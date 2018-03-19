@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MLSpinnerViewController">
+            <connections>
+                <outlet property="bigBlueSpinnerWithText" destination="k0f-YC-Iyv" id="Ohr-KL-VWe"/>
+                <outlet property="bigWhiteSpinner" destination="gSM-DX-95f" id="r5T-5W-NiL"/>
+                <outlet property="bigWhiteSpinnerWithText" destination="d5o-vh-VN1" id="n78-BT-pQ1"/>
+                <outlet property="smallBlueSpinner" destination="Gzt-z9-UmR" id="xRg-J1-caE"/>
+                <outlet property="smallSpinnerView" destination="OJV-CP-c4m" id="QAT-fR-QRN"/>
+                <outlet property="smallWhiteSpinner" destination="V8F-bR-Lfr" id="0hc-lr-Nfl"/>
+                <outlet property="spinner" destination="Ypn-tA-UFb" id="bEP-VO-g6w"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSM-DX-95f" customClass="MLButton">
+                    <rect key="frame" x="180" y="20" width="240" height="48"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="7Um-ch-ewT"/>
+                        <constraint firstAttribute="height" constant="48" id="Lz3-iJ-5yC"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d5o-vh-VN1" customClass="MLButton">
+                    <rect key="frame" x="180" y="188" width="240" height="48"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="VZH-Ig-hTW"/>
+                        <constraint firstAttribute="height" constant="48" id="W9F-xQ-zVl"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzt-z9-UmR" customClass="MLButton">
+                    <rect key="frame" x="180" y="76" width="240" height="48"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="2Rf-kL-EEI"/>
+                        <constraint firstAttribute="height" constant="48" id="Wpx-cw-PZ2"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8F-bR-Lfr" customClass="MLButton">
+                    <rect key="frame" x="180" y="132" width="240" height="48"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="duZ-bg-ahV"/>
+                        <constraint firstAttribute="width" constant="240" id="rVk-hq-UT0"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0f-YC-Iyv" customClass="MLButton">
+                    <rect key="frame" x="180" y="244" width="240" height="48"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="hnN-bL-esb"/>
+                        <constraint firstAttribute="width" constant="240" id="zfA-NC-9pz"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OJV-CP-c4m">
+                    <rect key="frame" x="420" y="132" width="62" height="48"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ypn-tA-UFb" customClass="MLSpinner">
+                    <rect key="frame" x="20" y="325" width="561" height="168"/>
+                    <color key="backgroundColor" red="0.92600888690000005" green="0.92688301279999996" blue="0.92387820509999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="183" id="Ik5-VH-Mdb"/>
+                        <constraint firstAttribute="height" constant="168" id="Sxo-GN-Pve"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Ik5-VH-Mdb"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="V8F-bR-Lfr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="71B-EI-Pms"/>
+                <constraint firstItem="Ypn-tA-UFb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="A8H-lH-BqR"/>
+                <constraint firstItem="Ypn-tA-UFb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="325" id="BSt-Qz-FAS"/>
+                <constraint firstItem="d5o-vh-VN1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Gki-71-88H"/>
+                <constraint firstItem="gSM-DX-95f" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LTF-PE-fzF"/>
+                <constraint firstItem="V8F-bR-Lfr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="132" id="PCI-md-1G6"/>
+                <constraint firstItem="Gzt-z9-UmR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Qxy-wk-q1Q"/>
+                <constraint firstItem="k0f-YC-Iyv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="296" id="TbV-zi-t1t"/>
+                <constraint firstItem="d5o-vh-VN1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="188" id="Tnf-22-brJ"/>
+                <constraint firstItem="k0f-YC-Iyv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="244" id="ZB8-5Z-O7C"/>
+                <constraint firstItem="Ypn-tA-UFb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="cpA-y8-V9H"/>
+                <constraint firstItem="gSM-DX-95f" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="pYN-9W-CvJ"/>
+                <constraint firstItem="k0f-YC-Iyv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rfx-dG-9VM"/>
+                <constraint firstItem="Gzt-z9-UmR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="76" id="wG2-14-ePr"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="TbV-zi-t1t"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="210" y="267"/>
+        </view>
+    </objects>
+</document>

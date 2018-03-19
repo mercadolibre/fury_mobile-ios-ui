@@ -1,0 +1,183 @@
+//
+// MLTitledSingleLineTextFieldTest.m
+// MLUI
+//
+// Created by Juan Andres Gebhard on 5/18/16.
+// Copyright © 2016 MercadoLibre. All rights reserved.
+//
+
+#import "MLTitledSingleLineTextFieldTest.h"
+#import "MLTitledSingleLineTextField.h"
+#import <OCMock/OCMock.h>
+#import <UIKit/UIKit.h>
+
+// Must declare that textfield implements UITextFieldDelegate to call shouldChangeCharactersInRange:raplacementString:
+@interface MLTitledSingleLineTextField () <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
+@property (weak, nonatomic) IBOutlet UILabel *accessoryLabel;
+@end
+
+@implementation MLTitledSingleLineTextFieldTest
+
+- (MLTitledSingleLineTextField *)textField
+{
+	return [[MLTitledSingleLineTextField alloc] init];
+}
+
+- (void)testSetText
+{
+	NSString *testText = @"A test text";
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.text = testText;
+
+	XCTAssertEqualObjects(testText, textField.text);
+}
+
+- (void)testSetTextFailsIfLongerThanMaxCharacters
+{
+	NSString *initialText = @"A test text";
+	NSString *longerText = @"A text that is longer to the first text";
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.text = initialText;
+	textField.maxCharacters = initialText.length;
+	textField.text = longerText;
+
+	XCTAssertEqualObjects(initialText, textField.text);
+}
+
+- (void)testErrorState
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.errorDescription = @"Error description";
+
+	XCTAssertEqual(MLTitledTextFieldStateError, textField.state);
+}
+
+- (void)testDisabledState
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.enabled = NO;
+
+	XCTAssertEqual(MLTitledTextFieldStateDisabled, textField.state);
+}
+
+- (void)testAlignCenter
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+	[textField setupInnerTextWithAlignment:NSTextAlignmentCenter];
+
+	XCTAssertEqual(textField.placeholderLabel.textAlignment, NSTextAlignmentCenter);
+	XCTAssertEqual(textField.titleLabel.textAlignment, NSTextAlignmentCenter);
+	XCTAssertEqual(textField.accessoryLabel.textAlignment, NSTextAlignmentCenter);
+}
+
+- (void)testAlignLeft
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+	[textField setupInnerTextWithAlignment:NSTextAlignmentLeft];
+
+	XCTAssertEqual(textField.placeholderLabel.textAlignment, NSTextAlignmentLeft);
+	XCTAssertEqual(textField.titleLabel.textAlignment, NSTextAlignmentLeft);
+	XCTAssertEqual(textField.accessoryLabel.textAlignment, NSTextAlignmentLeft);
+}
+
+- (void)testAlignRight
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+	[textField setupInnerTextWithAlignment:NSTextAlignmentRight];
+
+	XCTAssertEqual(textField.placeholderLabel.textAlignment, NSTextAlignmentRight);
+	XCTAssertEqual(textField.titleLabel.textAlignment, NSTextAlignmentRight);
+	XCTAssertEqual(textField.accessoryLabel.textAlignment, NSTextAlignmentRight);
+}
+
+- (void)testSetHelperDescription
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.helperDescription = @"Helper Description";
+
+	XCTAssertEqualObjects(textField.accessoryLabel.text, @"Helper Description");
+}
+
+- (void)testDelegateDoesntModifyMaxCharacters
+{
+	// A delegate
+	id protocolMock = OCMProtocolMock(@protocol(MLTitledTextFieldDelegate));
+	OCMStub([[protocolMock ignoringNonObjectArgs] textField:[OCMArg any] shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:[OCMArg any]]).andReturn(YES);
+
+	// Setup
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.maxCharacters = 4;
+	textField.delegate = protocolMock;
+
+	UITextField *internalTextField = [[UITextField alloc] init];
+	internalTextField.text = @"";
+
+	// Might simulate user using actual textfield
+	[textField textField:internalTextField shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:@"t"];
+
+	// Have to include a text field becouse original property textfield from textfiels is taken from view
+	internalTextField.text = textField.text;
+
+	[textField textField:internalTextField shouldChangeCharactersInRange:NSMakeRange(1, 0) replacementString:@"e"];
+
+	// Might modify internalTextField's text by code becouse with a view this is make automaicaly
+	internalTextField.text = textField.text;
+
+	[textField textField:internalTextField shouldChangeCharactersInRange:NSMakeRange(2, 0) replacementString:@"s"];
+	internalTextField.text = textField.text;
+	[textField textField:internalTextField shouldChangeCharactersInRange:NSMakeRange(3, 0) replacementString:@"t"];
+	internalTextField.text = textField.text;
+
+	// Range might stay in (4, 0) becouse textCache is not updated when text is longer than maxCharacters
+	[textField textField:internalTextField shouldChangeCharactersInRange:NSMakeRange(4, 0) replacementString:@" "];
+	internalTextField.text = textField.text;
+	[textField textField:internalTextField shouldChangeCharactersInRange:NSMakeRange(4, 0) replacementString:@"t"];
+	internalTextField.text = textField.text;
+	[textField textField:internalTextField shouldChangeCharactersInRange:NSMakeRange(4, 0) replacementString:@"e"];
+
+	XCTAssertTrue([textField.text isEqualToString:@"test"]);
+}
+
+- (void)testEditingEvents
+{
+	MLTitledSingleLineTextField *textField = OCMPartialMock(self.textField);
+	id <UITextFieldDelegate> innerTextFieldDelegate = textField;
+	UITextField *innerTextField = (UITextField *)textField.textInputControl;
+
+	[innerTextField sendActionsForControlEvents:UIControlEventEditingChanged];
+	[innerTextFieldDelegate textFieldDidBeginEditing:innerTextField];
+	[innerTextFieldDelegate textFieldDidEndEditing:innerTextField];
+
+	OCMVerify([textField sendActionsForControlEvents:UIControlEventEditingChanged]);
+	OCMVerify([textField sendActionsForControlEvents:UIControlEventEditingDidBegin]);
+	OCMVerify([textField sendActionsForControlEvents:UIControlEventEditingDidEnd]);
+}
+
+- (void)testKeyboardType
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+
+	textField.keyboardType = UIKeyboardTypeURL;
+	XCTAssertEqual(textField.keyboardType, UIKeyboardTypeURL);
+}
+
+- (void)testAutocapitalizationType
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+
+	textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+	XCTAssertEqual(textField.autocapitalizationType, UITextAutocapitalizationTypeNone);
+}
+
+- (void)testSecureTextEntry
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+	XCTAssertFalse(textField.secureTextEntry);
+
+	textField.secureTextEntry = YES;
+	XCTAssertTrue(textField.secureTextEntry);
+}
+
+@end

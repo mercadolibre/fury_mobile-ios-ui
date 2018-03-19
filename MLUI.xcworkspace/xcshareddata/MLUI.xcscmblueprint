@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "708FB19F908E036F39C3762BFF04B42CE7D65F24",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C4A3D6CBAEEA6AF917B6288EF03C64D4E8C41DE1" : 0,
+    "708FB19F908E036F39C3762BFF04B42CE7D65F24" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "42AA2ABD-86DB-4D16-B755-F9870ECDAC0B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C4A3D6CBAEEA6AF917B6288EF03C64D4E8C41DE1" : "search-ios\/",
+    "708FB19F908E036F39C3762BFF04B42CE7D65F24" : "mobile-ios_ui\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MLUI",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MLUI.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:niguibru\/mobile-ios_ui.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "708FB19F908E036F39C3762BFF04B42CE7D65F24"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:mercadolibre\/search-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C4A3D6CBAEEA6AF917B6288EF03C64D4E8C41DE1"
+    }
+  ]
+}

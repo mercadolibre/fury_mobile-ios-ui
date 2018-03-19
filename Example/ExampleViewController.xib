@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExampleViewController">
+            <connections>
+                <outlet property="colorPaletteButton" destination="i3x-T7-Qab" id="har-of-V52"/>
+                <outlet property="fontsButton" destination="s9y-pg-jJt" id="JNc-dd-eQb"/>
+                <outlet property="htmlButton" destination="eMf-cU-C6e" id="bSy-dn-8vm"/>
+                <outlet property="styleButton" destination="OAF-ir-bvF" id="okl-0x-laN"/>
+                <outlet property="styleSheetButton" destination="Op1-Xq-xoE" id="2vz-95-ObD"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Qgm-6j-n63"/>
+                <outlet property="widgetsButton" destination="EQN-h9-gEg" id="djf-6C-95A"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMb-r9-dpT">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9y-pg-jJt" customClass="MLButton">
+                            <rect key="frame" x="38" y="98" width="300" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="300" id="BCU-rh-ngU"/>
+                                <constraint firstAttribute="height" constant="48" id="fBd-Zc-SU9"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3x-T7-Qab" customClass="MLButton">
+                            <rect key="frame" x="38" y="162" width="300" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="300" id="7K3-va-3XU"/>
+                                <constraint firstAttribute="height" constant="48" id="R75-uR-Y6U"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMf-cU-C6e" userLabel="HTML" customClass="MLButton">
+                            <rect key="frame" x="38" y="290" width="300" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="139-gw-3HA"/>
+                                <constraint firstAttribute="width" constant="300" id="tPS-V9-yVx"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQN-h9-gEg" userLabel="ML Widgets" customClass="MLButton">
+                            <rect key="frame" x="38" y="226" width="300" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="300" id="Kx4-q8-0x6"/>
+                                <constraint firstAttribute="height" constant="48" id="e0J-oA-lAE"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAF-ir-bvF" customClass="MLButton">
+                            <rect key="frame" x="38" y="34" width="300" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="ClR-C3-7zj"/>
+                                <constraint firstAttribute="width" constant="300" id="uei-Yd-aGZ"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Op1-Xq-xoE" userLabel="StyleSheet" customClass="MLButton">
+                            <rect key="frame" x="37" y="354" width="300" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="4VI-ki-4gP"/>
+                                <constraint firstAttribute="width" constant="300" id="iXA-oF-mvS"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="s9y-pg-jJt" firstAttribute="top" secondItem="OAF-ir-bvF" secondAttribute="bottom" constant="16" id="BUV-wJ-yC9"/>
+                        <constraint firstItem="eMf-cU-C6e" firstAttribute="top" secondItem="EQN-h9-gEg" secondAttribute="bottom" constant="16" id="CAa-bY-vmW"/>
+                        <constraint firstItem="i3x-T7-Qab" firstAttribute="centerX" secondItem="BMb-r9-dpT" secondAttribute="centerX" id="HZJ-1b-vHi"/>
+                        <constraint firstItem="EQN-h9-gEg" firstAttribute="centerX" secondItem="BMb-r9-dpT" secondAttribute="centerX" id="JZL-dq-zbx"/>
+                        <constraint firstItem="OAF-ir-bvF" firstAttribute="leading" secondItem="BMb-r9-dpT" secondAttribute="leading" constant="16" id="K0t-lf-IXX"/>
+                        <constraint firstItem="i3x-T7-Qab" firstAttribute="top" secondItem="s9y-pg-jJt" secondAttribute="bottom" constant="16" id="RKm-l6-baF"/>
+                        <constraint firstItem="Op1-Xq-xoE" firstAttribute="top" secondItem="eMf-cU-C6e" secondAttribute="bottom" constant="16" id="VfK-8M-gUz"/>
+                        <constraint firstItem="EQN-h9-gEg" firstAttribute="top" secondItem="i3x-T7-Qab" secondAttribute="bottom" constant="16" id="XxW-L4-NiK"/>
+                        <constraint firstItem="s9y-pg-jJt" firstAttribute="centerX" secondItem="BMb-r9-dpT" secondAttribute="centerX" id="aim-Xm-51r"/>
+                        <constraint firstItem="Op1-Xq-xoE" firstAttribute="centerX" secondItem="BMb-r9-dpT" secondAttribute="centerX" id="eUB-mj-aml"/>
+                        <constraint firstAttribute="bottom" secondItem="eMf-cU-C6e" secondAttribute="bottom" constant="262" id="exJ-OE-wiw"/>
+                        <constraint firstAttribute="trailing" secondItem="OAF-ir-bvF" secondAttribute="trailing" constant="150" id="jZi-OG-aok"/>
+                        <constraint firstItem="OAF-ir-bvF" firstAttribute="top" secondItem="BMb-r9-dpT" secondAttribute="top" constant="34" id="kEC-1Z-i5b"/>
+                        <constraint firstItem="eMf-cU-C6e" firstAttribute="centerX" secondItem="BMb-r9-dpT" secondAttribute="centerX" id="mF2-L0-io1"/>
+                        <constraint firstItem="OAF-ir-bvF" firstAttribute="centerX" secondItem="BMb-r9-dpT" secondAttribute="centerX" id="rPU-gL-9Z7"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="K0t-lf-IXX"/>
+                        </mask>
+                    </variation>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BMb-r9-dpT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="08v-GP-jDp"/>
+                <constraint firstItem="BMb-r9-dpT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6c7-wl-TUk"/>
+                <constraint firstAttribute="bottom" secondItem="BMb-r9-dpT" secondAttribute="bottom" id="H71-9Z-RGx"/>
+                <constraint firstAttribute="trailing" secondItem="BMb-r9-dpT" secondAttribute="trailing" id="QB9-yM-IHZ"/>
+                <constraint firstItem="BMb-r9-dpT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="uQj-qg-iuH"/>
+                <constraint firstAttribute="trailing" secondItem="BMb-r9-dpT" secondAttribute="trailing" id="uoq-iL-0Zu"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="uQj-qg-iuH"/>
+                    <exclude reference="uoq-iL-0Zu"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="124" y="223"/>
+        </view>
+    </objects>
+</document>

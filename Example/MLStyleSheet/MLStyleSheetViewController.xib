@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MLStyleSheetViewController">
+            <connections>
+                <outlet property="styleSheetTitle" destination="y5m-5v-V40" id="Ix5-rH-REK"/>
+                <outlet property="switchStyles" destination="mwf-LN-pmZ" id="VIo-As-sNV"/>
+                <outlet property="titleLabel" destination="LiO-Wi-uTI" id="4aq-GR-Ump"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Switch StyleSheet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5m-5v-V40">
+                    <rect key="frame" x="16" y="42" width="204" height="31.5"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mwf-LN-pmZ">
+                    <rect key="frame" x="16" y="199" width="51" height="31"/>
+                </switch>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiO-Wi-uTI">
+                    <rect key="frame" x="115" y="204" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="y5m-5v-V40" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="42" id="8f6-lL-DXq"/>
+                <constraint firstItem="LiO-Wi-uTI" firstAttribute="centerY" secondItem="mwf-LN-pmZ" secondAttribute="centerY" id="Ocx-u6-2zS"/>
+                <constraint firstItem="LiO-Wi-uTI" firstAttribute="leading" secondItem="mwf-LN-pmZ" secondAttribute="trailing" constant="50" id="Pu9-IV-eYe"/>
+                <constraint firstItem="mwf-LN-pmZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="W8Q-3Q-rWX"/>
+                <constraint firstItem="mwf-LN-pmZ" firstAttribute="top" secondItem="y5m-5v-V40" secondAttribute="bottom" constant="125.5" id="ZL0-cZ-DX1"/>
+                <constraint firstItem="y5m-5v-V40" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="xh8-ty-qfr"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

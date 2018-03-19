@@ -1,0 +1,2338 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01F7D55919C59833456188558FE8D7FA /* OCMExpectationRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = B7420EA4CA1B768B98BB0ECE97E45AD1 /* OCMExpectationRecorder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0310B1523123778B0E3FB78BE3A14095 /* OCMBlockCaller.h in Headers */ = {isa = PBXBuildFile; fileRef = 79FC2EB0540F1AE453323A8F029BAD04 /* OCMBlockCaller.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0982657F56BAFB3E883286654536A3CC /* MLButton.h in Headers */ = {isa = PBXBuildFile; fileRef = D0D50C28B3F7CF2392D221605DF2BB6C /* MLButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09F482BD384DCB23E433BC30E4A3B4EF /* MLModal.m in Sources */ = {isa = PBXBuildFile; fileRef = F91B60D8838B98985A1CFD3670CA3248 /* MLModal.m */; };
+		0AEAD2BEB61CCA26BB0798F2E527BF84 /* OCMRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA74C67B1AF738AFE52CD0B69D2ABE0 /* OCMRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0CF1E362AF47B439B1B268D46B5BB23C /* MLGrowingTextViewHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 15FAC227E93EA61A68269F7079579CEE /* MLGrowingTextViewHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D183650A2D88CB6DAD886030A3A2B62 /* OCMBoxedReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 50361F228B576E1E34E48CF7C114F792 /* OCMBoxedReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0E32A8C1B69250199C8EC0794CF3A3B6 /* OCMStubRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = E36DD61BA98810109AD8612BCEEB8B1A /* OCMStubRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0FF1A121CD72359DA44D556A0A2FD894 /* UIFont+MLFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 054D54C040CC9C27ECEA152B529FB952 /* UIFont+MLFonts.m */; };
+		116FA1BBD719AFAA5593D71332D2A926 /* OCClassMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B907BDE51D8DC8C88D75769F1B22F267 /* OCClassMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		11C961ED56EB108FDAED8ED68E619634 /* NSString+BoundingSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 278112884CF59007346598814DDCF158 /* NSString+BoundingSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		128EFFDB31235C8DE0178EF11B6B8580 /* UILabel+MLFonts.h in Headers */ = {isa = PBXBuildFile; fileRef = 00FB0EAAE6FAD8B208E4551C4C7CC4BC /* UILabel+MLFonts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12C80162ABD0A7B5360F16F3E226BE76 /* MLGenericErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7616E63E95BBD4D2FCC2FC92D1FD1F7C /* MLGenericErrorView.m */; };
+		13A1051CA96D84674E588FECAF52DD43 /* OCMExpectationRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 584896D01DDEC2BD14A5AF02771563B0 /* OCMExpectationRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		13AA024ACA7FE3FAD7E0FFD5AC77370D /* OCMVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = D712D5DDF509A46E1A52D0E1E770C7BC /* OCMVerifier.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		147E00CDCEDB145F0012FA174BA4E545 /* OCObserverMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F05509522F64EF891B2D95DAB633A19 /* OCObserverMockObject.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		15081C3A4D626D9631A9594847D2E2A6 /* OCMFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = A9F1B724D8FEAFD4AFDE6695227B542A /* OCMFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		151C64FCF8CD219591B56486514C7612 /* MLBooleanWidget_Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = A12C20F8D0E6DB2DC0AAD7520C804773 /* MLBooleanWidget_Protected.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1583087CE691D66E050A0AE7C07296BD /* OCMNotificationPoster.h in Headers */ = {isa = PBXBuildFile; fileRef = FBEED5665CEDFBE5E497EB4F092CBDCC /* OCMNotificationPoster.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1592EE56FA3EDD21B2F2364E505321EF /* UITextView+MLFonts.h in Headers */ = {isa = PBXBuildFile; fileRef = 5140470FCB457A693D6CAC8D51511894 /* UITextView+MLFonts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		15FEDB8A315321D48BC7E535429ADB48 /* OCMInvocationStub.h in Headers */ = {isa = PBXBuildFile; fileRef = 98CBB6D9883FC6172148154E8F99FDC5 /* OCMInvocationStub.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1C48FCD568B31B99CD1068BE49D68A11 /* MLButtonConfigStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = DA99A3CF250C14C83F301B57FA1717D2 /* MLButtonConfigStyle.m */; };
+		1CD0E80E32815BF9D2F0C76BF7CA24F1 /* MLRadioButtonCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B3F2FD4B2EBA688EE5D6E703D876CEAB /* MLRadioButtonCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D53147F49F02FC693C33D8526049C90 /* OCMIndirectReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C353B3E9E03E774160959A2AF9D10D /* OCMIndirectReturnValueProvider.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1DD2C9A900B7D7B5F3862D15C1A8AD7E /* NSValue+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F1BEC9AF0A58E4F331A698B6207E459F /* NSValue+OCMAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1DF141B4EFFF24874AB4DFDC3B57135E /* FXBlurView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6514CB8BACA231DA2F8A9A9221C2E64E /* FXBlurView-dummy.m */; };
+		1E35A2620063447F3DC6A1016648797E /* FXBlurView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A174DBA87B02A2B93B4F4767D4F6BA1 /* FXBlurView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F62BCDD224C46375F12D5535879B5FF /* FXBlurView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F28581371433B9432205544F97A19A6 /* FXBlurView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20D28534AFFD4E475F473DFB3CD4850D /* MLStyleSheetManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0220690396ED2A3F648E42028726F001 /* MLStyleSheetManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		210831DC7E3844EC7E80DD9FBD7B7D81 /* MLUI-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 44F672E60FE29355140F4E94F34F1DC9 /* MLUI-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2121CB0CD58BAA47D148D3F33CF9379F /* MLStyleUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = FB7032C59F58CC4339E95B147C9EBCDA /* MLStyleUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		236CD6C00A1644753BAF198CAB42E6CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDEEB1BB43D68F5221CDFAF4A65DF75 /* Foundation.framework */; };
+		24394811C369F117D75337F436C81222 /* OCMock-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4224CF30219B90D5FA8357C97B9EF /* OCMock-dummy.m */; };
+		24CBE4FD7AABA52819472727B9DC260B /* MLButtonConfigStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = FE99E8A0AED8CFD1D4CB79CBEDDE7884 /* MLButtonConfigStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2686F0A674D8D995B1CF2204EFCA7DE4 /* NSString+BoundingSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D9B058FAFC83C689F3A6485709E81A /* NSString+BoundingSize.m */; };
+		28B5E9BDDC2F53432C7D7D244837F1B5 /* OCClassMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = FCBA329672BDFB433ABDB414EBFCE021 /* OCClassMockObject.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2A5A0709AC5CA1CBD990D63D609DF189 /* MLButtonConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = F01953098C0698BA6AF4AE16729E29D8 /* MLButtonConfig.m */; };
+		2DEFB1D6F7BCE16657D1479DD3C4569A /* MLStyleUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDBBC7CF49D3CD43CDD13814C196684 /* MLStyleUtils.m */; };
+		3452370C5EC942DFEE9CE87B4CEB5BFF /* MLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E0BB8B602711A89EF121A7467A6982 /* MLButton.m */; };
+		34CB9165910045F0BA35F81F8F62DE78 /* MLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10699ACB43510E3017914F4C444D9B84 /* MLTextView.m */; };
+		353759005B92EEC29E4B15765C4D3EEB /* OCPartialMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 0256D4F8D280984995CBF70636C39A96 /* OCPartialMockObject.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		38D5085895B3757AF0DCED078EF8B145 /* OCMRealObjectForwarder.h in Headers */ = {isa = PBXBuildFile; fileRef = F89A5911F330E534F05F41B97689C5D9 /* OCMRealObjectForwarder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3956AEFF9E72350C484EF8C9A90E72C5 /* UIImageView+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D1E29ED08655916DC13B8C7B4E779 /* UIImageView+Animations.m */; };
+		3995140BFFC8476740A9830B67798B78 /* MLTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 94819414E8762354EA7E4A09534A1CFE /* MLTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3ABD40C9A70F84B570D1E29A51170851 /* MLStyleSheetProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 57D1BF5986C6BA7CD4FBEE3B2C57ADCF /* MLStyleSheetProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B8D5A55B1B9448E066A4B05E9664740 /* UIImage+Transformations.h in Headers */ = {isa = PBXBuildFile; fileRef = EB5711105670A6E20975E1A6F9AF627A /* UIImage+Transformations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D1CB7A4AB9B00BC95F06CF858F18BCE /* OCMFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F9494E653DA679FA03D67F2AE03BF /* OCMFunctions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3D763FC2F299F3CAD17B589377557208 /* MLCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D43B843DA273F79DCA9D6A0E54C462 /* MLCheckBox.m */; };
+		3DF0FBD3E59D87323827D9DC7B5A656C /* JRSwizzle-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF437C55F223B47269154FCFB9D1C2A /* JRSwizzle-dummy.m */; };
+		3EEDD6D8E75CE5C57CC977A07904DBCC /* MLRadioButtonCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E061587B8304781ACF314ABE6B87288 /* MLRadioButtonCollection.m */; };
+		44F771A182D8A1181EA64DB7C9D7936E /* UIFont+MLFonts.h in Headers */ = {isa = PBXBuildFile; fileRef = 976CECDE52C18EAE7A775178B01404A8 /* UIFont+MLFonts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4552366371FE1ACA9600897C31D70E4C /* OCMObserverRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = A53A9A5B8A83C0CFF1F795E6842D0DF4 /* OCMObserverRecorder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		45938DF9764A6DD4B9FC8920A78ABAFF /* MLModalStyleFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 482ACC32823F7D015CD000029B36C2F3 /* MLModalStyleFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45C7543FE2A2631FFEDC05A8BD7435F1 /* UIImage+Transformations.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B267666864F800682352BF1377E330 /* UIImage+Transformations.m */; };
+		45E91E6E79D1EEACF0F7A668E3D9A89D /* OCProtocolMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = ACEE54B43F3F173A35C06DDC967D381A /* OCProtocolMockObject.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4624E9490FBCC69AA869320F07F5C6A2 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEBBF36A397DAAFCA797E23C2F2B6D94 /* Accelerate.framework */; };
+		46C80200EBF919F8357904B49A413F27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDEEB1BB43D68F5221CDFAF4A65DF75 /* Foundation.framework */; };
+		4743CB641543FC64EF31861FDAF5E697 /* MLModalConfigStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD2ECFEC1DC8669BE2875339552CDBD /* MLModalConfigStyle.m */; };
+		4775C0D9ABC625A1FFD29AC80DEF53D6 /* MLButtonConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = ADB3660AFCC1653D420DDA74DE8E472C /* MLButtonConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		47C55464E9C810E3BC018536AF8A9AC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDEEB1BB43D68F5221CDFAF4A65DF75 /* Foundation.framework */; };
+		485510B0B0EE51FD9F212500A2A86531 /* MLTitledMultiLineTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1162B6C2DD4D982556187AFE063D6162 /* MLTitledMultiLineTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4CA894D93B653D9705CB3E01A2E11E3C /* JRSwizzle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63935387A8F9E449763FD682ECD2DE7 /* JRSwizzle.framework */; };
+		4E8250BDB662F542F9294F6941333373 /* OCMPassByRefSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9975EC780FFB82C8F430793C46149A91 /* OCMPassByRefSetter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4E962449F2DC5BF696EF871F5F9653B5 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 846531EF7BA2AB8D81B0ADE9ADAF4C79 /* JRSwizzle.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4F02F5DD4EC7C3AFD1EC38E2F55B0C4A /* OCMBlockArgCaller.m in Sources */ = {isa = PBXBuildFile; fileRef = C11A5D3D67E87BCED6941AFA8EBB4919 /* OCMBlockArgCaller.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4F4A7459D96FDABBAB640D1D1B1BB42E /* OCMNotificationPoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7979139DCA3F5AB8ECCF5F296E6D9E /* OCMNotificationPoster.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5037A042D2012439DEC932F10FC51B95 /* NSMethodSignature+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 290B2A6AFE2AC8C7F49A8E9E239F9F56 /* NSMethodSignature+OCMAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		51CAB174257235556CE8902084F0E662 /* NSNotificationCenter+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BA3651B97629AA51B6BEAA56CD58A7 /* NSNotificationCenter+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		543D9D71DD92175A9CC5F0831CF2A028 /* OCPartialMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB40F71F26C48C9BB54990901D670BF /* OCPartialMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		54471D429F63760B736E52506A0B861B /* OCMInvocationMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 500E0D7F95701DF20CACFEDC4B838F5B /* OCMInvocationMatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		58FB50DB554239F854ECBEC3C86F3A92 /* OCMRealObjectForwarder.m in Sources */ = {isa = PBXBuildFile; fileRef = 656A0C316628D7D1DEE8692FD55D521A /* OCMRealObjectForwarder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		59578DBAB2520015A65B5B160722A370 /* NSValue+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E541FEC39BD22D72EA96E90A76E97FE4 /* NSValue+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5BB5B20EED14BF5D94488B2847D0D1CA /* NSAttributedString+MLHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FF9A1BA994136E4EB661BA7AB90010 /* NSAttributedString+MLHtml.m */; };
+		5E5C88BCE2794FDD97B078B3DB5964F2 /* FXBlurView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0ECEB0ECD0E3ECEE7B9BAE499FC7CA4 /* FXBlurView.framework */; };
+		5F1F7441E92010EB6A1319C357F5356B /* MLSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 275C9B2584EF3CEE2D254BBBC0FD9F28 /* MLSwitch.m */; };
+		61F33866639505D8336BF84D65F81183 /* MLGrowingTextViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D41EDA65F2C98450831B52E38DF1780D /* MLGrowingTextViewHandler.m */; };
+		63BE0B0C62570FD3D0B9B29D12411D9C /* MLSnackbarType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9BF6DF716971A0E29FE72B2D768F78 /* MLSnackbarType.m */; };
+		642A7199B8BB17CB77FA509462727535 /* MLHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CB3455118F09213F48150DE79868E /* MLHtml.m */; };
+		64362A6BA812236A5213FCDAAAA7E846 /* UIImageView+Animations.h in Headers */ = {isa = PBXBuildFile; fileRef = 54460217042B3F17ECC88F6E02DCEBB5 /* UIImageView+Animations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		677D4A83A473549ED481EE2A21201C70 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C91F84A497DC93A7160FB06D477CA2E /* QuartzCore.framework */; };
+		6B8D1E474FD06155A9C8C83ED7E3646C /* MLSnackbarType.h in Headers */ = {isa = PBXBuildFile; fileRef = 01EF3B26187F239275DA6A9EDB3D54C6 /* MLSnackbarType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CC8A2C603D1187B5994B362D956EB74 /* MLGenericErrorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EB982DC7D1E389DCCE303A05E398203 /* MLGenericErrorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6DEAD4CD0FF9467DA3FD3F22816418C6 /* OCMArgAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FC7CB13A79B90A5077A20021FBED796 /* OCMArgAction.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7064A25312765E66B26C3AC86F619891 /* MLSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D4A01D8E14DD7E3C54B64162D6CE735 /* MLSwitch.xib */; };
+		71213523998EC4038EEF2881118A57A1 /* NSInvocation+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AF726F08FB9B88880D6DE625E94BF4 /* NSInvocation+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		717FED2F9363BB81F41E0DD372E5EC40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDEEB1BB43D68F5221CDFAF4A65DF75 /* Foundation.framework */; };
+		72C8CC2855787B9DC1A37DDEB5E24155 /* OCMFunctionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = BBC0BD73E181D75941CBF66DB0804E52 /* OCMFunctionsPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		72F89CC4B8E4B23CAA0442B13C149C1C /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1354470412B520B18493BB39D62815E9 /* en.lproj */; };
+		73CB089ADD80AC1CF75B3CF01390834C /* MLSpinnerConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 0710AFE1E0A5EC2DDB85D46E22D2CDBF /* MLSpinnerConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73FF7E6F3E51C82B77673602743B7C30 /* UIImage+Misc.h in Headers */ = {isa = PBXBuildFile; fileRef = AF29DAFA5816FB21DCC2D94EE1838430 /* UIImage+Misc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		742381031968E60542F5C5865E6AB01F /* UIColor+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEDC79510A03A4A0675C334B7131A38 /* UIColor+Theme.m */; };
+		74885838D468F6AC3633C90B86853160 /* MLUIBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3494681F3215A79F3A6269CA2F0991C3 /* MLUIBundle.m */; };
+		74BC62D6FEB722F4976016FD4DCA870B /* OCMObserverRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = C79157CC72A1928A1C389BA2A3683B94 /* OCMObserverRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7525C2640FE05464C10B33FC952FAB3F /* MLStyleSheetDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = D0123CA19C864AC8DF2F04022B0230BD /* MLStyleSheetDefault.m */; };
+		7787243F8D1984A159DD6C4011139341 /* MLContextualMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9984F07ABAE856C35A685DEB2066CF81 /* MLContextualMenu.m */; };
+		78080B1F6EB492400E394B90ECD706D5 /* MLUIActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FFFD87F24A5C6927674FDCFC0DC3A6 /* MLUIActionButton.m */; };
+		78FC8B590BF44BD044D3FAF918A028F2 /* MLUIActionButton.h in Headers */ = {isa = PBXBuildFile; fileRef = FC18A488D8E59C16FBFA58AFF1A445A0 /* MLUIActionButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		79106922A4A600003981571FF8827A56 /* MLStyleSheetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F661DE900230E35FFF0EA64CC7BFFB14 /* MLStyleSheetManager.m */; };
+		7A2D684E5C2036E9FDBDE6ADA73C2E93 /* MLButtonStylesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AECF772BC5FA78E63E2B75FB09A39978 /* MLButtonStylesFactory.m */; };
+		7AC80E9EC91A3EA1FA32628B4891E4F0 /* MLSnackbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DF5C14211078B13B44158344451715 /* MLSnackbar.m */; };
+		7B006E74668E41702B8881E724728DE9 /* OCMBlockCaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 383229B122F5F6F61C2F2EF102086021 /* OCMBlockCaller.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7B283DCC29E2FBEEAB4E60B629E7955D /* UIViewController+SnackBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9876CA93C4CDCBF675AB506F5A5C5D /* UIViewController+SnackBar.m */; };
+		7B94EA7E6E5528BAD965CBF18561F96E /* MLUISnackBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4E965C861EE09EEDE5570FD2AEFB604 /* MLUISnackBarView.xib */; };
+		7CB9EC8A045A698D8F731F0258B0C781 /* MLModalStyleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A29BC54E9EF948EB34C0F2776D069A /* MLModalStyleFactory.m */; };
+		7D94DE66B8B5E3B4A0B5E53A88C3FAEE /* OCMIndirectReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B61B44D7F024392D5B23F02CA55F3 /* OCMIndirectReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		82558AE4441757075270A8A260B34EC9 /* OCObserverMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0986EB0EAE8899B464D691DCB360E891 /* OCObserverMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		84692FBD24D129366F9035127BA47988 /* MLModal.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3C7F0D2BD1F136EB8AA570D9164AF8 /* MLModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		85C61D989C67F0F8BA48DAE0A625C19F /* MLContextualMenuItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AE276A6C62C08A4FF8484C9B49BCDD0 /* MLContextualMenuItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86B2BD20FA5B26E83C363B28D51FA5BA /* NSAttributedString+MLFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BDFEEF5218FD08176036B606B86C48 /* NSAttributedString+MLFonts.m */; };
+		86FF90618135B7C9032BC7075343F236 /* OCMBlockArgCaller.h in Headers */ = {isa = PBXBuildFile; fileRef = 669FCDED5A52894FECF5A0633456FBFD /* OCMBlockArgCaller.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		872C032479F0F08346ECD3E96A265C82 /* MLSnackbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 762B69C6C00F1304BC71BF0673AA5E95 /* MLSnackbar.xib */; };
+		8820BAAA3FFA593614F8F7596B86F99F /* MLContextualMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B637661011EF0EB55F9ECE4A643698E4 /* MLContextualMenuItem.m */; };
+		8AA4168FA127D57F6E2B387191DA1A6E /* MLModal.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A75C35B8743174190E8607814D90DAE /* MLModal.xcassets */; };
+		8EE2E0824E8AD382EC6553104A60430E /* OCMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = EFA14F51D1C37DCE8A57632C821E5726 /* OCMockObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		90ECCCEF568E737D2540394185AEE95B /* MLSpinner.h in Headers */ = {isa = PBXBuildFile; fileRef = 25685A97ACF55815C6F5FD525AB7E39A /* MLSpinner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		915751C97068AF644D3FE4498633DAB1 /* OCMExceptionReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF9824AA76647DEA7E6AAEAAA75C3A9 /* OCMExceptionReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		92F61FA0ACB1B709FFEBE1D9DC2C68E5 /* OCMPassByRefSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D56DEA4AF11E11679D53C55F5FD625E /* OCMPassByRefSetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		92FBAD9ED1CAAFEF65F249BCD58E045E /* MLSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F260189E49DA3B40C65FD665469E2D /* MLSpinner.m */; };
+		93F5DB2AE8D32716870D6786986F9BB2 /* MLModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = D57DB88AE0025DE316F50FB7597E0BFF /* MLModal.xib */; };
+		971409D93414D45B412C08F7CB4C2CA5 /* MLBooleanWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = F6566F1A2F25BF69EEE525F60D142654 /* MLBooleanWidget.m */; };
+		974362D040AC870A5D72E365B21A8CE4 /* OCMExceptionReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 48977FE510AF8237F3787196D6A85FC5 /* OCMExceptionReturnValueProvider.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		97C7B4B869C222D4F7D09AFD7E05BE2A /* MLTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9153CEB22F2E7A0F0864BBFEE6B254BC /* MLTextView.xib */; };
+		9A139205A530646B1DB0306964F69946 /* MLUIPriceView.h in Headers */ = {isa = PBXBuildFile; fileRef = F784191CD9D7FC28EE4ABCD2AAB7AD02 /* MLUIPriceView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A92686CF21CC8ECAB69A3CFB621FA4B /* OCMock-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A9C1E63F40C48CA7C961A7453A669778 /* OCMock-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A045D6AD5D7EBABD111D7AAFB9300F1C /* MLTitledSingleLineTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B6CDCC192C721DBABE70B14C58944 /* MLTitledSingleLineTextField.m */; };
+		A1268C3E1B318712F159EF222F19BD8B /* NSNotificationCenter+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 660A7AA6924B1CDEEDF9E6B6064A87D7 /* NSNotificationCenter+OCMAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A188CE43166BA8D6654641DB0087BB27 /* MLTitledSingleLineStringProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = C86649B74513ED6173379BD859B6576E /* MLTitledSingleLineStringProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3BD745DE50F36D2C8E43894533D02F4 /* MLUIBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C5976AE1BADF951E5CA8A772094E2AB /* MLUIBundle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4888DA2F548CA00B609BFA2EA29146E /* UIColor+MLColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D799F6D2D5E6456199B82797C6FDFB0 /* UIColor+MLColorPalette.m */; };
+		A48CD70F4026C89F7816BA8DC453295A /* MLSpinnerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DC2B7384D596DFB5DE7FE86D0E2300 /* MLSpinnerConfig.m */; };
+		A4AF7E8EF9BB26F4CE7FD9EA32D4AD4C /* OCMMacroState.h in Headers */ = {isa = PBXBuildFile; fileRef = A9100F67CD1686F0D28F5772CA283A6F /* OCMMacroState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4C564F89D363B3681F09F61E2436F22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDEEB1BB43D68F5221CDFAF4A65DF75 /* Foundation.framework */; };
+		A4CD01540B9FCF8F26D52856704571D7 /* OCMReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = F8F47846BED0C6AC179EAA5D042F41D7 /* OCMReturnValueProvider.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A59AE6011C58D3D2F009DEF7F5AA259B /* OCMInvocationExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EA723AC4917F21281F4447D25EC713 /* OCMInvocationExpectation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A6C37525D328ECF6E3E39FBB4570F34B /* MLUISnackBarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7788AAC06A2F17A20F52D7913D8F1C39 /* MLUISnackBarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6FD80249435379F91162093D8C78645 /* MLStyleSheetDefault.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ABA4845AE2FA0119F5CD35CB4BE5B9F /* MLStyleSheetDefault.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A864156A636A5C410B010001C7ADFB09 /* MLSnackbar.h in Headers */ = {isa = PBXBuildFile; fileRef = C484217E9FC9B173324D0FEFDB362C2A /* MLSnackbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A86900E4F65E47783C4653920DEE4E13 /* UITextView+MLStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 830AA100068640FDACD2AC4158C444AE /* UITextView+MLStyle.m */; };
+		A8C98D483D800B96E37AA5069EF04E68 /* JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E50CC3A3954C8B5465086A2F60D56BB /* JRSwizzle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A90CBA8C84761DC71ABFC1AD8AA436A0 /* MLTitledSingleLineStringProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C69DEF365A729EE12A31584351382 /* MLTitledSingleLineStringProvider.m */; };
+		A93FF0A4360F31B0BD01A496CCA26C8A /* MLUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAFB38B6F6325C3A92A93762FB45A62 /* MLUI-dummy.m */; };
+		A9571E56544CD912F0DA62E545DB2419 /* OCMReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D867BA8E01F9BEDCD3B6FDBC0025F /* OCMReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AA2BB02F17B642A183EF1DF4B556E624 /* UIColor+Theme.h in Headers */ = {isa = PBXBuildFile; fileRef = 538DE3EC5EF5A6EE499407C99DD33A8D /* UIColor+Theme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AACE53180AF21A4282253DE67D04EB1B /* MLContextualMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 389D75B104BE0EF7AB97BF01D2C3A35F /* MLContextualMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD1903A808DA30C92B2C49CF5476D6D5 /* UILabel+MLStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B9EF9A97F1DB200ED453B7A521AD75 /* UILabel+MLStyle.m */; };
+		ADE91409C8CB482DAC32619D74FED2CE /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA672221B55D489E8A52DECFB9B81089 /* FXBlurView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B09B792361ECB1960F2B172C4FCFFD8E /* Pods-MLUIUnitTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4170D8CF55EBC48EE57B34C561766A3B /* Pods-MLUIUnitTests-dummy.m */; };
+		B200AEB2373802A1B871987A18D08F75 /* OCMConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C05CCCE9934F9D5ED15E0A1A765CAC7 /* OCMConstraint.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B295032F9CD7D5BED81CB40BC9FB2919 /* UITextView+MLFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 0899CB8741B6DC878B44E7E1EFDA1EF5 /* UITextView+MLFonts.m */; };
+		B33B6DFAA43992C898AF6D4F1C539A8A /* OCMInvocationStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A44CCD40F722929F46B42CB1D87C9C /* OCMInvocationStub.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B3E6AA126A971418B57B78A6B4E753E3 /* OCMInvocationExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = 29BD59843E112DECC9AC2D7C15149AC9 /* OCMInvocationExpectation.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B40D8DAB504B721D2BC6A6DDFDD82067 /* OCMConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25E9D40DE64B6341797907BD8F16F3 /* OCMConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B42B8EFE65F8B07957190A15F590093A /* OCMInvocationMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 012AD07453301F892AB2E2B2E406947D /* OCMInvocationMatcher.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B440651F929483A69A6155D8D3DDBB0D /* MLStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 13D792DD3B0D8E71EC214D9367DCC5ED /* MLStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B503FE04A9C2074EE478C4B76E89DAEA /* JRSwizzle-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C8E1804F1FE7EE68A8913684C838D19 /* JRSwizzle-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5BEEBFF97BEA49EA1362229E447A49A /* UILabel+MLFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6235FE33C330971691E763F03455C1 /* UILabel+MLFonts.m */; };
+		B66FB06824BBED66619F17DB82CC2A64 /* OCMLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 6667264EEDCDA524F18BA96C1BB9CE88 /* OCMLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B707211D47889C509536B09C5FE53F02 /* MLUISnackBarProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D8A56DA689FBB9990632C4A2030FD6D /* MLUISnackBarProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B852DBE3593443215A94EEFD59786402 /* NSObject+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA5D4EC6E7CCED8AD4CC8648E27AC30 /* NSObject+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B8EAD66DF1BB18A871CDB3B121339EAD /* MLModalConfigStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DE141BACBED93242B8F6AA6958FBFFE /* MLModalConfigStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD181F7E8C0BB325B051DA9F2FBD71BC /* NSMethodSignature+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6A88E8A0D9CAD78EE98A3E419DA05A /* NSMethodSignature+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BE49FE33C6C32EF03C33F0C2E4CB0BBC /* UIColor+MLColorPalette.h in Headers */ = {isa = PBXBuildFile; fileRef = 63C71A9D363A45E52F841B541BF4F8E7 /* UIColor+MLColorPalette.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF1FAE3BD55010CDBE974B500F56EF88 /* MLButtonStylesFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FC8A879D19776BED1EE637A105E0187 /* MLButtonStylesFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C12F1270D1A31CB9680F3D1A4E7EA362 /* MLCheckBox.h in Headers */ = {isa = PBXBuildFile; fileRef = B65C8B81A4E5172C4B76493A2B9EE114 /* MLCheckBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4F164E62DCFFF8F5A2252B6FA25872F /* MLCheckList.h in Headers */ = {isa = PBXBuildFile; fileRef = D953EA024F49D85D25C67B202484679A /* MLCheckList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C65A28088F0668711386816290C3880E /* OCMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10D2AAA25834876D044C4BC31B524C /* OCMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C8D8B56BDAAD7185646B741718720AAF /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 5B4A903D5E90704AD3EB351E9E31B608 /* es.lproj */; };
+		C9C8D8B461B1E711F313938CD89A944B /* UIViewController+SnackBar.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA5606F86047B82C709D031629CF86D /* UIViewController+SnackBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDA3F687701177141CC325CCE82D5DC9 /* NSAttributedString+MLFonts.h in Headers */ = {isa = PBXBuildFile; fileRef = E968A3834DB9464E6C2785FF7A716E1B /* NSAttributedString+MLFonts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF451EAA94004B370612757B61B46D2D /* OCMArgAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1353EE5E514ACE3AC9ADB00DB44BC3BA /* OCMArgAction.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D00C06B0B0CAB7490DC11434F1E81238 /* UILabel+MLStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 65757158FCA21DFE913153A83EAF45BD /* UILabel+MLStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D246AA7E096DD6CBDD18987503CCAC8C /* UITextView+MLStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DCBDD46EE5059DF9455B50424599CBB /* UITextView+MLStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D738AE5D022F0A01FFBD71CD04089835 /* MLGenericErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 917E792F4B1BD43C384EB5323983F804 /* MLGenericErrorView.xib */; };
+		D9C7A57A574090442C8631BA856B1599 /* OCMMacroState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B941D2A3255A6C2CA3A521E27C360C3 /* OCMMacroState.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DE22A1E50FADA4BFE13B72174DB177B4 /* MLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 370A7AD5ED0067EE9B51B1CC2F2F094D /* MLRadioButton.m */; };
+		DFACC77F446FD708AAA4C65138F03157 /* MLUIPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 590E8C2393CAC5EE066B1D632C167CF4 /* MLUIPriceView.m */; };
+		E14A5FC189CD75054825E45DA6D9F293 /* OCMBoxedReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C52A7EB8525EC8062C520C6B763FE69 /* OCMBoxedReturnValueProvider.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E3DD5EBA9DFF624C3ED1E054DDC59AEF /* MLRadioButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 97E82BB428CBAD53371E529D75E32B00 /* MLRadioButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4070427AD7F08E573CAA22DCEB79FB1 /* OCProtocolMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7136EA6C37D03275D1A8B638772E76F7 /* OCProtocolMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E4A87D8BA9BA24EE81DEC41C8BE98F2B /* OCMVerifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 56FC26DAF7610ADCCF0AFF224B632C78 /* OCMVerifier.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E61FEAB563814E928FFF2C1EF239058A /* NSObject+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CD30B7FB31B14626C29EAA9400451AA /* NSObject+OCMAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E6F1B20197D630B80285B5F6E5FAE80F /* OCMRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = D975FE5861DA709F7F6E7420B81CA3D6 /* OCMRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E77C6E31C1BD80A0B1C9EDBD43A08B33 /* NSAttributedString+MLHtml.h in Headers */ = {isa = PBXBuildFile; fileRef = BF285281779534BC283AA47EBE86C49B /* NSAttributedString+MLHtml.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8EF4496E85253E84F6D9F2DB81CCEC8 /* Pods-MLUIUnitTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C4071C5234BFF31D22BC9B12693A6FB0 /* Pods-MLUIUnitTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8F2DF8180B130235161157206DA99BB /* MLSpinner.xib in Resources */ = {isa = PBXBuildFile; fileRef = C44D623FAABA3E3487315B144A17AA9D /* MLSpinner.xib */; };
+		EA95DC12DEA70F2324E07333E994C4A0 /* MLTitledLineTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6911CDE071B6A0F363216B57FFCEE4E6 /* MLTitledLineTextField.xib */; };
+		EC33739AB54F71355C4FD5AAEF92F4B1 /* OCMStubRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E4684799C6156F20CCA79AB1791C039 /* OCMStubRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE505346A80CD8B32F14E51E4AEE663E /* MLSwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 424856EBFC0B8DEA7B49B04B9A303BF9 /* MLSwitch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EFC1318446EB79DC091867000F45D61C /* OCMLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E977111A3CE7477AC77E2E72FD932A78 /* OCMLocation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F02C2CD0A94965FFA8928B316D5825CB /* OCMArg.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F8D2F706063096DB7C5B426213E2639 /* OCMArg.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1071A41542EFB701545C3F3FA72E985 /* UIImage+Misc.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B861DFBED9150C5EE911C91BFF62F4 /* UIImage+Misc.m */; };
+		F11F240715F0849EE5AAF259D55B2760 /* MLUISnackBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A392954A82CC1936D6B9BA62C9BBE8A /* MLUISnackBarView.m */; };
+		F1B87399A430235ECA9D8C9C63E7F735 /* MLUIPriceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90380EF6BE523B3B9A84B1547832227E /* MLUIPriceView.xib */; };
+		F50DCAC226930B87A09BACDC35401411 /* MLHtml.h in Headers */ = {isa = PBXBuildFile; fileRef = C8EB2C705498759F1B9BC2B74C219F14 /* MLHtml.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F54AC2590480142D709E68651CBA56F6 /* Pods-MLUI-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F600D6373FF53639E050F2EEECE0C35D /* Pods-MLUI-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F581F8FF4C7B5ECFE349EBFAE37C3472 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDEEB1BB43D68F5221CDFAF4A65DF75 /* Foundation.framework */; };
+		F61CC41E11126D60F4B7AA579A4B71BC /* MLBooleanWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = F8151FBCB7F7A4261FEC4CF5B7D9AC1B /* MLBooleanWidget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6526A231BAAF163AAF223EED5870DEB /* MLTitledSingleLineTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C4562535F5E484547F4A0DBF9CA230F /* MLTitledSingleLineTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F98852F58D5FDF0191647087678ABE70 /* OCMArg.m in Sources */ = {isa = PBXBuildFile; fileRef = F4171760FA23CADDBAE0AD182A360CF5 /* OCMArg.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FAB7A1E7E1414DC657BA79D07135E15B /* OCMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D2F12AD3C3D891A1BEE8F43E1827F0C /* OCMock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FBD596B095C58C7A3AA647CAB7802226 /* NSInvocation+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0076CC6C91E40CFDDB2345865CEB3EAA /* NSInvocation+OCMAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FCFEE48BAD5B44C21FD7F77AD88C1B4B /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1BBACD6D5E827FD928F889901726C507 /* pt.lproj */; };
+		FDA900AF1E99C2930CB8EAF3E0F3AF13 /* Pods-MLUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C25892049E429653F5E9F8570A127FE /* Pods-MLUI-dummy.m */; };
+		FE48896F7594BDFD9089D7F7B7FAFE8A /* MLTitledMultiLineTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0814E191EE828F93E1114ECBF10387D6 /* MLTitledMultiLineTextField.m */; };
+		FEC1374A5C72F02F7BEC8FD391010724 /* MLCheckList.m in Sources */ = {isa = PBXBuildFile; fileRef = D567044D34F00F82ACED63CDC00D8E03 /* MLCheckList.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3E82100184273959FA47BD9C39B78CC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B45D666DABB464D83D203554EE4AA8B;
+			remoteInfo = MLUI;
+		};
+		A53067D0531DE6CA935FCE84B3AC3054 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5E7B86C60FCB91858074F7C2F733BE5;
+			remoteInfo = JRSwizzle;
+		};
+		AA2A9A70E04C5029D63A17A437CE8B94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD5BFC2F630B07DE8A20EBC90A7C8D49;
+			remoteInfo = FXBlurView;
+		};
+		E6803DB9C2BEB21C9498792F14148B7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5E7B86C60FCB91858074F7C2F733BE5;
+			remoteInfo = JRSwizzle;
+		};
+		F7E24BC916713879CB115BC721B086B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD5BFC2F630B07DE8A20EBC90A7C8D49;
+			remoteInfo = FXBlurView;
+		};
+		FA5A39036D587A27C7BDFA4B9DBA6F02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC54C98851E54D349520C786701A1845;
+			remoteInfo = OCMock;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0076CC6C91E40CFDDB2345865CEB3EAA /* NSInvocation+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+OCMAdditions.h"; path = "Source/OCMock/NSInvocation+OCMAdditions.h"; sourceTree = "<group>"; };
+		00FB0EAAE6FAD8B208E4551C4C7CC4BC /* UILabel+MLFonts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+MLFonts.h"; path = "LibraryComponents/MLFonts/classes/UILabel+MLFonts.h"; sourceTree = "<group>"; };
+		012AD07453301F892AB2E2B2E406947D /* OCMInvocationMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMInvocationMatcher.h; path = Source/OCMock/OCMInvocationMatcher.h; sourceTree = "<group>"; };
+		01EF3B26187F239275DA6A9EDB3D54C6 /* MLSnackbarType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLSnackbarType.h; path = LibraryComponents/MLSnackBar/classes/MLSnackbarType.h; sourceTree = "<group>"; };
+		0220690396ED2A3F648E42028726F001 /* MLStyleSheetManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLStyleSheetManager.h; path = LibraryComponents/StyleSheet/classes/MLStyleSheetManager.h; sourceTree = "<group>"; };
+		0256D4F8D280984995CBF70636C39A96 /* OCPartialMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCPartialMockObject.h; path = Source/OCMock/OCPartialMockObject.h; sourceTree = "<group>"; };
+		054D54C040CC9C27ECEA152B529FB952 /* UIFont+MLFonts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+MLFonts.m"; path = "LibraryComponents/MLFonts/classes/UIFont+MLFonts.m"; sourceTree = "<group>"; };
+		0710AFE1E0A5EC2DDB85D46E22D2CDBF /* MLSpinnerConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLSpinnerConfig.h; path = LibraryComponents/MLSpinner/classes/MLSpinnerConfig.h; sourceTree = "<group>"; };
+		0814E191EE828F93E1114ECBF10387D6 /* MLTitledMultiLineTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLTitledMultiLineTextField.m; path = LibraryComponents/MLTitledMultiLineTextField/classes/MLTitledMultiLineTextField.m; sourceTree = "<group>"; };
+		0899CB8741B6DC878B44E7E1EFDA1EF5 /* UITextView+MLFonts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextView+MLFonts.m"; path = "LibraryComponents/MLFonts/classes/UITextView+MLFonts.m"; sourceTree = "<group>"; };
+		0986EB0EAE8899B464D691DCB360E891 /* OCObserverMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCObserverMockObject.m; path = Source/OCMock/OCObserverMockObject.m; sourceTree = "<group>"; };
+		0A5B61B44D7F024392D5B23F02CA55F3 /* OCMIndirectReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMIndirectReturnValueProvider.m; path = Source/OCMock/OCMIndirectReturnValueProvider.m; sourceTree = "<group>"; };
+		0C25892049E429653F5E9F8570A127FE /* Pods-MLUI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MLUI-dummy.m"; sourceTree = "<group>"; };
+		0E4684799C6156F20CCA79AB1791C039 /* OCMStubRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMStubRecorder.h; path = Source/OCMock/OCMStubRecorder.h; sourceTree = "<group>"; };
+		0E6235FE33C330971691E763F03455C1 /* UILabel+MLFonts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+MLFonts.m"; path = "LibraryComponents/MLFonts/classes/UILabel+MLFonts.m"; sourceTree = "<group>"; };
+		10699ACB43510E3017914F4C444D9B84 /* MLTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLTextView.m; path = LibraryComponents/MLTextView/classes/MLTextView.m; sourceTree = "<group>"; };
+		10DF5C14211078B13B44158344451715 /* MLSnackbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLSnackbar.m; path = LibraryComponents/MLSnackBar/classes/MLSnackbar.m; sourceTree = "<group>"; };
+		1162B6C2DD4D982556187AFE063D6162 /* MLTitledMultiLineTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLTitledMultiLineTextField.h; path = LibraryComponents/MLTitledMultiLineTextField/classes/MLTitledMultiLineTextField.h; sourceTree = "<group>"; };
+		1353EE5E514ACE3AC9ADB00DB44BC3BA /* OCMArgAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMArgAction.m; path = Source/OCMock/OCMArgAction.m; sourceTree = "<group>"; };
+		1354470412B520B18493BB39D62815E9 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = LibraryComponents/MLTitledSingleLineTextField/assets/en.lproj; sourceTree = "<group>"; };
+		13D792DD3B0D8E71EC214D9367DCC5ED /* MLStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLStyle.h; path = LibraryComponents/MLSpacing/classes/MLStyle.h; sourceTree = "<group>"; };
+		15FAC227E93EA61A68269F7079579CEE /* MLGrowingTextViewHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLGrowingTextViewHandler.h; path = LibraryComponents/MLTextView/classes/MLGrowingTextViewHandler.h; sourceTree = "<group>"; };
+		1B3C7F0D2BD1F136EB8AA570D9164AF8 /* MLModal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLModal.h; path = LibraryComponents/MLModal/classes/MLModal.h; sourceTree = "<group>"; };
+		1BBACD6D5E827FD928F889901726C507 /* pt.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = pt.lproj; path = LibraryComponents/MLTitledSingleLineTextField/assets/pt.lproj; sourceTree = "<group>"; };
+		1C4562535F5E484547F4A0DBF9CA230F /* MLTitledSingleLineTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLTitledSingleLineTextField.h; path = LibraryComponents/MLTitledSingleLineTextField/classes/MLTitledSingleLineTextField.h; sourceTree = "<group>"; };
+		1F05509522F64EF891B2D95DAB633A19 /* OCObserverMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCObserverMockObject.h; path = Source/OCMock/OCObserverMockObject.h; sourceTree = "<group>"; };
+		1FC8A879D19776BED1EE637A105E0187 /* MLButtonStylesFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLButtonStylesFactory.h; path = LibraryComponents/MLButton/classes/MLButtonStylesFactory.h; sourceTree = "<group>"; };
+		1FD7588A10D46FFFA5368DF36AC64AAC /* OCMock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OCMock.xcconfig; sourceTree = "<group>"; };
+		242EBAF232133CA29890E1F68E81E14F /* FXBlurView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FXBlurView.xcconfig; sourceTree = "<group>"; };
+		25685A97ACF55815C6F5FD525AB7E39A /* MLSpinner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLSpinner.h; path = LibraryComponents/MLSpinner/classes/MLSpinner.h; sourceTree = "<group>"; };
+		275C9B2584EF3CEE2D254BBBC0FD9F28 /* MLSwitch.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MLSwitch.m; sourceTree = "<group>"; };
+		278112884CF59007346598814DDCF158 /* NSString+BoundingSize.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+BoundingSize.h"; path = "LibraryComponents/Core/classes/NSString+BoundingSize.h"; sourceTree = "<group>"; };
+		290B2A6AFE2AC8C7F49A8E9E239F9F56 /* NSMethodSignature+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMethodSignature+OCMAdditions.h"; path = "Source/OCMock/NSMethodSignature+OCMAdditions.h"; sourceTree = "<group>"; };
+		29BD59843E112DECC9AC2D7C15149AC9 /* OCMInvocationExpectation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMInvocationExpectation.h; path = Source/OCMock/OCMInvocationExpectation.h; sourceTree = "<group>"; };
+		2A7CB3455118F09213F48150DE79868E /* MLHtml.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLHtml.m; path = LibraryComponents/MLHtml/classes/MLHtml.m; sourceTree = "<group>"; };
+		2AE276A6C62C08A4FF8484C9B49BCDD0 /* MLContextualMenuItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLContextualMenuItem.h; path = LibraryComponents/MLContextualMenu/MLContextualMenuItem.h; sourceTree = "<group>"; };
+		2BA74C67B1AF738AFE52CD0B69D2ABE0 /* OCMRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMRecorder.m; path = Source/OCMock/OCMRecorder.m; sourceTree = "<group>"; };
+		2C52A7EB8525EC8062C520C6B763FE69 /* OCMBoxedReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMBoxedReturnValueProvider.h; path = Source/OCMock/OCMBoxedReturnValueProvider.h; sourceTree = "<group>"; };
+		2CC863EC7E6AEEBD43636EE544A9B57D /* MLUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MLUI.framework; path = MLUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CDEEB1BB43D68F5221CDFAF4A65DF75 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		2E061587B8304781ACF314ABE6B87288 /* MLRadioButtonCollection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MLRadioButtonCollection.m; sourceTree = "<group>"; };
+		2EA8B76AFDD3DEA1F48D03EC42CB45CC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EDA486CBB9F5E9587DE14FBE0E939AF /* Pods-MLUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MLUI.release.xcconfig"; sourceTree = "<group>"; };
+		2EDBBC7CF49D3CD43CDD13814C196684 /* MLStyleUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLStyleUtils.m; path = LibraryComponents/MLSpacing/classes/MLStyleUtils.m; sourceTree = "<group>"; };
+		3133E745E27C31F5515C317F6FD7FE21 /* OCMock.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = OCMock.modulemap; sourceTree = "<group>"; };
+		3494681F3215A79F3A6269CA2F0991C3 /* MLUIBundle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLUIBundle.m; path = LibraryComponents/Helpers/classes/MLUIBundle.m; sourceTree = "<group>"; };
+		370A7AD5ED0067EE9B51B1CC2F2F094D /* MLRadioButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MLRadioButton.m; sourceTree = "<group>"; };
+		37B267666864F800682352BF1377E330 /* UIImage+Transformations.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Transformations.m"; path = "LibraryComponents/Core/classes/UIImage+Transformations.m"; sourceTree = "<group>"; };
+		383229B122F5F6F61C2F2EF102086021 /* OCMBlockCaller.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMBlockCaller.m; path = Source/OCMock/OCMBlockCaller.m; sourceTree = "<group>"; };
+		389D75B104BE0EF7AB97BF01D2C3A35F /* MLContextualMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLContextualMenu.h; path = LibraryComponents/MLContextualMenu/MLContextualMenu.h; sourceTree = "<group>"; };
+		3A75C35B8743174190E8607814D90DAE /* MLModal.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = MLModal.xcassets; sourceTree = "<group>"; };
+		3BB4B4C8315094768441D6558603556F /* Pods-MLUIUnitTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MLUIUnitTests-frameworks.sh"; sourceTree = "<group>"; };
+		3CA4224CF30219B90D5FA8357C97B9EF /* OCMock-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OCMock-dummy.m"; sourceTree = "<group>"; };
+		3D2F12AD3C3D891A1BEE8F43E1827F0C /* OCMock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = Source/OCMock/OCMock.h; sourceTree = "<group>"; };
+		3DA2D3FDE3F9477455CE7DFC0BC47BF7 /* Pods-MLUI-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MLUI-frameworks.sh"; sourceTree = "<group>"; };
+		3EFE65470F765F2AD5C7450C6F46A79C /* MLUI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MLUI.modulemap; sourceTree = "<group>"; };
+		3F7C69DEF365A729EE12A31584351382 /* MLTitledSingleLineStringProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLTitledSingleLineStringProvider.m; path = LibraryComponents/MLTitledSingleLineTextField/classes/MLTitledSingleLineStringProvider.m; sourceTree = "<group>"; };
+		3FC7CB13A79B90A5077A20021FBED796 /* OCMArgAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMArgAction.h; path = Source/OCMock/OCMArgAction.h; sourceTree = "<group>"; };
+		4015531623A737E21D2B4CEC6F9D7020 /* JRSwizzle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JRSwizzle.framework; path = JRSwizzle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4170D8CF55EBC48EE57B34C561766A3B /* Pods-MLUIUnitTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MLUIUnitTests-dummy.m"; sourceTree = "<group>"; };
+		424856EBFC0B8DEA7B49B04B9A303BF9 /* MLSwitch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MLSwitch.h; sourceTree = "<group>"; };
+		42E0BB8B602711A89EF121A7467A6982 /* MLButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLButton.m; path = LibraryComponents/MLButton/classes/MLButton.m; sourceTree = "<group>"; };
+		44F672E60FE29355140F4E94F34F1DC9 /* MLUI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLUI-umbrella.h"; sourceTree = "<group>"; };
+		45BDFEEF5218FD08176036B606B86C48 /* NSAttributedString+MLFonts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+MLFonts.m"; path = "LibraryComponents/MLFonts/classes/NSAttributedString+MLFonts.m"; sourceTree = "<group>"; };
+		482ACC32823F7D015CD000029B36C2F3 /* MLModalStyleFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLModalStyleFactory.h; path = LibraryComponents/MLModal/classes/MLModalStyleFactory.h; sourceTree = "<group>"; };
+		4884BFBE266161CB0C28C9BCDBD1A71E /* Pods-MLUIUnitTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MLUIUnitTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		48977FE510AF8237F3787196D6A85FC5 /* OCMExceptionReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMExceptionReturnValueProvider.h; path = Source/OCMock/OCMExceptionReturnValueProvider.h; sourceTree = "<group>"; };
+		49BA3651B97629AA51B6BEAA56CD58A7 /* NSNotificationCenter+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+OCMAdditions.m"; path = "Source/OCMock/NSNotificationCenter+OCMAdditions.m"; sourceTree = "<group>"; };
+		4B2F9494E653DA679FA03D67F2AE03BF /* OCMFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMFunctions.m; path = Source/OCMock/OCMFunctions.m; sourceTree = "<group>"; };
+		4B941D2A3255A6C2CA3A521E27C360C3 /* OCMMacroState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMMacroState.m; path = Source/OCMock/OCMMacroState.m; sourceTree = "<group>"; };
+		4C05CCCE9934F9D5ED15E0A1A765CAC7 /* OCMConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMConstraint.m; path = Source/OCMock/OCMConstraint.m; sourceTree = "<group>"; };
+		4C5976AE1BADF951E5CA8A772094E2AB /* MLUIBundle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLUIBundle.h; path = LibraryComponents/Helpers/classes/MLUIBundle.h; sourceTree = "<group>"; };
+		4DCBDD46EE5059DF9455B50424599CBB /* UITextView+MLStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextView+MLStyle.h"; path = "LibraryComponents/MLSpacing/classes/UITextView+MLStyle.h"; sourceTree = "<group>"; };
+		4E50CC3A3954C8B5465086A2F60D56BB /* JRSwizzle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
+		4FEDC79510A03A4A0675C334B7131A38 /* UIColor+Theme.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Theme.m"; path = "LibraryComponents/Core/classes/UIColor+Theme.m"; sourceTree = "<group>"; };
+		500E0D7F95701DF20CACFEDC4B838F5B /* OCMInvocationMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMInvocationMatcher.m; path = Source/OCMock/OCMInvocationMatcher.m; sourceTree = "<group>"; };
+		50361F228B576E1E34E48CF7C114F792 /* OCMBoxedReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMBoxedReturnValueProvider.m; path = Source/OCMock/OCMBoxedReturnValueProvider.m; sourceTree = "<group>"; };
+		5140470FCB457A693D6CAC8D51511894 /* UITextView+MLFonts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextView+MLFonts.h"; path = "LibraryComponents/MLFonts/classes/UITextView+MLFonts.h"; sourceTree = "<group>"; };
+		538DE3EC5EF5A6EE499407C99DD33A8D /* UIColor+Theme.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+Theme.h"; path = "LibraryComponents/Core/classes/UIColor+Theme.h"; sourceTree = "<group>"; };
+		54460217042B3F17ECC88F6E02DCEBB5 /* UIImageView+Animations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+Animations.h"; path = "LibraryComponents/Core/classes/UIImageView+Animations.h"; sourceTree = "<group>"; };
+		54C353B3E9E03E774160959A2AF9D10D /* OCMIndirectReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMIndirectReturnValueProvider.h; path = Source/OCMock/OCMIndirectReturnValueProvider.h; sourceTree = "<group>"; };
+		55DB8D983AE88A897B9F99B7E14A2116 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56FC26DAF7610ADCCF0AFF224B632C78 /* OCMVerifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMVerifier.h; path = Source/OCMock/OCMVerifier.h; sourceTree = "<group>"; };
+		57D1BF5986C6BA7CD4FBEE3B2C57ADCF /* MLStyleSheetProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLStyleSheetProtocol.h; path = LibraryComponents/StyleSheet/classes/MLStyleSheetProtocol.h; sourceTree = "<group>"; };
+		57D9B058FAFC83C689F3A6485709E81A /* NSString+BoundingSize.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+BoundingSize.m"; path = "LibraryComponents/Core/classes/NSString+BoundingSize.m"; sourceTree = "<group>"; };
+		584896D01DDEC2BD14A5AF02771563B0 /* OCMExpectationRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMExpectationRecorder.m; path = Source/OCMock/OCMExpectationRecorder.m; sourceTree = "<group>"; };
+		58B861DFBED9150C5EE911C91BFF62F4 /* UIImage+Misc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Misc.m"; path = "LibraryComponents/Core/classes/UIImage+Misc.m"; sourceTree = "<group>"; };
+		590E8C2393CAC5EE066B1D632C167CF4 /* MLUIPriceView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLUIPriceView.m; path = LibraryComponents/PriceView/classes/MLUIPriceView.m; sourceTree = "<group>"; };
+		5ABA4845AE2FA0119F5CD35CB4BE5B9F /* MLStyleSheetDefault.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLStyleSheetDefault.h; path = LibraryComponents/StyleSheet/classes/MLStyleSheetDefault.h; sourceTree = "<group>"; };
+		5B06C9990299D74CDC54B0122792F814 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B4A903D5E90704AD3EB351E9E31B608 /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = es.lproj; path = LibraryComponents/MLTitledSingleLineTextField/assets/es.lproj; sourceTree = "<group>"; };
+		5B7B8640A814972F51735087D1CD1288 /* Pods-MLUIUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MLUIUnitTests.release.xcconfig"; sourceTree = "<group>"; };
+		5CD30B7FB31B14626C29EAA9400451AA /* NSObject+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+OCMAdditions.h"; path = "Source/OCMock/NSObject+OCMAdditions.h"; sourceTree = "<group>"; };
+		5D56DEA4AF11E11679D53C55F5FD625E /* OCMPassByRefSetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMPassByRefSetter.h; path = Source/OCMock/OCMPassByRefSetter.h; sourceTree = "<group>"; };
+		5F25E9D40DE64B6341797907BD8F16F3 /* OCMConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMConstraint.h; path = Source/OCMock/OCMConstraint.h; sourceTree = "<group>"; };
+		60AD50B4925D3B43B4FD4D6348D62E0E /* OCMock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OCMock.framework; path = OCMock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C71A9D363A45E52F841B541BF4F8E7 /* UIColor+MLColorPalette.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+MLColorPalette.h"; path = "LibraryComponents/MLColorPalette/classes/UIColor+MLColorPalette.h"; sourceTree = "<group>"; };
+		6514CB8BACA231DA2F8A9A9221C2E64E /* FXBlurView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FXBlurView-dummy.m"; sourceTree = "<group>"; };
+		656A0C316628D7D1DEE8692FD55D521A /* OCMRealObjectForwarder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMRealObjectForwarder.m; path = Source/OCMock/OCMRealObjectForwarder.m; sourceTree = "<group>"; };
+		65757158FCA21DFE913153A83EAF45BD /* UILabel+MLStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+MLStyle.h"; path = "LibraryComponents/MLSpacing/classes/UILabel+MLStyle.h"; sourceTree = "<group>"; };
+		660A7AA6924B1CDEEDF9E6B6064A87D7 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+OCMAdditions.h"; path = "Source/OCMock/NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		6667264EEDCDA524F18BA96C1BB9CE88 /* OCMLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMLocation.h; path = Source/OCMock/OCMLocation.h; sourceTree = "<group>"; };
+		669FCDED5A52894FECF5A0633456FBFD /* OCMBlockArgCaller.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMBlockArgCaller.h; path = Source/OCMock/OCMBlockArgCaller.h; sourceTree = "<group>"; };
+		6911CDE071B6A0F363216B57FFCEE4E6 /* MLTitledLineTextField.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = MLTitledLineTextField.xib; path = LibraryComponents/MLTitledSingleLineTextField/assets/MLTitledLineTextField.xib; sourceTree = "<group>"; };
+		6C91F84A497DC93A7160FB06D477CA2E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		6D8A56DA689FBB9990632C4A2030FD6D /* MLUISnackBarProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLUISnackBarProtocol.h; path = LibraryComponents/MLUISnackbar/classes/MLUISnackBarProtocol.h; sourceTree = "<group>"; };
+		6F8D2F706063096DB7C5B426213E2639 /* OCMArg.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMArg.h; path = Source/OCMock/OCMArg.h; sourceTree = "<group>"; };
+		7136EA6C37D03275D1A8B638772E76F7 /* OCProtocolMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCProtocolMockObject.m; path = Source/OCMock/OCProtocolMockObject.m; sourceTree = "<group>"; };
+		74AC12A05B806F8DC3767DB0BBF4AFF3 /* FXBlurView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FXBlurView-prefix.pch"; sourceTree = "<group>"; };
+		74FFFD87F24A5C6927674FDCFC0DC3A6 /* MLUIActionButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLUIActionButton.m; path = LibraryComponents/ActionButton/classes/MLUIActionButton.m; sourceTree = "<group>"; };
+		7587C24668F92548EB83395674D674D4 /* Pods-MLUIUnitTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MLUIUnitTests.modulemap"; sourceTree = "<group>"; };
+		75A44CCD40F722929F46B42CB1D87C9C /* OCMInvocationStub.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMInvocationStub.m; path = Source/OCMock/OCMInvocationStub.m; sourceTree = "<group>"; };
+		7616E63E95BBD4D2FCC2FC92D1FD1F7C /* MLGenericErrorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLGenericErrorView.m; path = LibraryComponents/MLGenericErrorView/classes/MLGenericErrorView.m; sourceTree = "<group>"; };
+		762B69C6C00F1304BC71BF0673AA5E95 /* MLSnackbar.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = MLSnackbar.xib; path = LibraryComponents/MLSnackBar/classes/MLSnackbar.xib; sourceTree = "<group>"; };
+		7788AAC06A2F17A20F52D7913D8F1C39 /* MLUISnackBarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLUISnackBarView.h; path = LibraryComponents/MLUISnackbar/classes/MLUISnackBarView.h; sourceTree = "<group>"; };
+		79FC2EB0540F1AE453323A8F029BAD04 /* OCMBlockCaller.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMBlockCaller.h; path = Source/OCMock/OCMBlockCaller.h; sourceTree = "<group>"; };
+		7AF437C55F223B47269154FCFB9D1C2A /* JRSwizzle-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JRSwizzle-dummy.m"; sourceTree = "<group>"; };
+		7C4277DEFA6775934F5D2F6CB9728678 /* Pods-MLUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MLUI.debug.xcconfig"; sourceTree = "<group>"; };
+		7C9D867BA8E01F9BEDCD3B6FDBC0025F /* OCMReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMReturnValueProvider.m; path = Source/OCMock/OCMReturnValueProvider.m; sourceTree = "<group>"; };
+		7E9BF6DF716971A0E29FE72B2D768F78 /* MLSnackbarType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLSnackbarType.m; path = LibraryComponents/MLSnackBar/classes/MLSnackbarType.m; sourceTree = "<group>"; };
+		7F1C1521FC45F9C2D375766B47D98A76 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		830AA100068640FDACD2AC4158C444AE /* UITextView+MLStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextView+MLStyle.m"; path = "LibraryComponents/MLSpacing/classes/UITextView+MLStyle.m"; sourceTree = "<group>"; };
+		846531EF7BA2AB8D81B0ADE9ADAF4C79 /* JRSwizzle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
+		87D43B843DA273F79DCA9D6A0E54C462 /* MLCheckBox.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MLCheckBox.m; sourceTree = "<group>"; };
+		88EA723AC4917F21281F4447D25EC713 /* OCMInvocationExpectation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMInvocationExpectation.m; path = Source/OCMock/OCMInvocationExpectation.m; sourceTree = "<group>"; };
+		8A174DBA87B02A2B93B4F4767D4F6BA1 /* FXBlurView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FXBlurView-umbrella.h"; sourceTree = "<group>"; };
+		8A392954A82CC1936D6B9BA62C9BBE8A /* MLUISnackBarView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLUISnackBarView.m; path = LibraryComponents/MLUISnackbar/classes/MLUISnackBarView.m; sourceTree = "<group>"; };
+		8BB40F71F26C48C9BB54990901D670BF /* OCPartialMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCPartialMockObject.m; path = Source/OCMock/OCPartialMockObject.m; sourceTree = "<group>"; };
+		8C8E1804F1FE7EE68A8913684C838D19 /* JRSwizzle-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JRSwizzle-umbrella.h"; sourceTree = "<group>"; };
+		8DE141BACBED93242B8F6AA6958FBFFE /* MLModalConfigStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLModalConfigStyle.h; path = LibraryComponents/MLModal/classes/MLModalConfigStyle.h; sourceTree = "<group>"; };
+		8E7979139DCA3F5AB8ECCF5F296E6D9E /* OCMNotificationPoster.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMNotificationPoster.m; path = Source/OCMock/OCMNotificationPoster.m; sourceTree = "<group>"; };
+		8F28581371433B9432205544F97A19A6 /* FXBlurView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FXBlurView.h; path = FXBlurView/FXBlurView.h; sourceTree = "<group>"; };
+		90380EF6BE523B3B9A84B1547832227E /* MLUIPriceView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = MLUIPriceView.xib; path = LibraryComponents/PriceView/classes/MLUIPriceView.xib; sourceTree = "<group>"; };
+		90F260189E49DA3B40C65FD665469E2D /* MLSpinner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLSpinner.m; path = LibraryComponents/MLSpinner/classes/MLSpinner.m; sourceTree = "<group>"; };
+		9153CEB22F2E7A0F0864BBFEE6B254BC /* MLTextView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = MLTextView.xib; path = LibraryComponents/MLTextView/assets/MLTextView.xib; sourceTree = "<group>"; };
+		917E792F4B1BD43C384EB5323983F804 /* MLGenericErrorView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = MLGenericErrorView.xib; path = LibraryComponents/MLGenericErrorView/classes/MLGenericErrorView.xib; sourceTree = "<group>"; };
+		9225E1EB757366D3EC6E47572CE9CD1D /* Pods-MLUI-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MLUI-acknowledgements.plist"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94819414E8762354EA7E4A09534A1CFE /* MLTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLTextView.h; path = LibraryComponents/MLTextView/classes/MLTextView.h; sourceTree = "<group>"; };
+		957AE6B4DDAE0CCAAC4CC3DC69FA5757 /* JRSwizzle.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JRSwizzle.xcconfig; sourceTree = "<group>"; };
+		976CECDE52C18EAE7A775178B01404A8 /* UIFont+MLFonts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIFont+MLFonts.h"; path = "LibraryComponents/MLFonts/classes/UIFont+MLFonts.h"; sourceTree = "<group>"; };
+		9786D7CB54374FC439C45A18FD074443 /* Pods_MLUIUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MLUIUnitTests.framework; path = "Pods-MLUIUnitTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97E82BB428CBAD53371E529D75E32B00 /* MLRadioButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MLRadioButton.h; sourceTree = "<group>"; };
+		98CBB6D9883FC6172148154E8F99FDC5 /* OCMInvocationStub.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMInvocationStub.h; path = Source/OCMock/OCMInvocationStub.h; sourceTree = "<group>"; };
+		9975EC780FFB82C8F430793C46149A91 /* OCMPassByRefSetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMPassByRefSetter.m; path = Source/OCMock/OCMPassByRefSetter.m; sourceTree = "<group>"; };
+		9984F07ABAE856C35A685DEB2066CF81 /* MLContextualMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLContextualMenu.m; path = LibraryComponents/MLContextualMenu/MLContextualMenu.m; sourceTree = "<group>"; };
+		9BBC9E5CFA77D42168A4C50489B87D51 /* MLUI-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLUI-prefix.pch"; sourceTree = "<group>"; };
+		9D4A01D8E14DD7E3C54B64162D6CE735 /* MLSwitch.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = MLSwitch.xib; path = LibraryComponents/MLBooleanWidget/MLSwitch/classes/MLSwitch.xib; sourceTree = "<group>"; };
+		9D799F6D2D5E6456199B82797C6FDFB0 /* UIColor+MLColorPalette.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MLColorPalette.m"; path = "LibraryComponents/MLColorPalette/classes/UIColor+MLColorPalette.m"; sourceTree = "<group>"; };
+		9E372564B23F62E3B15C77423F52B6F1 /* Pods-MLUIUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MLUIUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9EB982DC7D1E389DCCE303A05E398203 /* MLGenericErrorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLGenericErrorView.h; path = LibraryComponents/MLGenericErrorView/classes/MLGenericErrorView.h; sourceTree = "<group>"; };
+		A0AF726F08FB9B88880D6DE625E94BF4 /* NSInvocation+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSInvocation+OCMAdditions.m"; path = "Source/OCMock/NSInvocation+OCMAdditions.m"; sourceTree = "<group>"; };
+		A12C20F8D0E6DB2DC0AAD7520C804773 /* MLBooleanWidget_Protected.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MLBooleanWidget_Protected.h; sourceTree = "<group>"; };
+		A53A9A5B8A83C0CFF1F795E6842D0DF4 /* OCMObserverRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMObserverRecorder.h; path = Source/OCMock/OCMObserverRecorder.h; sourceTree = "<group>"; };
+		A5A29BC54E9EF948EB34C0F2776D069A /* MLModalStyleFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLModalStyleFactory.m; path = LibraryComponents/MLModal/classes/MLModalStyleFactory.m; sourceTree = "<group>"; };
+		A5DDE4B76CD987F994C6E48D945FC7C9 /* JRSwizzle.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = JRSwizzle.modulemap; sourceTree = "<group>"; };
+		A9100F67CD1686F0D28F5772CA283A6F /* OCMMacroState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMMacroState.h; path = Source/OCMock/OCMMacroState.h; sourceTree = "<group>"; };
+		A9C1E63F40C48CA7C961A7453A669778 /* OCMock-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OCMock-umbrella.h"; sourceTree = "<group>"; };
+		A9F1B724D8FEAFD4AFDE6695227B542A /* OCMFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMFunctions.h; path = Source/OCMock/OCMFunctions.h; sourceTree = "<group>"; };
+		AA672221B55D489E8A52DECFB9B81089 /* FXBlurView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FXBlurView.m; path = FXBlurView/FXBlurView.m; sourceTree = "<group>"; };
+		AAA5606F86047B82C709D031629CF86D /* UIViewController+SnackBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+SnackBar.h"; path = "LibraryComponents/MLUISnackbar/classes/UIViewController+SnackBar.h"; sourceTree = "<group>"; };
+		AB85E4288768887DE93F2B8EDCDE1D3D /* FXBlurView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FXBlurView.modulemap; sourceTree = "<group>"; };
+		AB9876CA93C4CDCBF675AB506F5A5C5D /* UIViewController+SnackBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+SnackBar.m"; path = "LibraryComponents/MLUISnackbar/classes/UIViewController+SnackBar.m"; sourceTree = "<group>"; };
+		AC10D2AAA25834876D044C4BC31B524C /* OCMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMockObject.m; path = Source/OCMock/OCMockObject.m; sourceTree = "<group>"; };
+		AC28B622350D286330BFCAC70AFB990D /* Pods-MLUIUnitTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MLUIUnitTests-resources.sh"; sourceTree = "<group>"; };
+		AC6A88E8A0D9CAD78EE98A3E419DA05A /* NSMethodSignature+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSMethodSignature+OCMAdditions.m"; path = "Source/OCMock/NSMethodSignature+OCMAdditions.m"; sourceTree = "<group>"; };
+		AC773EBD1BF500CB908AC052C9326EB9 /* Pods-MLUIUnitTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MLUIUnitTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		ACEE54B43F3F173A35C06DDC967D381A /* OCProtocolMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCProtocolMockObject.h; path = Source/OCMock/OCProtocolMockObject.h; sourceTree = "<group>"; };
+		ADB3660AFCC1653D420DDA74DE8E472C /* MLButtonConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLButtonConfig.h; path = LibraryComponents/MLButton/classes/MLButtonConfig.h; sourceTree = "<group>"; };
+		AE5E7949C38F98E0FC7B21FC01475B72 /* JRSwizzle-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JRSwizzle-prefix.pch"; sourceTree = "<group>"; };
+		AEA5D4EC6E7CCED8AD4CC8648E27AC30 /* NSObject+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+OCMAdditions.m"; path = "Source/OCMock/NSObject+OCMAdditions.m"; sourceTree = "<group>"; };
+		AECF772BC5FA78E63E2B75FB09A39978 /* MLButtonStylesFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLButtonStylesFactory.m; path = LibraryComponents/MLButton/classes/MLButtonStylesFactory.m; sourceTree = "<group>"; };
+		AF29DAFA5816FB21DCC2D94EE1838430 /* UIImage+Misc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Misc.h"; path = "LibraryComponents/Core/classes/UIImage+Misc.h"; sourceTree = "<group>"; };
+		B3F2FD4B2EBA688EE5D6E703D876CEAB /* MLRadioButtonCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MLRadioButtonCollection.h; sourceTree = "<group>"; };
+		B4E965C861EE09EEDE5570FD2AEFB604 /* MLUISnackBarView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = MLUISnackBarView.xib; path = LibraryComponents/MLUISnackbar/classes/MLUISnackBarView.xib; sourceTree = "<group>"; };
+		B637661011EF0EB55F9ECE4A643698E4 /* MLContextualMenuItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLContextualMenuItem.m; path = LibraryComponents/MLContextualMenu/MLContextualMenuItem.m; sourceTree = "<group>"; };
+		B65C8B81A4E5172C4B76493A2B9EE114 /* MLCheckBox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MLCheckBox.h; sourceTree = "<group>"; };
+		B7420EA4CA1B768B98BB0ECE97E45AD1 /* OCMExpectationRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMExpectationRecorder.h; path = Source/OCMock/OCMExpectationRecorder.h; sourceTree = "<group>"; };
+		B907BDE51D8DC8C88D75769F1B22F267 /* OCClassMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCClassMockObject.m; path = Source/OCMock/OCClassMockObject.m; sourceTree = "<group>"; };
+		BBC0BD73E181D75941CBF66DB0804E52 /* OCMFunctionsPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMFunctionsPrivate.h; path = Source/OCMock/OCMFunctionsPrivate.h; sourceTree = "<group>"; };
+		BEAFB38B6F6325C3A92A93762FB45A62 /* MLUI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MLUI-dummy.m"; sourceTree = "<group>"; };
+		BF285281779534BC283AA47EBE86C49B /* NSAttributedString+MLHtml.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+MLHtml.h"; path = "LibraryComponents/MLHtml/classes/NSAttributedString+MLHtml.h"; sourceTree = "<group>"; };
+		C0ECEB0ECD0E3ECEE7B9BAE499FC7CA4 /* FXBlurView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FXBlurView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C11A5D3D67E87BCED6941AFA8EBB4919 /* OCMBlockArgCaller.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMBlockArgCaller.m; path = Source/OCMock/OCMBlockArgCaller.m; sourceTree = "<group>"; };
+		C4071C5234BFF31D22BC9B12693A6FB0 /* Pods-MLUIUnitTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MLUIUnitTests-umbrella.h"; sourceTree = "<group>"; };
+		C44D623FAABA3E3487315B144A17AA9D /* MLSpinner.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = MLSpinner.xib; path = LibraryComponents/MLSpinner/classes/MLSpinner.xib; sourceTree = "<group>"; };
+		C484217E9FC9B173324D0FEFDB362C2A /* MLSnackbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLSnackbar.h; path = LibraryComponents/MLSnackBar/classes/MLSnackbar.h; sourceTree = "<group>"; };
+		C63935387A8F9E449763FD682ECD2DE7 /* JRSwizzle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JRSwizzle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C64E4CBE492034F28E735968889DDD9D /* OCMock-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OCMock-prefix.pch"; sourceTree = "<group>"; };
+		C79157CC72A1928A1C389BA2A3683B94 /* OCMObserverRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMObserverRecorder.m; path = Source/OCMock/OCMObserverRecorder.m; sourceTree = "<group>"; };
+		C86649B74513ED6173379BD859B6576E /* MLTitledSingleLineStringProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLTitledSingleLineStringProvider.h; path = LibraryComponents/MLTitledSingleLineTextField/classes/MLTitledSingleLineStringProvider.h; sourceTree = "<group>"; };
+		C8EB2C705498759F1B9BC2B74C219F14 /* MLHtml.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLHtml.h; path = LibraryComponents/MLHtml/classes/MLHtml.h; sourceTree = "<group>"; };
+		C92B6CDCC192C721DBABE70B14C58944 /* MLTitledSingleLineTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLTitledSingleLineTextField.m; path = LibraryComponents/MLTitledSingleLineTextField/classes/MLTitledSingleLineTextField.m; sourceTree = "<group>"; };
+		CC161269613594F7FDB70A3BFD8BFB33 /* Pods-MLUI-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MLUI-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CE8D1E29ED08655916DC13B8C7B4E779 /* UIImageView+Animations.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+Animations.m"; path = "LibraryComponents/Core/classes/UIImageView+Animations.m"; sourceTree = "<group>"; };
+		D0123CA19C864AC8DF2F04022B0230BD /* MLStyleSheetDefault.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLStyleSheetDefault.m; path = LibraryComponents/StyleSheet/classes/MLStyleSheetDefault.m; sourceTree = "<group>"; };
+		D0D50C28B3F7CF2392D221605DF2BB6C /* MLButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLButton.h; path = LibraryComponents/MLButton/classes/MLButton.h; sourceTree = "<group>"; };
+		D2DC2B7384D596DFB5DE7FE86D0E2300 /* MLSpinnerConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLSpinnerConfig.m; path = LibraryComponents/MLSpinner/classes/MLSpinnerConfig.m; sourceTree = "<group>"; };
+		D2FF9A1BA994136E4EB661BA7AB90010 /* NSAttributedString+MLHtml.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+MLHtml.m"; path = "LibraryComponents/MLHtml/classes/NSAttributedString+MLHtml.m"; sourceTree = "<group>"; };
+		D35336A4C0F1E4FD53B1D65A9F5A3D2D /* FXBlurView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FXBlurView.framework; path = FXBlurView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D41EDA65F2C98450831B52E38DF1780D /* MLGrowingTextViewHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLGrowingTextViewHandler.m; path = LibraryComponents/MLTextView/classes/MLGrowingTextViewHandler.m; sourceTree = "<group>"; };
+		D567044D34F00F82ACED63CDC00D8E03 /* MLCheckList.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MLCheckList.m; sourceTree = "<group>"; };
+		D57DB88AE0025DE316F50FB7597E0BFF /* MLModal.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = MLModal.xib; sourceTree = "<group>"; };
+		D671252D64FB7092A78338E4AE01E1A9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D712D5DDF509A46E1A52D0E1E770C7BC /* OCMVerifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMVerifier.m; path = Source/OCMock/OCMVerifier.m; sourceTree = "<group>"; };
+		D953EA024F49D85D25C67B202484679A /* MLCheckList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MLCheckList.h; sourceTree = "<group>"; };
+		D975FE5861DA709F7F6E7420B81CA3D6 /* OCMRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMRecorder.h; path = Source/OCMock/OCMRecorder.h; sourceTree = "<group>"; };
+		DA99A3CF250C14C83F301B57FA1717D2 /* MLButtonConfigStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLButtonConfigStyle.m; path = LibraryComponents/MLButton/classes/MLButtonConfigStyle.m; sourceTree = "<group>"; };
+		DBB6E3EF2E1A77D255B6D5975F1A7A58 /* Pods-MLUI-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MLUI-resources.sh"; sourceTree = "<group>"; };
+		DEBBF36A397DAAFCA797E23C2F2B6D94 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		DFD2ECFEC1DC8669BE2875339552CDBD /* MLModalConfigStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLModalConfigStyle.m; path = LibraryComponents/MLModal/classes/MLModalConfigStyle.m; sourceTree = "<group>"; };
+		E0B9EF9A97F1DB200ED453B7A521AD75 /* UILabel+MLStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+MLStyle.m"; path = "LibraryComponents/MLSpacing/classes/UILabel+MLStyle.m"; sourceTree = "<group>"; };
+		E36DD61BA98810109AD8612BCEEB8B1A /* OCMStubRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMStubRecorder.m; path = Source/OCMock/OCMStubRecorder.m; sourceTree = "<group>"; };
+		E541FEC39BD22D72EA96E90A76E97FE4 /* NSValue+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValue+OCMAdditions.m"; path = "Source/OCMock/NSValue+OCMAdditions.m"; sourceTree = "<group>"; };
+		E612632F6BF59C5362DA2B6EB623017D /* Pods-MLUI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MLUI.modulemap"; sourceTree = "<group>"; };
+		E7251202E9643063FAA52C9BB5140F9E /* MLUI.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MLUI.xcconfig; sourceTree = "<group>"; };
+		E968A3834DB9464E6C2785FF7A716E1B /* NSAttributedString+MLFonts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+MLFonts.h"; path = "LibraryComponents/MLFonts/classes/NSAttributedString+MLFonts.h"; sourceTree = "<group>"; };
+		E977111A3CE7477AC77E2E72FD932A78 /* OCMLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMLocation.m; path = Source/OCMock/OCMLocation.m; sourceTree = "<group>"; };
+		EB5711105670A6E20975E1A6F9AF627A /* UIImage+Transformations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Transformations.h"; path = "LibraryComponents/Core/classes/UIImage+Transformations.h"; sourceTree = "<group>"; };
+		EFA14F51D1C37DCE8A57632C821E5726 /* OCMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = Source/OCMock/OCMockObject.h; sourceTree = "<group>"; };
+		F01953098C0698BA6AF4AE16729E29D8 /* MLButtonConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLButtonConfig.m; path = LibraryComponents/MLButton/classes/MLButtonConfig.m; sourceTree = "<group>"; };
+		F0E7ECA26E794B0936BC2ED1F7E126B5 /* Pods_MLUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MLUI.framework; path = "Pods-MLUI.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1BEC9AF0A58E4F331A698B6207E459F /* NSValue+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValue+OCMAdditions.h"; path = "Source/OCMock/NSValue+OCMAdditions.h"; sourceTree = "<group>"; };
+		F1EC4344A34BE7BC3548750833621143 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4171760FA23CADDBAE0AD182A360CF5 /* OCMArg.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMArg.m; path = Source/OCMock/OCMArg.m; sourceTree = "<group>"; };
+		F600D6373FF53639E050F2EEECE0C35D /* Pods-MLUI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MLUI-umbrella.h"; sourceTree = "<group>"; };
+		F6566F1A2F25BF69EEE525F60D142654 /* MLBooleanWidget.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MLBooleanWidget.m; sourceTree = "<group>"; };
+		F661DE900230E35FFF0EA64CC7BFFB14 /* MLStyleSheetManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLStyleSheetManager.m; path = LibraryComponents/StyleSheet/classes/MLStyleSheetManager.m; sourceTree = "<group>"; };
+		F784191CD9D7FC28EE4ABCD2AAB7AD02 /* MLUIPriceView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLUIPriceView.h; path = LibraryComponents/PriceView/classes/MLUIPriceView.h; sourceTree = "<group>"; };
+		F8151FBCB7F7A4261FEC4CF5B7D9AC1B /* MLBooleanWidget.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MLBooleanWidget.h; sourceTree = "<group>"; };
+		F89A5911F330E534F05F41B97689C5D9 /* OCMRealObjectForwarder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMRealObjectForwarder.h; path = Source/OCMock/OCMRealObjectForwarder.h; sourceTree = "<group>"; };
+		F8F47846BED0C6AC179EAA5D042F41D7 /* OCMReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMReturnValueProvider.h; path = Source/OCMock/OCMReturnValueProvider.h; sourceTree = "<group>"; };
+		F91B60D8838B98985A1CFD3670CA3248 /* MLModal.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLModal.m; path = LibraryComponents/MLModal/classes/MLModal.m; sourceTree = "<group>"; };
+		FB7032C59F58CC4339E95B147C9EBCDA /* MLStyleUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLStyleUtils.h; path = LibraryComponents/MLSpacing/classes/MLStyleUtils.h; sourceTree = "<group>"; };
+		FBEED5665CEDFBE5E497EB4F092CBDCC /* OCMNotificationPoster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMNotificationPoster.h; path = Source/OCMock/OCMNotificationPoster.h; sourceTree = "<group>"; };
+		FBF9824AA76647DEA7E6AAEAAA75C3A9 /* OCMExceptionReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMExceptionReturnValueProvider.m; path = Source/OCMock/OCMExceptionReturnValueProvider.m; sourceTree = "<group>"; };
+		FC18A488D8E59C16FBFA58AFF1A445A0 /* MLUIActionButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLUIActionButton.h; path = LibraryComponents/ActionButton/classes/MLUIActionButton.h; sourceTree = "<group>"; };
+		FCBA329672BDFB433ABDB414EBFCE021 /* OCClassMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCClassMockObject.h; path = Source/OCMock/OCClassMockObject.h; sourceTree = "<group>"; };
+		FE99E8A0AED8CFD1D4CB79CBEDDE7884 /* MLButtonConfigStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLButtonConfigStyle.h; path = LibraryComponents/MLButton/classes/MLButtonConfigStyle.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		03A52B89DB6F0154312503C35543B4EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4C564F89D363B3681F09F61E2436F22 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		166395856F8980AE7F82DFB1C86D4235 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4624E9490FBCC69AA869320F07F5C6A2 /* Accelerate.framework in Frameworks */,
+				46C80200EBF919F8357904B49A413F27 /* Foundation.framework in Frameworks */,
+				677D4A83A473549ED481EE2A21201C70 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C6F2F201F69B9D4FB5476A4238ADFBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F581F8FF4C7B5ECFE349EBFAE37C3472 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46B6A6332C7063266270E86D97D2A3F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				717FED2F9363BB81F41E0DD372E5EC40 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D29925DDA06F94E7C818CA2403C1B0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				236CD6C00A1644753BAF198CAB42E6CD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFF4F4DF6299F4F91213FD9A5E72FC5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47C55464E9C810E3BC018536AF8A9AC5 /* Foundation.framework in Frameworks */,
+				5E5C88BCE2794FDD97B078B3DB5964F2 /* FXBlurView.framework in Frameworks */,
+				4CA894D93B653D9705CB3E01A2E11E3C /* JRSwizzle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04504A64752A4B17EE537E874B58718A /* MLSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				E81860DD950DF74A1BD35FF9D5AF80AB /* classes */,
+				AAF260D34DC71B016F3BA74DB70F405A /* MLSwitch */,
+				5251E5663447CB1E74B9E54DE1C15A0B /* Resources */,
+			);
+			name = MLSwitch;
+			sourceTree = "<group>";
+		};
+		0A695C90E03428195F38082885F7FD1E /* MLCheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				A347702355CC782A3BBE37EAD0038316 /* classes */,
+			);
+			name = MLCheckBox;
+			path = LibraryComponents/MLBooleanWidget/MLCheckBox;
+			sourceTree = "<group>";
+		};
+		0D2AE717305FCD614749FD4388D01ABB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				90380EF6BE523B3B9A84B1547832227E /* MLUIPriceView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		126DC89CBD7E62BE3B9F0109D977B701 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE6227CFC996D8020D19E1F51CB8E046 /* Pods-MLUI */,
+				B562820FFEE8B2A61072F2A568FEEB15 /* Pods-MLUIUnitTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		157D877C29C12FD4000614E37178C1B0 /* SnackBarView */ = {
+			isa = PBXGroup;
+			children = (
+				6D8A56DA689FBB9990632C4A2030FD6D /* MLUISnackBarProtocol.h */,
+				7788AAC06A2F17A20F52D7913D8F1C39 /* MLUISnackBarView.h */,
+				8A392954A82CC1936D6B9BA62C9BBE8A /* MLUISnackBarView.m */,
+				AAA5606F86047B82C709D031629CF86D /* UIViewController+SnackBar.h */,
+				AB9876CA93C4CDCBF675AB506F5A5C5D /* UIViewController+SnackBar.m */,
+				FFD8CC670351F24E5C4F3ACC788EE77C /* Resources */,
+			);
+			name = SnackBarView;
+			sourceTree = "<group>";
+		};
+		1F09F522EE45A3B71C0FA82CBA35A85D /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4EEFB7ADB351FBEC75D4931D36487B2F /* MLUI */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		218A4C553124506CB4E1A5E93267B81E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9153CEB22F2E7A0F0864BBFEE6B254BC /* MLTextView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		24747D771EB8E6A75F3D33DAA0370DDF /* MLSpacing */ = {
+			isa = PBXGroup;
+			children = (
+				13D792DD3B0D8E71EC214D9367DCC5ED /* MLStyle.h */,
+				FB7032C59F58CC4339E95B147C9EBCDA /* MLStyleUtils.h */,
+				2EDBBC7CF49D3CD43CDD13814C196684 /* MLStyleUtils.m */,
+				65757158FCA21DFE913153A83EAF45BD /* UILabel+MLStyle.h */,
+				E0B9EF9A97F1DB200ED453B7A521AD75 /* UILabel+MLStyle.m */,
+				4DCBDD46EE5059DF9455B50424599CBB /* UITextView+MLStyle.h */,
+				830AA100068640FDACD2AC4158C444AE /* UITextView+MLStyle.m */,
+			);
+			name = MLSpacing;
+			sourceTree = "<group>";
+		};
+		247FA2DE0284E557AE76A54BA0ACC144 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				55DB8D983AE88A897B9F99B7E14A2116 /* Info.plist */,
+				3133E745E27C31F5515C317F6FD7FE21 /* OCMock.modulemap */,
+				1FD7588A10D46FFFA5368DF36AC64AAC /* OCMock.xcconfig */,
+				3CA4224CF30219B90D5FA8357C97B9EF /* OCMock-dummy.m */,
+				C64E4CBE492034F28E735968889DDD9D /* OCMock-prefix.pch */,
+				A9C1E63F40C48CA7C961A7453A669778 /* OCMock-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/OCMock";
+			sourceTree = "<group>";
+		};
+		29A857FC6742D092DCC8B7C61A90C45D /* MLCheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				4A61248847145936D229399A1ABE332D /* classes */,
+				0A695C90E03428195F38082885F7FD1E /* MLCheckBox */,
+			);
+			name = MLCheckBox;
+			sourceTree = "<group>";
+		};
+		372C41101CF2A3ED951FC84A6422CBE5 /* JRSwizzle */ = {
+			isa = PBXGroup;
+			children = (
+				4E50CC3A3954C8B5465086A2F60D56BB /* JRSwizzle.h */,
+				846531EF7BA2AB8D81B0ADE9ADAF4C79 /* JRSwizzle.m */,
+				C2C1665D153AD0CDC9AE9545B0BB3060 /* Support Files */,
+			);
+			name = JRSwizzle;
+			path = JRSwizzle;
+			sourceTree = "<group>";
+		};
+		3BE15E2E91D0FD82E40CD312CE9EEF8F /* MLTextView */ = {
+			isa = PBXGroup;
+			children = (
+				15FAC227E93EA61A68269F7079579CEE /* MLGrowingTextViewHandler.h */,
+				D41EDA65F2C98450831B52E38DF1780D /* MLGrowingTextViewHandler.m */,
+				94819414E8762354EA7E4A09534A1CFE /* MLTextView.h */,
+				10699ACB43510E3017914F4C444D9B84 /* MLTextView.m */,
+				218A4C553124506CB4E1A5E93267B81E /* Resources */,
+			);
+			name = MLTextView;
+			sourceTree = "<group>";
+		};
+		424BFD8821F6016017D31A511EDE8395 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4B8B009CEBC8E1BB4E1641BBCD6895BC /* assets */,
+				757F1AE68D6BB6A26472907432915B02 /* classes */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		427992696A1226A4D6951AAF81B79ECA /* MLRadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				66B49B54BBBED0CA6ECC6FCC3437C60D /* classes */,
+			);
+			name = MLRadioButton;
+			path = LibraryComponents/MLBooleanWidget/MLRadioButton;
+			sourceTree = "<group>";
+		};
+		434F76A82274B37B1961B4620050B4F0 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DEBBF36A397DAAFCA797E23C2F2B6D94 /* Accelerate.framework */,
+				2CDEEB1BB43D68F5221CDFAF4A65DF75 /* Foundation.framework */,
+				6C91F84A497DC93A7160FB06D477CA2E /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		45A7B82EBC08E11CDEAD3B24D48DE317 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1354470412B520B18493BB39D62815E9 /* en.lproj */,
+				5B4A903D5E90704AD3EB351E9E31B608 /* es.lproj */,
+				6911CDE071B6A0F363216B57FFCEE4E6 /* MLTitledLineTextField.xib */,
+				1BBACD6D5E827FD928F889901726C507 /* pt.lproj */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4A61248847145936D229399A1ABE332D /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				F8151FBCB7F7A4261FEC4CF5B7D9AC1B /* MLBooleanWidget.h */,
+				F6566F1A2F25BF69EEE525F60D142654 /* MLBooleanWidget.m */,
+				A12C20F8D0E6DB2DC0AAD7520C804773 /* MLBooleanWidget_Protected.h */,
+			);
+			name = classes;
+			path = LibraryComponents/MLBooleanWidget/classes;
+			sourceTree = "<group>";
+		};
+		4B8B009CEBC8E1BB4E1641BBCD6895BC /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				3A75C35B8743174190E8607814D90DAE /* MLModal.xcassets */,
+			);
+			name = assets;
+			path = LibraryComponents/MLModal/assets;
+			sourceTree = "<group>";
+		};
+		4EEFB7ADB351FBEC75D4931D36487B2F /* MLUI */ = {
+			isa = PBXGroup;
+			children = (
+				FF83C7D67CA43AC048DDA4F0460FC838 /* ActionButton */,
+				9D764D8B12B03459D445A98473C336DD /* Core */,
+				F0A28C5A7B04BB4566357ECD2AFCA76E /* Helpers */,
+				D7280491865EF394C24EDA83D6CE469B /* MLButton */,
+				29A857FC6742D092DCC8B7C61A90C45D /* MLCheckBox */,
+				8ABA0163C97C1E4C9A82D2FFF72D00FE /* MLColorPalette */,
+				DA38083B77361BBAB3A592FC9299FAB3 /* MLContextualMenu */,
+				93519C75086DEC3B73484DD8119F0EE5 /* MLFonts */,
+				A941A0E5A98DD5E553414DACBA4B4E0A /* MLGenericErrorView */,
+				A9CB61A9A37BCD7909BC2F0D5CC80C88 /* MLHtml */,
+				E49190255276CFA0B08F757E6921D7F5 /* MLModal */,
+				F46FF4B726565A16DFE9F565D340493C /* MLRadioButton */,
+				C4B78D8CEF91E748DEEA5ACB7B3476CD /* MLSnackBar */,
+				24747D771EB8E6A75F3D33DAA0370DDF /* MLSpacing */,
+				5467C803F8A854DAD83311FC8B757E47 /* MLSpinner */,
+				04504A64752A4B17EE537E874B58718A /* MLSwitch */,
+				3BE15E2E91D0FD82E40CD312CE9EEF8F /* MLTextView */,
+				8D88890CB1388DFF1C2D177D504BDED0 /* MLTitledMultiLineTextField */,
+				A0696FF909F76672D48050AC76AF5EC9 /* MLTitledSingleLineTextField */,
+				DB969AFCD92E90559ABAF384EB99ADA9 /* PriceView */,
+				157D877C29C12FD4000614E37178C1B0 /* SnackBarView */,
+				89CAFE9F5F2ECB13C10F3305B69444D9 /* StyleSheet */,
+				E49C6147BE3CE918EA456A157C9ADF1A /* Support Files */,
+			);
+			name = MLUI;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		5251E5663447CB1E74B9E54DE1C15A0B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9D4A01D8E14DD7E3C54B64162D6CE735 /* MLSwitch.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5467C803F8A854DAD83311FC8B757E47 /* MLSpinner */ = {
+			isa = PBXGroup;
+			children = (
+				25685A97ACF55815C6F5FD525AB7E39A /* MLSpinner.h */,
+				90F260189E49DA3B40C65FD665469E2D /* MLSpinner.m */,
+				0710AFE1E0A5EC2DDB85D46E22D2CDBF /* MLSpinnerConfig.h */,
+				D2DC2B7384D596DFB5DE7FE86D0E2300 /* MLSpinnerConfig.m */,
+				F2B0FFD343DA7470E8D3048383ECB0F1 /* Resources */,
+			);
+			name = MLSpinner;
+			sourceTree = "<group>";
+		};
+		664F518AC21E8686439F98731C71E18B /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				424856EBFC0B8DEA7B49B04B9A303BF9 /* MLSwitch.h */,
+				275C9B2584EF3CEE2D254BBBC0FD9F28 /* MLSwitch.m */,
+			);
+			name = classes;
+			path = classes;
+			sourceTree = "<group>";
+		};
+		66B49B54BBBED0CA6ECC6FCC3437C60D /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				97E82BB428CBAD53371E529D75E32B00 /* MLRadioButton.h */,
+				370A7AD5ED0067EE9B51B1CC2F2F094D /* MLRadioButton.m */,
+				B3F2FD4B2EBA688EE5D6E703D876CEAB /* MLRadioButtonCollection.h */,
+				2E061587B8304781ACF314ABE6B87288 /* MLRadioButtonCollection.m */,
+			);
+			name = classes;
+			path = classes;
+			sourceTree = "<group>";
+		};
+		757F1AE68D6BB6A26472907432915B02 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				D57DB88AE0025DE316F50FB7597E0BFF /* MLModal.xib */,
+			);
+			name = classes;
+			path = LibraryComponents/MLModal/classes;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				1F09F522EE45A3B71C0FA82CBA35A85D /* Development Pods */,
+				D3A732C739382C9BEA77CE084ABD78A7 /* Frameworks */,
+				EE3D8E9BB2E44D2CC7E0AD60590945CF /* Pods */,
+				9DCE9DCDD91523CAE6802ABC97A5B79D /* Products */,
+				126DC89CBD7E62BE3B9F0109D977B701 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		89CAFE9F5F2ECB13C10F3305B69444D9 /* StyleSheet */ = {
+			isa = PBXGroup;
+			children = (
+				5ABA4845AE2FA0119F5CD35CB4BE5B9F /* MLStyleSheetDefault.h */,
+				D0123CA19C864AC8DF2F04022B0230BD /* MLStyleSheetDefault.m */,
+				0220690396ED2A3F648E42028726F001 /* MLStyleSheetManager.h */,
+				F661DE900230E35FFF0EA64CC7BFFB14 /* MLStyleSheetManager.m */,
+				57D1BF5986C6BA7CD4FBEE3B2C57ADCF /* MLStyleSheetProtocol.h */,
+			);
+			name = StyleSheet;
+			sourceTree = "<group>";
+		};
+		8ABA0163C97C1E4C9A82D2FFF72D00FE /* MLColorPalette */ = {
+			isa = PBXGroup;
+			children = (
+				63C71A9D363A45E52F841B541BF4F8E7 /* UIColor+MLColorPalette.h */,
+				9D799F6D2D5E6456199B82797C6FDFB0 /* UIColor+MLColorPalette.m */,
+			);
+			name = MLColorPalette;
+			sourceTree = "<group>";
+		};
+		8D88890CB1388DFF1C2D177D504BDED0 /* MLTitledMultiLineTextField */ = {
+			isa = PBXGroup;
+			children = (
+				1162B6C2DD4D982556187AFE063D6162 /* MLTitledMultiLineTextField.h */,
+				0814E191EE828F93E1114ECBF10387D6 /* MLTitledMultiLineTextField.m */,
+			);
+			name = MLTitledMultiLineTextField;
+			sourceTree = "<group>";
+		};
+		93519C75086DEC3B73484DD8119F0EE5 /* MLFonts */ = {
+			isa = PBXGroup;
+			children = (
+				E968A3834DB9464E6C2785FF7A716E1B /* NSAttributedString+MLFonts.h */,
+				45BDFEEF5218FD08176036B606B86C48 /* NSAttributedString+MLFonts.m */,
+				976CECDE52C18EAE7A775178B01404A8 /* UIFont+MLFonts.h */,
+				054D54C040CC9C27ECEA152B529FB952 /* UIFont+MLFonts.m */,
+				00FB0EAAE6FAD8B208E4551C4C7CC4BC /* UILabel+MLFonts.h */,
+				0E6235FE33C330971691E763F03455C1 /* UILabel+MLFonts.m */,
+				5140470FCB457A693D6CAC8D51511894 /* UITextView+MLFonts.h */,
+				0899CB8741B6DC878B44E7E1EFDA1EF5 /* UITextView+MLFonts.m */,
+			);
+			name = MLFonts;
+			sourceTree = "<group>";
+		};
+		95BE07DC62BAE4F5D74EA97F4DFC0A43 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB85E4288768887DE93F2B8EDCDE1D3D /* FXBlurView.modulemap */,
+				242EBAF232133CA29890E1F68E81E14F /* FXBlurView.xcconfig */,
+				6514CB8BACA231DA2F8A9A9221C2E64E /* FXBlurView-dummy.m */,
+				74AC12A05B806F8DC3767DB0BBF4AFF3 /* FXBlurView-prefix.pch */,
+				8A174DBA87B02A2B93B4F4767D4F6BA1 /* FXBlurView-umbrella.h */,
+				F1EC4344A34BE7BC3548750833621143 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FXBlurView";
+			sourceTree = "<group>";
+		};
+		9D764D8B12B03459D445A98473C336DD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				278112884CF59007346598814DDCF158 /* NSString+BoundingSize.h */,
+				57D9B058FAFC83C689F3A6485709E81A /* NSString+BoundingSize.m */,
+				538DE3EC5EF5A6EE499407C99DD33A8D /* UIColor+Theme.h */,
+				4FEDC79510A03A4A0675C334B7131A38 /* UIColor+Theme.m */,
+				AF29DAFA5816FB21DCC2D94EE1838430 /* UIImage+Misc.h */,
+				58B861DFBED9150C5EE911C91BFF62F4 /* UIImage+Misc.m */,
+				EB5711105670A6E20975E1A6F9AF627A /* UIImage+Transformations.h */,
+				37B267666864F800682352BF1377E330 /* UIImage+Transformations.m */,
+				54460217042B3F17ECC88F6E02DCEBB5 /* UIImageView+Animations.h */,
+				CE8D1E29ED08655916DC13B8C7B4E779 /* UIImageView+Animations.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		9DCE9DCDD91523CAE6802ABC97A5B79D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D35336A4C0F1E4FD53B1D65A9F5A3D2D /* FXBlurView.framework */,
+				4015531623A737E21D2B4CEC6F9D7020 /* JRSwizzle.framework */,
+				2CC863EC7E6AEEBD43636EE544A9B57D /* MLUI.framework */,
+				60AD50B4925D3B43B4FD4D6348D62E0E /* OCMock.framework */,
+				F0E7ECA26E794B0936BC2ED1F7E126B5 /* Pods_MLUI.framework */,
+				9786D7CB54374FC439C45A18FD074443 /* Pods_MLUIUnitTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A0696FF909F76672D48050AC76AF5EC9 /* MLTitledSingleLineTextField */ = {
+			isa = PBXGroup;
+			children = (
+				C86649B74513ED6173379BD859B6576E /* MLTitledSingleLineStringProvider.h */,
+				3F7C69DEF365A729EE12A31584351382 /* MLTitledSingleLineStringProvider.m */,
+				1C4562535F5E484547F4A0DBF9CA230F /* MLTitledSingleLineTextField.h */,
+				C92B6CDCC192C721DBABE70B14C58944 /* MLTitledSingleLineTextField.m */,
+				45A7B82EBC08E11CDEAD3B24D48DE317 /* Resources */,
+			);
+			name = MLTitledSingleLineTextField;
+			sourceTree = "<group>";
+		};
+		A347702355CC782A3BBE37EAD0038316 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				B65C8B81A4E5172C4B76493A2B9EE114 /* MLCheckBox.h */,
+				87D43B843DA273F79DCA9D6A0E54C462 /* MLCheckBox.m */,
+				D953EA024F49D85D25C67B202484679A /* MLCheckList.h */,
+				D567044D34F00F82ACED63CDC00D8E03 /* MLCheckList.m */,
+			);
+			name = classes;
+			path = classes;
+			sourceTree = "<group>";
+		};
+		A941A0E5A98DD5E553414DACBA4B4E0A /* MLGenericErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				9EB982DC7D1E389DCCE303A05E398203 /* MLGenericErrorView.h */,
+				7616E63E95BBD4D2FCC2FC92D1FD1F7C /* MLGenericErrorView.m */,
+				EF4669E66B491BFBB888DE8F81A1C4C0 /* Resources */,
+			);
+			name = MLGenericErrorView;
+			sourceTree = "<group>";
+		};
+		A9CB61A9A37BCD7909BC2F0D5CC80C88 /* MLHtml */ = {
+			isa = PBXGroup;
+			children = (
+				C8EB2C705498759F1B9BC2B74C219F14 /* MLHtml.h */,
+				2A7CB3455118F09213F48150DE79868E /* MLHtml.m */,
+				BF285281779534BC283AA47EBE86C49B /* NSAttributedString+MLHtml.h */,
+				D2FF9A1BA994136E4EB661BA7AB90010 /* NSAttributedString+MLHtml.m */,
+			);
+			name = MLHtml;
+			sourceTree = "<group>";
+		};
+		AA27411CF72181E4516D0E0F27CD9FEA /* classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = classes;
+			path = LibraryComponents/MLBooleanWidget/classes;
+			sourceTree = "<group>";
+		};
+		AAF260D34DC71B016F3BA74DB70F405A /* MLSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				664F518AC21E8686439F98731C71E18B /* classes */,
+			);
+			name = MLSwitch;
+			path = LibraryComponents/MLBooleanWidget/MLSwitch;
+			sourceTree = "<group>";
+		};
+		B562820FFEE8B2A61072F2A568FEEB15 /* Pods-MLUIUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				7F1C1521FC45F9C2D375766B47D98A76 /* Info.plist */,
+				7587C24668F92548EB83395674D674D4 /* Pods-MLUIUnitTests.modulemap */,
+				4884BFBE266161CB0C28C9BCDBD1A71E /* Pods-MLUIUnitTests-acknowledgements.markdown */,
+				AC773EBD1BF500CB908AC052C9326EB9 /* Pods-MLUIUnitTests-acknowledgements.plist */,
+				4170D8CF55EBC48EE57B34C561766A3B /* Pods-MLUIUnitTests-dummy.m */,
+				3BB4B4C8315094768441D6558603556F /* Pods-MLUIUnitTests-frameworks.sh */,
+				AC28B622350D286330BFCAC70AFB990D /* Pods-MLUIUnitTests-resources.sh */,
+				C4071C5234BFF31D22BC9B12693A6FB0 /* Pods-MLUIUnitTests-umbrella.h */,
+				9E372564B23F62E3B15C77423F52B6F1 /* Pods-MLUIUnitTests.debug.xcconfig */,
+				5B7B8640A814972F51735087D1CD1288 /* Pods-MLUIUnitTests.release.xcconfig */,
+			);
+			name = "Pods-MLUIUnitTests";
+			path = "Target Support Files/Pods-MLUIUnitTests";
+			sourceTree = "<group>";
+		};
+		BBC7E29D19245B590D78148FFBF494DA /* FXBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				8F28581371433B9432205544F97A19A6 /* FXBlurView.h */,
+				AA672221B55D489E8A52DECFB9B81089 /* FXBlurView.m */,
+				95BE07DC62BAE4F5D74EA97F4DFC0A43 /* Support Files */,
+			);
+			name = FXBlurView;
+			path = FXBlurView;
+			sourceTree = "<group>";
+		};
+		C2C1665D153AD0CDC9AE9545B0BB3060 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2EA8B76AFDD3DEA1F48D03EC42CB45CC /* Info.plist */,
+				A5DDE4B76CD987F994C6E48D945FC7C9 /* JRSwizzle.modulemap */,
+				957AE6B4DDAE0CCAAC4CC3DC69FA5757 /* JRSwizzle.xcconfig */,
+				7AF437C55F223B47269154FCFB9D1C2A /* JRSwizzle-dummy.m */,
+				AE5E7949C38F98E0FC7B21FC01475B72 /* JRSwizzle-prefix.pch */,
+				8C8E1804F1FE7EE68A8913684C838D19 /* JRSwizzle-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/JRSwizzle";
+			sourceTree = "<group>";
+		};
+		C4B78D8CEF91E748DEEA5ACB7B3476CD /* MLSnackBar */ = {
+			isa = PBXGroup;
+			children = (
+				C484217E9FC9B173324D0FEFDB362C2A /* MLSnackbar.h */,
+				10DF5C14211078B13B44158344451715 /* MLSnackbar.m */,
+				01EF3B26187F239275DA6A9EDB3D54C6 /* MLSnackbarType.h */,
+				7E9BF6DF716971A0E29FE72B2D768F78 /* MLSnackbarType.m */,
+				DF97645916F18E215F9DCC5D396170FF /* Resources */,
+			);
+			name = MLSnackBar;
+			sourceTree = "<group>";
+		};
+		D3A732C739382C9BEA77CE084ABD78A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0ECEB0ECD0E3ECEE7B9BAE499FC7CA4 /* FXBlurView.framework */,
+				C63935387A8F9E449763FD682ECD2DE7 /* JRSwizzle.framework */,
+				434F76A82274B37B1961B4620050B4F0 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7280491865EF394C24EDA83D6CE469B /* MLButton */ = {
+			isa = PBXGroup;
+			children = (
+				D0D50C28B3F7CF2392D221605DF2BB6C /* MLButton.h */,
+				42E0BB8B602711A89EF121A7467A6982 /* MLButton.m */,
+				ADB3660AFCC1653D420DDA74DE8E472C /* MLButtonConfig.h */,
+				F01953098C0698BA6AF4AE16729E29D8 /* MLButtonConfig.m */,
+				FE99E8A0AED8CFD1D4CB79CBEDDE7884 /* MLButtonConfigStyle.h */,
+				DA99A3CF250C14C83F301B57FA1717D2 /* MLButtonConfigStyle.m */,
+				1FC8A879D19776BED1EE637A105E0187 /* MLButtonStylesFactory.h */,
+				AECF772BC5FA78E63E2B75FB09A39978 /* MLButtonStylesFactory.m */,
+			);
+			name = MLButton;
+			sourceTree = "<group>";
+		};
+		DA38083B77361BBAB3A592FC9299FAB3 /* MLContextualMenu */ = {
+			isa = PBXGroup;
+			children = (
+				389D75B104BE0EF7AB97BF01D2C3A35F /* MLContextualMenu.h */,
+				9984F07ABAE856C35A685DEB2066CF81 /* MLContextualMenu.m */,
+				2AE276A6C62C08A4FF8484C9B49BCDD0 /* MLContextualMenuItem.h */,
+				B637661011EF0EB55F9ECE4A643698E4 /* MLContextualMenuItem.m */,
+			);
+			name = MLContextualMenu;
+			sourceTree = "<group>";
+		};
+		DB969AFCD92E90559ABAF384EB99ADA9 /* PriceView */ = {
+			isa = PBXGroup;
+			children = (
+				F784191CD9D7FC28EE4ABCD2AAB7AD02 /* MLUIPriceView.h */,
+				590E8C2393CAC5EE066B1D632C167CF4 /* MLUIPriceView.m */,
+				0D2AE717305FCD614749FD4388D01ABB /* Resources */,
+			);
+			name = PriceView;
+			sourceTree = "<group>";
+		};
+		DF97645916F18E215F9DCC5D396170FF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				762B69C6C00F1304BC71BF0673AA5E95 /* MLSnackbar.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E49190255276CFA0B08F757E6921D7F5 /* MLModal */ = {
+			isa = PBXGroup;
+			children = (
+				1B3C7F0D2BD1F136EB8AA570D9164AF8 /* MLModal.h */,
+				F91B60D8838B98985A1CFD3670CA3248 /* MLModal.m */,
+				8DE141BACBED93242B8F6AA6958FBFFE /* MLModalConfigStyle.h */,
+				DFD2ECFEC1DC8669BE2875339552CDBD /* MLModalConfigStyle.m */,
+				482ACC32823F7D015CD000029B36C2F3 /* MLModalStyleFactory.h */,
+				A5A29BC54E9EF948EB34C0F2776D069A /* MLModalStyleFactory.m */,
+				424BFD8821F6016017D31A511EDE8395 /* Resources */,
+			);
+			name = MLModal;
+			sourceTree = "<group>";
+		};
+		E49C6147BE3CE918EA456A157C9ADF1A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B06C9990299D74CDC54B0122792F814 /* Info.plist */,
+				3EFE65470F765F2AD5C7450C6F46A79C /* MLUI.modulemap */,
+				E7251202E9643063FAA52C9BB5140F9E /* MLUI.xcconfig */,
+				BEAFB38B6F6325C3A92A93762FB45A62 /* MLUI-dummy.m */,
+				9BBC9E5CFA77D42168A4C50489B87D51 /* MLUI-prefix.pch */,
+				44F672E60FE29355140F4E94F34F1DC9 /* MLUI-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Pods/Target Support Files/MLUI";
+			sourceTree = "<group>";
+		};
+		E81860DD950DF74A1BD35FF9D5AF80AB /* classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = classes;
+			path = LibraryComponents/MLBooleanWidget/classes;
+			sourceTree = "<group>";
+		};
+		EE3D8E9BB2E44D2CC7E0AD60590945CF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BBC7E29D19245B590D78148FFBF494DA /* FXBlurView */,
+				372C41101CF2A3ED951FC84A6422CBE5 /* JRSwizzle */,
+				EE9BB78B5E9642E4F3D5C01F1B217B0A /* OCMock */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EE9BB78B5E9642E4F3D5C01F1B217B0A /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				0076CC6C91E40CFDDB2345865CEB3EAA /* NSInvocation+OCMAdditions.h */,
+				A0AF726F08FB9B88880D6DE625E94BF4 /* NSInvocation+OCMAdditions.m */,
+				290B2A6AFE2AC8C7F49A8E9E239F9F56 /* NSMethodSignature+OCMAdditions.h */,
+				AC6A88E8A0D9CAD78EE98A3E419DA05A /* NSMethodSignature+OCMAdditions.m */,
+				660A7AA6924B1CDEEDF9E6B6064A87D7 /* NSNotificationCenter+OCMAdditions.h */,
+				49BA3651B97629AA51B6BEAA56CD58A7 /* NSNotificationCenter+OCMAdditions.m */,
+				5CD30B7FB31B14626C29EAA9400451AA /* NSObject+OCMAdditions.h */,
+				AEA5D4EC6E7CCED8AD4CC8648E27AC30 /* NSObject+OCMAdditions.m */,
+				F1BEC9AF0A58E4F331A698B6207E459F /* NSValue+OCMAdditions.h */,
+				E541FEC39BD22D72EA96E90A76E97FE4 /* NSValue+OCMAdditions.m */,
+				FCBA329672BDFB433ABDB414EBFCE021 /* OCClassMockObject.h */,
+				B907BDE51D8DC8C88D75769F1B22F267 /* OCClassMockObject.m */,
+				6F8D2F706063096DB7C5B426213E2639 /* OCMArg.h */,
+				F4171760FA23CADDBAE0AD182A360CF5 /* OCMArg.m */,
+				3FC7CB13A79B90A5077A20021FBED796 /* OCMArgAction.h */,
+				1353EE5E514ACE3AC9ADB00DB44BC3BA /* OCMArgAction.m */,
+				669FCDED5A52894FECF5A0633456FBFD /* OCMBlockArgCaller.h */,
+				C11A5D3D67E87BCED6941AFA8EBB4919 /* OCMBlockArgCaller.m */,
+				79FC2EB0540F1AE453323A8F029BAD04 /* OCMBlockCaller.h */,
+				383229B122F5F6F61C2F2EF102086021 /* OCMBlockCaller.m */,
+				2C52A7EB8525EC8062C520C6B763FE69 /* OCMBoxedReturnValueProvider.h */,
+				50361F228B576E1E34E48CF7C114F792 /* OCMBoxedReturnValueProvider.m */,
+				5F25E9D40DE64B6341797907BD8F16F3 /* OCMConstraint.h */,
+				4C05CCCE9934F9D5ED15E0A1A765CAC7 /* OCMConstraint.m */,
+				48977FE510AF8237F3787196D6A85FC5 /* OCMExceptionReturnValueProvider.h */,
+				FBF9824AA76647DEA7E6AAEAAA75C3A9 /* OCMExceptionReturnValueProvider.m */,
+				B7420EA4CA1B768B98BB0ECE97E45AD1 /* OCMExpectationRecorder.h */,
+				584896D01DDEC2BD14A5AF02771563B0 /* OCMExpectationRecorder.m */,
+				A9F1B724D8FEAFD4AFDE6695227B542A /* OCMFunctions.h */,
+				4B2F9494E653DA679FA03D67F2AE03BF /* OCMFunctions.m */,
+				BBC0BD73E181D75941CBF66DB0804E52 /* OCMFunctionsPrivate.h */,
+				54C353B3E9E03E774160959A2AF9D10D /* OCMIndirectReturnValueProvider.h */,
+				0A5B61B44D7F024392D5B23F02CA55F3 /* OCMIndirectReturnValueProvider.m */,
+				29BD59843E112DECC9AC2D7C15149AC9 /* OCMInvocationExpectation.h */,
+				88EA723AC4917F21281F4447D25EC713 /* OCMInvocationExpectation.m */,
+				012AD07453301F892AB2E2B2E406947D /* OCMInvocationMatcher.h */,
+				500E0D7F95701DF20CACFEDC4B838F5B /* OCMInvocationMatcher.m */,
+				98CBB6D9883FC6172148154E8F99FDC5 /* OCMInvocationStub.h */,
+				75A44CCD40F722929F46B42CB1D87C9C /* OCMInvocationStub.m */,
+				6667264EEDCDA524F18BA96C1BB9CE88 /* OCMLocation.h */,
+				E977111A3CE7477AC77E2E72FD932A78 /* OCMLocation.m */,
+				A9100F67CD1686F0D28F5772CA283A6F /* OCMMacroState.h */,
+				4B941D2A3255A6C2CA3A521E27C360C3 /* OCMMacroState.m */,
+				FBEED5665CEDFBE5E497EB4F092CBDCC /* OCMNotificationPoster.h */,
+				8E7979139DCA3F5AB8ECCF5F296E6D9E /* OCMNotificationPoster.m */,
+				A53A9A5B8A83C0CFF1F795E6842D0DF4 /* OCMObserverRecorder.h */,
+				C79157CC72A1928A1C389BA2A3683B94 /* OCMObserverRecorder.m */,
+				3D2F12AD3C3D891A1BEE8F43E1827F0C /* OCMock.h */,
+				EFA14F51D1C37DCE8A57632C821E5726 /* OCMockObject.h */,
+				AC10D2AAA25834876D044C4BC31B524C /* OCMockObject.m */,
+				5D56DEA4AF11E11679D53C55F5FD625E /* OCMPassByRefSetter.h */,
+				9975EC780FFB82C8F430793C46149A91 /* OCMPassByRefSetter.m */,
+				F89A5911F330E534F05F41B97689C5D9 /* OCMRealObjectForwarder.h */,
+				656A0C316628D7D1DEE8692FD55D521A /* OCMRealObjectForwarder.m */,
+				D975FE5861DA709F7F6E7420B81CA3D6 /* OCMRecorder.h */,
+				2BA74C67B1AF738AFE52CD0B69D2ABE0 /* OCMRecorder.m */,
+				F8F47846BED0C6AC179EAA5D042F41D7 /* OCMReturnValueProvider.h */,
+				7C9D867BA8E01F9BEDCD3B6FDBC0025F /* OCMReturnValueProvider.m */,
+				0E4684799C6156F20CCA79AB1791C039 /* OCMStubRecorder.h */,
+				E36DD61BA98810109AD8612BCEEB8B1A /* OCMStubRecorder.m */,
+				56FC26DAF7610ADCCF0AFF224B632C78 /* OCMVerifier.h */,
+				D712D5DDF509A46E1A52D0E1E770C7BC /* OCMVerifier.m */,
+				1F05509522F64EF891B2D95DAB633A19 /* OCObserverMockObject.h */,
+				0986EB0EAE8899B464D691DCB360E891 /* OCObserverMockObject.m */,
+				0256D4F8D280984995CBF70636C39A96 /* OCPartialMockObject.h */,
+				8BB40F71F26C48C9BB54990901D670BF /* OCPartialMockObject.m */,
+				ACEE54B43F3F173A35C06DDC967D381A /* OCProtocolMockObject.h */,
+				7136EA6C37D03275D1A8B638772E76F7 /* OCProtocolMockObject.m */,
+				247FA2DE0284E557AE76A54BA0ACC144 /* Support Files */,
+			);
+			name = OCMock;
+			path = OCMock;
+			sourceTree = "<group>";
+		};
+		EF4669E66B491BFBB888DE8F81A1C4C0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				917E792F4B1BD43C384EB5323983F804 /* MLGenericErrorView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F0A28C5A7B04BB4566357ECD2AFCA76E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4C5976AE1BADF951E5CA8A772094E2AB /* MLUIBundle.h */,
+				3494681F3215A79F3A6269CA2F0991C3 /* MLUIBundle.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		F2B0FFD343DA7470E8D3048383ECB0F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C44D623FAABA3E3487315B144A17AA9D /* MLSpinner.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F46FF4B726565A16DFE9F565D340493C /* MLRadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				AA27411CF72181E4516D0E0F27CD9FEA /* classes */,
+				427992696A1226A4D6951AAF81B79ECA /* MLRadioButton */,
+			);
+			name = MLRadioButton;
+			sourceTree = "<group>";
+		};
+		FE6227CFC996D8020D19E1F51CB8E046 /* Pods-MLUI */ = {
+			isa = PBXGroup;
+			children = (
+				D671252D64FB7092A78338E4AE01E1A9 /* Info.plist */,
+				E612632F6BF59C5362DA2B6EB623017D /* Pods-MLUI.modulemap */,
+				CC161269613594F7FDB70A3BFD8BFB33 /* Pods-MLUI-acknowledgements.markdown */,
+				9225E1EB757366D3EC6E47572CE9CD1D /* Pods-MLUI-acknowledgements.plist */,
+				0C25892049E429653F5E9F8570A127FE /* Pods-MLUI-dummy.m */,
+				3DA2D3FDE3F9477455CE7DFC0BC47BF7 /* Pods-MLUI-frameworks.sh */,
+				DBB6E3EF2E1A77D255B6D5975F1A7A58 /* Pods-MLUI-resources.sh */,
+				F600D6373FF53639E050F2EEECE0C35D /* Pods-MLUI-umbrella.h */,
+				7C4277DEFA6775934F5D2F6CB9728678 /* Pods-MLUI.debug.xcconfig */,
+				2EDA486CBB9F5E9587DE14FBE0E939AF /* Pods-MLUI.release.xcconfig */,
+			);
+			name = "Pods-MLUI";
+			path = "Target Support Files/Pods-MLUI";
+			sourceTree = "<group>";
+		};
+		FF83C7D67CA43AC048DDA4F0460FC838 /* ActionButton */ = {
+			isa = PBXGroup;
+			children = (
+				FC18A488D8E59C16FBFA58AFF1A445A0 /* MLUIActionButton.h */,
+				74FFFD87F24A5C6927674FDCFC0DC3A6 /* MLUIActionButton.m */,
+			);
+			name = ActionButton;
+			sourceTree = "<group>";
+		};
+		FFD8CC670351F24E5C4F3ACC788EE77C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B4E965C861EE09EEDE5570FD2AEFB604 /* MLUISnackBarView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1F39875707A60FF0FBFEE847D4A2E1DA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B503FE04A9C2074EE478C4B76E89DAEA /* JRSwizzle-umbrella.h in Headers */,
+				A8C98D483D800B96E37AA5069EF04E68 /* JRSwizzle.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		808E9C27E7118677651A7526B0945512 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBD596B095C58C7A3AA647CAB7802226 /* NSInvocation+OCMAdditions.h in Headers */,
+				5037A042D2012439DEC932F10FC51B95 /* NSMethodSignature+OCMAdditions.h in Headers */,
+				A1268C3E1B318712F159EF222F19BD8B /* NSNotificationCenter+OCMAdditions.h in Headers */,
+				E61FEAB563814E928FFF2C1EF239058A /* NSObject+OCMAdditions.h in Headers */,
+				1DD2C9A900B7D7B5F3862D15C1A8AD7E /* NSValue+OCMAdditions.h in Headers */,
+				28B5E9BDDC2F53432C7D7D244837F1B5 /* OCClassMockObject.h in Headers */,
+				F02C2CD0A94965FFA8928B316D5825CB /* OCMArg.h in Headers */,
+				6DEAD4CD0FF9467DA3FD3F22816418C6 /* OCMArgAction.h in Headers */,
+				86FF90618135B7C9032BC7075343F236 /* OCMBlockArgCaller.h in Headers */,
+				0310B1523123778B0E3FB78BE3A14095 /* OCMBlockCaller.h in Headers */,
+				E14A5FC189CD75054825E45DA6D9F293 /* OCMBoxedReturnValueProvider.h in Headers */,
+				B40D8DAB504B721D2BC6A6DDFDD82067 /* OCMConstraint.h in Headers */,
+				974362D040AC870A5D72E365B21A8CE4 /* OCMExceptionReturnValueProvider.h in Headers */,
+				01F7D55919C59833456188558FE8D7FA /* OCMExpectationRecorder.h in Headers */,
+				15081C3A4D626D9631A9594847D2E2A6 /* OCMFunctions.h in Headers */,
+				72C8CC2855787B9DC1A37DDEB5E24155 /* OCMFunctionsPrivate.h in Headers */,
+				1D53147F49F02FC693C33D8526049C90 /* OCMIndirectReturnValueProvider.h in Headers */,
+				B3E6AA126A971418B57B78A6B4E753E3 /* OCMInvocationExpectation.h in Headers */,
+				B42B8EFE65F8B07957190A15F590093A /* OCMInvocationMatcher.h in Headers */,
+				15FEDB8A315321D48BC7E535429ADB48 /* OCMInvocationStub.h in Headers */,
+				B66FB06824BBED66619F17DB82CC2A64 /* OCMLocation.h in Headers */,
+				A4AF7E8EF9BB26F4CE7FD9EA32D4AD4C /* OCMMacroState.h in Headers */,
+				1583087CE691D66E050A0AE7C07296BD /* OCMNotificationPoster.h in Headers */,
+				4552366371FE1ACA9600897C31D70E4C /* OCMObserverRecorder.h in Headers */,
+				9A92686CF21CC8ECAB69A3CFB621FA4B /* OCMock-umbrella.h in Headers */,
+				FAB7A1E7E1414DC657BA79D07135E15B /* OCMock.h in Headers */,
+				8EE2E0824E8AD382EC6553104A60430E /* OCMockObject.h in Headers */,
+				92F61FA0ACB1B709FFEBE1D9DC2C68E5 /* OCMPassByRefSetter.h in Headers */,
+				38D5085895B3757AF0DCED078EF8B145 /* OCMRealObjectForwarder.h in Headers */,
+				E6F1B20197D630B80285B5F6E5FAE80F /* OCMRecorder.h in Headers */,
+				A4CD01540B9FCF8F26D52856704571D7 /* OCMReturnValueProvider.h in Headers */,
+				EC33739AB54F71355C4FD5AAEF92F4B1 /* OCMStubRecorder.h in Headers */,
+				E4A87D8BA9BA24EE81DEC41C8BE98F2B /* OCMVerifier.h in Headers */,
+				147E00CDCEDB145F0012FA174BA4E545 /* OCObserverMockObject.h in Headers */,
+				353759005B92EEC29E4B15765C4D3EEB /* OCPartialMockObject.h in Headers */,
+				45E91E6E79D1EEACF0F7A668E3D9A89D /* OCProtocolMockObject.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D3F6984E26E0602651F23B52939F3C2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E35A2620063447F3DC6A1016648797E /* FXBlurView-umbrella.h in Headers */,
+				1F62BCDD224C46375F12D5535879B5FF /* FXBlurView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7B688C2E434C9E0E8F34B1FA66DD349 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8EF4496E85253E84F6D9F2DB81CCEC8 /* Pods-MLUIUnitTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABF4177CD9CD47BA2FCE55FD98102E71 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F61CC41E11126D60F4B7AA579A4B71BC /* MLBooleanWidget.h in Headers */,
+				151C64FCF8CD219591B56486514C7612 /* MLBooleanWidget_Protected.h in Headers */,
+				0982657F56BAFB3E883286654536A3CC /* MLButton.h in Headers */,
+				4775C0D9ABC625A1FFD29AC80DEF53D6 /* MLButtonConfig.h in Headers */,
+				24CBE4FD7AABA52819472727B9DC260B /* MLButtonConfigStyle.h in Headers */,
+				BF1FAE3BD55010CDBE974B500F56EF88 /* MLButtonStylesFactory.h in Headers */,
+				C12F1270D1A31CB9680F3D1A4E7EA362 /* MLCheckBox.h in Headers */,
+				C4F164E62DCFFF8F5A2252B6FA25872F /* MLCheckList.h in Headers */,
+				AACE53180AF21A4282253DE67D04EB1B /* MLContextualMenu.h in Headers */,
+				85C61D989C67F0F8BA48DAE0A625C19F /* MLContextualMenuItem.h in Headers */,
+				6CC8A2C603D1187B5994B362D956EB74 /* MLGenericErrorView.h in Headers */,
+				0CF1E362AF47B439B1B268D46B5BB23C /* MLGrowingTextViewHandler.h in Headers */,
+				F50DCAC226930B87A09BACDC35401411 /* MLHtml.h in Headers */,
+				84692FBD24D129366F9035127BA47988 /* MLModal.h in Headers */,
+				B8EAD66DF1BB18A871CDB3B121339EAD /* MLModalConfigStyle.h in Headers */,
+				45938DF9764A6DD4B9FC8920A78ABAFF /* MLModalStyleFactory.h in Headers */,
+				E3DD5EBA9DFF624C3ED1E054DDC59AEF /* MLRadioButton.h in Headers */,
+				1CD0E80E32815BF9D2F0C76BF7CA24F1 /* MLRadioButtonCollection.h in Headers */,
+				A864156A636A5C410B010001C7ADFB09 /* MLSnackbar.h in Headers */,
+				6B8D1E474FD06155A9C8C83ED7E3646C /* MLSnackbarType.h in Headers */,
+				90ECCCEF568E737D2540394185AEE95B /* MLSpinner.h in Headers */,
+				73CB089ADD80AC1CF75B3CF01390834C /* MLSpinnerConfig.h in Headers */,
+				B440651F929483A69A6155D8D3DDBB0D /* MLStyle.h in Headers */,
+				A6FD80249435379F91162093D8C78645 /* MLStyleSheetDefault.h in Headers */,
+				20D28534AFFD4E475F473DFB3CD4850D /* MLStyleSheetManager.h in Headers */,
+				3ABD40C9A70F84B570D1E29A51170851 /* MLStyleSheetProtocol.h in Headers */,
+				2121CB0CD58BAA47D148D3F33CF9379F /* MLStyleUtils.h in Headers */,
+				EE505346A80CD8B32F14E51E4AEE663E /* MLSwitch.h in Headers */,
+				3995140BFFC8476740A9830B67798B78 /* MLTextView.h in Headers */,
+				485510B0B0EE51FD9F212500A2A86531 /* MLTitledMultiLineTextField.h in Headers */,
+				A188CE43166BA8D6654641DB0087BB27 /* MLTitledSingleLineStringProvider.h in Headers */,
+				F6526A231BAAF163AAF223EED5870DEB /* MLTitledSingleLineTextField.h in Headers */,
+				210831DC7E3844EC7E80DD9FBD7B7D81 /* MLUI-umbrella.h in Headers */,
+				78FC8B590BF44BD044D3FAF918A028F2 /* MLUIActionButton.h in Headers */,
+				A3BD745DE50F36D2C8E43894533D02F4 /* MLUIBundle.h in Headers */,
+				9A139205A530646B1DB0306964F69946 /* MLUIPriceView.h in Headers */,
+				B707211D47889C509536B09C5FE53F02 /* MLUISnackBarProtocol.h in Headers */,
+				A6C37525D328ECF6E3E39FBB4570F34B /* MLUISnackBarView.h in Headers */,
+				CDA3F687701177141CC325CCE82D5DC9 /* NSAttributedString+MLFonts.h in Headers */,
+				E77C6E31C1BD80A0B1C9EDBD43A08B33 /* NSAttributedString+MLHtml.h in Headers */,
+				11C961ED56EB108FDAED8ED68E619634 /* NSString+BoundingSize.h in Headers */,
+				BE49FE33C6C32EF03C33F0C2E4CB0BBC /* UIColor+MLColorPalette.h in Headers */,
+				AA2BB02F17B642A183EF1DF4B556E624 /* UIColor+Theme.h in Headers */,
+				44F771A182D8A1181EA64DB7C9D7936E /* UIFont+MLFonts.h in Headers */,
+				73FF7E6F3E51C82B77673602743B7C30 /* UIImage+Misc.h in Headers */,
+				3B8D5A55B1B9448E066A4B05E9664740 /* UIImage+Transformations.h in Headers */,
+				64362A6BA812236A5213FCDAAAA7E846 /* UIImageView+Animations.h in Headers */,
+				128EFFDB31235C8DE0178EF11B6B8580 /* UILabel+MLFonts.h in Headers */,
+				D00C06B0B0CAB7490DC11434F1E81238 /* UILabel+MLStyle.h in Headers */,
+				1592EE56FA3EDD21B2F2364E505321EF /* UITextView+MLFonts.h in Headers */,
+				D246AA7E096DD6CBDD18987503CCAC8C /* UITextView+MLStyle.h in Headers */,
+				C9C8D8B461B1E711F313938CD89A944B /* UIViewController+SnackBar.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA2E1FD69874DD4B7216BBF601DC60F0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F54AC2590480142D709E68651CBA56F6 /* Pods-MLUI-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2B45D666DABB464D83D203554EE4AA8B /* MLUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FC436B38606CB83E6BF2F19F5F11A78 /* Build configuration list for PBXNativeTarget "MLUI" */;
+			buildPhases = (
+				17806DCEDB317B5018C593B33F0DD5BF /* Sources */,
+				EFF4F4DF6299F4F91213FD9A5E72FC5C /* Frameworks */,
+				ABF4177CD9CD47BA2FCE55FD98102E71 /* Headers */,
+				869DDA2F2F27B661F37F4C84894D94E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C233C0DF37285CB6B81C96707CE331AE /* PBXTargetDependency */,
+				81DB1213327358A87EEC02CFC7AFB92D /* PBXTargetDependency */,
+			);
+			name = MLUI;
+			productName = MLUI;
+			productReference = 2CC863EC7E6AEEBD43636EE544A9B57D /* MLUI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		687DBA16353D0DEDD06270A07225FB6F /* Pods-MLUIUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66BF5D098CC41FB720E02D278FC85541 /* Build configuration list for PBXNativeTarget "Pods-MLUIUnitTests" */;
+			buildPhases = (
+				6C0E255755A998BCAA2595512A481939 /* Sources */,
+				1C6F2F201F69B9D4FB5476A4238ADFBB /* Frameworks */,
+				A7B688C2E434C9E0E8F34B1FA66DD349 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF775D5C825DA83C208905AE51EC1EE5 /* PBXTargetDependency */,
+			);
+			name = "Pods-MLUIUnitTests";
+			productName = "Pods-MLUIUnitTests";
+			productReference = 9786D7CB54374FC439C45A18FD074443 /* Pods_MLUIUnitTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		89A1FF77FDBD41B7C399DFE173C3FE46 /* Pods-MLUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31E2A65526BDC04060B2E2A32A075EE0 /* Build configuration list for PBXNativeTarget "Pods-MLUI" */;
+			buildPhases = (
+				26572C3A99C6DCAE1F22AB2563F12C44 /* Sources */,
+				46B6A6332C7063266270E86D97D2A3F0 /* Frameworks */,
+				CA2E1FD69874DD4B7216BBF601DC60F0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25CCDDAA0417070648672AF3BA5F8757 /* PBXTargetDependency */,
+				C8485284D6F0CEDF3F0528A9D8C6B0D2 /* PBXTargetDependency */,
+				346DFF762D8490E3BE8A7FE8FDB2268F /* PBXTargetDependency */,
+			);
+			name = "Pods-MLUI";
+			productName = "Pods-MLUI";
+			productReference = F0E7ECA26E794B0936BC2ED1F7E126B5 /* Pods_MLUI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BD5BFC2F630B07DE8A20EBC90A7C8D49 /* FXBlurView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AD9B7CA019B1DC5B03042AB5E2C1CB3 /* Build configuration list for PBXNativeTarget "FXBlurView" */;
+			buildPhases = (
+				2F3D09A43F342210F70357E995DF843F /* Sources */,
+				166395856F8980AE7F82DFB1C86D4235 /* Frameworks */,
+				8D3F6984E26E0602651F23B52939F3C2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FXBlurView;
+			productName = FXBlurView;
+			productReference = D35336A4C0F1E4FD53B1D65A9F5A3D2D /* FXBlurView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DC54C98851E54D349520C786701A1845 /* OCMock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE8BA48E64C0BE4DC719C4BAE69F06A8 /* Build configuration list for PBXNativeTarget "OCMock" */;
+			buildPhases = (
+				BE952139340A1F69DCCDE76D81E60234 /* Sources */,
+				7D29925DDA06F94E7C818CA2403C1B0B /* Frameworks */,
+				808E9C27E7118677651A7526B0945512 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OCMock;
+			productName = OCMock;
+			productReference = 60AD50B4925D3B43B4FD4D6348D62E0E /* OCMock.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F5E7B86C60FCB91858074F7C2F733BE5 /* JRSwizzle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFB7E4A191A2188BE7C8E30FE682DB2E /* Build configuration list for PBXNativeTarget "JRSwizzle" */;
+			buildPhases = (
+				6C192372F9220548B74119C3A7966FA5 /* Sources */,
+				03A52B89DB6F0154312503C35543B4EC /* Frameworks */,
+				1F39875707A60FF0FBFEE847D4A2E1DA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JRSwizzle;
+			productName = JRSwizzle;
+			productReference = 4015531623A737E21D2B4CEC6F9D7020 /* JRSwizzle.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 9DCE9DCDD91523CAE6802ABC97A5B79D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD5BFC2F630B07DE8A20EBC90A7C8D49 /* FXBlurView */,
+				F5E7B86C60FCB91858074F7C2F733BE5 /* JRSwizzle */,
+				2B45D666DABB464D83D203554EE4AA8B /* MLUI */,
+				DC54C98851E54D349520C786701A1845 /* OCMock */,
+				89A1FF77FDBD41B7C399DFE173C3FE46 /* Pods-MLUI */,
+				687DBA16353D0DEDD06270A07225FB6F /* Pods-MLUIUnitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		869DDA2F2F27B661F37F4C84894D94E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72F89CC4B8E4B23CAA0442B13C149C1C /* en.lproj in Resources */,
+				C8D8B56BDAAD7185646B741718720AAF /* es.lproj in Resources */,
+				D738AE5D022F0A01FFBD71CD04089835 /* MLGenericErrorView.xib in Resources */,
+				8AA4168FA127D57F6E2B387191DA1A6E /* MLModal.xcassets in Resources */,
+				93F5DB2AE8D32716870D6786986F9BB2 /* MLModal.xib in Resources */,
+				872C032479F0F08346ECD3E96A265C82 /* MLSnackbar.xib in Resources */,
+				E8F2DF8180B130235161157206DA99BB /* MLSpinner.xib in Resources */,
+				7064A25312765E66B26C3AC86F619891 /* MLSwitch.xib in Resources */,
+				97C7B4B869C222D4F7D09AFD7E05BE2A /* MLTextView.xib in Resources */,
+				EA95DC12DEA70F2324E07333E994C4A0 /* MLTitledLineTextField.xib in Resources */,
+				F1B87399A430235ECA9D8C9C63E7F735 /* MLUIPriceView.xib in Resources */,
+				7B94EA7E6E5528BAD965CBF18561F96E /* MLUISnackBarView.xib in Resources */,
+				FCFEE48BAD5B44C21FD7F77AD88C1B4B /* pt.lproj in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17806DCEDB317B5018C593B33F0DD5BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				971409D93414D45B412C08F7CB4C2CA5 /* MLBooleanWidget.m in Sources */,
+				3452370C5EC942DFEE9CE87B4CEB5BFF /* MLButton.m in Sources */,
+				2A5A0709AC5CA1CBD990D63D609DF189 /* MLButtonConfig.m in Sources */,
+				1C48FCD568B31B99CD1068BE49D68A11 /* MLButtonConfigStyle.m in Sources */,
+				7A2D684E5C2036E9FDBDE6ADA73C2E93 /* MLButtonStylesFactory.m in Sources */,
+				3D763FC2F299F3CAD17B589377557208 /* MLCheckBox.m in Sources */,
+				FEC1374A5C72F02F7BEC8FD391010724 /* MLCheckList.m in Sources */,
+				7787243F8D1984A159DD6C4011139341 /* MLContextualMenu.m in Sources */,
+				8820BAAA3FFA593614F8F7596B86F99F /* MLContextualMenuItem.m in Sources */,
+				12C80162ABD0A7B5360F16F3E226BE76 /* MLGenericErrorView.m in Sources */,
+				61F33866639505D8336BF84D65F81183 /* MLGrowingTextViewHandler.m in Sources */,
+				642A7199B8BB17CB77FA509462727535 /* MLHtml.m in Sources */,
+				09F482BD384DCB23E433BC30E4A3B4EF /* MLModal.m in Sources */,
+				4743CB641543FC64EF31861FDAF5E697 /* MLModalConfigStyle.m in Sources */,
+				7CB9EC8A045A698D8F731F0258B0C781 /* MLModalStyleFactory.m in Sources */,
+				DE22A1E50FADA4BFE13B72174DB177B4 /* MLRadioButton.m in Sources */,
+				3EEDD6D8E75CE5C57CC977A07904DBCC /* MLRadioButtonCollection.m in Sources */,
+				7AC80E9EC91A3EA1FA32628B4891E4F0 /* MLSnackbar.m in Sources */,
+				63BE0B0C62570FD3D0B9B29D12411D9C /* MLSnackbarType.m in Sources */,
+				92FBAD9ED1CAAFEF65F249BCD58E045E /* MLSpinner.m in Sources */,
+				A48CD70F4026C89F7816BA8DC453295A /* MLSpinnerConfig.m in Sources */,
+				7525C2640FE05464C10B33FC952FAB3F /* MLStyleSheetDefault.m in Sources */,
+				79106922A4A600003981571FF8827A56 /* MLStyleSheetManager.m in Sources */,
+				2DEFB1D6F7BCE16657D1479DD3C4569A /* MLStyleUtils.m in Sources */,
+				5F1F7441E92010EB6A1319C357F5356B /* MLSwitch.m in Sources */,
+				34CB9165910045F0BA35F81F8F62DE78 /* MLTextView.m in Sources */,
+				FE48896F7594BDFD9089D7F7B7FAFE8A /* MLTitledMultiLineTextField.m in Sources */,
+				A90CBA8C84761DC71ABFC1AD8AA436A0 /* MLTitledSingleLineStringProvider.m in Sources */,
+				A045D6AD5D7EBABD111D7AAFB9300F1C /* MLTitledSingleLineTextField.m in Sources */,
+				A93FF0A4360F31B0BD01A496CCA26C8A /* MLUI-dummy.m in Sources */,
+				78080B1F6EB492400E394B90ECD706D5 /* MLUIActionButton.m in Sources */,
+				74885838D468F6AC3633C90B86853160 /* MLUIBundle.m in Sources */,
+				DFACC77F446FD708AAA4C65138F03157 /* MLUIPriceView.m in Sources */,
+				F11F240715F0849EE5AAF259D55B2760 /* MLUISnackBarView.m in Sources */,
+				86B2BD20FA5B26E83C363B28D51FA5BA /* NSAttributedString+MLFonts.m in Sources */,
+				5BB5B20EED14BF5D94488B2847D0D1CA /* NSAttributedString+MLHtml.m in Sources */,
+				2686F0A674D8D995B1CF2204EFCA7DE4 /* NSString+BoundingSize.m in Sources */,
+				A4888DA2F548CA00B609BFA2EA29146E /* UIColor+MLColorPalette.m in Sources */,
+				742381031968E60542F5C5865E6AB01F /* UIColor+Theme.m in Sources */,
+				0FF1A121CD72359DA44D556A0A2FD894 /* UIFont+MLFonts.m in Sources */,
+				F1071A41542EFB701545C3F3FA72E985 /* UIImage+Misc.m in Sources */,
+				45C7543FE2A2631FFEDC05A8BD7435F1 /* UIImage+Transformations.m in Sources */,
+				3956AEFF9E72350C484EF8C9A90E72C5 /* UIImageView+Animations.m in Sources */,
+				B5BEEBFF97BEA49EA1362229E447A49A /* UILabel+MLFonts.m in Sources */,
+				AD1903A808DA30C92B2C49CF5476D6D5 /* UILabel+MLStyle.m in Sources */,
+				B295032F9CD7D5BED81CB40BC9FB2919 /* UITextView+MLFonts.m in Sources */,
+				A86900E4F65E47783C4653920DEE4E13 /* UITextView+MLStyle.m in Sources */,
+				7B283DCC29E2FBEEAB4E60B629E7955D /* UIViewController+SnackBar.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26572C3A99C6DCAE1F22AB2563F12C44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDA900AF1E99C2930CB8EAF3E0F3AF13 /* Pods-MLUI-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F3D09A43F342210F70357E995DF843F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DF141B4EFFF24874AB4DFDC3B57135E /* FXBlurView-dummy.m in Sources */,
+				ADE91409C8CB482DAC32619D74FED2CE /* FXBlurView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C0E255755A998BCAA2595512A481939 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B09B792361ECB1960F2B172C4FCFFD8E /* Pods-MLUIUnitTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C192372F9220548B74119C3A7966FA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DF0FBD3E59D87323827D9DC7B5A656C /* JRSwizzle-dummy.m in Sources */,
+				4E962449F2DC5BF696EF871F5F9653B5 /* JRSwizzle.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE952139340A1F69DCCDE76D81E60234 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71213523998EC4038EEF2881118A57A1 /* NSInvocation+OCMAdditions.m in Sources */,
+				BD181F7E8C0BB325B051DA9F2FBD71BC /* NSMethodSignature+OCMAdditions.m in Sources */,
+				51CAB174257235556CE8902084F0E662 /* NSNotificationCenter+OCMAdditions.m in Sources */,
+				B852DBE3593443215A94EEFD59786402 /* NSObject+OCMAdditions.m in Sources */,
+				59578DBAB2520015A65B5B160722A370 /* NSValue+OCMAdditions.m in Sources */,
+				116FA1BBD719AFAA5593D71332D2A926 /* OCClassMockObject.m in Sources */,
+				F98852F58D5FDF0191647087678ABE70 /* OCMArg.m in Sources */,
+				CF451EAA94004B370612757B61B46D2D /* OCMArgAction.m in Sources */,
+				4F02F5DD4EC7C3AFD1EC38E2F55B0C4A /* OCMBlockArgCaller.m in Sources */,
+				7B006E74668E41702B8881E724728DE9 /* OCMBlockCaller.m in Sources */,
+				0D183650A2D88CB6DAD886030A3A2B62 /* OCMBoxedReturnValueProvider.m in Sources */,
+				B200AEB2373802A1B871987A18D08F75 /* OCMConstraint.m in Sources */,
+				915751C97068AF644D3FE4498633DAB1 /* OCMExceptionReturnValueProvider.m in Sources */,
+				13A1051CA96D84674E588FECAF52DD43 /* OCMExpectationRecorder.m in Sources */,
+				3D1CB7A4AB9B00BC95F06CF858F18BCE /* OCMFunctions.m in Sources */,
+				7D94DE66B8B5E3B4A0B5E53A88C3FAEE /* OCMIndirectReturnValueProvider.m in Sources */,
+				A59AE6011C58D3D2F009DEF7F5AA259B /* OCMInvocationExpectation.m in Sources */,
+				54471D429F63760B736E52506A0B861B /* OCMInvocationMatcher.m in Sources */,
+				B33B6DFAA43992C898AF6D4F1C539A8A /* OCMInvocationStub.m in Sources */,
+				EFC1318446EB79DC091867000F45D61C /* OCMLocation.m in Sources */,
+				D9C7A57A574090442C8631BA856B1599 /* OCMMacroState.m in Sources */,
+				4F4A7459D96FDABBAB640D1D1B1BB42E /* OCMNotificationPoster.m in Sources */,
+				74BC62D6FEB722F4976016FD4DCA870B /* OCMObserverRecorder.m in Sources */,
+				24394811C369F117D75337F436C81222 /* OCMock-dummy.m in Sources */,
+				C65A28088F0668711386816290C3880E /* OCMockObject.m in Sources */,
+				4E8250BDB662F542F9294F6941333373 /* OCMPassByRefSetter.m in Sources */,
+				58FB50DB554239F854ECBEC3C86F3A92 /* OCMRealObjectForwarder.m in Sources */,
+				0AEAD2BEB61CCA26BB0798F2E527BF84 /* OCMRecorder.m in Sources */,
+				A9571E56544CD912F0DA62E545DB2419 /* OCMReturnValueProvider.m in Sources */,
+				0E32A8C1B69250199C8EC0794CF3A3B6 /* OCMStubRecorder.m in Sources */,
+				13AA024ACA7FE3FAD7E0FFD5AC77370D /* OCMVerifier.m in Sources */,
+				82558AE4441757075270A8A260B34EC9 /* OCObserverMockObject.m in Sources */,
+				543D9D71DD92175A9CC5F0831CF2A028 /* OCPartialMockObject.m in Sources */,
+				E4070427AD7F08E573CAA22DCEB79FB1 /* OCProtocolMockObject.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		25CCDDAA0417070648672AF3BA5F8757 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FXBlurView;
+			target = BD5BFC2F630B07DE8A20EBC90A7C8D49 /* FXBlurView */;
+			targetProxy = AA2A9A70E04C5029D63A17A437CE8B94 /* PBXContainerItemProxy */;
+		};
+		346DFF762D8490E3BE8A7FE8FDB2268F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MLUI;
+			target = 2B45D666DABB464D83D203554EE4AA8B /* MLUI */;
+			targetProxy = 3E82100184273959FA47BD9C39B78CC6 /* PBXContainerItemProxy */;
+		};
+		81DB1213327358A87EEC02CFC7AFB92D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JRSwizzle;
+			target = F5E7B86C60FCB91858074F7C2F733BE5 /* JRSwizzle */;
+			targetProxy = E6803DB9C2BEB21C9498792F14148B7F /* PBXContainerItemProxy */;
+		};
+		C233C0DF37285CB6B81C96707CE331AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FXBlurView;
+			target = BD5BFC2F630B07DE8A20EBC90A7C8D49 /* FXBlurView */;
+			targetProxy = F7E24BC916713879CB115BC721B086B0 /* PBXContainerItemProxy */;
+		};
+		C8485284D6F0CEDF3F0528A9D8C6B0D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JRSwizzle;
+			target = F5E7B86C60FCB91858074F7C2F733BE5 /* JRSwizzle */;
+			targetProxy = A53067D0531DE6CA935FCE84B3AC3054 /* PBXContainerItemProxy */;
+		};
+		FF775D5C825DA83C208905AE51EC1EE5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OCMock;
+			target = DC54C98851E54D349520C786701A1845 /* OCMock */;
+			targetProxy = FA5A39036D587A27C7BDFA4B9DBA6F02 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D8E884397DAB7299F64E1FB808F4C26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7251202E9643063FAA52C9BB5140F9E /* MLUI.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MLUI/MLUI-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MLUI/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MLUI/MLUI.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = MLUI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1F38A38ECADEC0F3F6C9A9ED89B6A644 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7251202E9643063FAA52C9BB5140F9E /* MLUI.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MLUI/MLUI-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MLUI/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MLUI/MLUI.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MLUI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3890D7C92DE120C2BA762135796CFA80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A4110F0027954F74505F0BBA7127173 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C4277DEFA6775934F5D2F6CB9728678 /* Pods-MLUI.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MLUI/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MLUI/Pods-MLUI.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MLUI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3BADA370475E93942AD0153572E1B595 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		3C75404FEA142BBCBF2C869F3186B8D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E372564B23F62E3B15C77423F52B6F1 /* Pods-MLUIUnitTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MLUIUnitTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MLUIUnitTests/Pods-MLUIUnitTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MLUIUnitTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6DE5B3375C9E050CD1209AC75925FCA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 242EBAF232133CA29890E1F68E81E14F /* FXBlurView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FXBlurView/FXBlurView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FXBlurView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FXBlurView/FXBlurView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FXBlurView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6FAF0EDD4B94D2A8AFA7492285ECA305 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 957AE6B4DDAE0CCAAC4CC3DC69FA5757 /* JRSwizzle.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JRSwizzle/JRSwizzle-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JRSwizzle/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JRSwizzle/JRSwizzle.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = JRSwizzle;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		869945AF35AA5E0F69EA8AF46E706B8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EDA486CBB9F5E9587DE14FBE0E939AF /* Pods-MLUI.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MLUI/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MLUI/Pods-MLUI.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MLUI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9FEDE87523EE46A06030C00495B6507F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FD7588A10D46FFFA5368DF36AC64AAC /* OCMock.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/OCMock/OCMock-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OCMock/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OCMock/OCMock.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = OCMock;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B86C8EFC0265BE57DEBB10C744F12E9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 242EBAF232133CA29890E1F68E81E14F /* FXBlurView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FXBlurView/FXBlurView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FXBlurView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FXBlurView/FXBlurView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FXBlurView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C4E0AEE4B800808F069B28C1D7C1CED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FD7588A10D46FFFA5368DF36AC64AAC /* OCMock.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/OCMock/OCMock-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OCMock/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OCMock/OCMock.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = OCMock;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F5C3F7F8FA9970498EAB475F01A6ADB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B7B8640A814972F51735087D1CD1288 /* Pods-MLUIUnitTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MLUIUnitTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MLUIUnitTests/Pods-MLUIUnitTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MLUIUnitTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F85B25972925F56E7A070553F2CB5C48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 957AE6B4DDAE0CCAAC4CC3DC69FA5757 /* JRSwizzle.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JRSwizzle/JRSwizzle-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JRSwizzle/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JRSwizzle/JRSwizzle.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = JRSwizzle;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BADA370475E93942AD0153572E1B595 /* Debug */,
+				3890D7C92DE120C2BA762135796CFA80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		31E2A65526BDC04060B2E2A32A075EE0 /* Build configuration list for PBXNativeTarget "Pods-MLUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A4110F0027954F74505F0BBA7127173 /* Debug */,
+				869945AF35AA5E0F69EA8AF46E706B8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66BF5D098CC41FB720E02D278FC85541 /* Build configuration list for PBXNativeTarget "Pods-MLUIUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C75404FEA142BBCBF2C869F3186B8D1 /* Debug */,
+				F5C3F7F8FA9970498EAB475F01A6ADB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AD9B7CA019B1DC5B03042AB5E2C1CB3 /* Build configuration list for PBXNativeTarget "FXBlurView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B86C8EFC0265BE57DEBB10C744F12E9A /* Debug */,
+				6DE5B3375C9E050CD1209AC75925FCA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FC436B38606CB83E6BF2F19F5F11A78 /* Build configuration list for PBXNativeTarget "MLUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D8E884397DAB7299F64E1FB808F4C26 /* Debug */,
+				1F38A38ECADEC0F3F6C9A9ED89B6A644 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE8BA48E64C0BE4DC719C4BAE69F06A8 /* Build configuration list for PBXNativeTarget "OCMock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4E0AEE4B800808F069B28C1D7C1CED2 /* Debug */,
+				9FEDE87523EE46A06030C00495B6507F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFB7E4A191A2188BE7C8E30FE682DB2E /* Build configuration list for PBXNativeTarget "JRSwizzle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F85B25972925F56E7A070553F2CB5C48 /* Debug */,
+				6FAF0EDD4B94D2A8AFA7492285ECA305 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MLTextViewController">
+            <connections>
+                <outlet property="customEmptyTextView" destination="iiL-3Q-fbp" id="He4-Qf-ddZ"/>
+                <outlet property="customFixedSizeTextView" destination="MTo-PH-IiC" id="JZF-hw-2iE"/>
+                <outlet property="customFontTextView" destination="sKd-LO-J0B" id="NxD-i7-Xk0"/>
+                <outlet property="customPlaceholderTextView" destination="d2b-UJ-JyF" id="QkC-rt-K4a"/>
+                <outlet property="customTextAndPlaceholderTextView" destination="zYv-5q-Doe" id="XPR-Ix-f0Z"/>
+                <outlet property="customTextTextView" destination="PB5-tt-GVA" id="CHg-aL-7ck"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="Qd9-hM-oRn">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dA-bd-9fK">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="953.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1) With placeholder, min=1, max=3:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMR-i5-jOh">
+                                    <rect key="frame" x="20" y="21" width="335" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d2b-UJ-JyF" userLabel="Placeholder 1-3" customClass="MLTextView">
+                                    <rect key="frame" x="20" y="43.5" width="335" height="33"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="750" constant="33" id="psv-6F-WY4"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Has placeholder"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="minLines">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="maxLines">
+                                            <integer key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="flexibleSize" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2) With text + placeholder, min=1, max=1:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoK-2m-NUc">
+                                    <rect key="frame" x="20" y="100.5" width="335" height="15"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYv-5q-Doe" userLabel="Text + Placeholder 1-1" customClass="MLTextView">
+                                    <rect key="frame" x="20" y="123.5" width="335" height="33"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="750" constant="33" id="Ps5-n8-Sn0"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Secret placeholder"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3) With text only, min=3, max=5:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tY5-Df-IkF">
+                                    <rect key="frame" x="20" y="180.5" width="335" height="15"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PB5-tt-GVA" userLabel="Text  3-5" customClass="MLTextView">
+                                    <rect key="frame" x="20" y="203.5" width="335" height="33"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="750" constant="33" id="CMP-LY-zCD"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="minLines">
+                                            <integer key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="maxLines">
+                                            <integer key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="flexibleSize" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4) Without nothing, min=2, max=2:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVX-XK-GoL">
+                                    <rect key="frame" x="20" y="260.5" width="335" height="15"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiL-3Q-fbp" userLabel="Has nothing" customClass="MLTextView">
+                                    <rect key="frame" x="20" y="283.5" width="335" height="33"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="750" constant="33" id="W1Q-xc-apU"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="minLines">
+                                            <integer key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="maxLines">
+                                            <integer key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5) With text + placeholder + custom font, min=1, max=4:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcW-ce-3fD">
+                                    <rect key="frame" x="20" y="340.5" width="335" height="15"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKd-LO-J0B" userLabel="Customized from code" customClass="MLTextView">
+                                    <rect key="frame" x="20" y="363.5" width="335" height="33"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="750" constant="33" id="ExU-je-ZTV"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="minLines">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="maxLines">
+                                            <integer key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="A placeholder"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6) Fixed size (flexibleSize = NO), height=90:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1H-Ht-vhP">
+                                    <rect key="frame" x="20" y="420.5" width="335" height="15"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MTo-PH-IiC" userLabel="Customized from code" customClass="MLTextView">
+                                    <rect key="frame" x="20" y="443.5" width="335" height="90"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="750" constant="90" id="JOc-Zz-gUT"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="minLines">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="maxLines">
+                                            <integer key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="A placeholder"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="sizeToFit" value="NO"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="flexibleSize" value="NO"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                            <constraints>
+                                <constraint firstItem="iiL-3Q-fbp" firstAttribute="leading" secondItem="6dA-bd-9fK" secondAttribute="leading" constant="20" id="2h1-8h-6r7"/>
+                                <constraint firstAttribute="trailing" secondItem="YcW-ce-3fD" secondAttribute="trailing" constant="20" id="8Na-63-jCX"/>
+                                <constraint firstItem="sKd-LO-J0B" firstAttribute="leading" secondItem="6dA-bd-9fK" secondAttribute="leading" constant="20" id="8iH-qu-26M"/>
+                                <constraint firstAttribute="trailing" secondItem="cVX-XK-GoL" secondAttribute="trailing" constant="20" id="BSR-Rf-vrZ"/>
+                                <constraint firstAttribute="bottom" secondItem="MTo-PH-IiC" secondAttribute="bottom" constant="420" id="DfA-ZC-bIg"/>
+                                <constraint firstItem="YcW-ce-3fD" firstAttribute="top" secondItem="iiL-3Q-fbp" secondAttribute="bottom" constant="24" id="E1Y-TR-I1b"/>
+                                <constraint firstItem="iiL-3Q-fbp" firstAttribute="top" secondItem="cVX-XK-GoL" secondAttribute="bottom" constant="8" id="GvV-LD-ET0"/>
+                                <constraint firstItem="TMR-i5-jOh" firstAttribute="leading" secondItem="6dA-bd-9fK" secondAttribute="leading" constant="20" id="IRf-3T-Me0"/>
+                                <constraint firstItem="d2b-UJ-JyF" firstAttribute="leading" secondItem="6dA-bd-9fK" secondAttribute="leading" constant="20" id="JD0-E1-cbk"/>
+                                <constraint firstAttribute="trailing" secondItem="iiL-3Q-fbp" secondAttribute="trailing" constant="20" id="Jj3-Z0-AkI"/>
+                                <constraint firstItem="tY5-Df-IkF" firstAttribute="leading" secondItem="6dA-bd-9fK" secondAttribute="leading" constant="20" id="KJm-Ws-lvu"/>
+                                <constraint firstItem="PB5-tt-GVA" firstAttribute="top" secondItem="tY5-Df-IkF" secondAttribute="bottom" constant="8" id="Mhe-sR-Ng8"/>
+                                <constraint firstAttribute="trailing" secondItem="sKd-LO-J0B" secondAttribute="trailing" constant="20" id="OAT-Y2-sqt"/>
+                                <constraint firstItem="sKd-LO-J0B" firstAttribute="top" secondItem="YcW-ce-3fD" secondAttribute="bottom" constant="8" id="PF5-LT-8nb"/>
+                                <constraint firstItem="hoK-2m-NUc" firstAttribute="top" secondItem="d2b-UJ-JyF" secondAttribute="bottom" constant="24" id="Pnw-h4-7jj"/>
+                                <constraint firstItem="zYv-5q-Doe" firstAttribute="leading" secondItem="6dA-bd-9fK" secondAttribute="leading" constant="20" id="SMB-cy-9s3"/>
+                                <constraint firstAttribute="trailing" secondItem="MTo-PH-IiC" secondAttribute="trailing" constant="20" id="UM7-d0-Atk"/>
+                                <constraint firstItem="cVX-XK-GoL" firstAttribute="top" secondItem="PB5-tt-GVA" secondAttribute="bottom" constant="24" id="UwB-oJ-sW6"/>
+                                <constraint firstAttribute="trailing" secondItem="h1H-Ht-vhP" secondAttribute="trailing" constant="20" id="Ylf-0Y-BAM"/>
+                                <constraint firstItem="zYv-5q-Doe" firstAttribute="top" secondItem="hoK-2m-NUc" secondAttribute="bottom" constant="8" id="ZjU-gL-iby"/>
+                                <constraint firstAttribute="trailing" secondItem="d2b-UJ-JyF" secondAttribute="trailing" constant="20" id="cPb-2v-gwZ"/>
+                                <constraint firstItem="PB5-tt-GVA" firstAttribute="leading" secondItem="6dA-bd-9fK" secondAttribute="leading" constant="20" id="dQj-RP-Ytv"/>
+                                <constraint firstAttribute="trailing" secondItem="tY5-Df-IkF" secondAttribute="trailing" constant="20" id="dmV-p7-Jgl"/>
+                                <constraint firstItem="YcW-ce-3fD" firstAttribute="leading" secondItem="6dA-bd-9fK" secondAttribute="leading" constant="20" id="dp1-Np-X3z"/>
+                                <constraint firstAttribute="trailing" secondItem="TMR-i5-jOh" secondAttribute="trailing" constant="20" id="eBt-2U-N44"/>
+                                <constraint firstItem="d2b-UJ-JyF" firstAttribute="top" secondItem="TMR-i5-jOh" secondAttribute="bottom" constant="8" id="g02-la-iHl"/>
+                                <constraint firstItem="h1H-Ht-vhP" firstAttribute="top" secondItem="sKd-LO-J0B" secondAttribute="bottom" constant="24" id="jOe-hd-F04"/>
+                                <constraint firstItem="cVX-XK-GoL" firstAttribute="leading" secondItem="6dA-bd-9fK" secondAttribute="leading" constant="20" id="lWT-6l-ELx"/>
+                                <constraint firstItem="MTo-PH-IiC" firstAttribute="top" secondItem="h1H-Ht-vhP" secondAttribute="bottom" constant="8" id="odA-x2-MUt"/>
+                                <constraint firstAttribute="trailing" secondItem="hoK-2m-NUc" secondAttribute="trailing" constant="20" id="psd-dM-wvG"/>
+                                <constraint firstAttribute="trailing" secondItem="zYv-5q-Doe" secondAttribute="trailing" constant="20" id="qND-jg-YeP"/>
+                                <constraint firstItem="TMR-i5-jOh" firstAttribute="top" secondItem="6dA-bd-9fK" secondAttribute="top" constant="21" id="qi6-BH-YmA"/>
+                                <constraint firstItem="h1H-Ht-vhP" firstAttribute="leading" secondItem="6dA-bd-9fK" secondAttribute="leading" constant="20" id="r8t-3N-pho"/>
+                                <constraint firstAttribute="trailing" secondItem="PB5-tt-GVA" secondAttribute="trailing" constant="20" id="sH3-vR-egW"/>
+                                <constraint firstItem="MTo-PH-IiC" firstAttribute="leading" secondItem="6dA-bd-9fK" secondAttribute="leading" constant="20" id="w69-eG-0xE"/>
+                                <constraint firstItem="tY5-Df-IkF" firstAttribute="top" secondItem="zYv-5q-Doe" secondAttribute="bottom" constant="24" id="xMu-9Q-JtW"/>
+                                <constraint firstItem="hoK-2m-NUc" firstAttribute="leading" secondItem="6dA-bd-9fK" secondAttribute="leading" constant="20" id="zuw-Jl-GXv"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="6dA-bd-9fK" secondAttribute="bottom" id="BVd-bu-Qb8"/>
+                        <constraint firstItem="6dA-bd-9fK" firstAttribute="leading" secondItem="Qd9-hM-oRn" secondAttribute="leading" id="CCw-KR-Oqy"/>
+                        <constraint firstItem="6dA-bd-9fK" firstAttribute="centerX" secondItem="Qd9-hM-oRn" secondAttribute="centerX" id="Gdd-v5-XUl"/>
+                        <constraint firstAttribute="trailing" secondItem="6dA-bd-9fK" secondAttribute="trailing" id="ipd-5t-Dcz"/>
+                        <constraint firstItem="6dA-bd-9fK" firstAttribute="top" secondItem="Qd9-hM-oRn" secondAttribute="top" id="m9K-ni-FEz"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Qd9-hM-oRn" secondAttribute="trailing" id="S3k-vu-twk"/>
+                <constraint firstAttribute="bottom" secondItem="Qd9-hM-oRn" secondAttribute="bottom" id="aBL-Ks-gJM"/>
+                <constraint firstItem="Qd9-hM-oRn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gOp-QG-lsH"/>
+                <constraint firstItem="Qd9-hM-oRn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="w0p-Ac-dzL"/>
+            </constraints>
+            <point key="canvasLocation" x="50.5" y="55.5"/>
+        </view>
+    </objects>
+</document>

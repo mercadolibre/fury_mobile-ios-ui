@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MLHtmlViewController">
+            <connections>
+                <outlet property="button" destination="Iz9-lw-vor" id="eNF-UU-fUH"/>
+                <outlet property="label" destination="4TS-kT-PfV" id="41e-jw-H98"/>
+                <outlet property="textView" destination="UdM-cJ-mSx" id="jzX-2f-Y95"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingrese su texto en formato html" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sb5-ku-ggy">
+                    <rect key="frame" x="176" y="40" width="248" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="WIS-lF-Dal"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UdM-cJ-mSx">
+                    <rect key="frame" x="16" y="96" width="568" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="1vK-bA-t75"/>
+                    </constraints>
+                    <string key="text">&lt;font color="#333333"&gt;&lt;b&gt;&lt;big&gt;¡No te lo pierdas!&lt;/big&gt;&lt;/b&gt; &lt;font color="#ff0000"&gt;&lt;u&gt;&lt;s&gt;Siguen&lt;/s&gt;&lt;/u&gt;&lt;/font&gt; Mega Ofertas 60%&lt;small&gt;OFF&lt;/small&gt;&lt;/font&gt;
+</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iz9-lw-vor">
+                    <rect key="frame" x="272" y="162" width="56" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="t9b-nH-yEg"/>
+                    </constraints>
+                    <state key="normal" title="Generar"/>
+                    <connections>
+                        <action selector="buttonTouchUpInside:" destination="-1" eventType="touchUpInside" id="rk3-P1-0U4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXV-Hs-Fan">
+                    <rect key="frame" x="227" y="218" width="146" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="vhU-WS-IWe"/>
+                    </constraints>
+                    <state key="normal" title="Generar con protocol"/>
+                    <connections>
+                        <action selector="buttonTouchUpInsideWithProtocol:" destination="-1" eventType="touchUpInside" id="XyE-Ig-lCI"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TS-kT-PfV">
+                    <rect key="frame" x="300" y="296" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="UdM-cJ-mSx" secondAttribute="trailing" constant="16" id="7dl-0q-yAb"/>
+                <constraint firstItem="Iz9-lw-vor" firstAttribute="top" secondItem="UdM-cJ-mSx" secondAttribute="bottom" constant="16" id="AdA-1N-tDk"/>
+                <constraint firstItem="uXV-Hs-Fan" firstAttribute="top" secondItem="Iz9-lw-vor" secondAttribute="bottom" constant="8" id="GZu-vE-zTH"/>
+                <constraint firstItem="4TS-kT-PfV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JPp-58-3as"/>
+                <constraint firstItem="Iz9-lw-vor" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KvE-d4-WOq"/>
+                <constraint firstItem="UdM-cJ-mSx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MBd-VH-udq"/>
+                <constraint firstItem="uXV-Hs-Fan" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="PN7-g9-DC4"/>
+                <constraint firstItem="4TS-kT-PfV" firstAttribute="top" secondItem="uXV-Hs-Fan" secondAttribute="bottom" constant="30" id="RTf-zn-S9c"/>
+                <constraint firstItem="4TS-kT-PfV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="UcZ-ZI-9C2"/>
+                <constraint firstItem="sb5-ku-ggy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="aSp-L6-7Fc"/>
+                <constraint firstItem="UdM-cJ-mSx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="eUH-Ct-CXh"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4TS-kT-PfV" secondAttribute="bottom" constant="16" id="enX-hh-Cyx"/>
+                <constraint firstItem="sb5-ku-ggy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kwn-6L-3lQ"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4TS-kT-PfV" secondAttribute="trailing" constant="30" id="sik-wC-uF5"/>
+                <constraint firstItem="UdM-cJ-mSx" firstAttribute="top" secondItem="sb5-ku-ggy" secondAttribute="bottom" constant="8" id="uh7-HA-BBQ"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

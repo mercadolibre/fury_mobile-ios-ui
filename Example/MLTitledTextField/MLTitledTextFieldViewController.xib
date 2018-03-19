@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MLTitledTextFieldViewController">
+            <connections>
+                <outlet property="scrollView" destination="P2o-1J-LLS" id="YER-jL-gDT"/>
+                <outlet property="textField1" destination="ZcJ-1b-FDZ" id="SrX-WZ-08g"/>
+                <outlet property="textField2" destination="cCH-L2-bld" id="qzR-tS-7fV"/>
+                <outlet property="textFieldAlignCenter" destination="0Ay-BT-CLQ" id="AWB-ja-cnf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2o-1J-LLS">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="621"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="76" translatesAutoresizingMaskIntoConstraints="NO" id="ZcJ-1b-FDZ" customClass="MLTitledSingleLineTextField">
+                            <rect key="frame" x="8" y="30" width="359" height="76"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Textfield sin limite"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="un placeholder"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="charactersCountVisible" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="SRz-Nx-o9e"/>
+                                <outlet property="accessoryView" destination="ha4-pu-GFt" id="XvP-2X-9r3"/>
+                                <outlet property="delegate" destination="-1" id="4hT-wX-cia"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="76" translatesAutoresizingMaskIntoConstraints="NO" id="cCH-L2-bld" customClass="MLTitledMultiLineTextField">
+                            <rect key="frame" x="8" y="148" width="359" height="76"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Textfield dos lineas"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="el placeholder"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="maxLines">
+                                    <integer key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="charactersCountVisible" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="maxCharacters">
+                                    <integer key="value" value="200"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="scrollEnabled" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="767-ZH-61P"/>
+                                <outlet property="delegate" destination="-1" id="saW-Jy-YRF"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="76" translatesAutoresizingMaskIntoConstraints="NO" id="EF5-Vh-BMO" customClass="MLTitledSingleLineTextField">
+                            <rect key="frame" x="8" y="266" width="359" height="76"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enabled" value="YES"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="No title"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="maxCharacters">
+                                    <integer key="value" value="30"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="charactersCountVisible" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="Evb-rw-HvS"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="76" translatesAutoresizingMaskIntoConstraints="NO" id="sJe-NM-Qp1" customClass="MLTitledMultiLineTextField">
+                            <rect key="frame" x="8" y="384" width="359" height="76"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="76" id="fHT-Ux-C4w"/>
+                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="tJs-7M-cb6"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Textfield lineas ilimitadas"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="maxLines">
+                                    <integer key="value" value="0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enabled" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="fHJ-fe-M4n"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="76" translatesAutoresizingMaskIntoConstraints="NO" id="hNH-d0-dSL" customClass="MLTitledSingleLineTextField">
+                            <rect key="frame" x="8" y="502" width="359" height="76"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Textfield limite 10 caracteres"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="maxCharacters">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="hlS-We-Vub"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="76" translatesAutoresizingMaskIntoConstraints="NO" id="zjG-Ig-vo1" customClass="MLTitledMultiLineTextField">
+                            <rect key="frame" x="8" y="620" width="359" height="76"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Textfield multiline 60 caracteres"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="maxCharacters">
+                                    <integer key="value" value="60"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="oNa-7R-O0g"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="76" translatesAutoresizingMaskIntoConstraints="NO" id="sHA-iF-t0h" userLabel="Disabled text field" customClass="MLTitledMultiLineTextField">
+                            <rect key="frame" x="8" y="738" width="359" height="76"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Disabled multiline text field"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="maxCharacters">
+                                    <integer key="value" value="60"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enabled" value="NO"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Disabled state"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="rPI-gA-BZF"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="76" translatesAutoresizingMaskIntoConstraints="NO" id="0Ay-BT-CLQ" userLabel="Text Field Align Center" customClass="MLTitledSingleLineTextField">
+                            <rect key="frame" x="8" y="856" width="351" height="76"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Text Field Align Center"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="maxCharacters">
+                                    <integer key="value" value="60"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="l"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="sUG-JQ-vx3"/>
+                            </connections>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ha4-pu-GFt">
+                            <rect key="frame" x="264" y="53" width="142" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Accessory button"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wu0-NA-T0p">
+                            <rect key="frame" x="142" y="114" width="74" height="30"/>
+                            <state key="normal" title="add helper"/>
+                            <connections>
+                                <action selector="addHelperDescription:" destination="-1" eventType="touchUpInside" id="kMw-3M-XaV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Nt-hV-kZC">
+                            <rect key="frame" x="34" y="114" width="71" height="30"/>
+                            <state key="normal" title="Add count"/>
+                            <connections>
+                                <action selector="addCharCount:" destination="-1" eventType="touchUpInside" id="h8P-Wu-6mq"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="EF5-Vh-BMO" firstAttribute="top" secondItem="cCH-L2-bld" secondAttribute="bottom" constant="42" id="08U-lj-ZcI"/>
+                        <constraint firstItem="sHA-iF-t0h" firstAttribute="top" secondItem="zjG-Ig-vo1" secondAttribute="bottom" constant="42" id="0Dn-lH-UXu"/>
+                        <constraint firstItem="0Ay-BT-CLQ" firstAttribute="top" secondItem="sHA-iF-t0h" secondAttribute="bottom" constant="42" id="1bm-N9-2vy"/>
+                        <constraint firstItem="zjG-Ig-vo1" firstAttribute="leading" secondItem="hNH-d0-dSL" secondAttribute="leading" id="2N4-zs-4am"/>
+                        <constraint firstItem="hNH-d0-dSL" firstAttribute="leading" secondItem="sJe-NM-Qp1" secondAttribute="leading" id="3Tv-EP-yZu"/>
+                        <constraint firstAttribute="trailing" secondItem="0Ay-BT-CLQ" secondAttribute="trailing" constant="8" id="98M-zE-MKf"/>
+                        <constraint firstItem="EF5-Vh-BMO" firstAttribute="trailing" secondItem="cCH-L2-bld" secondAttribute="trailing" id="COW-s8-s28"/>
+                        <constraint firstItem="zjG-Ig-vo1" firstAttribute="trailing" secondItem="hNH-d0-dSL" secondAttribute="trailing" id="Dr8-ce-RWp"/>
+                        <constraint firstItem="cCH-L2-bld" firstAttribute="leading" secondItem="ZcJ-1b-FDZ" secondAttribute="leading" id="FSw-cw-01q"/>
+                        <constraint firstItem="cCH-L2-bld" firstAttribute="top" secondItem="ZcJ-1b-FDZ" secondAttribute="bottom" constant="42" id="Gyk-8H-yGi"/>
+                        <constraint firstItem="sJe-NM-Qp1" firstAttribute="top" secondItem="EF5-Vh-BMO" secondAttribute="bottom" constant="42" id="Kws-od-Ybn"/>
+                        <constraint firstAttribute="trailing" secondItem="ZcJ-1b-FDZ" secondAttribute="trailing" id="QDl-Sr-kai"/>
+                        <constraint firstItem="sJe-NM-Qp1" firstAttribute="leading" secondItem="EF5-Vh-BMO" secondAttribute="leading" id="RK0-4J-uP9"/>
+                        <constraint firstItem="ZcJ-1b-FDZ" firstAttribute="top" secondItem="P2o-1J-LLS" secondAttribute="top" constant="30" id="RNJ-G5-llC"/>
+                        <constraint firstAttribute="bottom" secondItem="0Ay-BT-CLQ" secondAttribute="bottom" constant="40" id="TTD-sT-rVA"/>
+                        <constraint firstItem="zjG-Ig-vo1" firstAttribute="top" secondItem="hNH-d0-dSL" secondAttribute="bottom" constant="42" id="Uh6-49-En1"/>
+                        <constraint firstItem="EF5-Vh-BMO" firstAttribute="leading" secondItem="cCH-L2-bld" secondAttribute="leading" id="Utb-1R-YaT"/>
+                        <constraint firstItem="hNH-d0-dSL" firstAttribute="trailing" secondItem="sJe-NM-Qp1" secondAttribute="trailing" id="X3N-Tc-IBZ"/>
+                        <constraint firstItem="sHA-iF-t0h" firstAttribute="leading" secondItem="zjG-Ig-vo1" secondAttribute="leading" id="Yio-eS-cth"/>
+                        <constraint firstItem="ZcJ-1b-FDZ" firstAttribute="leading" secondItem="P2o-1J-LLS" secondAttribute="leading" constant="8" id="cg6-8j-p7b"/>
+                        <constraint firstItem="6Nt-hV-kZC" firstAttribute="top" secondItem="ZcJ-1b-FDZ" secondAttribute="bottom" constant="8" id="dqc-fM-4sf"/>
+                        <constraint firstItem="cCH-L2-bld" firstAttribute="trailing" secondItem="ZcJ-1b-FDZ" secondAttribute="trailing" id="f4x-yK-Avq"/>
+                        <constraint firstItem="sJe-NM-Qp1" firstAttribute="trailing" secondItem="EF5-Vh-BMO" secondAttribute="trailing" id="h4M-XF-jC1"/>
+                        <constraint firstItem="6Nt-hV-kZC" firstAttribute="leading" secondItem="P2o-1J-LLS" secondAttribute="leading" constant="34" id="nLo-PA-s6h"/>
+                        <constraint firstItem="hNH-d0-dSL" firstAttribute="top" secondItem="sJe-NM-Qp1" secondAttribute="bottom" constant="42" id="ome-bY-dDP"/>
+                        <constraint firstItem="wu0-NA-T0p" firstAttribute="leading" secondItem="6Nt-hV-kZC" secondAttribute="trailing" constant="37" id="wEs-3H-Em8"/>
+                        <constraint firstItem="sHA-iF-t0h" firstAttribute="trailing" secondItem="zjG-Ig-vo1" secondAttribute="trailing" id="yTA-Gj-MYL"/>
+                        <constraint firstItem="0Ay-BT-CLQ" firstAttribute="leading" secondItem="P2o-1J-LLS" secondAttribute="leading" constant="8" id="zCz-4V-9la"/>
+                        <constraint firstItem="wu0-NA-T0p" firstAttribute="top" secondItem="ZcJ-1b-FDZ" secondAttribute="bottom" constant="8" id="zY1-kd-8Hm"/>
+                    </constraints>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAv-wm-cNf">
+                    <rect key="frame" x="8" y="629" width="73" height="30"/>
+                    <state key="normal" title="Add errors"/>
+                    <connections>
+                        <action selector="addErrors:" destination="-1" eventType="touchUpInside" id="2jH-th-oDZ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="P2o-1J-LLS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3EE-1z-LMU"/>
+                <constraint firstItem="ZcJ-1b-FDZ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" constant="-16" id="45f-05-wy6"/>
+                <constraint firstAttribute="bottom" secondItem="YAv-wm-cNf" secondAttribute="bottom" constant="8" id="L4M-z0-gnE"/>
+                <constraint firstItem="YAv-wm-cNf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Ohm-oc-g3L"/>
+                <constraint firstItem="P2o-1J-LLS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XK0-02-e2S"/>
+                <constraint firstAttribute="trailing" secondItem="P2o-1J-LLS" secondAttribute="trailing" id="bdE-t5-dZU"/>
+                <constraint firstItem="YAv-wm-cNf" firstAttribute="top" secondItem="P2o-1J-LLS" secondAttribute="bottom" constant="8" id="zj0-6E-q04"/>
+            </constraints>
+            <point key="canvasLocation" x="74" y="296"/>
+        </view>
+    </objects>
+</document>

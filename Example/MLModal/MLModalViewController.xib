@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MLModalViewController">
+            <connections>
+                <outlet property="modalMP" destination="P8a-2z-OTG" id="vli-Us-efx"/>
+                <outlet property="modalWithButtons" destination="udA-21-aOn" id="zi3-X3-G3d"/>
+                <outlet property="modalWithTitle" destination="Id3-uP-mMN" id="ft7-Z3-SAo"/>
+                <outlet property="plainModal" destination="Ph8-qS-c4a" id="9FP-KC-DaJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ph8-qS-c4a" customClass="MLButton">
+                    <rect key="frame" x="37.5" y="77" width="300" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="DQt-OX-qYN"/>
+                        <constraint firstAttribute="height" constant="48" id="Pxm-mp-1xX"/>
+                    </constraints>
+                    <connections>
+                        <action selector="showPlainModal:" destination="-1" eventType="touchUpInside" id="uPf-JP-iBK"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Id3-uP-mMN" customClass="MLButton">
+                    <rect key="frame" x="37" y="141" width="300" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="J1y-v5-ipE"/>
+                        <constraint firstAttribute="height" constant="48" id="YFf-O4-Hju"/>
+                    </constraints>
+                    <connections>
+                        <action selector="showTitleModal:" destination="-1" eventType="touchUpInside" id="M6D-2D-rEW"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udA-21-aOn" customClass="MLButton">
+                    <rect key="frame" x="37.5" y="203" width="300" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="aBL-eM-h3F"/>
+                        <constraint firstAttribute="width" constant="300" id="cPl-fl-Hfa"/>
+                    </constraints>
+                    <connections>
+                        <action selector="showButtonModal:" destination="-1" eventType="touchUpInside" id="QNS-Ci-5YH"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8a-2z-OTG" customClass="MLButton">
+                    <rect key="frame" x="37" y="265" width="300" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="6pX-Ew-eFi"/>
+                        <constraint firstAttribute="height" constant="48" id="K14-lH-ztv"/>
+                    </constraints>
+                    <connections>
+                        <action selector="showModalMP:" destination="-2" eventType="touchUpInside" id="o8e-1w-wib"/>
+                    </connections>
+                </view>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VAM-JN-N15">
+                    <rect key="frame" x="139" y="377" width="97" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="97" id="Evj-mX-O4M"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MLUIdeal_flag_small_bg" translatesAutoresizingMaskIntoConstraints="NO" id="G2j-1I-VmM">
+                    <rect key="frame" x="67.5" y="421" width="240" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="ICc-Ue-WI9"/>
+                        <constraint firstAttribute="height" constant="128" id="brl-J2-otU"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOLA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBN-0D-B8Q">
+                    <rect key="frame" x="164.5" y="571" width="46" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Fpk-dM-XDa"/>
+                        <constraint firstAttribute="width" constant="46" id="Kdi-rN-ZDK"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="eQL-sW-TMY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="IBN-0D-B8Q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="17O-1z-dbY"/>
+                <constraint firstItem="Id3-uP-mMN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AM9-qi-abf"/>
+                <constraint firstItem="VAM-JN-N15" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BbF-4R-69y"/>
+                <constraint firstItem="Id3-uP-mMN" firstAttribute="top" secondItem="Ph8-qS-c4a" secondAttribute="bottom" constant="16" id="DSH-Qs-YI4"/>
+                <constraint firstItem="G2j-1I-VmM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="421" id="EaY-4h-GfA"/>
+                <constraint firstItem="VAM-JN-N15" firstAttribute="top" secondItem="P8a-2z-OTG" secondAttribute="bottom" constant="64" id="MZC-ew-Jgr"/>
+                <constraint firstItem="G2j-1I-VmM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UoC-32-ghL"/>
+                <constraint firstItem="IBN-0D-B8Q" firstAttribute="top" secondItem="G2j-1I-VmM" secondAttribute="bottom" constant="22" id="X7O-oK-fth"/>
+                <constraint firstItem="P8a-2z-OTG" firstAttribute="top" secondItem="udA-21-aOn" secondAttribute="bottom" constant="14" id="XMg-UH-vXj"/>
+                <constraint firstItem="udA-21-aOn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gd0-7B-HJU"/>
+                <constraint firstItem="udA-21-aOn" firstAttribute="top" secondItem="Id3-uP-mMN" secondAttribute="bottom" constant="14" id="hdh-SS-lXM"/>
+                <constraint firstItem="P8a-2z-OTG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pij-pi-pu3"/>
+                <constraint firstItem="Ph8-qS-c4a" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="77" id="q49-ci-BsT"/>
+                <constraint firstItem="Ph8-qS-c4a" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qgI-tW-eOt"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="MLUIdeal_flag_small_bg" width="40" height="13"/>
+    </resources>
+</document>
