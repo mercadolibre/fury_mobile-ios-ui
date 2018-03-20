@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "MLUI"
-  s.version          = "1.0.0"
+  s.version          = "3.2.0"
   s.summary          = "MercadoLibre mobile ios UI components"
   s.homepage         = "https://github.com/mercadolibre"
   s.license          = 'none'
