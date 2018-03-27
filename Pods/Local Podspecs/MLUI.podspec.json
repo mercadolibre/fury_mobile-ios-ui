@@ -1,6 +1,6 @@
 {
   "name": "MLUI",
-  "version": "2.6.8",
+  "version": "3.2.0",
   "summary": "MercadoLibre mobile ios UI components",
   "homepage": "https://github.com/mercadolibre",
   "license": "none",
@@ -8,8 +8,8 @@
     "mobile IT @ meli": "mobile-it@mercadolibre.com"
   },
   "source": {
-    "git": "git@github.com:mercadolibre/mobile-ios_ui.git",
-    "tag": "2.6.8"
+    "git": "git@github.com:mercadolibre/fury_mobile-ios-ui.git",
+    "tag": "3.2.0"
   },
   "platforms": {
     "ios": "7.0"
