@@ -3,8 +3,8 @@ Pod::Spec.new do |s|
   s.version          = "3.2.0"
   s.summary          = "MercadoLibre mobile ios UI components"
   s.homepage         = "https://github.com/mercadolibre"
-  s.license          = 'none'
-  s.author           = { "mobile IT @ meli" => "mobile-it@mercadolibre.com" }
+  s.license          = "Apache License, Version 2.0"
+  s.author           = { "mobile arquitectura @ meli" => "mobile-arquitectura@mercadolibre.com" }
   s.source           = { :git => "git@github.com:mercadolibre/fury_mobile-ios-ui.git", :tag => s.version.to_s }
   s.platform         = :ios, '7.0'
   s.requires_arc     = true

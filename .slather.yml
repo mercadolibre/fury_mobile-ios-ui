@@ -1,0 +1,10 @@
+coverage_service: cobertura_xml
+scheme: MLUIApp
+xcodeproj: MLUI.xcodeproj
+workspace: MLUI.xcworkspace
+source_directory: LibraryComponents
+output_directory: coverage
+ignore:
+  - ../**/*/Xcode*
+  - Example/*  
+  - Pods/*
