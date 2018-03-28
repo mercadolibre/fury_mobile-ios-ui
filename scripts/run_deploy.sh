@@ -1,4 +1,4 @@
 #!/bin/sh
 
 bundle install --gemfile=.fastlane/Gemfile 
-bundle exec fastlane start_deploy
+BUNDLE_GEMFILE=.fastlane/Gemfile bundle exec fastlane start_deploy

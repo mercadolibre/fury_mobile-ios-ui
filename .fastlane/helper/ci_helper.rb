@@ -2,6 +2,8 @@ module CIHelper
     GITHUB_TOKEN = ENV['GITHUB_TOKEN']
     PULL_REQUEST = ENV['CI_PULL_REQUEST'] ? URI(ENV['CI_PULL_REQUEST']).path.split('/').last : "false"
     BUILD_DIR = ENV['CIRCLE_WORKING_DIRECTORY'] ? ENV['CIRCLE_WORKING_DIRECTORY'].gsub(/\~/, "#{ENV['HOME']}") : "#{ENV['HOME']}/#{ENV['CIRCLE_PROJECT_REPONAME']}"
+    REPO_SLUG = "#{ENV['CIRCLE_PROJECT_USERNAME']}/#{ENV['CIRCLE_PROJECT_REPONAME']}"
+    CHANGED_FILES_PATTERS_WHITELIST = ['.pbxproj', 'Podfile.lock']
 
     # Run a given command from the ci build directory
     def self.cd_run(command)
@@ -49,6 +51,20 @@ module CIHelper
         return release_notes
     end
 
+    def self.get_pr_info
+        unless Gem::Specification::find_all_by_name('octokit').any?
+            $stderr.puts "[!] Cannot obtain PR info from GitHub. 'octokit' dependency not found"
+            return nil
+        end
+
+        if @@pr_info == nil
+            require "octokit"
+            client = Octokit::Client.new(access_token: CIHelper::GITHUB_TOKEN)
+            @@pr_info = client.pull_request(REPO_SLUG, PULL_REQUEST)
+        end
+        return @@pr_info
+    end
+
     def self.get_base_branch
         if !PULL_REQUEST.to_s.empty? && PULL_REQUEST != "false"
             begin
@@ -59,5 +75,68 @@ module CIHelper
             end
         end
         return ENV['CIRCLE_BRANCH']
+    end
+
+    def self.is_running_in_ci?
+        return ENV['CIRCLECI']=="true"
+    end
+
+    def self.is_release_branch?
+        CIHelper::get_base_branch =~ /^release.*$/
+    end
+
+    def self.is_pr?
+        CIHelper::PULL_REQUEST != "false"
+    end
+
+    # Checks if untracked changes are present in the current HEAD
+    def self.has_untracked_changes?
+        whitelist = CHANGED_FILES_PATTERS_WHITELIST.join(' -e ')
+        CIHelper::cd_run("git status --porcelain | grep -v -e #{whitelist} | wc -l").to_s().strip! != "0"
+    end
+
+    # Gets the untracked changes of the current HEAD
+    def self.untracked_changes
+        whitelist = CHANGED_FILES_PATTERS_WHITELIST.join(' -e ')
+        CIHelper::cd_run("git status --porcelain | grep -v -e #{whitelist}").to_s
+    end
+
+    # Checks if for a given pod the tag already exists
+    def self.tag_already_exists(pod_version)
+        CIHelper::cd_run('git tag').strip.split("\n").include?(pod_version)
+    end
+
+    # Checks if can deploy library as release
+    def self.can_deploy_library? (version)
+        errors = ''
+        if not CIHelper::is_release_branch?
+            errors << "[!] Deployment runs only 'release' branch\n"
+        end
+
+        if CIHelper::is_pr?
+            errors <<  "[!] Deployment doesn't run on pull requests\n"
+        end
+
+        # This check has mixed behaviors. We definitely should remove it from here.
+        # Checks for a deploy should be done only when [ci deploy] is present, but 
+        # the inexistence of it doesn't mean there is an error
+        if not CIHelper::has_deploy_message?
+            errors <<  "[!] To make a deployment add '[ci deploy]' anywhere in the commit message\n"
+        end
+
+        if CIHelper::has_untracked_changes?
+            errors <<  "[!] Uncommitted or untracked files are detected. Please commit them and try again\n"
+            errors <<  ">>> Untracked changes: " << untracked_changes
+        end
+
+        if CIHelper::tag_already_exists(version)
+            errors << "[!] A tag for version #{version} already exists. Please change the version and try again\n"
+        end
+
+        if errors.length>0
+            $stderr.puts errors
+            return false
+        end
+        return true
     end
 end

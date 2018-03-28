@@ -26,11 +26,9 @@ end
 
 desc 'Deploy to Github And CocoaPods'
 lane :deploy_lib do
-	# unless CIHelper::is_running_in_ci?
-		# UI.error 'Not running in CI environment. Local run not yet supported'
-	# end
-
-    pods = 'MLUI'
+	unless CIHelper::is_running_in_ci?
+		UI.error 'Not running in CI environment. Local run not yet supported'
+	end
 
 	UI.message 'Checking pod version'
     # All submodules should have the same version, so I take the version from the first module
@@ -53,6 +51,6 @@ lane :deploy_lib do
 	UI.success 'Release created'
 
 	UI.message 'Publishing pod'
-	push_pod(pod)
+	# pod_push(path: "MLUI.podspec")
 	UI.success 'Pod published successfully'
 end

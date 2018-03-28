@@ -14,12 +14,40 @@ default-workflow: &defaultWorkflow
   filters:
     branches:
       ignore:
-        - master
         - /release\/.*$/
+deploy-workflow: &deployWorkflow
+  filters:
+    branches:
+      only:
+        - /release\/.*$/
+
+baseDeploy: &baseDeploy
+  <<: *defaultJob
+  steps:
+    - checkout
+    - add_ssh_keys
+    - restore_cache:
+        key: gem-cache-{{ checksum "Gemfile.lock" }}-v2
+    - run:
+        name: Install Bundler
+        command: gem install bundler
+    - run:
+        name: Install Ruby tools
+        command: bundle install --path vendor/bundle
+    - run:
+        name: Install CocoaPods
+        command: |
+          curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s
+          bundle exec pod install
+    - run:
+        name: Run Deploy
+        command: ./scripts/ci/run_deploy.sh
 
 # Define the jobs we will be using
 version: 2
 jobs:
+  build:
+    <<: *baseDeploy
   test:
     <<: *defaultJob
     steps:
@@ -80,7 +108,7 @@ jobs:
             bundle exec pod install
       - run:
           name: Run Pod Lint
-          command: bundle exec pod lib lint MLUI --allow-warnings --private --sources='https://github.com/CocoaPods/Specs'
+          command: bundle exec pod lib lint MLUI.podspec --allow-warnings --sources='https://github.com/CocoaPods/Specs'
       - run:
           name: Run Uncrustify
           command: ./scripts/uncrustify.sh --check --path LibraryComponents Example MLUIUnitTests
