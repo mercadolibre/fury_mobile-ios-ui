@@ -1,0 +1,153 @@
+default: &defaultJob
+  docker:
+      - image: circleci/android:api-25-alpha
+        # This environment block must be inside docker one to prevent to be overridden by each job specific environment.
+        environment:
+          MODULE: "Mercadolibre"
+  resource_class: xlarge
+init-job: &initJob
+  <<: *defaultJob
+  steps:
+      - checkout
+      - add_ssh_keys
+      - run:
+          name: Install Mobile requirements
+          command: ./scripts/ci/run_mobile_requirements.sh
+      - run:
+          name: Lock/Unlock Dependencies
+          command: ./mobile-cd/scripts/android/run_lock_dependencies.sh
+build-job: &buildJob
+  <<: *defaultJob
+  steps:
+      - checkout
+      - add_ssh_keys
+      - restore_cache:
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "build.gradle" }}
+      - run:
+          name: Install Mobile requirements
+          command: ./scripts/ci/run_mobile_requirements.sh
+      - run:
+          name: Run Tests
+          command: ./scripts/ci/run_test.sh
+      - run:
+          name: Run Mobile Lints
+          command: ./scripts/ci/run_mobile_lints.sh
+      - run:
+          name: Run Coverage Report
+          command: ./scripts/ci/run_coverage_report.sh
+      - save_cache:
+          paths:
+          - ~/.gradle
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "build.gradle" }}
+      - run:
+          name: "[TEMP] Copy reports"
+          command: ./scripts/ci/run_copy_test_reports.sh
+          when: always
+      - store_artifacts:
+          path: "tmp/build/reports"
+          destination: reports
+      - store_test_results:
+          path: "tmp/build/test-results"
+deploy-job: &deployJob
+  <<: *defaultJob
+  steps:
+      - checkout
+      - add_ssh_keys
+      - restore_cache: ## TODO VER
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "build.gradle" }}
+      - run:
+          name: Install Mobile requirements
+          command: ./scripts/ci/run_mobile_requirements.sh
+      - run:
+          name: Lock/Unlock Dependencies
+          command: ./mobile-cd/scripts/android/run_lock_dependencies.sh
+      - run:
+          name: Run Deploy
+          command: ./scripts/ci/run_deploy.sh
+default-workflow: &defaultWorkflow
+  requires:
+    - init
+  filters:
+    branches:
+      ignore:
+        - /release/.*$/
+deploy-workflow: &deployWorkflow
+  requires:
+    - init
+  filters:
+    branches:
+      only:
+        - /release/.*$/
+        - develop
+deploy-nightly-workflow: &deployNightlyWorkflow
+  requires:
+    - debug
+    - mTesting
+    - release
+  filters:
+    branches:
+      only:
+        - develop
+version: 2
+jobs:
+  build:
+    <<: *deployJob
+  init:
+    <<: *initJob
+  buck:
+    <<: *buildJob
+    environment:
+      TEST_TASK: "bin_debug"
+  debug:
+    <<: *buildJob
+    environment:
+      TEST_TASK: "assembleDebug"
+  mTesting:
+    <<: *buildJob
+    environment:
+      TEST_TASK: "assembleMTesting,testMTesting"
+  release:
+    <<: *buildJob
+    environment:
+      TEST_TASK: "assembleRelease"
+  deployNightly:
+    <<: *deployJob
+    environment:
+      NIGHTLY_BUILD: "true"
+workflows:
+  version: 2
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 2 * * 2-6" #This way its 11pm GMT-3 since circle runs it UTC, 2-6 means thursday to saturday
+          filters:
+            branches:
+              only:
+                - develop
+    jobs:
+      - init
+# Disabled temporally because it's not working in neither develop nor here.
+#      - buck:
+#          <<: *defaultWorkflow
+      - debug:
+          <<: *defaultWorkflow
+      - mTesting:
+          <<: *defaultWorkflow
+      - release:
+          <<: *defaultWorkflow
+      - deployNightly:
+          <<: *deployNightlyWorkflow
+
+  build-test-deploy:
+    jobs:
+      - init
+# Disabled temporally because it's not working in neither develop nor here.
+#      - buck:
+#          <<: *defaultWorkflow
+      - debug:
+          <<: *defaultWorkflow
+      - mTesting:
+          <<: *defaultWorkflow
+      - release:
+          <<: *defaultWorkflow
+  
