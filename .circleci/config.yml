@@ -112,6 +112,7 @@ jobs:
       - run:
           name: Run Uncrustify
           command: ./scripts/uncrustify.sh --check --path LibraryComponents Example MLUIUnitTests
+
 # Define the full workflow.
 workflows:
   version: 2
@@ -121,3 +122,5 @@ workflows:
           <<: *defaultWorkflow
       - lint:
           <<: *defaultWorkflow
+      - deploy:
+          <<: *deployWorkflow
