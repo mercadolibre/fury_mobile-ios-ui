@@ -85,10 +85,6 @@ module CIHelper
         CIHelper::get_base_branch =~ /^release.*$/
     end
 
-    def self.is_pr?
-        CIHelper::PULL_REQUEST != "false"
-    end
-
     # Checks if untracked changes are present in the current HEAD
     def self.has_untracked_changes?
         whitelist = CHANGED_FILES_PATTERS_WHITELIST.join(' -e ')
@@ -111,10 +107,6 @@ module CIHelper
         errors = ''
         if not CIHelper::is_release_branch?
             errors << "[!] Deployment runs only 'release' branch\n"
-        end
-
-        if CIHelper::is_pr?
-            errors <<  "[!] Deployment doesn't run on pull requests\n"
         end
 
         # This check has mixed behaviors. We definitely should remove it from here.
