@@ -108,7 +108,7 @@ jobs:
             bundle exec pod install
       - run:
           name: Run Deploy
-          command: ./scripts/ci/run_deploy.sh
+          command: ./scripts/run_deploy.sh
 
 # Define the full workflow.
 workflows:
