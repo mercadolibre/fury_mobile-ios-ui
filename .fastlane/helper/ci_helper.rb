@@ -4,6 +4,7 @@ module CIHelper
     BUILD_DIR = ENV['CIRCLE_WORKING_DIRECTORY'] ? ENV['CIRCLE_WORKING_DIRECTORY'].gsub(/\~/, "#{ENV['HOME']}") : "#{ENV['HOME']}/#{ENV['CIRCLE_PROJECT_REPONAME']}"
     REPO_SLUG = "#{ENV['CIRCLE_PROJECT_USERNAME']}/#{ENV['CIRCLE_PROJECT_REPONAME']}"
     CHANGED_FILES_PATTERS_WHITELIST = ['.pbxproj', 'Podfile.lock']
+    @@pr_info = nil # PR info from GitHub API: https://developer.github.com/v3/pulls/#get-a-single-pull-request
 
     # Run a given command from the ci build directory
     def self.cd_run(command)
