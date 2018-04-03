@@ -45,12 +45,12 @@ lane :deploy_lib do
 		repository_name: 'mercadolibre/fury_mobile-ios-ui',
 		api_token: CIHelper::GITHUB_TOKEN,
 		name: "Release v#{pod_version}",
-		tag_name: "v#{pod_version}",
+		tag_name: "#{pod_version}",
 		description: CIHelper::get_release_notes,
 		commitish: CIHelper::get_base_branch)
 	UI.success 'Release created'
 
 	UI.message 'Publishing pod'
-	pod_push(path: "MLUI.podspec")
+	pod_push(path: "MLUI.podspec", allow_warnings: true)
 	UI.success 'Pod published successfully'
 end
