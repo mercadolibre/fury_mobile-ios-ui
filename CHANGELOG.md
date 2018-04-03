@@ -1,3 +1,7 @@
+# Sin publicar
+### Agregado
+- Job de deploy publico
+
 # v3.2.0
 ### Agregado
 - Se incorpora property config a MLButton en reemplazo del atributo style que está deprecado.
