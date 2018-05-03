@@ -35,7 +35,7 @@ const CGFloat MLFontWeightBlack = 0.620000;
 
 + (void)load
 {
-#ifndef MLUI_DONT_OVERRIDE_FONT
+#ifdef MLUI_OVERRIDE_FONT
 	SEL original = @selector(systemFontOfSize:);
 	SEL modified = @selector(ml_regularSwizzledSystemFontOfSize:);
 	SEL originalBold = @selector(boldSystemFontOfSize:);

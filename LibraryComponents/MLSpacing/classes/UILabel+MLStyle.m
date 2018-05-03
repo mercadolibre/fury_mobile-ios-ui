@@ -13,7 +13,7 @@
 
 + (void)load
 {
-#ifndef MLUI_DONT_OVERRIDE_FONT
+#ifdef MLUI_OVERRIDE_FONT
 	SEL originalSetFont = @selector(setFont:);
 	SEL swizzleSetFont = @selector(ml_swizzleSetFont:);
 	[self jr_swizzleMethod:originalSetFont withMethod:swizzleSetFont error:nil];

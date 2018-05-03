@@ -60,6 +60,11 @@
 	return [UIColor colorWithRed:57.f / 255.f green:181.f / 255.f blue:74.f / 255.f alpha:1];
 }
 
++ (UIColor *)ml_meli_orange
+{
+    return [UIColor colorWithRed:0.98 green:0.67 blue:0.38 alpha:1.0];
+}
+
 + (UIColor *)ml_meli_red
 {
 	return [UIColor colorWithRed:240.f / 255.f green:68.f / 255.f blue:73.f / 255.f alpha:1];

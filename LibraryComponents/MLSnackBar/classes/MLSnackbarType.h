@@ -56,6 +56,12 @@
 + (instancetype)successType;
 
 /**
+ *  Creates the warning type
+ *
+ */
++ (instancetype)warningType;
+
+/**
  *  Creates the error type
  *
  */

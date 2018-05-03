@@ -50,6 +50,17 @@
 	XCTAssertTrue(CGColorEqualToColor(type.actionBackgroundHighlightColor.CGColor, [UIColor colorWithRed:0.f / 255.f green:0.f / 255.f blue:0.f / 255.f alpha:0.1].CGColor));
 }
 
+- (void)testWarningType
+{
+    MLSnackbarType *type = [MLSnackbarType warningType];
+
+    XCTAssertTrue(CGColorEqualToColor(type.backgroundColor.CGColor, MLStyleSheetManager.styleSheet.warningColor.CGColor));
+    XCTAssertTrue(CGColorEqualToColor(type.titleFontColor.CGColor, MLStyleSheetManager.styleSheet.whiteColor.CGColor));
+    XCTAssertTrue(CGColorEqualToColor(type.actionFontColor.CGColor, MLStyleSheetManager.styleSheet.whiteColor.CGColor));
+    XCTAssertTrue(CGColorEqualToColor(type.actionFontHighlightColor.CGColor, MLStyleSheetManager.styleSheet.whiteColor.CGColor));
+    XCTAssertTrue(CGColorEqualToColor(type.actionBackgroundHighlightColor.CGColor, [UIColor colorWithRed:0.f / 255.f green:0.f / 255.f blue:0.f / 255.f alpha:0.1].CGColor));
+}
+
 - (void)testErrorType
 {
 	MLSnackbarType *type = [MLSnackbarType errorType];

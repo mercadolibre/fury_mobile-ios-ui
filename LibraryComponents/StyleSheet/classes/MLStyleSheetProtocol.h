@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) UIColor *secondaryColorPressed;
 @property (nonatomic, readonly) UIColor *secondaryColorDisabled;
 @property (nonatomic, readonly) UIColor *successColor;
+@property (nonatomic, readonly) UIColor *warningColor;
 @property (nonatomic, readonly) UIColor *errorColor;
 @property (nonatomic, readonly) UIColor *blackColor;
 @property (nonatomic, readonly) UIColor *darkGreyColor;
