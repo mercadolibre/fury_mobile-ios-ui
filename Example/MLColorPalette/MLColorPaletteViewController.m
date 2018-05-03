@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *blueButton;
 @property (weak, nonatomic) IBOutlet UIButton *greenButton;
 @property (weak, nonatomic) IBOutlet UIButton *redButton;
+@property (weak, nonatomic) IBOutlet UIButton *orangeButton;
 
 @end
 
@@ -82,6 +83,11 @@
 	self.redButton.enabled = NO;
 	self.redButton.backgroundColor = [UIColor ml_meli_red];
 	self.redButton.layer.cornerRadius = 4.0f;
+
+    [self.orangeButton setTitle:@"ml_meli_orange" forState:UIControlStateNormal];
+    self.orangeButton.enabled = NO;
+    self.orangeButton.backgroundColor = [UIColor ml_meli_orange];
+    self.orangeButton.layer.cornerRadius = 4.0f;
 }
 
 @end
