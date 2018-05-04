@@ -16,3 +16,12 @@ target 'MLUI' do
   	pod 'OCMock'
     end
 end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+		preprocessor_macros = config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
+		preprocessor_macros << 'MLUI_OVERRIDE_FONT=1'
+	end
+    end
+end
