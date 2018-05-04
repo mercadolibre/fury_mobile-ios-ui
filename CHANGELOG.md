@@ -1,5 +1,7 @@
-# Sin publicar
+# v4.0.0
 ### Agregado
+- Se agrega el color warning al StyleSheet
+- Se agrega el tipo warning al MLSnackBar
 - Job de deploy publico
 
 # v3.2.0
