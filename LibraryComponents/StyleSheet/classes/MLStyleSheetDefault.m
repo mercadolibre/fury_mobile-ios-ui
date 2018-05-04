@@ -40,6 +40,11 @@
 	return [UIColor colorWithRed:0.22 green:0.71 blue:0.29 alpha:1.0];
 }
 
+- (UIColor *)warningColor
+{
+	return [UIColor colorWithRed:0.98 green:0.67 blue:0.38 alpha:1.0];
+}
+
 - (UIColor *)errorColor
 {
 	return [UIColor colorWithRed:0.94 green:0.27 blue:0.29 alpha:1.0];

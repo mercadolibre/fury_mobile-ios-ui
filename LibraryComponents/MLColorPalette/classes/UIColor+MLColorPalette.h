@@ -72,6 +72,12 @@
 
 /**
  *
+ * Returns standard orange for mercadolibre
+ */
++ (UIColor *)ml_meli_orange;
+
+/**
+ *
  * Returns standard red for mercadolibre
  */
 + (UIColor *)ml_meli_red;

@@ -97,6 +97,13 @@
 	              );
 }
 
+- (void)testMLMeliOrange
+{
+	UIColor *meliOrange = [UIColor ml_meli_orange];
+	XCTAssertTrue(CGColorEqualToColor(meliOrange.CGColor, [UIColor colorWithRed:0.98 green:0.67 blue:0.38 alpha:1.0].CGColor)
+	              );
+}
+
 - (void)testMLMeliRed
 {
 	UIColor *meliRed = [UIColor ml_meli_red];
