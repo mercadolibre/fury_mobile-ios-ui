@@ -84,10 +84,10 @@
 	self.redButton.backgroundColor = [UIColor ml_meli_red];
 	self.redButton.layer.cornerRadius = 4.0f;
 
-    [self.orangeButton setTitle:@"ml_meli_orange" forState:UIControlStateNormal];
-    self.orangeButton.enabled = NO;
-    self.orangeButton.backgroundColor = [UIColor ml_meli_orange];
-    self.orangeButton.layer.cornerRadius = 4.0f;
+	[self.orangeButton setTitle:@"ml_meli_orange" forState:UIControlStateNormal];
+	self.orangeButton.enabled = NO;
+	self.orangeButton.backgroundColor = [UIColor ml_meli_orange];
+	self.orangeButton.layer.cornerRadius = 4.0f;
 }
 
 @end

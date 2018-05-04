@@ -39,9 +39,9 @@
 
 + (instancetype)warningType
 {
-    MLSnackbarType *warningType = [self defaultType];
-    warningType.backgroundColor = MLStyleSheetManager.styleSheet.warningColor;
-    return warningType;
+	MLSnackbarType *warningType = [self defaultType];
+	warningType.backgroundColor = MLStyleSheetManager.styleSheet.warningColor;
+	return warningType;
 }
 
 + (instancetype)errorType
