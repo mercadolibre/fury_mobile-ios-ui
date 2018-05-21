@@ -211,9 +211,9 @@
 	NSDictionary *attributes = self.textView.font ? @{NSFontAttributeName : self.textView.font} : nil;
 	CGSize textViewSize = CGSizeMake(CGRectGetWidth(self.textView.frame), MAXFLOAT);
 	CGRect textRect = [text boundingRectWithSize:textViewSize
-		                                 options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-		                              attributes:attributes
-		                                 context:nil];
+	                                     options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+	                                  attributes:attributes
+	                                     context:nil];
 
 	return textRect.size;
 }

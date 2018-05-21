@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return NSAttributedString with html
  */
-+ (NSAttributedString *)ml_attributedStringWithHtml:(NSString *)htmlText attributes:(nullable NSDictionary <NSString *, id> *)attrs error:(NSError *__autoreleasing *)error;
++ (NSAttributedString *)ml_attributedStringWithHtml:(NSString *)htmlText attributes:(nullable NSDictionary <NSAttributedStringKey, id> *)attrs error:(NSError *__autoreleasing *)error;
 
 /**
  *  Build an NSAttributedString from an html with default style and process every tag with the attributesProvider.
@@ -44,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return NSAttributedString with html
  */
 + (NSAttributedString *)ml_attributedStringWithHtml:(NSString *)htmlText
-                                 attributesProvider:(id <MLHtmlAttributeProvider> )attributesProvider
+                                 attributesProvider:(id <MLHtmlAttributeProvider>)attributesProvider
                                               error:(NSError *__autoreleasing *)error;
 
 /**
@@ -60,8 +60,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return NSAttributedString with html
  */
 + (NSAttributedString *)ml_attributedStringWithHtml:(NSString *)htmlText
-                                 attributesProvider:(id <MLHtmlAttributeProvider> )attributesProvider
-                                         attributes:(nullable NSDictionary <NSString *, id> *)attrs
+                                 attributesProvider:(id <MLHtmlAttributeProvider>)attributesProvider
+                                         attributes:(nullable NSDictionary <NSAttributedStringKey, id> *)attrs
                                               error:(NSError *__autoreleasing *)error;
 
 @end

@@ -13,7 +13,7 @@
 @implementation MLBooleanWidget
 
 #pragma mark - Init
-+ (instancetype)booleanWidgetWithDelegate:(id <MLBooleanWidgetDelegate> )delegate
++ (instancetype)booleanWidgetWithDelegate:(id <MLBooleanWidgetDelegate>)delegate
 {
 	MLBooleanWidget *selectionWidget = [[self alloc] init];
 

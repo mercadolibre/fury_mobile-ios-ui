@@ -98,8 +98,8 @@ static const CGFloat kMLSpinnerAppearenceAnimationDuration = 0.3;
 - (void)loadView
 {
 	UIView *view = [[MLUIBundle mluiBundle] loadNibNamed:NSStringFromClass([MLSpinner class])
-		                                           owner:self
-		                                         options:nil].firstObject;
+	                                               owner:self
+	                                             options:nil].firstObject;
 	self.view = view;
 
 	view.translatesAutoresizingMaskIntoConstraints = NO;
@@ -150,7 +150,7 @@ static const CGFloat kMLSpinnerAppearenceAnimationDuration = 0.3;
 
 		case MLSpinnerStyleWhiteBig: {
 			config = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeBig primaryColor:MLStyleSheetManager.styleSheet.whiteColor
-				                            secondaryColor :MLStyleSheetManager.styleSheet.secondaryColor];
+			                                secondaryColor :MLStyleSheetManager.styleSheet.secondaryColor];
 			break;
 		}
 

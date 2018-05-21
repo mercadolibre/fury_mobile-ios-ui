@@ -95,7 +95,7 @@ static NSString *const MLLongPressContextMenuLayerType_toString[] = {
 - (void)setupDisplayLink
 {
 	CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self
-		                                                     selector:@selector(highlightMenuItemForPoint)];
+	                                                         selector:@selector(highlightMenuItemForPoint)];
 	[displayLink addToRunLoop:[NSRunLoop mainRunLoop]
 	                  forMode:NSDefaultRunLoopMode];
 }
@@ -119,10 +119,10 @@ static NSString *const MLLongPressContextMenuLayerType_toString[] = {
 #pragma mark -
 #pragma mark GestureRecognizer
 #pragma mark -
-- (UILongPressGestureRecognizer *)gestureRecognizerWithDelegate:(id <UIGestureRecognizerDelegate> )delegate
+- (UILongPressGestureRecognizer *)gestureRecognizerWithDelegate:(id <UIGestureRecognizerDelegate>)delegate
 {
 	UILongPressGestureRecognizer *gestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self
-		                                                                                            action:@selector(longPressDetected:)];
+	                                                                                                action:@selector(longPressDetected:)];
 	gestureRecognizer.delegate = delegate;
 
 	// Standard config
@@ -134,7 +134,7 @@ static NSString *const MLLongPressContextMenuLayerType_toString[] = {
 #pragma mark -
 #pragma mark Datasource
 #pragma mark -
-- (void)setDataSource:(id <MLContextualMenuDataSource> )dataSource
+- (void)setDataSource:(id <MLContextualMenuDataSource>)dataSource
 {
 	_dataSource = dataSource;
 	[self reloadData];
@@ -251,12 +251,12 @@ static NSString *const MLLongPressContextMenuLayerType_toString[] = {
 	CALayer *mainLayer = [self drawMainLayer];
 
 	CALayer *contentImageLayer = [self drawContentImageLayerAtIndex:index
-		                                                      width:CGRectGetWidth(mainLayer.bounds)
-		                                                     height:CGRectGetHeight(mainLayer.bounds)];
+	                                                          width:CGRectGetWidth(mainLayer.bounds)
+	                                                         height:CGRectGetHeight(mainLayer.bounds)];
 	[mainLayer addSublayer:contentImageLayer];
 
 	CALayer *textLayer = [self drawTextLayerAtIndex:index
-		                                      width:mainLayer.bounds.size.width];
+	                                          width:mainLayer.bounds.size.width];
 	[mainLayer addSublayer:textLayer];
 
 	return mainLayer;
@@ -379,7 +379,7 @@ static NSString *const MLLongPressContextMenuLayerType_toString[] = {
 	CGFloat itemAngle = [self itemAngleAtIndex:index andRatio:ratio];
 
 	CGPoint itemCenter = CGPointMake(self.longPressLocation.x + cosf(itemAngle) * self.radius,
-		                             self.longPressLocation.y + sinf(itemAngle) * self.radius);
+	                                 self.longPressLocation.y + sinf(itemAngle) * self.radius);
 	MLLongPressMenuItemLocation *location = [MLLongPressMenuItemLocation new];
 	location.position = itemCenter;
 	location.angle = itemAngle;
@@ -498,9 +498,9 @@ static NSString *const MLLongPressContextMenuLayerType_toString[] = {
 			if (self.longPressContextMenuItems[index].selected) {
 				layer.sublayers = nil;
 				CALayer *imageLayer = [self drawImageLayerAtIndex:index
-					                                        width:CGRectGetWidth(mainLayer.bounds)
-					                                       height:CGRectGetHeight(mainLayer.bounds)
-					                                     selected:selecting];
+				                                            width:CGRectGetWidth(mainLayer.bounds)
+				                                           height:CGRectGetHeight(mainLayer.bounds)
+				                                         selected:selecting];
 				[layer addSublayer:imageLayer];
 			}
 		}
