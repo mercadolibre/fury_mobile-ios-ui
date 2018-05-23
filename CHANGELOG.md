@@ -1,6 +1,7 @@
 # Sin publicar
 ### Agregado
 - Job de deploy publico
+- Modificaion de firmas de NSAttributeString+Html para soportar swift
 
 # v3.2.0
 ### Agregado

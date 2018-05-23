@@ -88,8 +88,8 @@ static NSInteger kLowestPriority = 1;
 {
 	NSString *nibName = @"MLTextView";
 	NSArray *nibArray = [[MLUIBundle mluiBundle] loadNibNamed:nibName
-		                                                owner:self
-		                                              options:nil];
+	                                                    owner:self
+	                                                  options:nil];
 	UIView *view = nibArray.firstObject;
 	view.translatesAutoresizingMaskIntoConstraints = NO;
 	[self addSubview:view];
