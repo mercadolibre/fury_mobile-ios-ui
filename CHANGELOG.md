@@ -1,7 +1,12 @@
-# Sin publicar
-### Agregado
-- Job de deploy publico
+# Sin Publicar
+### Cambiado
 - Modificaion de firmas de NSAttributeString+Html para soportar swift
+
+# v4.0.0
+### Agregado
+- Se agrega el color warning al StyleSheet
+- Se agrega el tipo warning al MLSnackBar
+- Job de deploy publico
 
 # v3.2.0
 ### Agregado

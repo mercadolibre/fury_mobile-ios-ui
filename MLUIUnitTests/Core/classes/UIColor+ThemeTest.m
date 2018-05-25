@@ -166,9 +166,9 @@
 	CGFloat h, s, b, a;
 	XCTAssertTrue([color getHue:&h saturation:&s brightness:&b alpha:&a]);
 	UIColor *colorExpected = [UIColor colorWithHue:h
-		                                saturation:s
-		                                brightness:MIN(b * 1.3, 1.0)
-		                                     alpha:a];
+	                                    saturation:s
+	                                    brightness:MIN(b * 1.3, 1.0)
+	                                         alpha:a];
 	XCTAssertTrue(CGColorEqualToColor([color ml_lighterColor].CGColor, colorExpected.CGColor));
 }
 
@@ -179,9 +179,9 @@
 	CGFloat h, s, b, a;
 	XCTAssertTrue([color getHue:&h saturation:&s brightness:&b alpha:&a]);
 	UIColor *colorExpected = [UIColor colorWithHue:h
-		                                saturation:s
-		                                brightness:b * 0.75
-		                                     alpha:a];
+	                                    saturation:s
+	                                    brightness:b * 0.75
+	                                         alpha:a];
 	XCTAssertTrue(CGColorEqualToColor([color ml_darkerColor].CGColor, colorExpected.CGColor));
 }
 
