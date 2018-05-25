@@ -202,8 +202,8 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 {
 	if (self = [super init]) {
 		self.view = [[MLUIBundle mluiBundle] loadNibNamed:NSStringFromClass([MLSnackbar class])
-			                                        owner:self
-			                                      options:nil].firstObject;
+		                                            owner:self
+		                                          options:nil].firstObject;
 
 		self.view.translatesAutoresizingMaskIntoConstraints = NO;
 

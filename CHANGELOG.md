@@ -1,3 +1,7 @@
+# Sin Publicar
+### Cambiado
+- Modificaion de firmas de NSAttributeString+Html para soportar swift
+
 # v4.0.0
 ### Agregado
 - Se agrega el color warning al StyleSheet
