@@ -44,7 +44,7 @@
 	textField.text = nil;
 
 	XCTAssertEqualObjects(textField.text, @"");
-    XCTAssertEqualObjects(textField.textField.text, @"");
+	XCTAssertEqualObjects(textField.textField.text, @"");
 }
 
 - (void)testSetTextFailsIfLongerThanMaxCharacters

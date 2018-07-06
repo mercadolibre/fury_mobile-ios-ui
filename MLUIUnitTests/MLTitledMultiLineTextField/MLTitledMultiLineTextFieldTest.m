@@ -35,11 +35,11 @@
 
 - (void)testSetTextNil
 {
-    MLTitledMultiLineTextField *textField = self.textField;
-    textField.text = nil;
+	MLTitledMultiLineTextField *textField = self.textField;
+	textField.text = nil;
 
-    XCTAssertEqualObjects(textField.text, @"");
-    XCTAssertEqualObjects(textField.textView.text, @"");
+	XCTAssertEqualObjects(textField.text, @"");
+	XCTAssertEqualObjects(textField.textView.text, @"");
 }
 
 - (void)testEditingEvents

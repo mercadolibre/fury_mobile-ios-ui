@@ -200,7 +200,7 @@ static const CGFloat kMLTextFieldThickLine = 2;
 	if (![self validateLength:text]) {
 		return;
 	}
-    self.textCache = text;
+	self.textCache = text;
 	self.textField.text = text;
 	[self style];
 }
@@ -329,7 +329,7 @@ static const CGFloat kMLTextFieldThickLine = 2;
 
 - (NSString *)text
 {
-    return self.textCache ? : @"";
+	return self.textCache ? : @"";
 }
 
 - (UIView <UITextInputTraits, UITextInput> *)textInputControl
