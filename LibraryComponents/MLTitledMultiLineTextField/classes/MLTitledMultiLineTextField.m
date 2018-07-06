@@ -136,8 +136,7 @@
 
 - (void)setAutocorrectionType:(UITextAutocorrectionType)autocorrectionType
 {
-    super.autocorrectionType = autocorrectionType;
-    self.textView.autocorrectionType = autocorrectionType;
+	self.textView.autocorrectionType = autocorrectionType;
 }
 
 - (void)setMaxLines:(NSUInteger)maxLines
@@ -171,12 +170,12 @@
 
 - (UITextAutocapitalizationType)autocapitalizationType
 {
-    return self.textView.autocapitalizationType;
+	return self.textView.autocapitalizationType;
 }
 
 - (UITextAutocorrectionType)autocorrectionType
 {
-    return self.textView.autocorrectionType;
+	return self.textView.autocorrectionType;
 }
 
 - (CGFloat)lineHeight

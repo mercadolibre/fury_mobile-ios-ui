@@ -278,9 +278,9 @@ static const CGFloat kMLTextFieldThickLine = 2;
 	UIView *container = self.accessoryViewContainer;
 	_accessoryView = accessoryView;
 
-    if (!accessoryView) {
-        return;
-    }
+	if (!accessoryView) {
+		return;
+	}
 
 	accessoryView.translatesAutoresizingMaskIntoConstraints = NO;
 
@@ -317,7 +317,7 @@ static const CGFloat kMLTextFieldThickLine = 2;
 
 - (void)setAutocorrectionType:(UITextAutocorrectionType)autocorrectionType
 {
-    self.textField.autocorrectionType = autocorrectionType;
+	self.textField.autocorrectionType = autocorrectionType;
 }
 
 - (void)setSecureTextEntry:(BOOL)secureTextEntry
@@ -353,12 +353,12 @@ static const CGFloat kMLTextFieldThickLine = 2;
 
 - (UITextAutocapitalizationType)autocapitalizationType
 {
-    return self.textField.autocapitalizationType;
+	return self.textField.autocapitalizationType;
 }
 
 - (UITextAutocorrectionType)autocorrectionType
 {
-    return self.textField.autocorrectionType;
+	return self.textField.autocorrectionType;
 }
 
 #pragma mark State handling
