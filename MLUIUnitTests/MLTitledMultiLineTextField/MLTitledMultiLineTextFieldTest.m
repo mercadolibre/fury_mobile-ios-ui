@@ -6,18 +6,24 @@
 // Copyright © 2016 MercadoLibre. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
+#import "MLTitledSingleLineTextFieldTest.h"
+#import <MLUI/MLTitledMultiLineTextField.h>
 #import <UIKit/UIKit.h>
 #import <OCMock/OCMock.h>
-#import "MLTitledMultiLineTextField.h"
-#import "MLTitledSingleLineTextFieldTest.h"
 
 @interface MLTitledMultiLineTextField ()
+
+@property (weak, nonatomic) UITextView *textView;
+
 - (UITextView *)textView;
 - (CGSize)sizeForText:(NSString *)text;
+
 @end
 
 @interface MLTitledMultiLineTextFieldTest : MLTitledSingleLineTextFieldTest
+
+- (MLTitledMultiLineTextField *)textField;
+
 @end
 
 @implementation MLTitledMultiLineTextFieldTest
@@ -27,24 +33,13 @@
 	return [[MLTitledMultiLineTextField alloc] init];
 }
 
-- (void)testSetText
+- (void)testSetTextNil
 {
-	[super testSetText];
-}
+    MLTitledMultiLineTextField *textField = self.textField;
+    textField.text = nil;
 
-- (void)testSetTextFailsIfLongerThanMaxCharacters
-{
-	[super testSetTextFailsIfLongerThanMaxCharacters];
-}
-
-- (void)testErrorState
-{
-	[super testErrorState];
-}
-
-- (void)testDisabledState
-{
-	[super testDisabledState];
+    XCTAssertEqualObjects(textField.text, @"");
+    XCTAssertEqualObjects(textField.textView.text, @"");
 }
 
 - (void)testEditingEvents
@@ -72,14 +67,6 @@
 
 	XCTAssertNil(textField.textView.font);
 	XCTAssertEqual([textField sizeForText:@""].width, 0);
-}
-
-- (void)testAutocapitalizationType
-{
-	MLTitledMultiLineTextField *textField = OCMPartialMock(self.textField);
-
-	textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-	XCTAssertEqual(textField.autocapitalizationType, UITextAutocapitalizationTypeNone);
 }
 
 @end

@@ -170,7 +170,7 @@
 
 - (NSString *)text
 {
-	return self.textCache;
+    return self.textCache ? : @"";
 }
 
 - (UIKeyboardType)keyboardType

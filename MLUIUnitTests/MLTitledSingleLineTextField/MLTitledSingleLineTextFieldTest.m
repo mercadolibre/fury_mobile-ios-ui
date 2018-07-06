@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *accessoryLabel;
 @property (weak, nonatomic) IBOutlet UIView *accessoryViewContainer;
 
+@property (strong, nonatomic) UITextField *textField;
+
 @end
 
 @implementation MLTitledSingleLineTextFieldTest
@@ -41,7 +43,8 @@
 	MLTitledSingleLineTextField *textField = self.textField;
 	textField.text = nil;
 
-	XCTAssertNil(textField.text);
+	XCTAssertEqualObjects(textField.text, @"");
+    XCTAssertEqualObjects(textField.textField.text, @"");
 }
 
 - (void)testSetTextFailsIfLongerThanMaxCharacters
