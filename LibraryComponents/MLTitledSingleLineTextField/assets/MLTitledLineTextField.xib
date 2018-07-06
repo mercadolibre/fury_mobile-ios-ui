@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MLTitledSingleLineTextField">
@@ -23,13 +28,13 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci8-92-goc" userLabel="Title">
                     <rect key="frame" x="0.0" y="2" width="396" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mk6-3N-faf">
                     <rect key="frame" x="0.0" y="91" width="396" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="245" verticalCompressionResistancePriority="756" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="27" translatesAutoresizingMaskIntoConstraints="NO" id="Ttm-Hz-PLL" userLabel="TextContainer">
@@ -38,11 +43,11 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opn-WP-FUU" userLabel="Placeholder">
                             <rect key="frame" x="0.0" y="0.0" width="336" height="66"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="Opn-WP-FUU" firstAttribute="leading" secondItem="Ttm-Hz-PLL" secondAttribute="leading" id="4o9-Nd-XHc"/>
                         <constraint firstAttribute="trailing" secondItem="Opn-WP-FUU" secondAttribute="trailing" id="clZ-FP-2yp"/>
@@ -52,31 +57,17 @@
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zui-Sp-0jq" userLabel="Separator">
                     <rect key="frame" x="0.0" y="79" width="396" height="1"/>
-                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="sGH-8m-uC3"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" horizontalHuggingPriority="752" horizontalCompressionResistancePriority="752" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="abO-Fz-yNE" userLabel="Accessory view">
                     <rect key="frame" x="336" y="9" width="60" height="66"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUV-Dc-taB">
-                            <rect key="frame" x="0.0" y="0.0" width="60" height="66"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="iUV-Dc-taB" secondAttribute="trailing" id="7pQ-cG-ZIU"/>
-                        <constraint firstItem="iUV-Dc-taB" firstAttribute="top" secondItem="abO-Fz-yNE" secondAttribute="top" id="evL-kQ-Fsa"/>
-                        <constraint firstItem="iUV-Dc-taB" firstAttribute="leading" secondItem="abO-Fz-yNE" secondAttribute="leading" id="vEe-fZ-plZ"/>
-                        <constraint firstAttribute="bottom" secondItem="iUV-Dc-taB" secondAttribute="bottom" id="xwX-ww-Ilq"/>
-                    </constraints>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="abO-Fz-yNE" firstAttribute="bottom" secondItem="Ttm-Hz-PLL" secondAttribute="bottom" id="AMk-c3-yQX"/>
                 <constraint firstItem="Ttm-Hz-PLL" firstAttribute="leading" secondItem="eB9-vN-3kQ" secondAttribute="leading" id="COS-bg-Yi0"/>

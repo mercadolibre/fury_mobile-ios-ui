@@ -19,13 +19,16 @@
 - (void)testSetTextFailsIfLongerThanMaxCharacters;
 - (void)testSetHelperDescription;
 - (void)testSetHelperDescriptionNil;
-- (void)testErrorState;
-- (void)testDisabledState;
+- (void)testAccessoryViewDefault;
+- (void)testSetAccessoryView;
+- (void)testSetAccessoryViewNil;
 - (void)testKeyboardTypeDefault;
 - (void)testSetKeyboardType;
 - (void)testAutocapitalizationTypeDefault;
 - (void)testSetAutocapitalizationType;
 - (void)testAutocorrectionTypeDefault;
 - (void)testSetAutocorrectionType;
+- (void)testErrorState;
+- (void)testDisabledState;
 
 @end

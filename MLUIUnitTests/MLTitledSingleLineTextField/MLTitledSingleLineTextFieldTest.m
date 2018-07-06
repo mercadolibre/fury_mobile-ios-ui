@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *accessoryLabel;
+@property (weak, nonatomic) IBOutlet UIView *accessoryViewContainer;
 
 @end
 
@@ -73,20 +74,31 @@
 	XCTAssertEqualObjects(textField.accessoryLabel.text, @"");
 }
 
-- (void)testErrorState
+- (void)testAccessoryViewDefault
 {
 	MLTitledSingleLineTextField *textField = self.textField;
-	textField.errorDescription = @"Error description";
 
-	XCTAssertEqual(MLTitledTextFieldStateError, textField.state);
+	XCTAssertNil(textField.accessoryView);
+	XCTAssertEqual(textField.accessoryViewContainer.subviews.count, 0);
 }
 
-- (void)testDisabledState
+- (void)testSetAccessoryView
 {
 	MLTitledSingleLineTextField *textField = self.textField;
-	textField.enabled = NO;
+	UIView *accessoryView = [[UILabel alloc] init];
+	textField.accessoryView = accessoryView;
 
-	XCTAssertEqual(MLTitledTextFieldStateDisabled, textField.state);
+	XCTAssertEqualObjects(textField.accessoryView, accessoryView);
+	XCTAssertEqual(textField.accessoryViewContainer.subviews.count, 1);
+}
+
+- (void)testSetAccessoryViewNil
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.accessoryView = nil;
+
+	XCTAssertNil(textField.accessoryView);
+	XCTAssertEqual(textField.accessoryViewContainer.subviews.count, 0);
 }
 
 - (void)testKeyboardTypeDefault
@@ -132,6 +144,22 @@
 	textField.autocorrectionType = UITextAutocorrectionTypeNo;
 
 	XCTAssertEqual(textField.autocorrectionType, UITextAutocorrectionTypeNo);
+}
+
+- (void)testErrorState
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.errorDescription = @"Error description";
+
+	XCTAssertEqual(MLTitledTextFieldStateError, textField.state);
+}
+
+- (void)testDisabledState
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.enabled = NO;
+
+	XCTAssertEqual(MLTitledTextFieldStateDisabled, textField.state);
 }
 
 - (void)testAlignCenter
