@@ -135,6 +135,7 @@ typedef NS_ENUM (NSInteger, MLTitledTextFieldState) {
 
 /**
  * Textfield keyboard type.
+ * Default is UIKeyboardTypeDefault
  */
 @property (nonatomic) UIKeyboardType keyboardType;
 

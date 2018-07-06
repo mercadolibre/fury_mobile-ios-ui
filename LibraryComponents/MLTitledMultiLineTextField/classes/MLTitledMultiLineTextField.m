@@ -129,6 +129,11 @@
 	[self style];
 }
 
+- (void)setKeyboardType:(UIKeyboardType)keyboardType
+{
+	self.textView.keyboardType = keyboardType;
+}
+
 - (void)setAutocapitalizationType:(UITextAutocapitalizationType)autocapitalizationType
 {
 	self.textView.autocapitalizationType = autocapitalizationType;
@@ -166,6 +171,11 @@
 - (NSString *)text
 {
 	return self.textCache;
+}
+
+- (UIKeyboardType)keyboardType
+{
+	return self.textView.keyboardType;
 }
 
 - (UITextAutocapitalizationType)autocapitalizationType

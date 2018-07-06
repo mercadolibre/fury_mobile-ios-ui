@@ -15,7 +15,17 @@
 - (MLTitledSingleLineTextField *)textField;
 
 - (void)testSetText;
+- (void)testSetTextNil;
 - (void)testSetTextFailsIfLongerThanMaxCharacters;
+- (void)testSetHelperDescription;
+- (void)testSetHelperDescriptionNil;
 - (void)testErrorState;
 - (void)testDisabledState;
+- (void)testKeyboardTypeDefault;
+- (void)testSetKeyboardType;
+- (void)testAutocapitalizationTypeDefault;
+- (void)testSetAutocapitalizationType;
+- (void)testAutocorrectionTypeDefault;
+- (void)testSetAutocorrectionType;
+
 @end

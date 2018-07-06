@@ -7,15 +7,16 @@
 //
 
 #import "MLTitledSingleLineTextFieldTest.h"
-#import "MLTitledSingleLineTextField.h"
 #import <OCMock/OCMock.h>
-#import <UIKit/UIKit.h>
+#import <MLUI/MLTitledSingleLineTextField.h>
 
 // Must declare that textfield implements UITextFieldDelegate to call shouldChangeCharactersInRange:raplacementString:
 @interface MLTitledSingleLineTextField () <UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *accessoryLabel;
+
 @end
 
 @implementation MLTitledSingleLineTextFieldTest
@@ -34,6 +35,14 @@
 	XCTAssertEqualObjects(testText, textField.text);
 }
 
+- (void)testSetTextNil
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.text = nil;
+
+	XCTAssertNil(textField.text);
+}
+
 - (void)testSetTextFailsIfLongerThanMaxCharacters
 {
 	NSString *initialText = @"A test text";
@@ -44,6 +53,24 @@
 	textField.text = longerText;
 
 	XCTAssertEqualObjects(initialText, textField.text);
+}
+
+- (void)testSetHelperDescription
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.helperDescription = @"Helper Description";
+
+	XCTAssertEqualObjects(textField.helperDescription, @"Helper Description");
+	XCTAssertEqualObjects(textField.accessoryLabel.text, @"Helper Description");
+}
+
+- (void)testSetHelperDescriptionNil
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.helperDescription = nil;
+
+	XCTAssertNil(textField.helperDescription);
+	XCTAssertEqualObjects(textField.accessoryLabel.text, @"");
 }
 
 - (void)testErrorState
@@ -60,6 +87,51 @@
 	textField.enabled = NO;
 
 	XCTAssertEqual(MLTitledTextFieldStateDisabled, textField.state);
+}
+
+- (void)testKeyboardTypeDefault
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+
+	XCTAssertEqual(textField.keyboardType, UIKeyboardTypeDefault);
+}
+
+- (void)testSetKeyboardType
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.keyboardType = UIKeyboardTypeURL;
+
+	XCTAssertEqual(textField.keyboardType, UIKeyboardTypeURL);
+}
+
+- (void)testAutocapitalizationTypeDefault
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+
+	XCTAssertEqual(textField.autocapitalizationType, UITextAutocapitalizationTypeSentences);
+}
+
+- (void)testSetAutocapitalizationType
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+
+	XCTAssertEqual(textField.autocapitalizationType, UITextAutocapitalizationTypeNone);
+}
+
+- (void)testAutocorrectionTypeDefault
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+
+	XCTAssertEqual(textField.autocorrectionType, UITextAutocorrectionTypeDefault);
+}
+
+- (void)testSetAutocorrectionType
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.autocorrectionType = UITextAutocorrectionTypeNo;
+
+	XCTAssertEqual(textField.autocorrectionType, UITextAutocorrectionTypeNo);
 }
 
 - (void)testAlignCenter
@@ -90,14 +162,6 @@
 	XCTAssertEqual(textField.placeholderLabel.textAlignment, NSTextAlignmentRight);
 	XCTAssertEqual(textField.titleLabel.textAlignment, NSTextAlignmentRight);
 	XCTAssertEqual(textField.accessoryLabel.textAlignment, NSTextAlignmentRight);
-}
-
-- (void)testSetHelperDescription
-{
-	MLTitledSingleLineTextField *textField = self.textField;
-	textField.helperDescription = @"Helper Description";
-
-	XCTAssertEqualObjects(textField.accessoryLabel.text, @"Helper Description");
 }
 
 - (void)testDelegateDoesntModifyMaxCharacters
@@ -153,22 +217,6 @@
 	OCMVerify([textField sendActionsForControlEvents:UIControlEventEditingChanged]);
 	OCMVerify([textField sendActionsForControlEvents:UIControlEventEditingDidBegin]);
 	OCMVerify([textField sendActionsForControlEvents:UIControlEventEditingDidEnd]);
-}
-
-- (void)testKeyboardType
-{
-	MLTitledSingleLineTextField *textField = self.textField;
-
-	textField.keyboardType = UIKeyboardTypeURL;
-	XCTAssertEqual(textField.keyboardType, UIKeyboardTypeURL);
-}
-
-- (void)testAutocapitalizationType
-{
-	MLTitledSingleLineTextField *textField = self.textField;
-
-	textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-	XCTAssertEqual(textField.autocapitalizationType, UITextAutocapitalizationTypeNone);
 }
 
 - (void)testSecureTextEntry

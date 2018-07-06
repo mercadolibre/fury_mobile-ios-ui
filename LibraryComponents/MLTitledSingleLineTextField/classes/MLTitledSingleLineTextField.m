@@ -305,8 +305,6 @@ static const CGFloat kMLTextFieldThickLine = 2;
 
 - (void)setKeyboardType:(UIKeyboardType)keyboardType
 {
-	_keyboardType = keyboardType;
-
 	self.textField.keyboardType = keyboardType;
 }
 
@@ -331,7 +329,7 @@ static const CGFloat kMLTextFieldThickLine = 2;
 
 - (NSString *)text
 {
-	return self.textCache ? self.textCache : @"";
+	return self.textCache;
 }
 
 - (UIView <UITextInputTraits, UITextInput> *)textInputControl
@@ -349,6 +347,11 @@ static const CGFloat kMLTextFieldThickLine = 2;
 - (NSString *)placeholder
 {
 	return self.placeholderLabel.text;
+}
+
+- (UIKeyboardType)keyboardType
+{
+	return self.textField.keyboardType;
 }
 
 - (UITextAutocapitalizationType)autocapitalizationType
