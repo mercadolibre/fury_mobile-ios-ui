@@ -8,6 +8,8 @@
 
 #import "MLTitledSingleLineTextField.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  * Multiline text field with a title.
  */
@@ -32,3 +34,5 @@
 @property (nonatomic) BOOL secureTextEntry NS_UNAVAILABLE;
 
 @end
+
+NS_ASSUME_NONNULL_END

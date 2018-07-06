@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  * States of the MLTitledSingleLineTextField
  */
@@ -83,27 +85,27 @@ typedef NS_ENUM (NSInteger, MLTitledTextFieldState) {
 /**
  * The text content of the text field.
  */
-@property (nonatomic, copy) IBInspectable NSString *text;
+@property (nonatomic, copy, nullable) IBInspectable NSString *text;
 
 /**
  * The name of the field. This string is displayed in the label.
  */
-@property (nonatomic, copy) IBInspectable NSString *title;
+@property (nonatomic, copy, nullable) IBInspectable NSString *title;
 
 /**
  * The textfield placeholder.
  */
-@property (nonatomic, copy) IBInspectable NSString *placeholder;
+@property (nonatomic, copy, nullable) IBInspectable NSString *placeholder;
 
 /**
  * An error string to be displayed.
  */
-@property (nonatomic, copy) IBInspectable NSString *errorDescription;
+@property (nonatomic, copy, nullable) IBInspectable NSString *errorDescription;
 
 /**
  * An helper description text to show below the textfield.
  */
-@property (nonatomic, copy) NSString *helperDescription;
+@property (nonatomic, copy, nullable) NSString *helperDescription;
 
 /**
  * The maximum number of characters of the textfield.
@@ -119,7 +121,7 @@ typedef NS_ENUM (NSInteger, MLTitledTextFieldState) {
 /**
  * The text field delegate.
  */
-@property (nonatomic, weak) IBOutlet id <MLTitledTextFieldDelegate> delegate;
+@property (nonatomic, weak, nullable) IBOutlet id <MLTitledTextFieldDelegate> delegate;
 
 /**
  * The textfield state.
@@ -129,7 +131,7 @@ typedef NS_ENUM (NSInteger, MLTitledTextFieldState) {
 /**
  * An accessory view that will be placed on the right of the control.
  */
-@property (strong, nonatomic) IBOutlet UIView *accessoryView;
+@property (strong, nonatomic, nullable) IBOutlet UIView *accessoryView;
 
 /**
  * Textfield keyboard type.
@@ -141,6 +143,12 @@ typedef NS_ENUM (NSInteger, MLTitledTextFieldState) {
  * Default is UITextAutocapitalizationTypeSentences
  */
 @property (nonatomic) UITextAutocapitalizationType autocapitalizationType;
+
+/**
+ * The Autocorrection type.
+ * Default is UITextAutocorrectionTypeDefault
+ */
+@property (nonatomic) UITextAutocorrectionType autocorrectionType;
 
 /**
  * Identifies whether the text object should disable text copying and in some cases hide the text being entered.
@@ -168,3 +176,5 @@ typedef NS_ENUM (NSInteger, MLTitledTextFieldState) {
 - (UIView <UITextInputTraits, UITextInput> *)textInputControl;
 
 @end
+
+NS_ASSUME_NONNULL_END
