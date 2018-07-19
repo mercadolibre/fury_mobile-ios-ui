@@ -129,11 +129,19 @@
 	[self style];
 }
 
+- (void)setKeyboardType:(UIKeyboardType)keyboardType
+{
+	self.textView.keyboardType = keyboardType;
+}
+
 - (void)setAutocapitalizationType:(UITextAutocapitalizationType)autocapitalizationType
 {
-	super.autocapitalizationType = autocapitalizationType;
-
 	self.textView.autocapitalizationType = autocapitalizationType;
+}
+
+- (void)setAutocorrectionType:(UITextAutocorrectionType)autocorrectionType
+{
+	self.textView.autocorrectionType = autocorrectionType;
 }
 
 - (void)setMaxLines:(NSUInteger)maxLines
@@ -162,7 +170,22 @@
 
 - (NSString *)text
 {
-	return self.textCache;
+	return self.textCache ? : @"";
+}
+
+- (UIKeyboardType)keyboardType
+{
+	return self.textView.keyboardType;
+}
+
+- (UITextAutocapitalizationType)autocapitalizationType
+{
+	return self.textView.autocapitalizationType;
+}
+
+- (UITextAutocorrectionType)autocorrectionType
+{
+	return self.textView.autocorrectionType;
 }
 
 - (CGFloat)lineHeight

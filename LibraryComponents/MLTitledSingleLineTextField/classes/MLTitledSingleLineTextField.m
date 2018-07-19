@@ -277,6 +277,11 @@ static const CGFloat kMLTextFieldThickLine = 2;
 
 	UIView *container = self.accessoryViewContainer;
 	_accessoryView = accessoryView;
+
+	if (!accessoryView) {
+		return;
+	}
+
 	accessoryView.translatesAutoresizingMaskIntoConstraints = NO;
 
 	UILayoutConstraintAxis axis = UILayoutConstraintAxisHorizontal;
@@ -300,16 +305,17 @@ static const CGFloat kMLTextFieldThickLine = 2;
 
 - (void)setKeyboardType:(UIKeyboardType)keyboardType
 {
-	_keyboardType = keyboardType;
-
 	self.textField.keyboardType = keyboardType;
 }
 
 - (void)setAutocapitalizationType:(UITextAutocapitalizationType)autocapitalizationType
 {
-	_autocapitalizationType = autocapitalizationType;
-
 	self.textField.autocapitalizationType = autocapitalizationType;
+}
+
+- (void)setAutocorrectionType:(UITextAutocorrectionType)autocorrectionType
+{
+	self.textField.autocorrectionType = autocorrectionType;
 }
 
 - (void)setSecureTextEntry:(BOOL)secureTextEntry
@@ -323,7 +329,7 @@ static const CGFloat kMLTextFieldThickLine = 2;
 
 - (NSString *)text
 {
-	return self.textCache ? self.textCache : @"";
+	return self.textCache ? : @"";
 }
 
 - (UIView <UITextInputTraits, UITextInput> *)textInputControl
@@ -341,6 +347,21 @@ static const CGFloat kMLTextFieldThickLine = 2;
 - (NSString *)placeholder
 {
 	return self.placeholderLabel.text;
+}
+
+- (UIKeyboardType)keyboardType
+{
+	return self.textField.keyboardType;
+}
+
+- (UITextAutocapitalizationType)autocapitalizationType
+{
+	return self.textField.autocapitalizationType;
+}
+
+- (UITextAutocorrectionType)autocorrectionType
+{
+	return self.textField.autocorrectionType;
 }
 
 #pragma mark State handling
