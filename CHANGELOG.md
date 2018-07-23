@@ -1,4 +1,15 @@
-# Sin Publicar
+# v5.0.0
+### Agregado
+- Soporte para configurar el autocorrection type a los titled text fields
+
+### Cambiado
+- Condiciones de nullability de los titled text fields
+
+# v4.2.0
+### Agregado
+- Implementacion de isEqual para MLButtonConfig
+
+# v4.1.0
 ### Cambiado
 - Modificaion de firmas de NSAttributeString+Html para soportar swift
 
