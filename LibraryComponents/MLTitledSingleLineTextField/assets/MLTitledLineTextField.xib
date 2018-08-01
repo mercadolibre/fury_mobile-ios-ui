@@ -64,7 +64,21 @@
                 </view>
                 <view contentMode="scaleToFill" horizontalHuggingPriority="752" horizontalCompressionResistancePriority="752" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="abO-Fz-yNE" userLabel="Accessory view">
                     <rect key="frame" x="336" y="9" width="60" height="66"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUV-Dc-taB">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="66"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="iUV-Dc-taB" secondAttribute="trailing" id="7pQ-cG-ZIU"/>
+                        <constraint firstItem="iUV-Dc-taB" firstAttribute="top" secondItem="abO-Fz-yNE" secondAttribute="top" id="evL-kQ-Fsa"/>
+                        <constraint firstItem="iUV-Dc-taB" firstAttribute="leading" secondItem="abO-Fz-yNE" secondAttribute="leading" id="vEe-fZ-plZ"/>
+                        <constraint firstAttribute="bottom" secondItem="iUV-Dc-taB" secondAttribute="bottom" id="xwX-ww-Ilq"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
