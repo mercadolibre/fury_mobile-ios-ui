@@ -1,3 +1,7 @@
+# v5.0.1
+### Arreglado
+- `MLTitledLineTextField`: El ancho del AccessoryView no se calculaba correctamente. Se revierten los cambios del xib introducidos en el release 5.0.0
+
 # v5.0.0
 ### Agregado
 - Soporte para configurar el autocorrection type a los titled text fields
