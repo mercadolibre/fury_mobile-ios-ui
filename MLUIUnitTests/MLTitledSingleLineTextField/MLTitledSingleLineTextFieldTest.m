@@ -82,7 +82,7 @@
 	MLTitledSingleLineTextField *textField = self.textField;
 
 	XCTAssertNil(textField.accessoryView);
-	XCTAssertEqual(textField.accessoryViewContainer.subviews.count, 0);
+	XCTAssertEqual(textField.accessoryViewContainer.subviews.count, 1);
 }
 
 - (void)testSetAccessoryView
@@ -92,7 +92,7 @@
 	textField.accessoryView = accessoryView;
 
 	XCTAssertEqualObjects(textField.accessoryView, accessoryView);
-	XCTAssertEqual(textField.accessoryViewContainer.subviews.count, 1);
+	XCTAssertEqual(textField.accessoryViewContainer.subviews.count, 2);
 }
 
 - (void)testSetAccessoryViewNil
@@ -101,7 +101,7 @@
 	textField.accessoryView = nil;
 
 	XCTAssertNil(textField.accessoryView);
-	XCTAssertEqual(textField.accessoryViewContainer.subviews.count, 0);
+	XCTAssertEqual(textField.accessoryViewContainer.subviews.count, 1);
 }
 
 - (void)testKeyboardTypeDefault
