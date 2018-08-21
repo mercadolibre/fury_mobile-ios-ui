@@ -10,4 +10,6 @@
 
 @interface MLCheckBox : MLBooleanWidget
 
+- (void)setEnabled:(BOOL)enabled Animated:(BOOL)animated;
+
 @end

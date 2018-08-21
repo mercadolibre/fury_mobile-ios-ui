@@ -60,6 +60,11 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
     self.checkBoxInternalLayer.frame = self.bounds;
 }
 
+#pragma mark - Public Methods
+- (void)setEnabled:(BOOL)enabled Animated:(BOOL)animated
+{
+}
+
 #pragma mark - Animation
 
 - (void)setOnBooleanWidgetAnimated:(BOOL)animated
