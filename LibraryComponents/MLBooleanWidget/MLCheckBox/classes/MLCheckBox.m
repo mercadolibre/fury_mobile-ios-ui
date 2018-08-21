@@ -63,6 +63,30 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 #pragma mark - Public Methods
 - (void)setEnabled:(BOOL)enabled Animated:(BOOL)animated
 {
+    if (self.userInteractionEnabled == enabled) {
+        return;
+    }
+    
+    self.userInteractionEnabled = enabled;
+    if (enabled) {
+        if (self.isBooleanWidgetOn) {
+            [self fillCheckBoxExternalFromColor:[UIColor ml_meli_mid_grey] ToColor:[UIColor ml_meli_blue] Animated:animated];
+            [self fillCheckBoxInternalFromColor:[UIColor ml_meli_mid_grey] ToColor:[UIColor ml_meli_blue] FromOpacity:1 ToOpacity:1 Animated:animated];
+            [self fillCheckBoxTickAnimated:animated];
+        } else {
+            [self fillCheckBoxExternalFromColor:[UIColor ml_meli_mid_grey] ToColor:[UIColor ml_meli_grey] Animated:animated];
+            [self fillCheckBoxInternalFromColor:[UIColor ml_meli_mid_grey] ToColor:[UIColor ml_meli_grey] FromOpacity:0 ToOpacity:0 Animated:animated];
+        }
+    } else {
+        if (self.isBooleanWidgetOn) {
+            [self fillCheckBoxExternalFromColor:[UIColor ml_meli_blue] ToColor:[UIColor ml_meli_mid_grey] Animated:animated];
+            [self fillCheckBoxInternalFromColor:[UIColor ml_meli_blue] ToColor:[UIColor ml_meli_mid_grey] FromOpacity:1 ToOpacity:1 Animated:animated];
+            [self fillCheckBoxTickAnimated:animated];
+        } else {
+            [self fillCheckBoxExternalFromColor:[UIColor ml_meli_grey] ToColor:[UIColor ml_meli_mid_grey] Animated:animated];
+            [self fillCheckBoxInternalFromColor:[UIColor ml_meli_grey] ToColor:[UIColor ml_meli_mid_grey] FromOpacity:0 ToOpacity:0 Animated:animated];
+        }
+    }
 }
 
 #pragma mark - Animation
