@@ -73,21 +73,21 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 	self.isEnabled = enabled;
 	if (enabled) {
 		if (self.isBooleanWidgetOn) {
-			[self fillCheckBoxExternalFromColor:[UIColor ml_meli_mid_grey] ToColor:[UIColor ml_meli_blue] Animated:animated];
-			[self fillCheckBoxInternalFromColor:[UIColor ml_meli_mid_grey] ToColor:[UIColor ml_meli_blue] FromOpacity:1 ToOpacity:1 Animated:animated];
+			[self fillCheckBoxExternalFromColor:[self disabledColor] ToColor:[self enabledOnColor] Animated:animated];
+			[self fillCheckBoxInternalFromColor:[self disabledColor] ToColor:[self enabledOnColor] FromOpacity:1 ToOpacity:1 Animated:animated];
 			[self fillCheckBoxTickAnimated:animated];
 		} else {
-			[self fillCheckBoxExternalFromColor:[UIColor ml_meli_mid_grey] ToColor:[UIColor ml_meli_grey] Animated:animated];
-			[self fillCheckBoxInternalFromColor:[UIColor ml_meli_mid_grey] ToColor:[UIColor ml_meli_grey] FromOpacity:0 ToOpacity:0 Animated:animated];
+			[self fillCheckBoxExternalFromColor:[self disabledColor] ToColor:[self enabledOffColor] Animated:animated];
+			[self fillCheckBoxInternalFromColor:[self disabledColor] ToColor:[self enabledOffColor] FromOpacity:0 ToOpacity:0 Animated:animated];
 		}
 	} else {
 		if (self.isBooleanWidgetOn) {
-			[self fillCheckBoxExternalFromColor:[UIColor ml_meli_blue] ToColor:[UIColor ml_meli_mid_grey] Animated:animated];
-			[self fillCheckBoxInternalFromColor:[UIColor ml_meli_blue] ToColor:[UIColor ml_meli_mid_grey] FromOpacity:1 ToOpacity:1 Animated:animated];
+			[self fillCheckBoxExternalFromColor:[self enabledOnColor] ToColor:[self disabledColor] Animated:animated];
+			[self fillCheckBoxInternalFromColor:[self enabledOnColor] ToColor:[self disabledColor] FromOpacity:1 ToOpacity:1 Animated:animated];
 			[self fillCheckBoxTickAnimated:animated];
 		} else {
-			[self fillCheckBoxExternalFromColor:[UIColor ml_meli_grey] ToColor:[UIColor ml_meli_mid_grey] Animated:animated];
-			[self fillCheckBoxInternalFromColor:[UIColor ml_meli_grey] ToColor:[UIColor ml_meli_mid_grey] FromOpacity:0 ToOpacity:0 Animated:animated];
+			[self fillCheckBoxExternalFromColor:[self enabledOffColor] ToColor:[self disabledColor] Animated:animated];
+			[self fillCheckBoxInternalFromColor:[self enabledOffColor] ToColor:[self disabledColor] FromOpacity:0 ToOpacity:0 Animated:animated];
 		}
 	}
 }
@@ -101,7 +101,7 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 	}
 
 	[self fillCheckBoxExternalAnimated:animated];
-	[self fillCheckBoxInternalFromColor:[UIColor ml_meli_grey] ToColor:[UIColor ml_meli_blue] FromOpacity:0 ToOpacity:1 Animated:animated];
+	[self fillCheckBoxInternalFromColor:[self enabledOffColor] ToColor:[self enabledOnColor] FromOpacity:0 ToOpacity:1 Animated:animated];
 	[self fillCheckBoxTickAnimated:animated];
 }
 
@@ -127,7 +127,7 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 
 - (void)fillCheckBoxExternalAnimated:(BOOL)animated
 {
-	[self fillCheckBoxExternalFromColor:[UIColor ml_meli_grey] ToColor:[UIColor ml_meli_blue] Animated:animated];
+	[self fillCheckBoxExternalFromColor:[self enabledOffColor] ToColor:[self enabledOnColor] Animated:animated];
 }
 
 - (void)fillCheckBoxInternalFromColor:(UIColor *)fromColor ToColor:(UIColor *)toColor FromOpacity:(float)fromOpacity ToOpacity:(float)toOpacity Animated:(BOOL)animated
@@ -196,8 +196,8 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 		return;
 	}
 
-	[self fillCheckBoxExternalFromColor:[UIColor ml_meli_blue] ToColor:[UIColor ml_meli_grey] Animated:animated];
-	[self fillCheckBoxInternalFromColor:[UIColor ml_meli_blue] ToColor:[UIColor ml_meli_grey] FromOpacity:1 ToOpacity:0 Animated:animated];
+	[self fillCheckBoxExternalFromColor:[self enabledOnColor] ToColor:[self enabledOffColor] Animated:animated];
+	[self fillCheckBoxInternalFromColor:[self enabledOnColor] ToColor:[self enabledOffColor] FromOpacity:1 ToOpacity:0 Animated:animated];
 }
 
 #pragma mark - Tick Positions
@@ -265,6 +265,22 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 	colorFillAnimation.fillMode = fillMode;
 
 	return colorFillAnimation;
+}
+
+#pragma mark - Color Getter Methods
+- (UIColor *)enabledOnColor
+{
+    return [UIColor ml_meli_blue];
+}
+
+- (UIColor *)enabledOffColor
+{
+    return [UIColor ml_meli_mid_grey];
+}
+
+- (UIColor *)disabledColor
+{
+    return [UIColor ml_meli_light_grey];
 }
 
 @end
