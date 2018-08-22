@@ -49,8 +49,8 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 	// create tick layer
 	self.checkBoxTickLayer = [CAShapeLayer layer];
 	[self.layer addSublayer:self.checkBoxTickLayer];
-    
-    self.isEnabled = YES;
+
+	self.isEnabled = YES;
 }
 
 #pragma mark - Navigation
@@ -270,17 +270,17 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 #pragma mark - Color Getter Methods
 - (UIColor *)enabledOnColor
 {
-    return [UIColor ml_meli_blue];
+	return [UIColor ml_meli_blue];
 }
 
 - (UIColor *)enabledOffColor
 {
-    return [UIColor ml_meli_mid_grey];
+	return [UIColor ml_meli_mid_grey];
 }
 
 - (UIColor *)disabledColor
 {
-    return [UIColor ml_meli_light_grey];
+	return [UIColor ml_meli_light_grey];
 }
 
 @end
