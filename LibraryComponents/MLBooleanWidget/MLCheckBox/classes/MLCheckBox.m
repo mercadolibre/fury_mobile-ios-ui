@@ -275,12 +275,12 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 
 - (UIColor *)enabledOffColor
 {
-	return [UIColor ml_meli_mid_grey];
+	return [UIColor ml_meli_grey];
 }
 
 - (UIColor *)disabledColor
 {
-	return [UIColor ml_meli_light_grey];
+	return [UIColor ml_meli_mid_grey];
 }
 
 @end
