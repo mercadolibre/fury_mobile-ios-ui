@@ -93,7 +93,7 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 
 - (void)setOnBooleanWidgetAnimated:(BOOL)animated
 {
-	if (self.isBooleanWidgetOn) {
+	if (self.isBooleanWidgetOn || !self.userInteractionEnabled) {
 		return;
 	}
 
@@ -189,6 +189,10 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 
 - (void)setOffBooleanWidgetAnimated:(BOOL)animated
 {
+    if (!self.userInteractionEnabled) {
+        return;
+    }
+    
 	[self fillCheckBoxExternalFromColor:[UIColor ml_meli_blue] ToColor:[UIColor ml_meli_grey] Animated:animated];
 	[self fillCheckBoxInternalFromColor:[UIColor ml_meli_blue] ToColor:[UIColor ml_meli_grey] FromOpacity:1 ToOpacity:0 Animated:animated];
 }
