@@ -24,6 +24,7 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 @property (nonatomic, strong) CAShapeLayer *checkBoxExternalLayer;
 @property (nonatomic, strong) CAShapeLayer *checkBoxInternalLayer;
 @property (nonatomic, strong) CAShapeLayer *checkBoxTickLayer;
+@property (nonatomic, assign) BOOL isEnabled;
 
 @end
 
@@ -48,6 +49,8 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 	// create tick layer
 	self.checkBoxTickLayer = [CAShapeLayer layer];
 	[self.layer addSublayer:self.checkBoxTickLayer];
+    
+    self.isEnabled = YES;
 }
 
 #pragma mark - Navigation
@@ -63,11 +66,11 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 #pragma mark - Public Methods
 - (void)setEnabled:(BOOL)enabled Animated:(BOOL)animated
 {
-	if (self.userInteractionEnabled == enabled) {
+	if (self.isEnabled == enabled) {
 		return;
 	}
 
-	self.userInteractionEnabled = enabled;
+	self.isEnabled = enabled;
 	if (enabled) {
 		if (self.isBooleanWidgetOn) {
 			[self fillCheckBoxExternalFromColor:[UIColor ml_meli_mid_grey] ToColor:[UIColor ml_meli_blue] Animated:animated];
@@ -93,7 +96,7 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 
 - (void)setOnBooleanWidgetAnimated:(BOOL)animated
 {
-	if (self.isBooleanWidgetOn || !self.userInteractionEnabled) {
+	if (self.isBooleanWidgetOn || !self.isEnabled) {
 		return;
 	}
 
@@ -189,7 +192,7 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 
 - (void)setOffBooleanWidgetAnimated:(BOOL)animated
 {
-	if (!self.userInteractionEnabled) {
+	if (!self.isEnabled) {
 		return;
 	}
 
