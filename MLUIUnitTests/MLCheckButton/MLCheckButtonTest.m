@@ -31,6 +31,7 @@
 	MLCheckBox *checkBox = [[MLCheckBox alloc] init];
 
 	XCTAssertEqual([checkBox isOff], YES);
+    XCTAssertTrue([checkBox isEnabled]);
 }
 
 - (void)testFillCheckButton
@@ -41,6 +42,31 @@
 
 	XCTAssertEqual([checkBox isOn], YES);
 	XCTAssertEqual([checkBox isOff], NO);
+}
+
+- (void)testDisableCheckBox
+{
+    MLCheckBox *enabledCheckBox = [[MLCheckBox alloc] init];
+    MLCheckBox *disabledCheckBox = [[MLCheckBox alloc] init];
+    [disabledCheckBox setEnabled:NO Animated:NO];
+    
+    XCTAssertTrue([enabledCheckBox isEnabled]);
+    XCTAssertFalse([disabledCheckBox isEnabled]);
+    
+    [enabledCheckBox setEnabled:NO Animated:YES];
+    [disabledCheckBox setEnabled:YES Animated:YES];
+    
+    XCTAssertFalse([enabledCheckBox isEnabled]);
+    XCTAssertTrue([disabledCheckBox isEnabled]);
+    
+    [enabledCheckBox setEnabled:YES Animated:NO];
+    
+    XCTAssertTrue([enabledCheckBox isEnabled]);
+}
+
+- (void)testEnableCheckBox
+{
+    
 }
 
 - (void)testClearRadioButton
