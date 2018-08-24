@@ -63,7 +63,7 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 #pragma mark - Public Methods
 - (void)setEnabled:(BOOL)enabled Animated:(BOOL)animated
 {
-    [super setEnabled:enabled Animated:animated];
+	[super setEnabled:enabled Animated:animated];
 	if (enabled) {
 		if (self.isBooleanWidgetOn) {
 			[self fillCheckBoxExternalFromColor:[self disabledColor] ToColor:[self enabledOnColor] Animated:animated];

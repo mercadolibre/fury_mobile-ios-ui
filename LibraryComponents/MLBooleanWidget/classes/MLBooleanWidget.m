@@ -9,7 +9,7 @@
 #import "MLBooleanWidget.h"
 #import "MLBooleanWidget_Protected.h"
 
-@interface MLBooleanWidget()
+@interface MLBooleanWidget ()
 
 @property (nonatomic, assign) BOOL enabled;
 
@@ -56,7 +56,7 @@
 - (void)commonInit
 {
 	// Default Boolean Widget is Enabled and Off.
-    self.enabled = YES;
+	self.enabled = YES;
 	[self off];
 
 	self.backgroundColor = [UIColor clearColor];
@@ -66,16 +66,16 @@
 
 - (BOOL)isEnabled
 {
-    return self.enabled;
+	return self.enabled;
 }
 
 - (void)setEnabled:(BOOL)enabled Animated:(BOOL)animated
 {
-    if (self.enabled == enabled) {
-        return;
-    }
-    
-    self.enabled = enabled;
+	if (self.enabled == enabled) {
+		return;
+	}
+
+	self.enabled = enabled;
 }
 
 #pragma mark - Navigation
@@ -108,10 +108,10 @@
 
 - (void)onAnimated:(BOOL)animated
 {
-    if (!self.enabled) {
-        return;
-    }
-    
+	if (!self.enabled) {
+		return;
+	}
+
 	[self setOnBooleanWidgetAnimated:animated];
 	[self setStateOn];
 }
@@ -123,10 +123,10 @@
 
 - (void)offAnimated:(BOOL)animated
 {
-    if (!self.enabled) {
-        return;
-    }
-    
+	if (!self.enabled) {
+		return;
+	}
+
 	[self setStateOff];
 	[self setOffBooleanWidgetAnimated:animated];
 }
@@ -148,10 +148,10 @@
 
 - (void)toggleAnimated:(BOOL)animated
 {
-    if (!self.enabled) {
-        return;
-    }
-    
+	if (!self.enabled) {
+		return;
+	}
+
 	if (self.isBooleanWidgetOn) {
 		[self offAnimated:animated];
 	} else {
