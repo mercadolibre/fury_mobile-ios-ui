@@ -1,5 +1,5 @@
 # v5.1.0
-### Agregado
+### Nuevo
 - Feature/checkbox update #15
 
 # v5.0.1
