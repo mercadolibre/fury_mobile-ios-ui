@@ -71,6 +71,16 @@
  */
 - (BOOL)isOff;
 
+/**
+ *  Returns YES if the Widget is enabled and NO if it is not.
+ */
+- (BOOL)isEnabled;
+
+/**
+ *  Sets the Widget either to enabled or disabled with or without an animation.
+ */
+- (void)setEnabled:(BOOL)enabled Animated:(BOOL)animated;
+
 @end
 
 /**

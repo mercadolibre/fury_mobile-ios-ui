@@ -24,7 +24,6 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 @property (nonatomic, strong) CAShapeLayer *checkBoxExternalLayer;
 @property (nonatomic, strong) CAShapeLayer *checkBoxInternalLayer;
 @property (nonatomic, strong) CAShapeLayer *checkBoxTickLayer;
-@property (nonatomic, assign) BOOL isEnabled;
 
 @end
 
@@ -49,8 +48,6 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 	// create tick layer
 	self.checkBoxTickLayer = [CAShapeLayer layer];
 	[self.layer addSublayer:self.checkBoxTickLayer];
-
-	self.isEnabled = YES;
 }
 
 #pragma mark - Navigation
@@ -66,16 +63,11 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 #pragma mark - Public Methods
 - (void)setEnabled:(BOOL)enabled Animated:(BOOL)animated
 {
-	if (self.isEnabled == enabled) {
-		return;
-	}
-
-	self.isEnabled = enabled;
+    [super setEnabled:enabled Animated:animated];
 	if (enabled) {
 		if (self.isBooleanWidgetOn) {
 			[self fillCheckBoxExternalFromColor:[self disabledColor] ToColor:[self enabledOnColor] Animated:animated];
 			[self fillCheckBoxInternalFromColor:[self disabledColor] ToColor:[self enabledOnColor] FromOpacity:1 ToOpacity:1 Animated:animated];
-			[self fillCheckBoxTickAnimated:animated];
 		} else {
 			[self fillCheckBoxExternalFromColor:[self disabledColor] ToColor:[self enabledOffColor] Animated:animated];
 			[self fillCheckBoxInternalFromColor:[self disabledColor] ToColor:[self enabledOffColor] FromOpacity:0 ToOpacity:0 Animated:animated];
@@ -84,7 +76,6 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 		if (self.isBooleanWidgetOn) {
 			[self fillCheckBoxExternalFromColor:[self enabledOnColor] ToColor:[self disabledColor] Animated:animated];
 			[self fillCheckBoxInternalFromColor:[self enabledOnColor] ToColor:[self disabledColor] FromOpacity:1 ToOpacity:1 Animated:animated];
-			[self fillCheckBoxTickAnimated:animated];
 		} else {
 			[self fillCheckBoxExternalFromColor:[self enabledOffColor] ToColor:[self disabledColor] Animated:animated];
 			[self fillCheckBoxInternalFromColor:[self enabledOffColor] ToColor:[self disabledColor] FromOpacity:0 ToOpacity:0 Animated:animated];
