@@ -20,6 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet MLCheckBox *mlCheckBox1;
 @property (weak, nonatomic) IBOutlet MLCheckBox *mlCheckBox2;
+@property (weak, nonatomic) IBOutlet MLCheckBox *mlCheckBox3;
 
 @property (weak, nonatomic) IBOutlet MLRadioButton *mlRadioButton1;
 @property (weak, nonatomic) IBOutlet MLRadioButton *mlRadioButton2;
@@ -44,6 +45,7 @@
 	[self setupTitle];
 	[self setupCheckBox];
 	[self setupCheckBoxLabels];
+	[self setupControlCheckbox];
 	[self setupRadioButton];
 	[self setupOptionLabels];
 	[self setupSwitch];
@@ -58,6 +60,12 @@
 - (void)setupCheckBox
 {
 	self.mlCheckList = [MLCheckList checkListWithCheckBoxes:@[self.mlCheckBox1, self.mlCheckBox2]];
+}
+
+- (void)setupControlCheckbox
+{
+	[self.mlCheckBox3 onAnimated:NO];
+	self.mlCheckBox3.delegate = self;
 }
 
 - (void)setupCheckBoxLabels
@@ -86,6 +94,11 @@
 - (void)booleanWidgetDidRequestChangeOfState:(MLBooleanWidget *)booleanWidget
 {
 	[booleanWidget toggleAnimated:YES];
+
+	if (booleanWidget == self.mlCheckBox3) {
+		[self.mlCheckBox1 setEnabled:booleanWidget.isOn Animated:YES];
+		[self.mlCheckBox2 setEnabled:booleanWidget.isOn Animated:YES];
+	}
 }
 
 #pragma mark - Actions

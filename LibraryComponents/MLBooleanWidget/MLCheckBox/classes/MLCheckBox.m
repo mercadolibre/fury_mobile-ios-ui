@@ -60,19 +60,43 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 	self.checkBoxInternalLayer.frame = self.bounds;
 }
 
+#pragma mark - Public Methods
+- (void)setEnabled:(BOOL)enabled Animated:(BOOL)animated
+{
+	[super setEnabled:enabled Animated:animated];
+	if (enabled) {
+		if (self.isBooleanWidgetOn) {
+			[self fillCheckBoxExternalFromColor:[self disabledColor] ToColor:[self enabledOnColor] Animated:animated];
+			[self fillCheckBoxInternalFromColor:[self disabledColor] ToColor:[self enabledOnColor] FromOpacity:1 ToOpacity:1 Animated:animated];
+		} else {
+			[self fillCheckBoxExternalFromColor:[self disabledColor] ToColor:[self enabledOffColor] Animated:animated];
+			[self fillCheckBoxInternalFromColor:[self disabledColor] ToColor:[self enabledOffColor] FromOpacity:0 ToOpacity:0 Animated:animated];
+		}
+	} else {
+		if (self.isBooleanWidgetOn) {
+			[self fillCheckBoxExternalFromColor:[self enabledOnColor] ToColor:[self disabledColor] Animated:animated];
+			[self fillCheckBoxInternalFromColor:[self enabledOnColor] ToColor:[self disabledColor] FromOpacity:1 ToOpacity:1 Animated:animated];
+		} else {
+			[self fillCheckBoxExternalFromColor:[self enabledOffColor] ToColor:[self disabledColor] Animated:animated];
+			[self fillCheckBoxInternalFromColor:[self enabledOffColor] ToColor:[self disabledColor] FromOpacity:0 ToOpacity:0 Animated:animated];
+		}
+	}
+}
+
 #pragma mark - Animation
+
 - (void)setOnBooleanWidgetAnimated:(BOOL)animated
 {
-	if (self.isBooleanWidgetOn) {
+	if (self.isBooleanWidgetOn || !self.isEnabled) {
 		return;
 	}
 
 	[self fillCheckBoxExternalAnimated:animated];
-	[self fillCheckBoxInternalAnimated:animated];
+	[self fillCheckBoxInternalFromColor:[self enabledOffColor] ToColor:[self enabledOnColor] FromOpacity:0 ToOpacity:1 Animated:animated];
 	[self fillCheckBoxTickAnimated:animated];
 }
 
-- (void)fillCheckBoxExternalAnimated:(BOOL)animated
+- (void)fillCheckBoxExternalFromColor:(UIColor *)fromColor ToColor:(UIColor *)toColor Animated:(BOOL)animated
 {
 	// Set circle layer bounds
 	self.checkBoxExternalLayer.bounds = CGRectMake(0, 0, CGRectGetHeight(self.frame), CGRectGetWidth(self.frame));
@@ -82,52 +106,40 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 	self.checkBoxExternalLayer.path = externalFrame.CGPath;
 
 	self.checkBoxExternalLayer.fillColor = [UIColor clearColor].CGColor;
-	float lineWidth = kMLCheckBoxExternalLineWidth;
-
-	self.checkBoxExternalLayer.lineWidth = lineWidth;
+	self.checkBoxExternalLayer.lineWidth = kMLCheckBoxExternalLineWidth;
 
 	// Color animation
-	CABasicAnimation *colorFillAnimation = [CABasicAnimation animationWithKeyPath:@"strokeColor"];
-	colorFillAnimation.beginTime = 0;
-	colorFillAnimation.fromValue = (id)[UIColor ml_meli_grey].CGColor;
-	colorFillAnimation.toValue = (id)[UIColor ml_meli_blue].CGColor;
-	colorFillAnimation.fillMode = kCAFillModeForwards;
-	colorFillAnimation.duration = animated ? kMLCheckBoxAnimationDuration : kMLCheckBoxNotAnimationDuration;
+	CABasicAnimation *colorFillAnimation = [self createColorFillAnimationFromColor:fromColor ToColor:toColor WithDuration:animated ? kMLCheckBoxAnimationDuration : kMLCheckBoxNotAnimationDuration];
 
 	[self.checkBoxExternalLayer addAnimation:colorFillAnimation forKey:@"animateFill"];
 
-	self.checkBoxExternalLayer.strokeColor = [UIColor ml_meli_blue].CGColor;
+	self.checkBoxExternalLayer.strokeColor = toColor.CGColor;
 }
 
-- (void)fillCheckBoxInternalAnimated:(BOOL)animated
+- (void)fillCheckBoxExternalAnimated:(BOOL)animated
+{
+	[self fillCheckBoxExternalFromColor:[self enabledOffColor] ToColor:[self enabledOnColor] Animated:animated];
+}
+
+- (void)fillCheckBoxInternalFromColor:(UIColor *)fromColor ToColor:(UIColor *)toColor FromOpacity:(float)fromOpacity ToOpacity:(float)toOpacity Animated:(BOOL)animated
 {
 	// Set circle layer bounds
 	self.checkBoxInternalLayer.bounds = CGRectMake(0, 0, CGRectGetHeight(self.frame), CGRectGetWidth(self.frame));
 
 	// Set circle layer path
-	UIBezierPath *externalFrame = [UIBezierPath bezierPathWithRoundedRect:self.checkBoxExternalLayer.bounds cornerRadius:kMLCheckBoxExternalCornerRadius];
-	self.checkBoxInternalLayer.path = externalFrame.CGPath;
-
 	UIBezierPath *internalFrame = [UIBezierPath bezierPathWithRoundedRect:self.checkBoxExternalLayer.bounds cornerRadius:kMLCheckBoxExternalCornerRadius];
+	self.checkBoxInternalLayer.path = internalFrame.CGPath;
 
-	self.checkBoxInternalLayer.fillColor = [UIColor ml_meli_blue].CGColor;
+	self.checkBoxInternalLayer.fillColor = toOpacity == 0 ? [UIColor clearColor].CGColor : toColor.CGColor;
 	float lineWidth = kMLCheckBoxExternalLineWidth;
 
 	self.checkBoxInternalLayer.lineWidth = lineWidth;
 
 	// Opacity animation
-	CABasicAnimation *opacityFillAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-	opacityFillAnimation.beginTime = 0;
-	opacityFillAnimation.fromValue = @0;
-	opacityFillAnimation.toValue = @1;
-	opacityFillAnimation.fillMode = kCAFillModeForwards;
+	CABasicAnimation *opacityFillAnimation = [self createOpacityFillAnimationFromValue:fromOpacity ToValue:toOpacity];
 
 	// Color animation
-	CABasicAnimation *colorFillAnimation = [CABasicAnimation animationWithKeyPath:@"strokeColor"];
-	colorFillAnimation.beginTime = 0;
-	colorFillAnimation.fromValue = (id)[UIColor ml_meli_grey].CGColor;
-	colorFillAnimation.toValue = (id)[UIColor ml_meli_blue].CGColor;
-	colorFillAnimation.fillMode = kCAFillModeForwards;
+	CABasicAnimation *colorFillAnimation = [self createColorFillAnimationFromColor:fromColor ToColor:toColor];
 
 	// Compaund animation
 	CAAnimationGroup *fillAnimation = [CAAnimationGroup animation];
@@ -136,9 +148,7 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 
 	[self.checkBoxInternalLayer addAnimation:fillAnimation forKey:@"animateFill"];
 
-	self.checkBoxInternalLayer.strokeColor = [UIColor ml_meli_blue].CGColor;
-	self.checkBoxInternalLayer.path = internalFrame.CGPath;
-	self.checkBoxInternalLayer.opacity = 1;
+	self.checkBoxInternalLayer.strokeColor = toColor.CGColor;
 }
 
 - (void)fillCheckBoxTickAnimated:(BOOL)animated
@@ -163,7 +173,6 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 
 	// Color animation
 	CABasicAnimation *pathTickAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-	pathTickAnimation.beginTime = 0;
 	pathTickAnimation.fromValue = @0.0;
 	pathTickAnimation.toValue = @1.0;
 	pathTickAnimation.fillMode = kCAFillModeForwards;
@@ -174,79 +183,12 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 
 - (void)setOffBooleanWidgetAnimated:(BOOL)animated
 {
-	[self clearCheckBoxExternalAnimated:animated];
-	[self clearCheckBoxInternalAnimated:animated];
-}
+	if (!self.isEnabled) {
+		return;
+	}
 
-- (void)clearCheckBoxExternalAnimated:(BOOL)animated
-{
-	// Set circle layer bounds
-	self.checkBoxExternalLayer.bounds = CGRectMake(0, 0, CGRectGetHeight(self.frame), CGRectGetWidth(self.frame));
-
-	// Set circle layer path
-	UIBezierPath *externalFrame = [UIBezierPath bezierPathWithRoundedRect:self.checkBoxExternalLayer.bounds cornerRadius:kMLCheckBoxExternalCornerRadius];
-
-	self.checkBoxExternalLayer.path = externalFrame.CGPath;
-
-	self.checkBoxExternalLayer.fillColor = [UIColor clearColor].CGColor;
-	float lineWidth = kMLCheckBoxExternalLineWidth;
-
-	self.checkBoxExternalLayer.lineWidth = lineWidth;
-
-	// Color animation
-	CABasicAnimation *colorFillAnimation = [CABasicAnimation animationWithKeyPath:@"strokeColor"];
-	colorFillAnimation.beginTime = 0;
-	colorFillAnimation.fromValue = (id)[UIColor ml_meli_blue].CGColor;
-	colorFillAnimation.toValue = (id)[UIColor ml_meli_grey].CGColor;
-	colorFillAnimation.fillMode = kCAFillModeForwards;
-	colorFillAnimation.duration = animated ? kMLCheckBoxAnimationDuration : kMLCheckBoxNotAnimationDuration;
-
-	[self.checkBoxExternalLayer addAnimation:colorFillAnimation forKey:@"animateFill"];
-
-	self.checkBoxExternalLayer.strokeColor = [UIColor ml_meli_grey].CGColor;
-}
-
-- (void)clearCheckBoxInternalAnimated:(BOOL)animated
-{
-	// Set circle layer bounds
-	self.checkBoxInternalLayer.bounds = CGRectMake(0, 0, CGRectGetHeight(self.frame), CGRectGetWidth(self.frame));
-
-	// Set circle layer path
-	UIBezierPath *externalFrame = [UIBezierPath bezierPathWithRoundedRect:self.checkBoxExternalLayer.bounds cornerRadius:kMLCheckBoxExternalCornerRadius];
-
-	UIBezierPath *internalFrame = [UIBezierPath bezierPathWithRoundedRect:self.checkBoxExternalLayer.bounds cornerRadius:kMLCheckBoxExternalCornerRadius];
-	[internalFrame fill];
-
-	self.checkBoxInternalLayer.path = internalFrame.CGPath;
-
-	self.checkBoxInternalLayer.fillColor = [UIColor clearColor].CGColor;
-	float lineWidth = kMLCheckBoxExternalLineWidth;
-	self.checkBoxInternalLayer.lineWidth = lineWidth;
-
-	// Opacity animation
-	CABasicAnimation *opacityClearAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-	opacityClearAnimation.beginTime = 0;
-	opacityClearAnimation.fromValue = @1;
-	opacityClearAnimation.toValue = @0;
-	opacityClearAnimation.fillMode = kCAFillModeForwards;
-
-	// Color animation
-	CABasicAnimation *colorClearAnimation = [CABasicAnimation animationWithKeyPath:@"strokeColor"];
-	colorClearAnimation.beginTime = 0;
-	colorClearAnimation.fromValue = (id)[UIColor ml_meli_blue].CGColor;
-	colorClearAnimation.toValue = (id)[UIColor ml_meli_grey].CGColor;
-	colorClearAnimation.fillMode = kCAFillModeForwards;
-
-	// Compaund animation
-	CAAnimationGroup *clearAnimation = [CAAnimationGroup animation];
-	clearAnimation.duration = animated ? kMLCheckBoxAnimationDuration : kMLCheckBoxNotAnimationDuration;
-	[clearAnimation setAnimations:[NSArray arrayWithObjects:colorClearAnimation, opacityClearAnimation, nil]];
-
-	[self.checkBoxInternalLayer addAnimation:clearAnimation forKey:@"animateClear"];
-
-	self.checkBoxInternalLayer.strokeColor = [UIColor ml_meli_grey].CGColor;
-	self.checkBoxInternalLayer.path = externalFrame.CGPath;
-	self.checkBoxInternalLayer.opacity = 0;
+	[self fillCheckBoxExternalFromColor:[self enabledOnColor] ToColor:[self enabledOffColor] Animated:animated];
+	[self fillCheckBoxInternalFromColor:[self enabledOnColor] ToColor:[self enabledOffColor] FromOpacity:1 ToOpacity:0 Animated:animated];
 }
 
 #pragma mark - Tick Positions
@@ -272,6 +214,64 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 	CGFloat y = rect.size.height / 4.0;
 
 	return CGPointMake(x, y);
+}
+
+- (CABasicAnimation *)createOpacityFillAnimationFromValue:(float)fromValue ToValue:(float)toValue
+{
+	return [self createOpacityFillAnimationFromValue:fromValue ToValue:toValue WithDuration:0 WithFillMode:kCAFillModeForwards];
+}
+
+- (CABasicAnimation *)createOpacityFillAnimationFromValue:(float)fromValue ToValue:(float)toValue WithDuration:(double)duration
+{
+	return [self createOpacityFillAnimationFromValue:fromValue ToValue:toValue WithDuration:duration WithFillMode:kCAFillModeForwards];
+}
+
+- (CABasicAnimation *)createOpacityFillAnimationFromValue:(float)fromValue ToValue:(float)toValue WithDuration:(double)duration WithFillMode:(NSString *)fillMode
+{
+	CABasicAnimation *opacityFillAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+	opacityFillAnimation.fromValue = [NSNumber numberWithFloat:fromValue];
+	opacityFillAnimation.toValue = [NSNumber numberWithFloat:toValue];
+	opacityFillAnimation.duration = duration;
+	opacityFillAnimation.fillMode = fillMode;
+
+	return opacityFillAnimation;
+}
+
+- (CABasicAnimation *)createColorFillAnimationFromColor:(UIColor *)fromColor ToColor:(UIColor *)toColor WithDuration:(double)duration
+{
+	return [self createColorFillAnimationFromColor:fromColor ToColor:toColor WithDuration:duration WithFillMode:kCAFillModeForwards];
+}
+
+- (CABasicAnimation *)createColorFillAnimationFromColor:(UIColor *)fromColor ToColor:(UIColor *)toColor
+{
+	return [self createColorFillAnimationFromColor:fromColor ToColor:toColor WithDuration:0 WithFillMode:kCAFillModeForwards];
+}
+
+- (CABasicAnimation *)createColorFillAnimationFromColor:(UIColor *)fromColor ToColor:(UIColor *)toColor WithDuration:(double)duration WithFillMode:(NSString *)fillMode
+{
+	CABasicAnimation *colorFillAnimation = [CABasicAnimation animationWithKeyPath:@"strokeColor"];
+	colorFillAnimation.fromValue = (id)fromColor.CGColor;
+	colorFillAnimation.toValue = (id)toColor.CGColor;
+	colorFillAnimation.duration = duration;
+	colorFillAnimation.fillMode = fillMode;
+
+	return colorFillAnimation;
+}
+
+#pragma mark - Color Getter Methods
+- (UIColor *)enabledOnColor
+{
+	return [UIColor ml_meli_blue];
+}
+
+- (UIColor *)enabledOffColor
+{
+	return [UIColor ml_meli_grey];
+}
+
+- (UIColor *)disabledColor
+{
+	return [UIColor ml_meli_mid_grey];
 }
 
 @end

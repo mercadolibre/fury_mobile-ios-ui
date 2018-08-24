@@ -7,8 +7,13 @@
 //
 
 #import "MLBooleanWidget.h"
-
 #import "MLBooleanWidget_Protected.h"
+
+@interface MLBooleanWidget ()
+
+@property (nonatomic, assign) BOOL enabled;
+
+@end
 
 @implementation MLBooleanWidget
 
@@ -50,12 +55,27 @@
 
 - (void)commonInit
 {
-	// Default radio button state is clear
+	// Default Boolean Widget is Enabled and Off.
+	self.enabled = YES;
 	[self off];
 
 	self.backgroundColor = [UIColor clearColor];
 
 	[self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(booleanWidgetWasTapped:)]];
+}
+
+- (BOOL)isEnabled
+{
+	return self.enabled;
+}
+
+- (void)setEnabled:(BOOL)enabled Animated:(BOOL)animated
+{
+	if (self.enabled == enabled) {
+		return;
+	}
+
+	self.enabled = enabled;
 }
 
 #pragma mark - Navigation
@@ -88,6 +108,10 @@
 
 - (void)onAnimated:(BOOL)animated
 {
+	if (!self.enabled) {
+		return;
+	}
+
 	[self setOnBooleanWidgetAnimated:animated];
 	[self setStateOn];
 }
@@ -99,6 +123,10 @@
 
 - (void)offAnimated:(BOOL)animated
 {
+	if (!self.enabled) {
+		return;
+	}
+
 	[self setStateOff];
 	[self setOffBooleanWidgetAnimated:animated];
 }
@@ -120,6 +148,10 @@
 
 - (void)toggleAnimated:(BOOL)animated
 {
+	if (!self.enabled) {
+		return;
+	}
+
 	if (self.isBooleanWidgetOn) {
 		[self offAnimated:animated];
 	} else {
