@@ -5,7 +5,7 @@ project 'MLUI.xcodeproj'
 
 use_frameworks!
 
-platform :ios, '7.0'
+platform :ios, '9.0'
 
 target 'MLUI' do
     pod 'MLUI', :path => "./"
@@ -13,7 +13,7 @@ target 'MLUI' do
 
     target 'MLUIUnitTests' do
 	inherit! :search_paths
-  	pod 'OCMock'
+  	pod 'OCMock', '3.4.1'
     end
 end
 

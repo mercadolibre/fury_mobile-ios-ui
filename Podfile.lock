@@ -1,104 +1,104 @@
 PODS:
   - FXBlurView (1.6.4)
   - JRSwizzle (1.0)
-  - MLUI (4.0.0):
-    - MLUI/ActionButton (= 4.0.0)
-    - MLUI/Core (= 4.0.0)
-    - MLUI/Helpers (= 4.0.0)
-    - MLUI/MLButton (= 4.0.0)
-    - MLUI/MLCheckBox (= 4.0.0)
-    - MLUI/MLColorPalette (= 4.0.0)
-    - MLUI/MLContextualMenu (= 4.0.0)
-    - MLUI/MLFonts (= 4.0.0)
-    - MLUI/MLGenericErrorView (= 4.0.0)
-    - MLUI/MLHtml (= 4.0.0)
-    - MLUI/MLModal (= 4.0.0)
-    - MLUI/MLRadioButton (= 4.0.0)
-    - MLUI/MLSnackBar (= 4.0.0)
-    - MLUI/MLSpacing (= 4.0.0)
-    - MLUI/MLSpinner (= 4.0.0)
-    - MLUI/MLSwitch (= 4.0.0)
-    - MLUI/MLTextView (= 4.0.0)
-    - MLUI/MLTitledMultiLineTextField (= 4.0.0)
-    - MLUI/MLTitledSingleLineTextField (= 4.0.0)
-    - MLUI/PriceView (= 4.0.0)
-    - MLUI/SnackBarView (= 4.0.0)
-    - MLUI/StyleSheet (= 4.0.0)
-  - MLUI/ActionButton (4.0.0):
+  - MLUI (5.0.1):
+    - MLUI/ActionButton (= 5.0.1)
+    - MLUI/Core (= 5.0.1)
+    - MLUI/Helpers (= 5.0.1)
+    - MLUI/MLButton (= 5.0.1)
+    - MLUI/MLCheckBox (= 5.0.1)
+    - MLUI/MLColorPalette (= 5.0.1)
+    - MLUI/MLContextualMenu (= 5.0.1)
+    - MLUI/MLFonts (= 5.0.1)
+    - MLUI/MLGenericErrorView (= 5.0.1)
+    - MLUI/MLHtml (= 5.0.1)
+    - MLUI/MLModal (= 5.0.1)
+    - MLUI/MLRadioButton (= 5.0.1)
+    - MLUI/MLSnackBar (= 5.0.1)
+    - MLUI/MLSpacing (= 5.0.1)
+    - MLUI/MLSpinner (= 5.0.1)
+    - MLUI/MLSwitch (= 5.0.1)
+    - MLUI/MLTextView (= 5.0.1)
+    - MLUI/MLTitledMultiLineTextField (= 5.0.1)
+    - MLUI/MLTitledSingleLineTextField (= 5.0.1)
+    - MLUI/PriceView (= 5.0.1)
+    - MLUI/SnackBarView (= 5.0.1)
+    - MLUI/StyleSheet (= 5.0.1)
+  - MLUI/ActionButton (5.0.1):
     - MLUI/Core
-  - MLUI/Core (4.0.0):
+  - MLUI/Core (5.0.1):
     - MLUI/MLFonts
-  - MLUI/Helpers (4.0.0)
-  - MLUI/MLButton (4.0.0):
+  - MLUI/Helpers (5.0.1)
+  - MLUI/MLButton (5.0.1):
     - MLUI/MLColorPalette
     - MLUI/MLFonts
     - MLUI/MLSpinner
     - MLUI/StyleSheet
-  - MLUI/MLCheckBox (4.0.0):
+  - MLUI/MLCheckBox (5.0.1):
     - MLUI/MLColorPalette
-  - MLUI/MLColorPalette (4.0.0)
-  - MLUI/MLContextualMenu (4.0.0):
+  - MLUI/MLColorPalette (5.0.1)
+  - MLUI/MLContextualMenu (5.0.1):
     - MLUI/MLColorPalette
     - MLUI/MLFonts
-  - MLUI/MLFonts (4.0.0):
+  - MLUI/MLFonts (5.0.1):
     - JRSwizzle (= 1.0)
     - MLUI/Helpers
     - MLUI/StyleSheet
-  - MLUI/MLGenericErrorView (4.0.0):
+  - MLUI/MLGenericErrorView (5.0.1):
     - MLUI/MLButton
     - MLUI/MLColorPalette
     - MLUI/MLSpacing
-  - MLUI/MLHtml (4.0.0):
+  - MLUI/MLHtml (5.0.1):
     - MLUI/MLFonts
-  - MLUI/MLModal (4.0.0):
+  - MLUI/MLModal (5.0.1):
     - FXBlurView (~> 1.6)
     - MLUI/Core
     - MLUI/MLButton
     - MLUI/MLColorPalette
     - MLUI/MLFonts
     - MLUI/StyleSheet
-  - MLUI/MLRadioButton (4.0.0):
+  - MLUI/MLRadioButton (5.0.1):
     - MLUI/MLColorPalette
-  - MLUI/MLSnackBar (4.0.0):
+  - MLUI/MLSnackBar (5.0.1):
     - MLUI/Helpers
     - MLUI/MLButton
     - MLUI/MLColorPalette
     - MLUI/MLFonts
-  - MLUI/MLSpacing (4.0.0):
+  - MLUI/MLSpacing (5.0.1):
     - JRSwizzle (= 1.0)
     - MLUI/MLFonts
-  - MLUI/MLSpinner (4.0.0):
+  - MLUI/MLSpinner (5.0.1):
     - MLUI/MLColorPalette
     - MLUI/MLFonts
     - MLUI/StyleSheet
-  - MLUI/MLSwitch (4.0.0):
+  - MLUI/MLSwitch (5.0.1):
     - MLUI/Helpers
     - MLUI/MLColorPalette
-  - MLUI/MLTextView (4.0.0):
+  - MLUI/MLTextView (5.0.1):
     - MLUI/MLColorPalette
     - MLUI/MLFonts
-  - MLUI/MLTitledMultiLineTextField (4.0.0):
+  - MLUI/MLTitledMultiLineTextField (5.0.1):
     - MLUI/MLColorPalette
     - MLUI/MLFonts
     - MLUI/MLTitledSingleLineTextField
     - MLUI/StyleSheet
-  - MLUI/MLTitledSingleLineTextField (4.0.0):
+  - MLUI/MLTitledSingleLineTextField (5.0.1):
     - MLUI/MLColorPalette
     - MLUI/MLFonts
     - MLUI/StyleSheet
-  - MLUI/PriceView (4.0.0):
+  - MLUI/PriceView (5.0.1):
     - MLUI/Core
     - MLUI/MLFonts
-  - MLUI/SnackBarView (4.0.0):
+  - MLUI/SnackBarView (5.0.1):
     - MLUI/Helpers
     - MLUI/MLFonts
-  - MLUI/StyleSheet (4.0.0)
-  - OCMock (3.3.1)
+  - MLUI/StyleSheet (5.0.1)
+  - OCMock (3.4.1)
 
 DEPENDENCIES:
   - FXBlurView (~> 1.6)
   - MLUI (from `./`)
-  - OCMock
+  - OCMock (= 3.4.1)
 
 EXTERNAL SOURCES:
   MLUI:
@@ -107,9 +107,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
-  MLUI: d768815357f23d0ef61b0a95e80a0e016f494064
-  OCMock: f3f61e6eaa16038c30caa5798c5e49d3307b6f22
+  MLUI: 2c9ec8216c19a3d8952783ecfc1985f510c42c09
+  OCMock: 2cd0716969bab32a2283ff3a46fd26a8c8b4c5e3
 
-PODFILE CHECKSUM: e62da3accd1dd10c2d997fabcd3120201e30f5ab
+PODFILE CHECKSUM: d65eb06a9c9e82b3edb1b830bfe1ccd9a3ad44f5
 
 COCOAPODS: 1.4.0
