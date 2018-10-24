@@ -498,4 +498,18 @@ static const CGFloat kBigSmallFontIncrement = 3;
 	XCTAssertNotNil(target);
 }
 
+- (void)testAttributedStringShouldReturnNilWhenAnErrorOccursWithNilErrorArgument
+{
+	NSString *invalidHtml = @"<b>invalidhtml";
+	NSError *error = nil;
+	
+	
+	NSAttributedString *target = [MLHtml attributedStringWithHtml:invalidHtml error:&error];
+	XCTAssertNil(target);
+	XCTAssertNotNil(error);
+	
+	target = [MLHtml attributedStringWithHtml:invalidHtml error:nil];
+	XCTAssertNil(target);
+}
+
 @end

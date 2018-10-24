@@ -360,11 +360,13 @@ static const CGFloat kBigSmallFontIncrement = 3;
 
 			// check if html is well formed
 			if (tagStack.count > 0 && [self needCloseTag:tagStack.lastObject]) {
-				*error = [NSError errorWithDomain:kMLHtmlErrorDomain
-				                             code:kMLHtmlSyntaxErrorCode
-				                         userInfo:@{
-				          NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Open tag not found: %@", tagStack.lastObject]
-				}];
+				if (error != nil) {
+					*error = [NSError errorWithDomain:kMLHtmlErrorDomain
+					                             code:kMLHtmlSyntaxErrorCode
+					                         userInfo:@{
+					          NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Open tag not found: %@", tagStack.lastObject]
+					}];
+				}
 				return nil;
 			}
 		} else {
@@ -417,11 +419,13 @@ static const CGFloat kBigSmallFontIncrement = 3;
 
 		        // check if html is well formed
 		        if (tagStack.count  == 0 || ![tagStack.lastObject isEqualToString:tag]) {
-		            *error = [NSError errorWithDomain:kMLHtmlErrorDomain
-		                                         code:kMLHtmlSyntaxErrorCode
-		                                     userInfo:@{
-		                      NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Open tag not found: %@", tagStack.lastObject]
-					}];
+		        	if (error != nil) {
+			            *error = [NSError errorWithDomain:kMLHtmlErrorDomain
+			                                         code:kMLHtmlSyntaxErrorCode
+			                                     userInfo:@{
+			                      NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Open tag not found: %@", tagStack.lastObject]
+						}];
+			        }
 		            return nil;
 				}
 
