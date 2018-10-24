@@ -502,12 +502,11 @@ static const CGFloat kBigSmallFontIncrement = 3;
 {
 	NSString *invalidHtml = @"<b>invalidhtml";
 	NSError *error = nil;
-	
-	
+
 	NSAttributedString *target = [MLHtml attributedStringWithHtml:invalidHtml error:&error];
 	XCTAssertNil(target);
 	XCTAssertNotNil(error);
-	
+
 	target = [MLHtml attributedStringWithHtml:invalidHtml error:nil];
 	XCTAssertNil(target);
 }
