@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -124,13 +125,14 @@
                     <color key="backgroundColor" red="0.99607843137254903" green="0.86274509803921573" blue="0.070588235294117646" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="4XS-Ui-rNj" secondAttribute="trailing" id="9Kn-vH-oiv"/>
+                        <constraint firstItem="4XS-Ui-rNj" firstAttribute="top" secondItem="BuL-oC-Ql3" secondAttribute="top" id="GCq-Hv-oFt"/>
                         <constraint firstItem="2SC-X9-P9R" firstAttribute="leading" secondItem="Sbv-TH-0aD" secondAttribute="leading" constant="32" id="aff-yx-bCI"/>
                         <constraint firstItem="2SC-X9-P9R" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Sbv-TH-0aD" secondAttribute="top" constant="80" id="cR7-Tb-B4b"/>
-                        <constraint firstItem="4XS-Ui-rNj" firstAttribute="top" secondItem="Sbv-TH-0aD" secondAttribute="top" constant="20" id="fAa-Xs-eNf"/>
                         <constraint firstItem="4XS-Ui-rNj" firstAttribute="leading" secondItem="Sbv-TH-0aD" secondAttribute="leading" id="jcS-8b-Afg"/>
                         <constraint firstItem="2SC-X9-P9R" firstAttribute="centerX" secondItem="Sbv-TH-0aD" secondAttribute="centerX" id="oix-MS-ya7"/>
                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="2SC-X9-P9R" secondAttribute="bottom" constant="60" id="p5K-ZT-9kQ"/>
                     </constraints>
+                    <viewLayoutGuide key="safeArea" id="BuL-oC-Ql3"/>
                 </view>
             </subviews>
             <constraints>
@@ -139,6 +141,7 @@
                 <constraint firstAttribute="trailing" secondItem="Sbv-TH-0aD" secondAttribute="trailing" id="xU8-WA-WHt"/>
                 <constraint firstAttribute="bottom" secondItem="Sbv-TH-0aD" secondAttribute="bottom" id="yfM-LH-JHH"/>
             </constraints>
+            <viewLayoutGuide key="safeArea" id="kB6-37-6Bc"/>
             <point key="canvasLocation" x="765.5" y="-36.5"/>
         </view>
     </objects>
