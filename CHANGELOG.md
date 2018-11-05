@@ -1,3 +1,8 @@
+# 5.2.0
+## Arreglado
+- Safe Areas on MLModal
+- Crash when HTML parsing fails
+
 # v5.1.0
 ### Nuevo
 - Feature/checkbox update #15
