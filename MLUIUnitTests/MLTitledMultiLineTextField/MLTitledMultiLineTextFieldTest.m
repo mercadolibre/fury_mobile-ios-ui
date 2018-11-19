@@ -18,6 +18,8 @@
 - (UITextView *)textView;
 - (CGSize)sizeForText:(NSString *)text;
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text;
+
 @end
 
 @interface MLTitledMultiLineTextFieldTest : MLTitledSingleLineTextFieldTest
@@ -67,6 +69,42 @@
 
 	XCTAssertNil(textField.textView.font);
 	XCTAssertEqual([textField sizeForText:@""].width, 0);
+}
+
+- (void)test_shouldRespectWhenDelegate_Accepts {
+	MLTitledMultiLineTextField *textField = [[MLTitledMultiLineTextField alloc] init];
+
+	NSString *currentText = @"Current Text";
+	textField.text = currentText;
+
+	NSString *newText = @"New Text";
+	NSRange range = NSMakeRange(0, currentText.length);
+
+	NSObject <MLTitledTextFieldDelegate> *delegate = OCMProtocolMock(@protocol(MLTitledTextFieldDelegate));
+	[OCMStub([delegate textField:textField shouldChangeCharactersInRange:range replacementString:newText]) andReturnValue:@(NO)];
+
+	textField.delegate = delegate;
+	BOOL result = [textField textView:textField.textView shouldChangeTextInRange:range replacementText:newText];
+
+	XCTAssertFalse(result);
+}
+
+- (void)test_shouldRespectWhenDelegate_Rejects {
+	MLTitledMultiLineTextField *textField = [[MLTitledMultiLineTextField alloc] init];
+
+	NSString *currentText = @"Current Text";
+	textField.text = currentText;
+
+	NSString *newText = @"New Text";
+	NSRange range = NSMakeRange(0, currentText.length);
+
+	NSObject <MLTitledTextFieldDelegate> *delegate = OCMProtocolMock(@protocol(MLTitledTextFieldDelegate));
+	[OCMStub([delegate textField:textField shouldChangeCharactersInRange:range replacementString:newText]) andReturnValue:@(YES)];
+
+	textField.delegate = delegate;
+	BOOL result = [textField textView:textField.textView shouldChangeTextInRange:range replacementText:newText];
+
+	XCTAssertTrue(result);
 }
 
 @end

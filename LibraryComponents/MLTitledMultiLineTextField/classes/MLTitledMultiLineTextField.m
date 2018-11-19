@@ -61,7 +61,7 @@
 		textColor = MLStyleSheetManager.styleSheet.midGreyColor;
 	}
 
-	__weak typeof(self)weakSelf = self;
+	__weak typeof(self) weakSelf = self;
 
 	[UIView animateWithDuration:.5f animations: ^{
 	    weakSelf.textView.textColor = textColor;
@@ -285,7 +285,7 @@
 		return NO;
 	}
 	if ([self.delegate respondsToSelector:@selector(textField:shouldChangeCharactersInRange:replacementString:)]) {
-		[self.delegate textField:self shouldChangeCharactersInRange:range replacementString:text];
+		return [self.delegate textField:self shouldChangeCharactersInRange:range replacementString:text];
 	}
 
 	if ([text isEqualToString:@"\n"] &&
