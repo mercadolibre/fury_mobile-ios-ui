@@ -226,15 +226,15 @@ static const CGFloat kBigSmallFontIncrement = 3;
 - (void)testAttributedStringWithHtmlShouldReturnAttributedStringWithBoldFont
 {
 	NSDictionary *defaultAttributes = @{
-		NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
-		NSForegroundColorAttributeName : [UIColor blackColor]
+	        NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
+	        NSForegroundColorAttributeName : [UIColor blackColor]
 	};
 
 	NSMutableAttributedString *expected = [[NSMutableAttributedString alloc] initWithString:@"normal text bold text normal text"];
 
 	NSDictionary *boldAttributes = @{
-		NSFontAttributeName : [UIFont ml_boldSystemFontOfSize:kMLFontsSizeXXSmall],
-		NSForegroundColorAttributeName : [UIColor blackColor]
+	        NSFontAttributeName : [UIFont ml_boldSystemFontOfSize:kMLFontsSizeXXSmall],
+	        NSForegroundColorAttributeName : [UIColor blackColor]
 	};
 
 	[expected addAttributes:defaultAttributes range:NSMakeRange(0, kMLFontsSizeXXSmall)];
@@ -251,15 +251,15 @@ static const CGFloat kBigSmallFontIncrement = 3;
 - (void)testAttributedStringWithHtmlShouldReturnAttributedStringWithNestedTags
 {
 	NSDictionary *defaultAttributes = @{
-		NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
-		NSForegroundColorAttributeName : [UIColor blackColor]
+	        NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
+	        NSForegroundColorAttributeName : [UIColor blackColor]
 	};
 
 	NSMutableAttributedString *expected = [[NSMutableAttributedString alloc] initWithString:@"normal text bold text normal text"];
 
 	NSDictionary *boldAttributes = @{
-		NSFontAttributeName : [UIFont ml_boldSystemFontOfSize:12],
-		NSForegroundColorAttributeName : [UIColor blackColor]
+	        NSFontAttributeName : [UIFont ml_boldSystemFontOfSize:12],
+	        NSForegroundColorAttributeName : [UIColor blackColor]
 	};
 
 	[expected addAttributes:defaultAttributes range:NSMakeRange(0, 12)];
@@ -288,15 +288,15 @@ static const CGFloat kBigSmallFontIncrement = 3;
 - (void)testAttributedStringWithHtmlShouldReturnAttributedStringWithMultiTags
 {
 	NSDictionary *defaultAttributes = @{
-		NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
-		NSForegroundColorAttributeName : [UIColor blackColor]
+	        NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
+	        NSForegroundColorAttributeName : [UIColor blackColor]
 	};
 
 	NSMutableAttributedString *expected = [[NSMutableAttributedString alloc] initWithString:@"normal text bold text normal text bold text normal text"];
 
 	NSDictionary *boldAttributes = @{
-		NSFontAttributeName : [UIFont ml_boldSystemFontOfSize:kMLFontsSizeXXSmall],
-		NSForegroundColorAttributeName : [UIColor blackColor]
+	        NSFontAttributeName : [UIFont ml_boldSystemFontOfSize:kMLFontsSizeXXSmall],
+	        NSForegroundColorAttributeName : [UIColor blackColor]
 	};
 
 	[expected addAttributes:defaultAttributes range:NSMakeRange(0, 12)];
@@ -315,8 +315,8 @@ static const CGFloat kBigSmallFontIncrement = 3;
 - (void)testAttributedStringWithHtmlShouldReturnNewLineForClosedHtmlBrTag
 {
 	NSDictionary *defaultAttributes = @{
-		NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
-		NSForegroundColorAttributeName : [UIColor blackColor]
+	        NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
+	        NSForegroundColorAttributeName : [UIColor blackColor]
 	};
 
 	NSMutableAttributedString *expected = [[NSMutableAttributedString alloc] initWithString:@"normal \n text"];
@@ -332,8 +332,8 @@ static const CGFloat kBigSmallFontIncrement = 3;
 - (void)testAttributedStringWithHtmlShouldReturnNewLineForHtmlBrTag
 {
 	NSDictionary *defaultAttributes = @{
-		NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
-		NSForegroundColorAttributeName : [UIColor blackColor]
+	        NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
+	        NSForegroundColorAttributeName : [UIColor blackColor]
 	};
 
 	NSMutableAttributedString *expected = [[NSMutableAttributedString alloc] initWithString:@"normal \n text"];
@@ -349,8 +349,8 @@ static const CGFloat kBigSmallFontIncrement = 3;
 - (void)testAttributedStringWithHtmlWithEmptyTextShouldReturnEmptyAttributedString
 {
 	NSDictionary *defaultAttributes = @{
-		NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
-		NSForegroundColorAttributeName : [UIColor blackColor]
+	        NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
+	        NSForegroundColorAttributeName : [UIColor blackColor]
 	};
 
 	NSMutableAttributedString *expected = [[NSMutableAttributedString alloc] initWithString:@""];
@@ -366,8 +366,8 @@ static const CGFloat kBigSmallFontIncrement = 3;
 - (void)testAttributedStringWithHtmlWithEmptyTaggedTextShouldReturnEmptyAttributedString
 {
 	NSDictionary *defaultAttributes = @{
-		NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
-		NSForegroundColorAttributeName : [UIColor blackColor]
+	        NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
+	        NSForegroundColorAttributeName : [UIColor blackColor]
 	};
 
 	NSMutableAttributedString *expected = [[NSMutableAttributedString alloc] initWithString:@""];
@@ -418,15 +418,15 @@ static const CGFloat kBigSmallFontIncrement = 3;
 	});
 
 	NSDictionary *regularAttributes = @{
-		NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
-		NSForegroundColorAttributeName : [UIColor blackColor]
+	        NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
+	        NSForegroundColorAttributeName : [UIColor blackColor]
 	};
 
 	NSMutableAttributedString *expected = [[NSMutableAttributedString alloc] initWithString:@"Texto en bold esto en regular sigo en bold"];
 
 	NSDictionary *boldAttributes = @{
-		NSFontAttributeName : [UIFont ml_boldSystemFontOfSize:kMLFontsSizeXXSmall],
-		NSForegroundColorAttributeName : [UIColor blackColor]
+	        NSFontAttributeName : [UIFont ml_boldSystemFontOfSize:kMLFontsSizeXXSmall],
+	        NSForegroundColorAttributeName : [UIColor blackColor]
 	};
 
 	[expected addAttributes:boldAttributes range:NSMakeRange(0, 14)];
@@ -468,20 +468,20 @@ static const CGFloat kBigSmallFontIncrement = 3;
 	});
 
 	NSDictionary *defaultAttributes = @{
-		NSFontAttributeName : [UIFont ml_lightSystemFontOfSize:kMLFontsSizeSmall],
-		NSForegroundColorAttributeName : [UIColor blackColor]
+	        NSFontAttributeName : [UIFont ml_lightSystemFontOfSize:kMLFontsSizeSmall],
+	        NSForegroundColorAttributeName : [UIColor blackColor]
 	};
 
 	NSDictionary *regularAttributes = @{
-		NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeSmall],
-		NSForegroundColorAttributeName : [UIColor blackColor]
+	        NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeSmall],
+	        NSForegroundColorAttributeName : [UIColor blackColor]
 	};
 
 	NSMutableAttributedString *expected = [[NSMutableAttributedString alloc] initWithString:@"Texto en bold esto en regular sigo en bold"];
 
 	NSDictionary *boldAttributes = @{
-		NSFontAttributeName : [UIFont ml_boldSystemFontOfSize:kMLFontsSizeSmall],
-		NSForegroundColorAttributeName : [UIColor blackColor]
+	        NSFontAttributeName : [UIFont ml_boldSystemFontOfSize:kMLFontsSizeSmall],
+	        NSForegroundColorAttributeName : [UIColor blackColor]
 	};
 
 	[expected addAttributes:boldAttributes range:NSMakeRange(0, 14)];

@@ -300,7 +300,7 @@ static const CGFloat kMLSpinnerAppearenceAnimationDuration = 0.3;
 
 	self.shouldShow = YES;
 
-	__weak typeof(self)weakSelf = self;
+	__weak typeof(self) weakSelf = self;
 
 	if (!self.isAnimating) {
 		self.isHidden = NO;
@@ -326,7 +326,7 @@ static const CGFloat kMLSpinnerAppearenceAnimationDuration = 0.3;
 		return;
 	}
 
-	__weak typeof(self)weakSelf = self;
+	__weak typeof(self) weakSelf = self;
 
 	self.shouldHide = YES;
 	if (!self.isAnimating) {

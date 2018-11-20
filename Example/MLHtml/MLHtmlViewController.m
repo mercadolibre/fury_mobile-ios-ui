@@ -37,8 +37,8 @@ static NSString *const kHTMLRegularTag = @"regular";
 	NSString *htmlString = self.textView.text;
 
 	NSDictionary *defaultAttributes = @{
-		NSForegroundColorAttributeName : [UIColor blackColor],
-		NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:16]
+	        NSForegroundColorAttributeName : [UIColor blackColor],
+	        NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:16]
 	};
 
 	NSError *error;

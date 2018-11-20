@@ -127,7 +127,7 @@ static const CGFloat kMLSwitchButtonNotAnimationDuration = 0;
 
 - (void)setOnBooleanWidgetAnimated:(BOOL)animated
 {
-	__weak typeof(self)weakSelf = self;
+	__weak typeof(self) weakSelf = self;
 
 	CGFloat circleWidth = CGRectGetWidth(self.circleView.frame);
 	CGFloat switchWidth = CGRectGetWidth(self.frame);
@@ -144,7 +144,7 @@ static const CGFloat kMLSwitchButtonNotAnimationDuration = 0;
 
 - (void)setOffBooleanWidgetAnimated:(BOOL)animated
 {
-	__weak typeof(self)weakSelf = self;
+	__weak typeof(self) weakSelf = self;
 
 	self.circleLeftConstraint.constant = 0;
 

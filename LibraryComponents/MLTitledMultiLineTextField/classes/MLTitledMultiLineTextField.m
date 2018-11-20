@@ -61,7 +61,7 @@
 		textColor = MLStyleSheetManager.styleSheet.midGreyColor;
 	}
 
-	__weak typeof(self)weakSelf = self;
+	__weak typeof(self) weakSelf = self;
 
 	[UIView animateWithDuration:.5f animations: ^{
 	    weakSelf.textView.textColor = textColor;
