@@ -316,8 +316,8 @@ static const CGFloat kBigSmallFontIncrement = 3;
 
 	// add default attributes to attributes stack
 	NSDictionary *defaultAttributes = @{
-		NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
-		NSForegroundColorAttributeName : kDefaultColor
+	        NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
+	        NSForegroundColorAttributeName : kDefaultColor
 	};
 
 	NSMutableDictionary *firstAttributes = [defaultAttributes mutableCopy];
@@ -364,7 +364,7 @@ static const CGFloat kBigSmallFontIncrement = 3;
 					*error = [NSError errorWithDomain:kMLHtmlErrorDomain
 					                             code:kMLHtmlSyntaxErrorCode
 					                         userInfo:@{
-					          NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Open tag not found: %@", tagStack.lastObject]
+					              NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Open tag not found: %@", tagStack.lastObject]
 					}];
 				}
 				return nil;
@@ -423,7 +423,7 @@ static const CGFloat kBigSmallFontIncrement = 3;
 		                *error = [NSError errorWithDomain:kMLHtmlErrorDomain
 		                                             code:kMLHtmlSyntaxErrorCode
 		                                         userInfo:@{
-		                          NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Open tag not found: %@", tagStack.lastObject]
+		                              NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Open tag not found: %@", tagStack.lastObject]
 						}];
 					}
 		            return nil;

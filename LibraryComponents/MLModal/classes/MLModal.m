@@ -279,8 +279,8 @@ static int const kMLModalStatusBarHeight = 20;
 	[self.topViewController addChildViewController:self.innerViewController];
 
 	NSDictionary *views = @{
-		@"modalView" : self.modalView,
-		@"innerView" : self.innerViewController.view
+	        @"modalView" : self.modalView,
+	        @"innerView" : self.innerViewController.view
 	};
 
 	if ([self.innerViewController.view isKindOfClass:[UIScrollView class]] || !self.scrollEnabled) {
@@ -348,7 +348,7 @@ static int const kMLModalStatusBarHeight = 20;
 	CGRect containerFinalFrame = self.innerContainerView.frame;
 	self.innerContainerView.frame = CGRectOffset(containerFinalFrame, 0, 20);
 
-	__weak typeof(self)weakSelf = self;
+	__weak typeof(self) weakSelf = self;
 
 	[UIView animateWithDuration:kMLModalAnimationDuration animations: ^{
 	    weakSelf.innerContainerView.frame = containerFinalFrame;
@@ -410,7 +410,7 @@ static int const kMLModalStatusBarHeight = 20;
         [self.innerViewController beginAppearanceTransition:NO animated:YES];
 	}
 
-    __weak typeof(self)weakSelf = self;
+    __weak typeof(self) weakSelf = self;
 
     [UIView animateWithDuration:kMLModalAnimationDuration animations: ^{
         weakSelf.innerContainerView.frame = CGRectOffset(containerFinalFrame, 0, 20);
@@ -492,7 +492,7 @@ static int const kMLModalStatusBarHeight = 20;
     double duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     [self placeContainerViewForVisibleKeyboardWithHeight:self.keyboardHeight];
 
-    __weak typeof(self)weakSelf = self;
+    __weak typeof(self) weakSelf = self;
 
     [UIView animateWithDuration:duration delay:0 options:curve animations: ^{
         [weakSelf.modalView layoutIfNeeded];
@@ -511,7 +511,7 @@ static int const kMLModalStatusBarHeight = 20;
     self.containerViewCenterYConstraint = [NSLayoutConstraint constraintWithItem:self.containerView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.backgroundView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0];
     [self.backgroundView addConstraint:self.containerViewCenterYConstraint];
 
-    __weak typeof(self)weakSelf = self;
+    __weak typeof(self) weakSelf = self;
 
     [UIView animateWithDuration:duration delay:0 options:curve animations: ^{
         [weakSelf.modalView layoutIfNeeded];
