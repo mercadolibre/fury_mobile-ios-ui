@@ -5,6 +5,8 @@ set -o pipefail
 IOS_VERSION="${1:-10.3.1}"
 IOS_DEVICE="${2:-iPhone 7}"
 
+xcrun instruments -s devices
+
 export XCPRETTY_JSON_FILE_OUTPUT="build/reports/result_$IOS_VERSION.json"
 FORMATTER="xcpretty -f `bundle exec xcpretty-json-formatter`"
 
