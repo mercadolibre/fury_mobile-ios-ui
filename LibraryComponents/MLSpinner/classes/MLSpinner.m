@@ -11,6 +11,20 @@
 #import "UIFont+MLFonts.h"
 #import "MLUIBundle.h"
 
+/**
+   This enum enumerates posible changes on spinner states, this enum
+   reduce BOOL properties on this class
+
+   - MLSpinnerStateNone: Dont change spinner state
+   - MLSpinnerStateHide: Hide spinner
+   - MLSpinnerStateShow: Show spinner
+ */
+typedef NS_ENUM (NSUInteger, MLSpinnerState) {
+	MLSpinnerStateNone,
+	MLSpinnerStateHide,
+	MLSpinnerStateShow,
+};
+
 @interface MLSpinner ()
 
 @property (nonatomic, strong) CAShapeLayer *circleLayer;
@@ -28,9 +42,10 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *spinnerWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *spinnerHeightConstraint;
 @property (nonatomic) BOOL isAnimating;
-@property (nonatomic) BOOL shouldHide;
-@property (nonatomic) BOOL shouldShow;
 @property (nonatomic) BOOL isHidden;
+
+// Indicates if exist a pending state to apply
+@property (nonatomic) MLSpinnerState pendingStateChange;
 
 @end
 
@@ -52,6 +67,7 @@ static const CGFloat kMLSpinnerAppearenceAnimationDuration = 0.3;
 {
 	if (self = [self initWithConfig:[self setUpConfigFromStyle:MLSpinnerStyleBlueBig] text:nil]) {
 		self.translatesAutoresizingMaskIntoConstraints = NO;
+		self.pendingStateChange = MLSpinnerStateNone;
 	}
 	return self;
 }
@@ -60,6 +76,7 @@ static const CGFloat kMLSpinnerAppearenceAnimationDuration = 0.3;
 {
 	if (self = [self initWithConfig:[self setUpConfigFromStyle:style] text:nil]) {
 		self.translatesAutoresizingMaskIntoConstraints = NO;
+		self.pendingStateChange = MLSpinnerStateNone;
 	}
 	return self;
 }
@@ -68,6 +85,7 @@ static const CGFloat kMLSpinnerAppearenceAnimationDuration = 0.3;
 {
 	if (self = [self initWithConfig:[self setUpConfigFromStyle:style] text:text]) {
 		self.translatesAutoresizingMaskIntoConstraints = NO;
+		self.pendingStateChange = MLSpinnerStateNone;
 	}
 	return self;
 }
@@ -76,6 +94,7 @@ static const CGFloat kMLSpinnerAppearenceAnimationDuration = 0.3;
 {
 	if (self = [super init]) {
 		self.translatesAutoresizingMaskIntoConstraints = NO;
+		self.pendingStateChange = MLSpinnerStateNone;
 		self.spinnerText = text;
 		[self setUpView];
 		[self setUpSpinnerWithConfig:config];
@@ -87,6 +106,7 @@ static const CGFloat kMLSpinnerAppearenceAnimationDuration = 0.3;
 {
 	self = [super initWithCoder:aDecoder];
 	if (self) {
+		self.pendingStateChange = MLSpinnerStateNone;
 		[self setUpView];
 		// By default the stayle blue big
 		MLSpinnerConfig *config = [self setUpConfigFromStyle:MLSpinnerStyleBlueBig];
@@ -292,57 +312,77 @@ static const CGFloat kMLSpinnerAppearenceAnimationDuration = 0.3;
 	[self setUpSpinnerWithConfig:[self setUpConfigFromStyle:style]];
 }
 
+- (void)showOrHideSpinnerIfNeeded
+{
+	switch (self.pendingStateChange) {
+		case MLSpinnerStateHide: {
+			[self hideSpinner];
+			break;
+		}
+
+		case MLSpinnerStateShow: {
+			[self showSpinner];
+			break;
+		}
+
+		default: {
+			break;
+		}
+	}
+}
+
 - (void)showSpinner
 {
-	if (!self.isHidden) {
+	// if already in the requested state, and no next change state scheduled
+	if (!self.isHidden && self.pendingStateChange == MLSpinnerStateNone) {
 		return;
 	}
 
-	self.shouldShow = YES;
-
-	__weak typeof(self) weakSelf = self;
-
-	if (!self.isAnimating) {
-		self.isHidden = NO;
-
-		self.view.alpha = 0;
-		weakSelf.isAnimating = YES;
-		[UIView animateWithDuration:kMLSpinnerAppearenceAnimationDuration animations: ^{
-		    weakSelf.view.alpha = 1;
-		} completion: ^(BOOL finished) {
-		    weakSelf.isAnimating = NO;
-		    weakSelf.shouldShow = NO;
-
-		    if (weakSelf.shouldHide) {
-		        [weakSelf hideSpinner];
-			}
-		}];
+	// if changing state, schedule nextState to show
+	if (self.isAnimating) {
+		self.pendingStateChange = MLSpinnerStateShow;
+		return;
 	}
+
+	// Change state to show
+	self.pendingStateChange = MLSpinnerStateNone;
+	self.isHidden = NO;
+	self.view.alpha = 0;
+	self.isAnimating = YES;
+	__weak typeof(self) weakSelf = self;
+	[UIView animateWithDuration:kMLSpinnerAppearenceAnimationDuration animations: ^{
+	    weakSelf.view.alpha = 1;
+	} completion: ^(BOOL finished) {
+	    weakSelf.isAnimating = NO;
+	    [weakSelf showOrHideSpinnerIfNeeded];
+	}];
 }
 
 - (void)hideSpinner
 {
-	if (self.isHidden) {
+	// if already in the requested state, and no next change state scheduled
+	if (self.isHidden && self.pendingStateChange == MLSpinnerStateNone) {
 		return;
 	}
 
-	__weak typeof(self) weakSelf = self;
-
-	self.shouldHide = YES;
-	if (!self.isAnimating) {
-		self.isHidden = YES;
-
-		weakSelf.isAnimating = YES;
-		[UIView animateWithDuration:kMLSpinnerAppearenceAnimationDuration animations: ^{
-		    weakSelf.view.alpha = 0;
-		} completion: ^(BOOL finished) {
-		    weakSelf.isAnimating = NO;
-		    weakSelf.shouldHide = NO;
-		    if (weakSelf.shouldShow) {
-		        [weakSelf showSpinner];
-			}
-		}];
+	// if changing state, schedule nextState to show
+	if (self.isAnimating) {
+		self.pendingStateChange = MLSpinnerStateHide;
+		return;
 	}
+
+	// Change state to show
+	self.pendingStateChange = MLSpinnerStateNone;
+	self.isHidden = YES;
+	self.isAnimating = YES;
+
+	__weak typeof(self) weakSelf = self;
+	[UIView animateWithDuration:kMLSpinnerAppearenceAnimationDuration animations: ^{
+	    weakSelf.view.alpha = 0;
+	} completion: ^(BOOL finished) {
+	    weakSelf.isAnimating = NO;
+	    [weakSelf showOrHideSpinnerIfNeeded];
+	}];
 }
 
 @end
