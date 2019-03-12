@@ -6,7 +6,7 @@
 //
 
 #import "MLUIHeader.h"
-#import <MLUI/MLStyleSheetManager.h>
+#import "MLStyleSheetManager.h"
 
 static NSString *const kMLHeaderControllerContentOffsetKey = @"contentOffset";
 static NSString *const kMLHeaderControllerTitleKey = @"title";
