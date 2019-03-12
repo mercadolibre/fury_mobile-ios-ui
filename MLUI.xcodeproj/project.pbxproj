@@ -1316,7 +1316,6 @@
 				CD16659D19C1406400EE6243 /* Resources */,
 				4BBA11567B8A4FF1ABCD8190 /* Frameworks */,
 				956BDD9D7075D31696469CC6 /* [CP] Embed Pods Frameworks */,
-				F1922E4334C7976A50DAEE8D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1336,7 +1335,6 @@
 				FC570F311A66A30F0021DCF4 /* Frameworks */,
 				FC570F321A66A30F0021DCF4 /* Resources */,
 				D54BBDAC34A134C537224AC1 /* [CP] Embed Pods Frameworks */,
-				A9825A7E61344DC4ECE9117D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1485,21 +1483,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MLUI/Pods-MLUI-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A9825A7E61344DC4ECE9117D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MLUIUnitTests/Pods-MLUIUnitTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D54BBDAC34A134C537224AC1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1516,21 +1499,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MLUIUnitTests/Pods-MLUIUnitTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F1922E4334C7976A50DAEE8D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MLUI/Pods-MLUI-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
