@@ -49,7 +49,8 @@ PODS:
     - MLUI/MLButton
     - MLUI/MLColorPalette
     - MLUI/MLSpacing
-  - MLUI/MLHeader (5.2.0)
+  - MLUI/MLHeader (5.2.0):
+    - MLUI/StyleSheet
   - MLUI/MLHtml (5.2.0):
     - MLUI/MLFonts
   - MLUI/MLModal (5.2.0):
@@ -109,7 +110,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
-  MLUI: 150bb11fa36b335c8a7748b7771dcb8600672853
+  MLUI: c0ab9fe70144ebdc3b2623318f5ca87d6879c405
   OCMock: 2cd0716969bab32a2283ff3a46fd26a8c8b4c5e3
 
 PODFILE CHECKSUM: d65eb06a9c9e82b3edb1b830bfe1ccd9a3ad44f5
