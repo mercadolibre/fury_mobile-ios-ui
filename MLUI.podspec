@@ -71,6 +71,7 @@ Pod::Spec.new do |s|
   s.subspec 'MLHeader' do |mlheader|
       mlheader.source_files = "LibraryComponents/MLHeader/classes/*.{h,m}"
       mlheader.resources = "LibraryComponents/MLHeader/classes/*.xib"
+      mlheader.dependency 'MLUI/StyleSheet'
   end
 
   s.subspec 'MLHtml' do |mlhtml|
