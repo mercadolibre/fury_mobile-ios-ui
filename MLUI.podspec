@@ -68,6 +68,12 @@ Pod::Spec.new do |s|
       mlfonts.dependency 'MLUI/StyleSheet'
   end
 
+  s.subspec 'MLHeader' do |mlheader|
+      mlheader.source_files = "LibraryComponents/MLHeader/classes/*.{h,m}"
+      mlheader.resources = "LibraryComponents/MLHeader/classes/*.xib"
+      mlheader.dependency 'MLUI/StyleSheet'
+  end
+
   s.subspec 'MLHtml' do |mlhtml|
       mlhtml.source_files = "LibraryComponents/MLHtml/classes/*.{h,m}"
       mlhtml.dependency 'MLUI/MLFonts'
