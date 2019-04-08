@@ -9,7 +9,7 @@
 #import "MLFullscreenModal.h"
 #import "MLFullscreenModalHeader.h"
 #import "MLStyleSheetManager.h"
-#import <MLUI/MLUIHeader.h>
+#import "MLUIHeader.h"
 #import <MLUI/UIColor+MLColorPalette.h>
 #import "MLUIBundle.h"
 
