@@ -37,4 +37,9 @@ typedef NS_ENUM (NSInteger, MLUIHeaderMode) {
  */
 @property (nonatomic, assign) MLUIHeaderMode mode;
 
+/**
+ *  If the navigation Bar have shadow.
+ */
+@property (nonatomic, assign) BOOL hasShadow;
+
 @end

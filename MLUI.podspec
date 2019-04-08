@@ -68,6 +68,17 @@ Pod::Spec.new do |s|
       mlfonts.dependency 'MLUI/StyleSheet'
   end
 
+  s.subspec 'MLFullscreenModal' do |mlfullmodal|
+    mlfullmodal.source_files = "LibraryComponents/MLFullscreenModal/classes/*.{h,m}"
+    mlfullmodal.resources = "LibraryComponents/MLFullscreenModal/classes/*.xib","LibraryComponents/MLFullscreenModal/assets/*"
+    mlfullmodal.dependency 'MLUI/MLColorPalette'
+    mlfullmodal.dependency 'MLUI/MLFonts'
+    mlfullmodal.dependency 'MLUI/MLButton'
+    mlfullmodal.dependency 'FXBlurView', '~> 1.6'
+    mlfullmodal.dependency 'MLUI/Core'
+    mlfullmodal.dependency 'MLUI/StyleSheet'
+  end
+
   s.subspec 'MLHeader' do |mlheader|
       mlheader.source_files = "LibraryComponents/MLHeader/classes/*.{h,m}"
       mlheader.resources = "LibraryComponents/MLHeader/classes/*.xib"
@@ -97,6 +108,7 @@ Pod::Spec.new do |s|
     mlmodal.dependency 'MLUI/Core'
     mlmodal.dependency 'MLUI/StyleSheet'
   end
+
   s.subspec 'MLSnackBar' do |mlsnackbar|
     mlsnackbar.source_files = "LibraryComponents/MLSnackBar/classes/*.{h,m}"
     mlsnackbar.resources = "LibraryComponents/MLSnackBar/classes/*.xib"
