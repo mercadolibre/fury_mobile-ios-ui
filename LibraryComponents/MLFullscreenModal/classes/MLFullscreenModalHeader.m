@@ -11,8 +11,8 @@
 #import "MLUIBundle.h"
 
 static const CGFloat kMLFullscreenModalHeaderViewAnimationDuration = 0.3f;
-static const CGFloat kMLFullscreenModalHeaderTitleLabelTopConstraintWithScrollEnabled = 15;
-static const CGFloat kMLFullscreenModalHeaderTitleLabelTopConstraintWithoutScrollEnabled = 66;
+static const CGFloat kMLFullscreenModalHeaderTitleLabelTopConstraintWithScrollEnabled = 15.f;
+static const CGFloat kMLFullscreenModalHeaderTitleLabelTopConstraintWithoutScrollEnabled = 86.f;
 
 @interface MLFullscreenModalHeader ()
 
