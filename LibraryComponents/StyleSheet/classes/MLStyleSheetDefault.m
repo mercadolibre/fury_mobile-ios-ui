@@ -133,7 +133,7 @@
 
 - (UIFont *)cardFontOfSize:(CGFloat)fontSize
 {
-    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightRegular];
+	return [UIFont systemFontOfSize:fontSize weight:UIFontWeightRegular];
 }
 
 @end
