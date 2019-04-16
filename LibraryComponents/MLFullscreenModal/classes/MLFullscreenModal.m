@@ -60,10 +60,13 @@
 	                               inBundle:[MLUIBundle mluiBundle]
 	          compatibleWithTraitCollection:nil];
 
-	UIBarButtonItem *closeBtn = [[UIBarButtonItem alloc] initWithImage:closeImg
-	                                                             style:UIBarButtonItemStylePlain
-	                                                            target:self
-	                                                            action:@selector(onCloseButtonDidTouch:)];
+	UIButton *buttonWithCustomImage = [UIButton buttonWithType:UIButtonTypeCustom];
+	buttonWithCustomImage.bounds = CGRectMake(0, 0, closeImg.size.width, closeImg.size.height);
+	[buttonWithCustomImage setImage:closeImg forState:UIControlStateNormal];
+	[buttonWithCustomImage addTarget:self action:@selector(onCloseButtonDidTouch:) forControlEvents:UIControlEventTouchUpInside];
+
+	UIBarButtonItem *closeBtn = [[UIBarButtonItem alloc] initWithCustomView:buttonWithCustomImage];
+
 	[self.navigationItem setLeftBarButtonItem:closeBtn];
 }
 
