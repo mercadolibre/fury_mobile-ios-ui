@@ -1,3 +1,7 @@
+# 5.4.0
+## Agregado
+- Se agrega fuente para tarjetas al protocolo de MLStyleSheetProtocol
+
 # 5.2.0
 ## Arreglado
 - Safe Areas on MLModal
