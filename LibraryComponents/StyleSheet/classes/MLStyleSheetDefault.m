@@ -131,7 +131,7 @@
 	return [UIFont systemFontOfSize:fontSize weight:UIFontWeightBlack];
 }
 
-- (UIFont *)cardFontOfSize:(CGFloat)fontSize
+- (UIFont *)creditCardFontOfSize:(CGFloat)fontSize
 {
 	return [UIFont systemFontOfSize:fontSize weight:UIFontWeightRegular];
 }

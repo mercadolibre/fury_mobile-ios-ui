@@ -1316,7 +1316,6 @@
 				CD16659D19C1406400EE6243 /* Resources */,
 				4BBA11567B8A4FF1ABCD8190 /* Frameworks */,
 				956BDD9D7075D31696469CC6 /* [CP] Embed Pods Frameworks */,
-				A66F355514131B332554B5E0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1336,7 +1335,6 @@
 				FC570F311A66A30F0021DCF4 /* Frameworks */,
 				FC570F321A66A30F0021DCF4 /* Resources */,
 				D54BBDAC34A134C537224AC1 /* [CP] Embed Pods Frameworks */,
-				71A17959CF8F281A2EFD9988 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1445,21 +1443,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		71A17959CF8F281A2EFD9988 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MLUIUnitTests/Pods-MLUIUnitTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		92F3E052612A301C4DCC086F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1498,21 +1481,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MLUI/Pods-MLUI-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A66F355514131B332554B5E0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MLUI/Pods-MLUI-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D54BBDAC34A134C537224AC1 /* [CP] Embed Pods Frameworks */ = {
