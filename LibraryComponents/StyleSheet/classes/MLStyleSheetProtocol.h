@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIFont *)blackSystemFontOfSize:(CGFloat)fontSize;
 
 /*
- Not every stylesheet must override these methods
+   Not every stylesheet must override these methods
  */
 @optional
 - (UIFont *)creditCardFontOfSize:(CGFloat)fontSize;
