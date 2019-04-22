@@ -50,6 +50,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIFont *)semiboldSystemFontOfSize:(CGFloat)fontSize;
 - (UIFont *)extraboldSystemFontOfSize:(CGFloat)fontSize;
 - (UIFont *)blackSystemFontOfSize:(CGFloat)fontSize;
+
+/*
+   Not every stylesheet must override these methods
+ */
+@optional
 - (UIFont *)creditCardFontOfSize:(CGFloat)fontSize;
 
 @end
