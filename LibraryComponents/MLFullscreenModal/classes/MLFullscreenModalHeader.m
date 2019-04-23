@@ -16,7 +16,13 @@ static const CGFloat kMLFullscreenModalHeaderTitleLabelTopConstraintWithoutScrol
 
 @interface MLFullscreenModalHeader ()
 
+/**
+ * Header title label.
+ */
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+/**
+ * Title label top constraint.
+ */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleLabelTopConstraint;
 
 @end

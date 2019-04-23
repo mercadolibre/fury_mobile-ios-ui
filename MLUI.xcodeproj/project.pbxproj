@@ -230,6 +230,13 @@
 		6A9583971E27D8C5009306AC /* MLUIBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUIBundle.h; sourceTree = "<group>"; };
 		6A9583981E27D8C5009306AC /* MLUIBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUIBundle.m; sourceTree = "<group>"; };
 		78A39CBAD61E64A4A2DBF119 /* Pods-MLUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MLUI/Pods-MLUI.debug.xcconfig"; sourceTree = "<group>"; };
+		7CB826D7226F5F3600E0C4A3 /* MLFullscreenModal.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = MLFullscreenModal.xcassets; path = MLFullscreenModal/assets/MLFullscreenModal.xcassets; sourceTree = "<group>"; };
+		7CB826DA226F5F6400E0C4A3 /* MLFullscreenModalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLFullscreenModalHeader.h; path = MLFullscreenModal/classes/MLFullscreenModalHeader.h; sourceTree = "<group>"; };
+		7CB826DB226F5F6400E0C4A3 /* MLFullscreenModalHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLFullscreenModalHeader.m; path = MLFullscreenModal/classes/MLFullscreenModalHeader.m; sourceTree = "<group>"; };
+		7CB826DC226F5F6400E0C4A3 /* MLFullscreenModalHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MLFullscreenModalHeader.xib; path = MLFullscreenModal/classes/MLFullscreenModalHeader.xib; sourceTree = "<group>"; };
+		7CB826DD226F5F6500E0C4A3 /* MLFullscreenModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLFullscreenModal.h; path = MLFullscreenModal/classes/MLFullscreenModal.h; sourceTree = "<group>"; };
+		7CB826DE226F5F6500E0C4A3 /* MLFullscreenModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLFullscreenModal.m; path = MLFullscreenModal/classes/MLFullscreenModal.m; sourceTree = "<group>"; };
+		7CB826DF226F5F6500E0C4A3 /* MLFullscreenModal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MLFullscreenModal.xib; path = MLFullscreenModal/classes/MLFullscreenModal.xib; sourceTree = "<group>"; };
 		863E9A8D1CF3460900240FE0 /* MLTitledTextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTitledTextFieldViewController.h; sourceTree = "<group>"; };
 		863E9A8E1CF3460900240FE0 /* MLTitledTextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTitledTextFieldViewController.m; sourceTree = "<group>"; };
 		863E9A8F1CF3460900240FE0 /* MLTitledTextFieldViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLTitledTextFieldViewController.xib; sourceTree = "<group>"; };
@@ -860,6 +867,36 @@
 			path = MLBooleanWidget;
 			sourceTree = "<group>";
 		};
+		7CB826D5226F5EE900E0C4A3 /* MLFullscreenModal */ = {
+			isa = PBXGroup;
+			children = (
+				7CB826D6226F5F2800E0C4A3 /* assets */,
+				7CB826D9226F5F3D00E0C4A3 /* classes */,
+			);
+			name = MLFullscreenModal;
+			sourceTree = "<group>";
+		};
+		7CB826D6226F5F2800E0C4A3 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				7CB826D7226F5F3600E0C4A3 /* MLFullscreenModal.xcassets */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+		7CB826D9226F5F3D00E0C4A3 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				7CB826DD226F5F6500E0C4A3 /* MLFullscreenModal.h */,
+				7CB826DE226F5F6500E0C4A3 /* MLFullscreenModal.m */,
+				7CB826DF226F5F6500E0C4A3 /* MLFullscreenModal.xib */,
+				7CB826DA226F5F6400E0C4A3 /* MLFullscreenModalHeader.h */,
+				7CB826DB226F5F6400E0C4A3 /* MLFullscreenModalHeader.m */,
+				7CB826DC226F5F6400E0C4A3 /* MLFullscreenModalHeader.xib */,
+			);
+			name = classes;
+			sourceTree = "<group>";
+		};
 		863E9A8C1CF3460900240FE0 /* MLTitledTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -1092,6 +1129,7 @@
 				4DB11BFA1C453D0100570E2F /* MLFonts */,
 				4DA59A471C3EA5EC00AA439D /* MLColorPalette */,
 				C0B960A51CD1542000094F7A /* MLContextualMenu */,
+				7CB826D5226F5EE900E0C4A3 /* MLFullscreenModal */,
 				4D1854A01C8DCD1B00676993 /* MLModal */,
 				4D8906671C8084D100BD0EEE /* MLSnackbar */,
 				4D0D97CE1CC52F5B00FFF679 /* MLSpinner */,

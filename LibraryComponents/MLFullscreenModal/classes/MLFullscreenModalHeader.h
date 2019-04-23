@@ -10,9 +10,19 @@
 
 @interface MLFullscreenModalHeader : UIView
 
+/**
+ * Returns header instance.
+ */
 + (instancetype)simpleHeaderView;
 
+/**
+ * Header title.
+ */
 @property (nonatomic, copy) NSString *title;
+
+/**
+ * Whether the header should react to screen content scroll.
+ */
 @property (nonatomic) BOOL scrollEnabled;
 
 @end
