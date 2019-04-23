@@ -24,13 +24,14 @@
 
 @end
 
+static int const kTransitionDuration = 0.4f;
+
 @implementation MLFullscreenModal
 
 - (instancetype)initWithViewController:(UIViewController *)innerViewController
                                  title:(NSString *)title
 {
-	self = [super init];
-	if (self) {
+	if (self = [super init]) {
 		self.title = title;
 		self.innerViewController = innerViewController;
 	}
@@ -47,7 +48,7 @@
 	_headerViewController.delegate = self;
 	_headerViewController.hasShadow = YES;
 	_previousNavBarColor = self.navigationController.navigationBar.backgroundColor;
-	[_headerViewController setNavigationBarBackgroundcolor:[UIColor ml_meli_white]];
+	[_headerViewController setNavigationBarBackgroundcolor:[[MLStyleSheetManager styleSheet] whiteColor]];
 	[_headerViewController didMoveToParentViewController:self];
 
 	[self addChildViewController:_headerViewController];
@@ -72,11 +73,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-	[super viewWillAppear:NO];
+	[super viewWillAppear:animated];
 	[self.innerViewController viewWillAppear:animated];
 
 	CATransition *transition = [CATransition animation];
-	transition.duration = 0.4f;
+	transition.duration = kTransitionDuration;
 	transition.type = kCATransitionMoveIn;
 	transition.subtype = kCATransitionFromTop;
 	[self.navigationController.view.layer addAnimation:transition
@@ -91,11 +92,11 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-	[super viewWillDisappear:NO];
+	[super viewWillDisappear:animated];
 	[self.innerViewController viewWillDisappear:animated];
 
 	CATransition *transition = [CATransition animation];
-	transition.duration = 0.4f;
+	transition.duration = kTransitionDuration;
 	transition.type = kCATransitionReveal;
 	transition.subtype = kCATransitionFromBottom;
 	[self.navigationController.view.layer addAnimation:transition
@@ -104,7 +105,7 @@
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-	[super viewDidDisappear:NO];
+	[super viewDidDisappear:animated];
 	[self.innerViewController viewDidDisappear:animated];
 
 	self.navigationController.navigationBar.backgroundColor = self.previousNavBarColor;
