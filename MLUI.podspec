@@ -77,12 +77,14 @@ Pod::Spec.new do |s|
     mlfullmodal.dependency 'FXBlurView', '~> 1.6'
     mlfullmodal.dependency 'MLUI/Core'
     mlfullmodal.dependency 'MLUI/StyleSheet'
+    mlfullmodal.dependency 'MLUI/MLHeader'
   end
 
   s.subspec 'MLHeader' do |mlheader|
       mlheader.source_files = "LibraryComponents/MLHeader/classes/*.{h,m}"
       mlheader.resources = "LibraryComponents/MLHeader/classes/*.xib"
       mlheader.dependency 'MLUI/StyleSheet'
+      mlheader.dependency 'MLUI/MLColorPalette'
   end
 
   s.subspec 'MLHtml' do |mlhtml|

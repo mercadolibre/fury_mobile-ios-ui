@@ -39,7 +39,7 @@ static NSString *const kMLHeaderControllerHeaderBoundsKey = @"bounds";
 @property (nonatomic, assign) CGFloat statusbarHeight;
 @property (nonatomic, assign) CGFloat navigationBarHeight;
 
-@property (nonatomic, assign) BOOL navBarColorIsChanged;
+@property (nonatomic, assign) BOOL navBarColorChanged;
 
 @end
 
@@ -126,7 +126,7 @@ static NSString *const kMLHeaderControllerHeaderBoundsKey = @"bounds";
 	[self.view bringSubviewToFront:self.statusBarView];
 
 	// Set default backgroundColor
-	if (!self.navBarColorIsChanged) {
+	if (!self.navBarColorChanged) {
 		self.navigationBarBackgroundcolor = [[MLStyleSheetManager styleSheet] primaryColor];
 	}
 }
@@ -421,7 +421,7 @@ static NSString *const kMLHeaderControllerHeaderBoundsKey = @"bounds";
 
         CGSize size = CGSizeMake(1, 1);
         UIGraphicsBeginImageContextWithOptions(size, YES, 0);
-        [[UIColor ml_meli_white] setFill];
+        [[[MLStyleSheetManager styleSheet] whiteColor] setFill];
         UIRectFill(CGRectMake(0, 0, 1, 1));
         UIImage *shadowedImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
@@ -437,7 +437,7 @@ static NSString *const kMLHeaderControllerHeaderBoundsKey = @"bounds";
 - (void)setNavigationBarBackgroundcolor:(UIColor *)navigationBarBackgroundcolor
 {
     _navigationBarBackgroundcolor = navigationBarBackgroundcolor;
-    _navBarColorIsChanged = YES;
+    _navBarColorChanged = YES;
 
     UIColor *oldColor = self.delegate.navigationController.navigationBar.backgroundColor;
     CGFloat alpha = CGColorGetAlpha([oldColor CGColor]);
