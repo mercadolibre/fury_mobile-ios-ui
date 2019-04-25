@@ -55,9 +55,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelButtonSpacing;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonTrailingConstraint;
 @property (nonatomic) MLSnackbarDuration duration;
-//@property (nonatomic) CGRect snackbarFrame;
-//@property (nonatomic) CGRect snackbarInitialFrame;
-//@property (nonatomic) CGFloat parentHeight;
 @property (nonatomic) BOOL isShowingSnackbar;
 @property (nonatomic) BOOL isAnimating;
 @property (nonatomic) BOOL isDesappearing;
@@ -132,15 +129,6 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
         snackbar.pendingAction = ^{[weakSnackbar setUpSnackbarWithTitle:title actionTitle:buttonTitle actionBlock:actionBlock type:type duration:duration dismissGestureEnabled:dismissGestureEnabled dismissBlock:dismissBlock viewController:viewController];
         };
     } else {
-//        if (viewController != nil) {
-//            snackbar.parentHeight = CGRectGetHeight(viewController.view.frame) + [viewController.view convertPoint:viewController.view.frame.origin toView:nil].y;
-//            snackbar.frame = CGRectMake(0, snackbar.parentHeight - CGRectGetHeight(snackbar.view.frame) - [[MLKeyboardInfo sharedInstance] keyboardHeight], CGRectGetWidth(snackbar.view.frame), CGRectGetHeight(snackbar.view.frame));
-//        } else {
-//            CGRect screenRect = [[UIScreen mainScreen] bounds];
-//            snackbar.parentHeight = CGRectGetHeight(screenRect);
-//            snackbar.frame = CGRectMake(0, CGRectGetHeight(screenRect) - CGRectGetHeight(snackbar.view.frame) - [[MLKeyboardInfo sharedInstance] keyboardHeight], CGRectGetWidth(screenRect), CGRectGetHeight(snackbar.view.frame));
-//        }
-
         if (snackbar.isShowingSnackbar) {
             snackbar.pendingAction = ^{[weakSnackbar setUpSnackbarWithTitle:title actionTitle:buttonTitle actionBlock:actionBlock type:type duration:duration dismissGestureEnabled:dismissGestureEnabled dismissBlock:dismissBlock viewController:viewController];
             };
@@ -191,14 +179,8 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 	}
 	self.dismissBlock = dismissBlock;
 
-    //CLEAN THIS
     [self updateLayoutWith:viewController];
-//    self.snackbarFrame = self.frame;
-//    self.snackbarInitialFrame = CGRectMake(CGRectGetMinX(self.snackbarFrame), CGRectGetMaxY(self.snackbarFrame), CGRectGetWidth(self.snackbarFrame), CGRectGetHeight(self.snackbarFrame));
-
     [self show];
-
-    ////CLEAN THIS
 
 	if (duration != MLSnackbarDurationIndefinitely) {
 		self.durationInMillis = [self durationInMilliseconds:duration];
@@ -359,28 +341,17 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 
     // I also include opaque bars because the tabbar is opaque by default and if not is not considered in the
     // above condition.
-    // In iOS 7, although this property extendedLayoutIncludesOpaqueBars is available it is always nil.
     return bottomEdgesCanExtend && viewController.extendedLayoutIncludesOpaqueBars;
 }
 
 
 - (void)show
 {
-	// get the current position
-//    CGRect currentFrame = [[self.layer presentationLayer] frame];
-//    CGFloat currentMinY = CGRectGetMinY(currentFrame);
-
 	// weakSelf
 	__weak typeof(self) weakSelf = self;
 
 	// if other snackbar is animating, we need to disappear it before showing new one
 	if (self.isAnimating) {
-		// if snackbar isn't visible, set the default initial position for animation
-//        if (currentMinY == 0 || currentMinY < CGRectGetMinY(self.snackbarFrame)) {
-//            self.snackbarInitialFrame = CGRectMake(CGRectGetMinX(self.snackbarFrame), CGRectGetMaxY(self.snackbarFrame), CGRectGetWidth(self.snackbarFrame), CGRectGetHeight(self.snackbarFrame));
-//        } else {
-//            self.snackbarInitialFrame = currentFrame;
-//        }
 		self.pendingAction = ^{[weakSelf show];
 		};
 		if (!self.isDesappearing) {
@@ -513,62 +484,6 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
             }
         }
     }
-
-
-//    CGRect frame = self.snackbarFrame;
-//
-//    CGPoint translate = [gesture translationInView:gesture.view];
-//    CGFloat percent = translate.x / gesture.view.bounds.size.width;
-//    UIPercentDrivenInteractiveTransition *interactionController;
-//
-//    if (gesture.state == UIGestureRecognizerStateBegan) {
-//        interactionController = [[UIPercentDrivenInteractiveTransition alloc] init];
-//        // cancel timer while swipe interaction is occuring
-//        [self.timer invalidate];
-//    } else if (gesture.state == UIGestureRecognizerStateChanged) {
-//        self.frame = CGRectMake(translate.x, CGRectGetMinY(frame), CGRectGetWidth(frame), CGRectGetHeight(frame));
-//        self.alpha = 1 - fabs(percent);
-//        [interactionController updateInteractiveTransition:percent];
-//    } else if (gesture.state == UIGestureRecognizerStateEnded) {
-//        CGRect finalFrame;
-//        if (translate.x > 0) {
-//            finalFrame = CGRectMake(CGRectGetMaxX(frame), CGRectGetMinY(frame), CGRectGetWidth(frame), CGRectGetHeight(frame));
-//        } else {
-//            finalFrame = CGRectMake(CGRectGetMinX(frame) - CGRectGetWidth(frame), CGRectGetMinY(frame), CGRectGetWidth(frame), CGRectGetHeight(frame));
-//        }
-//        if (fabs(percent) > 0.2) {
-//            __weak typeof(self) weakSelf = self;
-//
-//            [UIView animateWithDuration:kMLSnackbarAnimationDuration animations: ^{
-//                weakSelf.frame = finalFrame;
-//                weakSelf.alpha = 0;
-//            } completion: ^(BOOL finished) {
-//                [interactionController finishInteractiveTransition];
-//                [weakSelf removeFromSuperview];
-//                weakSelf.frame = frame;
-//                weakSelf.alpha = 1;
-//                weakSelf.isShowingSnackbar = NO;
-//                [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
-//                [weakSelf removeGestureRecognizer:gesture];
-//                if (weakSelf.dismissBlock != nil) {
-//                    weakSelf.dismissBlock(MLSnackbarDismissCauseSwipe);
-//                }
-//            }];
-//        } else {
-//            __weak typeof(self) weakSelf = self;
-//
-//            [UIView animateWithDuration:kMLSnackbarAnimationDuration animations: ^{
-//                weakSelf.frame = frame;
-//                weakSelf.alpha = 1;
-//            }];
-//            [interactionController cancelInteractiveTransition];
-//
-//            // if swipe was canceled, the timer needs to restart
-//            if (self.durationInMillis > 0) {
-//                self.timer = [NSTimer scheduledTimerWithTimeInterval:self.durationInMillis / 1000.0 target:self selector:@selector(snackbarTimeOut) userInfo:nil repeats:NO];
-//            }
-//        }
-//    }
 }
 
 - (void)removeSnackbarWithAnimation:(MLSnackbarDismissCause)cause
