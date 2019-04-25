@@ -48,7 +48,7 @@
 @interface MLSnackbar ()
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 @property (weak, nonatomic) IBOutlet MLSnackbarButton *actionButton;
-@property (strong, nonatomic) UIView *view;
+@property (strong, nonatomic) UIView *snackbarView;
 @property (nonatomic, copy) void (^actionBlock)(void);
 @property (nonatomic, copy) MLSnackbarDismissBlock dismissBlock;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelTopConstraint;
@@ -149,7 +149,7 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 	self.messageLabel.textColor = type.titleFontColor;
 	self.messageLabel.font = [UIFont ml_lightSystemFontOfSize:kMLFontsSizeXSmall];
 
-	self.view.backgroundColor = type.backgroundColor;
+	self.snackbarView.backgroundColor = type.backgroundColor;
 
 	if (buttonTitle != nil && actionBlock != nil) {
 		[self.actionButton setTitle:buttonTitle forState:UIControlStateNormal];
@@ -207,20 +207,20 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 - (id)init
 {
 	if (self = [super init]) {
-		self.view = [[MLUIBundle mluiBundle] loadNibNamed:NSStringFromClass([MLSnackbar class])
+		self.snackbarView = [[MLUIBundle mluiBundle] loadNibNamed:NSStringFromClass([MLSnackbar class])
 		                                            owner:self
 		                                          options:nil].firstObject;
 
-		self.view.translatesAutoresizingMaskIntoConstraints = NO;
+		self.snackbarView.translatesAutoresizingMaskIntoConstraints = NO;
 
         //Set presenting view controller
         self.presentingViewController = [self topViewController];
 
-		[self addSubview:self.view];
-        [self.view autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self];
-        [self.view autoMatchDimension:ALDimensionHeight toDimension:ALDimensionHeight ofView:self];
-        self.snackbarViewLeftConstraint = [self.view autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self];
-        self.snackbarViewTopConstraint = [self.view autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self];
+		[self addSubview:self.snackbarView];
+        [self.snackbarView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self];
+        [self.snackbarView autoMatchDimension:ALDimensionHeight toDimension:ALDimensionHeight ofView:self];
+        self.snackbarViewLeftConstraint = [self.snackbarView autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self];
+        self.snackbarViewTopConstraint = [self.snackbarView autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self];
 
         self.clipsToBounds = YES;
 	}
@@ -250,16 +250,12 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
     CGFloat snackBarHeight = (CGRectGetHeight(self.messageLabel.frame) > kMLSnackbarOneLineComponentHeight) ? kMLSnackbarTwoLineViewHeight : kMLSnackbarOneLineViewHeight;
     CGFloat labelTopConstraintSpacing = snackBarHeight == kMLSnackbarOneLineComponentHeight ? kMLSnackbarOneLineTopSpacing : kMLSnackbarTwoLineTopSpacing;
 
-    [self autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:presentingView];
-    [self autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:presentingView];
+    [self autoPinEdgeToSuperviewSafeArea:ALEdgeLeft];
+    [self autoPinEdgeToSuperviewSafeArea:ALEdgeRight];
+
     CGFloat keyboardHeight = [[MLKeyboardInfo sharedInstance] keyboardHeight];
-
     self.heightConstraint = [self autoSetDimension:ALDimensionHeight toSize:snackBarHeight];
-    self.bottomConstraint = [self autoPinEdge:ALEdgeBottom
-                                       toEdge:ALEdgeBottom
-                                       ofView:presentingView
-                                   withOffset:[self bottomInsetWithKeyboardHeight:keyboardHeight]];
-
+    self.bottomConstraint = [self autoPinEdgeToSuperviewSafeArea:ALEdgeBottom withInset:[self bottomInsetWithKeyboardHeight:keyboardHeight]];
 
     self.labelTopConstraint.constant = labelTopConstraintSpacing;
 
@@ -456,7 +452,7 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 {
 	CGRect screenRect = [[UIScreen mainScreen] bounds];
 	// take keyboard height into account when device rotates
-	self.frame = CGRectMake(0, CGRectGetHeight(screenRect) - CGRectGetHeight(self.view.frame) - [[MLKeyboardInfo sharedInstance] keyboardHeight], CGRectGetWidth(screenRect), CGRectGetHeight(self.view.frame));
+	self.frame = CGRectMake(0, CGRectGetHeight(screenRect) - CGRectGetHeight(self.snackbarView.frame) - [[MLKeyboardInfo sharedInstance] keyboardHeight], CGRectGetWidth(screenRect), CGRectGetHeight(self.snackbarView.frame));
 }
 
 - (CGFloat)bottomInsetWithKeyboardHeight:(CGFloat)keyboardHeight
@@ -552,9 +548,9 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 
 - (void)keyboardWillChange:(NSNotification *)notification
 {
-    MLSnackbar *snackbard = [MLSnackbar sharedInstance];
+    MLSnackbar *snackbar = [MLSnackbar sharedInstance];
 
-    if (!snackbard.view || !snackbard.bottomConstraint) {
+    if (!snackbar.snackbarView || !snackbar.bottomConstraint) {
         return;
     }
 
@@ -563,9 +559,9 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
     CGFloat keyboardEndPosition = [info[UIKeyboardFrameEndUserInfoKey] CGRectValue].origin.y;
     CGFloat newKeyboardHeight = mainScreenHeight - keyboardEndPosition;
 
-    CGFloat finalHeight = [snackbard bottomInsetWithKeyboardHeight:newKeyboardHeight];
+    CGFloat finalHeight = [snackbar bottomInsetWithKeyboardHeight:newKeyboardHeight];
     NSTimeInterval animationDuration = [info[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    [snackbard updateBottomConstraintWithBottomInset:finalHeight withKeyboardAnimationDuration:animationDuration];
+    [snackbar updateBottomConstraintWithBottomInset:finalHeight withKeyboardAnimationDuration:animationDuration];
 }
 
 @end
