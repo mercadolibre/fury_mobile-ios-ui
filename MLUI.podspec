@@ -98,6 +98,7 @@ Pod::Spec.new do |s|
     mlsnackbar.dependency 'MLUI/MLFonts'
     mlsnackbar.dependency 'MLUI/MLButton'
     mlsnackbar.dependency 'MLUI/Helpers'
+    mlsnackbar.dependency 'PureLayout'
   end
 
   s.subspec 'MLSpinner' do |mlspinner|

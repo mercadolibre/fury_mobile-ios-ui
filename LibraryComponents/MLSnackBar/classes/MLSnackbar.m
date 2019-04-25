@@ -9,6 +9,7 @@
 #import "MLSnackbar.h"
 #import "UIFont+MLFonts.h"
 #import "MLUIBundle.h"
+#import "PureLayout.h"
 
 @interface MLSnackbarButton : UIButton
 @property (nonatomic, strong) UIColor *backgroundHighlightedColor;
@@ -64,6 +65,10 @@
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic) long durationInMillis;
 @property (nonatomic, copy) void (^pendingAction)(void);
+@property (nonatomic, strong) NSLayoutConstraint *bottomConstraint;
+@property (nonatomic, strong) NSLayoutConstraint *heightConstraint;
+@property (nonatomic, strong) NSLayoutConstraint *snackbarViewTopConstraint;
+@property (nonatomic) UIViewController *presentingViewController;
 
 @end
 
@@ -156,6 +161,7 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 	self.messageLabel.font = [UIFont ml_lightSystemFontOfSize:kMLFontsSizeXSmall];
 
 	self.view.backgroundColor = type.backgroundColor;
+    self.presentingViewController = viewController;
 
 	if (buttonTitle != nil && actionBlock != nil) {
 		[self.actionButton setTitle:buttonTitle forState:UIControlStateNormal];
@@ -184,11 +190,14 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 	}
 	self.dismissBlock = dismissBlock;
 
+    //CLEAN THIS
     [self updateLayoutWith:viewController];
 	self.snackbarFrame = self.frame;
 	self.snackbarInitialFrame = CGRectMake(CGRectGetMinX(self.snackbarFrame), CGRectGetMaxY(self.snackbarFrame), CGRectGetWidth(self.snackbarFrame), CGRectGetHeight(self.snackbarFrame));
 
-	[self show];
+    [self show];
+
+    ////CLEAN THIS
 
 	if (duration != MLSnackbarDurationIndefinitely) {
 		self.durationInMillis = [self durationInMilliseconds:duration];
@@ -218,17 +227,28 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 		self.view.translatesAutoresizingMaskIntoConstraints = NO;
 
 		[self addSubview:self.view];
+
+        [self.view autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self];
+        [self.view autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self];
+        [self.view autoMatchDimension:ALDimensionHeight toDimension:ALDimensionHeight ofView:self];
+        self.snackbarViewTopConstraint = [self.view autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self withOffset:0];
+
+        self.layer.borderWidth = 1;
+        self.layer.borderColor = [UIColor orangeColor].CGColor;
+        self.view.layer.borderColor = [UIColor yellowColor].CGColor;
+        self.view.layer.borderWidth = 3;
         self.clipsToBounds = YES;
 
-		NSDictionary *views = @{@"view" : self.view};
-		[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view]-0-|"
-		                                                             options:0
-		                                                             metrics:nil
-		                                                               views:views]];
-		[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[view]-0-|"
-		                                                             options:0
-		                                                             metrics:nil
-		                                                               views:views]];
+
+//        NSDictionary *views = @{@"view" : self.view};
+//        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view]-0-|"
+//                                                                     options:0
+//                                                                     metrics:nil
+//                                                                       views:views]];
+//        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[view]-0-|"
+//                                                                     options:0
+//                                                                     metrics:nil
+//                                                                       views:views]];
 	}
 
 	return self;
@@ -261,22 +281,148 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 
 	[self.messageLabel sizeToFit];
 
-    if (viewController != nil) {
-        self.parentHeight = CGRectGetHeight(viewController.view.frame) + [viewController.view convertPoint:viewController.view.frame.origin toView:nil].y;
+    CGFloat snackBarHeight = (CGRectGetHeight(self.messageLabel.frame) > kMLSnackbarOneLineComponentHeight) ? kMLSnackbarTwoLineViewHeight : kMLSnackbarOneLineViewHeight;
+    CGFloat labelTopConstraintSpacing = snackBarHeight == kMLSnackbarOneLineComponentHeight ? kMLSnackbarOneLineTopSpacing : kMLSnackbarTwoLineTopSpacing;
 
+    UIView *presentingView = [self topViewController].view;
+
+    if (self.presentingViewController) {
+        presentingView = self.presentingViewController.view;
     }
 
-    CGFloat keyboardHeight = [[MLKeyboardInfo sharedInstance] keyboardHeight];
-	if (CGRectGetHeight(self.messageLabel.frame) > kMLSnackbarOneLineComponentHeight) {
-		self.frame = CGRectMake(self.frame.origin.x, self.parentHeight - kMLSnackbarTwoLineViewHeight - keyboardHeight, self.frame.size.width, kMLSnackbarTwoLineViewHeight);
-		self.labelTopConstraint.constant = kMLSnackbarTwoLineTopSpacing;
-	} else {
-		self.frame = CGRectMake(self.frame.origin.x, self.parentHeight - kMLSnackbarOneLineViewHeight - keyboardHeight, self.frame.size.width, kMLSnackbarOneLineViewHeight);
-		self.labelTopConstraint.constant = kMLSnackbarOneLineTopSpacing;
-	}
+    [presentingView addSubview:self];
 
-	[self layoutIfNeeded];
+    [self autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:presentingView];
+    [self autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:presentingView];
+    CGFloat keyboardHeight = [[MLKeyboardInfo sharedInstance] keyboardHeight];
+    self.heightConstraint = [self autoSetDimension:ALDimensionHeight toSize:snackBarHeight];
+    self.bottomConstraint = [self autoPinEdge:ALEdgeBottom
+                                       toEdge:ALEdgeBottom
+                                       ofView:presentingView
+                                   withOffset:[self bottomInsetWithKeyboardHeight:keyboardHeight]];
+
+
+    self.labelTopConstraint.constant = labelTopConstraintSpacing;
+
+    [self layoutIfNeeded];
+
+//    if (self.presentingViewController) {
+//
+//        [self.presentingViewController.view addSubview:self];
+//
+//        [self autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.presentingViewController.view];
+//        [self autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self.presentingViewController.view];
+//        CGFloat keyboardHeight = [[MLKeyboardInfo sharedInstance] keyboardHeight];
+//        self.heightConstraint = [self autoSetDimension:ALDimensionHeight toSize:snackBarHeight];
+//        self.bottomConstraint = [self autoPinEdge:ALEdgeBottom
+//                                                     toEdge:ALEdgeBottom
+//                                                     ofView:self.presentingViewController.view
+//                                                 withOffset:[self bottomInsetWithKeyboardHeight:keyboardHeight]];
+//
+//
+//        self.labelTopConstraint.constant = labelTopConstraintSpacing;
+//
+//        [self layoutIfNeeded];
+//    } else {
+
+//        CGFloat keyboardHeight = [[MLKeyboardInfo sharedInstance] keyboardHeight];
+//        if (CGRectGetHeight(self.messageLabel.frame) > kMLSnackbarOneLineComponentHeight) {
+//            self.frame = CGRectMake(self.frame.origin.x, self.parentHeight - kMLSnackbarTwoLineViewHeight - keyboardHeight, self.frame.size.width, kMLSnackbarTwoLineViewHeight);
+//            self.labelTopConstraint.constant = kMLSnackbarTwoLineTopSpacing;
+//        } else {
+//            self.frame = CGRectMake(self.frame.origin.x, self.parentHeight - kMLSnackbarOneLineViewHeight - keyboardHeight, self.frame.size.width, kMLSnackbarOneLineViewHeight);
+//            self.labelTopConstraint.constant = kMLSnackbarOneLineTopSpacing;
+//        }
+//
+//        [self layoutIfNeeded];
+//    }
+
+
+
+
+
+//    if (viewController != nil) {
+////        CGFloat assd = [viewController.view convertPoint:viewController.view.frame.origin toView:nil].y;
+////        CGRect asd = [viewController.view convertRect:viewController.view.frame toView:nil];
+//        self.parentHeight = CGRectGetHeight(viewController.view.frame);
+//
+////        self.parentHeight = CGRectGetMaxX(asd);
+////        self.parentHeight = asd.size.height + asd.origin.y;
+//    }
+//
+//    CGFloat keyboardHeight = [[MLKeyboardInfo sharedInstance] keyboardHeight];
+//    if (CGRectGetHeight(self.messageLabel.frame) > kMLSnackbarOneLineComponentHeight) {
+//        self.frame = CGRectMake(self.frame.origin.x, self.parentHeight - kMLSnackbarTwoLineViewHeight - keyboardHeight, self.frame.size.width, kMLSnackbarTwoLineViewHeight);
+//        self.labelTopConstraint.constant = kMLSnackbarTwoLineTopSpacing;
+//    } else {
+//        self.frame = CGRectMake(self.frame.origin.x, self.parentHeight - kMLSnackbarOneLineViewHeight - keyboardHeight, self.frame.size.width, kMLSnackbarOneLineViewHeight);
+//        self.labelTopConstraint.constant = kMLSnackbarOneLineTopSpacing;
+//    }
+//
+//    [self layoutIfNeeded];
 }
+
+- (CGFloat)bottomInsetWithKeyboardHeight:(CGFloat)keyboardHeight
+{
+    UITabBar *tabBar = [self findTabBarForViewController:self.presentingViewController];
+    CGFloat tabBarOffsetHeight = (tabBar && !tabBar.hidden) ? CGRectGetHeight(tabBar.bounds) : 0;
+    CGFloat offset = 0;
+
+    // To define the offset height, the only thing I do care is if the view extends or not at bottom behind the tabbar.
+    if ([self viewExtendsAtBottomForViewController:self.presentingViewController]) {
+        /* If it extends,
+         * If the keyboard exists, the maximum value is going to be the keyboardHeight.
+         * If the keyboard does not exist, the maximum value will be the tabBarOffset.
+         */
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu"
+        offset = MAX(keyboardHeight, tabBarOffsetHeight);
+#pragma clang diagnostic pop
+    } else {
+        /* If it does not extend,
+         * If the keyboard does not exist, the 0 is actually 49 (the tabBar height) so the offset needs to be 0.
+         * If it exists, the offset can't be just the keyboard height because it also starts in 49, so i need to
+         * substract 49 (the tabBarHeight).
+         */
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu"
+        offset = MAX(0, keyboardHeight - tabBarOffsetHeight);
+#pragma clang diagnostic pop
+    }
+
+    return -offset;
+}
+
+/*Returns the tabbar if exists.*/
+- (nullable __kindof UITabBar *)findTabBarForViewController:(UIViewController *)viewController
+{
+    UIViewController *current = viewController;
+
+    while (current) {
+        UIViewController *parent = current.parentViewController;
+
+        if ([parent isKindOfClass:[UITabBarController class]]) {
+            return ((UITabBarController *)parent).tabBar;
+        }
+
+        current = parent;
+    }
+    return nil;
+}
+
+/*Checks if the view can extend behind the tabbar, filling the whole screen or not.*/
+- (BOOL)viewExtendsAtBottomForViewController:(UIViewController *)viewController
+{
+    BOOL bottomEdgesCanExtend = ((viewController.edgesForExtendedLayout & UIRectEdgeBottom) == UIRectEdgeBottom);
+
+    // I also include opaque bars because the tabbar is opaque by default and if not is not considered in the
+    // above condition.
+    // In iOS 7, although this property extendedLayoutIncludesOpaqueBars is available it is always nil.
+    return bottomEdgesCanExtend && viewController.extendedLayoutIncludesOpaqueBars;
+}
+
 
 - (void)show
 {
@@ -301,22 +447,45 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 			[self removeSnackbarWithAnimation:MLSnackbarDismissCauseNone];
 		}
 	} else {
-		// get remaining distance constant
-		CGFloat distance = CGRectGetMinY(self.snackbarInitialFrame) / CGRectGetMaxY(self.snackbarFrame);
 
-		// perform animation
-		self.view.frame = self.snackbarInitialFrame;
-        weakSelf.frame = weakSelf.snackbarFrame;
-		[UIView animateWithDuration:kMLSnackbarAnimationDuration * distance delay:0 options:UIViewAnimationOptionCurveEaseOut animations: ^{
-		    weakSelf.view.frame = weakSelf.snackbarFrame;
-		    UIViewController *topViewController = [weakSelf topViewController];
-		    UIView *parentView = topViewController.view;
-		    [parentView addSubview:weakSelf];
-		    weakSelf.isAnimating = YES;
-		} completion: ^(BOOL finished) {
-		    weakSelf.isShowingSnackbar = YES;
-		    weakSelf.isAnimating = NO;
-		}];
+        CGFloat distance = self.heightConstraint.constant;
+        self.snackbarViewTopConstraint.constant = distance;
+        [self layoutIfNeeded];
+
+        [UIView animateWithDuration:kMLSnackbarAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations: ^{
+
+            self.snackbarViewTopConstraint.constant = 0;
+            [self layoutIfNeeded];
+
+            weakSelf.isAnimating = YES;
+        } completion: ^(BOOL finished) {
+            weakSelf.isShowingSnackbar = YES;
+            weakSelf.isAnimating = NO;
+        }];
+
+
+//        // get remaining distance constant
+//        CGFloat distance2 = CGRectGetMinY(self.snackbarInitialFrame) / CGRectGetMaxY(self.snackbarFrame);
+//
+//        // perform animation
+//        self.view.frame = self.snackbarInitialFrame;
+//        weakSelf.frame = weakSelf.snackbarFrame;
+//        [UIView animateWithDuration:kMLSnackbarAnimationDuration * distance delay:0 options:UIViewAnimationOptionCurveEaseOut animations: ^{
+//            weakSelf.view.frame = weakSelf.snackbarFrame;
+//
+//            if (self.presentingViewController) {
+//                [self.presentingViewController.view addSubview:weakSelf];
+//            } else {
+//                UIViewController *topViewController = [weakSelf topViewController];
+//                UIView *parentView = topViewController.view;
+//                [parentView addSubview:weakSelf];
+//            }
+//
+//            weakSelf.isAnimating = YES;
+//        } completion: ^(BOOL finished) {
+//            weakSelf.isShowingSnackbar = YES;
+//            weakSelf.isAnimating = NO;
+//        }];
 	}
 }
 
@@ -443,37 +612,73 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 	MLSnackbarDismissBlock dismissBlock = [self.dismissBlock copy];
 	void (^actionBlock)(void) = [self.actionBlock copy];
 
-	[UIView animateWithDuration:kMLSnackbarAnimationDuration delay:0 options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationCurveEaseOut animations: ^{
-	    weakSelf.isAnimating = YES;
-	    weakSelf.isDesappearing = YES;
-	    [weakSelf.timer invalidate];
-        weakSelf.view.frame = CGRectMake(CGRectGetMinX(frame), CGRectGetMaxY(frame), CGRectGetWidth(frame), CGRectGetHeight(frame));
-	} completion: ^(BOOL finished) {
-	    weakSelf.alpha = 1;
-	    [weakSelf removeFromSuperview];
-	    [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
-	    [weakSelf removeGestureRecognizer:weakSelf.gesture];
-	    weakSelf.isShowingSnackbar = NO;
-	    weakSelf.isDesappearing = NO;
-	    weakSelf.isAnimating = NO;
+    [UIView animateWithDuration:kMLSnackbarAnimationDuration delay:0 options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationCurveEaseOut animations: ^{
+        weakSelf.isAnimating = YES;
+        weakSelf.isDesappearing = YES;
+        [weakSelf.timer invalidate];
 
-	    // perfom the action block if dismiss ocurred beacuse the Action Button was pressed
-	    if (cause == MLSnackbarDismissCauseActionButton) {
-	        if (actionBlock) {
-	            actionBlock();
-			}
-		}
+        CGFloat distance = weakSelf.heightConstraint.constant;
+        weakSelf.snackbarViewTopConstraint.constant = distance;
+        [weakSelf layoutIfNeeded];
 
-	    if (dismissBlock != nil) {
-	        dismissBlock(cause);
-		}
+    } completion: ^(BOOL finished) {
+        weakSelf.alpha = 1;
+        [weakSelf removeFromSuperview];
+        [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
+        [weakSelf removeGestureRecognizer:weakSelf.gesture];
+        weakSelf.isShowingSnackbar = NO;
+        weakSelf.isDesappearing = NO;
+        weakSelf.isAnimating = NO;
 
-	    // perfom any pending action after the animation finished
-	    if (weakSelf.pendingAction) {
-	        weakSelf.pendingAction();
-	        weakSelf.pendingAction = nil;
-		}
-	}];
+        // perfom the action block if dismiss ocurred beacuse the Action Button was pressed
+        if (cause == MLSnackbarDismissCauseActionButton) {
+            if (actionBlock) {
+                actionBlock();
+            }
+        }
+
+        if (dismissBlock != nil) {
+            dismissBlock(cause);
+        }
+
+        // perfom any pending action after the animation finished
+        if (weakSelf.pendingAction) {
+            weakSelf.pendingAction();
+            weakSelf.pendingAction = nil;
+        }
+    }];
+
+//    [UIView animateWithDuration:kMLSnackbarAnimationDuration delay:0 options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationCurveEaseOut animations: ^{
+//        weakSelf.isAnimating = YES;
+//        weakSelf.isDesappearing = YES;
+//        [weakSelf.timer invalidate];
+//        weakSelf.view.frame = CGRectMake(CGRectGetMinX(frame), CGRectGetMaxY(frame), CGRectGetWidth(frame), CGRectGetHeight(frame));
+//    } completion: ^(BOOL finished) {
+//        weakSelf.alpha = 1;
+//        [weakSelf removeFromSuperview];
+//        [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
+//        [weakSelf removeGestureRecognizer:weakSelf.gesture];
+//        weakSelf.isShowingSnackbar = NO;
+//        weakSelf.isDesappearing = NO;
+//        weakSelf.isAnimating = NO;
+//
+//        // perfom the action block if dismiss ocurred beacuse the Action Button was pressed
+//        if (cause == MLSnackbarDismissCauseActionButton) {
+//            if (actionBlock) {
+//                actionBlock();
+//            }
+//        }
+//
+//        if (dismissBlock != nil) {
+//            dismissBlock(cause);
+//        }
+//
+//        // perfom any pending action after the animation finished
+//        if (weakSelf.pendingAction) {
+//            weakSelf.pendingAction();
+//            weakSelf.pendingAction = nil;
+//        }
+//    }];
 }
 
 - (void)didRotate:(NSNotification *)notification
