@@ -150,7 +150,6 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 	self.messageLabel.font = [UIFont ml_lightSystemFontOfSize:kMLFontsSizeXSmall];
 
 	self.view.backgroundColor = type.backgroundColor;
-    self.presentingViewController = viewController;
 
 	if (buttonTitle != nil && actionBlock != nil) {
 		[self.actionButton setTitle:buttonTitle forState:UIControlStateNormal];
@@ -179,7 +178,12 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 	}
 	self.dismissBlock = dismissBlock;
 
-    [self updateLayoutWith:viewController];
+    //Set presenting view controller
+    if (viewController) {
+        self.presentingViewController = viewController;
+    }
+
+    [self updateLayout];
     [self show];
 
 	if (duration != MLSnackbarDurationIndefinitely) {
@@ -209,8 +213,10 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 
 		self.view.translatesAutoresizingMaskIntoConstraints = NO;
 
-		[self addSubview:self.view];
+        //Set presenting view controller
+        self.presentingViewController = [self topViewController];
 
+		[self addSubview:self.view];
         [self.view autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self];
         [self.view autoMatchDimension:ALDimensionHeight toDimension:ALDimensionHeight ofView:self];
         self.snackbarViewLeftConstraint = [self.view autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self];
@@ -226,47 +232,27 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 	return self;
 }
 
-- (void)animateForKeyboardNotification:(NSNotification *)notification
+- (void)updateBottomConstraintWithBottomInset:(CGFloat)inset
+                withKeyboardAnimationDuration:(NSTimeInterval)animationDuration
 {
-	if (!self.isShowingSnackbar) {
-		return;
-	}
-
-	NSDictionary *info = [notification userInfo];
-	UIViewAnimationCurve curve = [[info objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
-	double duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-
-//    BOOL movingUp = [notification.name isEqualToString:UIKeyboardWillShowNotification];
-//
-//    CGFloat newY = CGRectGetMinY(self.frame) + (movingUp ? -1 : 1) * [[MLKeyboardInfo sharedInstance] keyboardHeight];
-
-	__weak typeof(self) weakSelf = self;
-
-	[UIView animateWithDuration:duration delay:0 options:curve << 16 animations: ^{
-        weakSelf.bottomConstraint.constant = [[MLKeyboardInfo sharedInstance] keyboardHeight];
-        [weakSelf layoutIfNeeded];
-
-
-//        weakSelf.frame = CGRectMake(CGRectGetMinX(weakSelf.frame), newY, CGRectGetWidth(weakSelf.frame), CGRectGetHeight(weakSelf.frame));
-		} completion:nil];
+    [UIView animateWithDuration:animationDuration
+                     animations: ^{
+                         self.bottomConstraint.constant = inset;
+                         [self setNeedsLayout];
+                         [self layoutIfNeeded];
+                     }];
 }
 
-- (void)updateLayoutWith:(UIViewController*)viewController
+- (void)updateLayout
 {
 	[self layoutIfNeeded];
-
 	[self.messageLabel sizeToFit];
+
+    UIView *presentingView = self.presentingViewController.view;
+    [presentingView addSubview:self];
 
     CGFloat snackBarHeight = (CGRectGetHeight(self.messageLabel.frame) > kMLSnackbarOneLineComponentHeight) ? kMLSnackbarTwoLineViewHeight : kMLSnackbarOneLineViewHeight;
     CGFloat labelTopConstraintSpacing = snackBarHeight == kMLSnackbarOneLineComponentHeight ? kMLSnackbarOneLineTopSpacing : kMLSnackbarTwoLineTopSpacing;
-
-    UIView *presentingView = [self topViewController].view;
-
-    if (self.presentingViewController) {
-        presentingView = self.presentingViewController.view;
-    }
-
-    [presentingView addSubview:self];
 
     [self autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:presentingView];
     [self autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:presentingView];
@@ -365,8 +351,8 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 
         [UIView animateWithDuration:kMLSnackbarAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations: ^{
 
-            self.snackbarViewTopConstraint.constant = 0;
-            [self layoutIfNeeded];
+            weakSelf.snackbarViewTopConstraint.constant = 0;
+            [weakSelf layoutIfNeeded];
 
             weakSelf.isAnimating = YES;
         } completion: ^(BOOL finished) {
@@ -434,7 +420,7 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 
 - (void)swipeAnimation:(UIPanGestureRecognizer *)gesture
 {
-
+    BOOL swipingRight = [gesture velocityInView:gesture.view].x > 0 ? true : false;
     CGPoint translate = [gesture translationInView:gesture.view];
     CGFloat percent = translate.x / gesture.view.bounds.size.width;
     UIPercentDrivenInteractiveTransition *interactionController;
@@ -452,7 +438,8 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
             __weak typeof(self) weakSelf = self;
 
             [UIView animateWithDuration:kMLSnackbarAnimationDuration animations: ^{
-                weakSelf.snackbarViewLeftConstraint.constant = 500;
+                CGFloat mainScreenWidth = CGRectGetWidth([UIScreen mainScreen].bounds) * (swipingRight ? 1 : -1);
+                weakSelf.snackbarViewLeftConstraint.constant = mainScreenWidth;
                 [weakSelf layoutIfNeeded];
                 weakSelf.alpha = 0;
             } completion: ^(BOOL finished) {
@@ -488,8 +475,6 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 
 - (void)removeSnackbarWithAnimation:(MLSnackbarDismissCause)cause
 {
-//    CGRect frame = self.frame;
-
 	__weak typeof(self) weakSelf = self;
 
 	MLSnackbarDismissBlock dismissBlock = [self.dismissBlock copy];
@@ -562,31 +547,30 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 {
 	if (self = [super init]) {
 		self.keyboardHeight = 0.0f;
-		[[NSNotificationCenter defaultCenter] addObserver:self
-		                                         selector:@selector(keyboardWillShow:)
-		                                             name:UIKeyboardWillShowNotification object:nil];
-		[[NSNotificationCenter defaultCenter] addObserver:self
-		                                         selector:@selector(keyboardWillHide:)
-		                                             name:UIKeyboardWillHideNotification object:nil];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(keyboardWillChange:)
+                                                     name:UIKeyboardWillChangeFrameNotification object:nil];
 	}
 	return self;
 }
 
-- (void)keyboardWillShow:(NSNotification *)notification
+- (void)keyboardWillChange:(NSNotification *)notification
 {
-	NSDictionary *info = [notification userInfo];
+    MLSnackbar *snackbard = [MLSnackbar sharedInstance];
 
-	// If keyboard was already visible, snackbar should not animate
-	if (self.keyboardHeight == 0) {
-		self.keyboardHeight = CGRectGetHeight([info[UIKeyboardFrameEndUserInfoKey] CGRectValue]);
-		[[MLSnackbar sharedInstance] animateForKeyboardNotification:notification];
-	}
-}
+    if (!snackbard.view || !snackbard.bottomConstraint) {
+        return;
+    }
 
-- (void)keyboardWillHide:(NSNotification *)notification
-{
-	[[MLSnackbar sharedInstance] animateForKeyboardNotification:notification];
-	self.keyboardHeight = 0.0f; // Set to zero after the animation because it uses this height
+    NSDictionary *info = [notification userInfo];
+    CGFloat mainScreenHeight = CGRectGetHeight([UIScreen mainScreen].bounds);
+    CGFloat keyboardEndPosition = [info[UIKeyboardFrameEndUserInfoKey] CGRectValue].origin.y;
+    CGFloat newKeyboardHeight = mainScreenHeight - keyboardEndPosition;
+
+    CGFloat finalHeight = [snackbard bottomInsetWithKeyboardHeight:newKeyboardHeight];
+    NSTimeInterval animationDuration = [info[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    [snackbard updateBottomConstraintWithBottomInset:finalHeight withKeyboardAnimationDuration:animationDuration];
 }
 
 @end
