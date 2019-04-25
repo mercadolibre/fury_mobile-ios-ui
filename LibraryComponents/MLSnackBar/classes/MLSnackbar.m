@@ -55,9 +55,9 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelButtonSpacing;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonTrailingConstraint;
 @property (nonatomic) MLSnackbarDuration duration;
-@property (nonatomic) CGRect snackbarFrame;
-@property (nonatomic) CGRect snackbarInitialFrame;
-@property (nonatomic) CGFloat parentHeight;
+//@property (nonatomic) CGRect snackbarFrame;
+//@property (nonatomic) CGRect snackbarInitialFrame;
+//@property (nonatomic) CGFloat parentHeight;
 @property (nonatomic) BOOL isShowingSnackbar;
 @property (nonatomic) BOOL isAnimating;
 @property (nonatomic) BOOL isDesappearing;
@@ -67,6 +67,7 @@
 @property (nonatomic, copy) void (^pendingAction)(void);
 @property (nonatomic, strong) NSLayoutConstraint *bottomConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *heightConstraint;
+@property (nonatomic, strong) NSLayoutConstraint *snackbarViewLeftConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *snackbarViewTopConstraint;
 @property (nonatomic) UIViewController *presentingViewController;
 
@@ -131,14 +132,14 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
         snackbar.pendingAction = ^{[weakSnackbar setUpSnackbarWithTitle:title actionTitle:buttonTitle actionBlock:actionBlock type:type duration:duration dismissGestureEnabled:dismissGestureEnabled dismissBlock:dismissBlock viewController:viewController];
         };
     } else {
-        if (viewController != nil) {
-            snackbar.parentHeight = CGRectGetHeight(viewController.view.frame) + [viewController.view convertPoint:viewController.view.frame.origin toView:nil].y;
-            snackbar.frame = CGRectMake(0, snackbar.parentHeight - CGRectGetHeight(snackbar.view.frame) - [[MLKeyboardInfo sharedInstance] keyboardHeight], CGRectGetWidth(snackbar.view.frame), CGRectGetHeight(snackbar.view.frame));
-        } else {
-            CGRect screenRect = [[UIScreen mainScreen] bounds];
-            snackbar.parentHeight = CGRectGetHeight(screenRect);
-            snackbar.frame = CGRectMake(0, CGRectGetHeight(screenRect) - CGRectGetHeight(snackbar.view.frame) - [[MLKeyboardInfo sharedInstance] keyboardHeight], CGRectGetWidth(screenRect), CGRectGetHeight(snackbar.view.frame));
-        }
+//        if (viewController != nil) {
+//            snackbar.parentHeight = CGRectGetHeight(viewController.view.frame) + [viewController.view convertPoint:viewController.view.frame.origin toView:nil].y;
+//            snackbar.frame = CGRectMake(0, snackbar.parentHeight - CGRectGetHeight(snackbar.view.frame) - [[MLKeyboardInfo sharedInstance] keyboardHeight], CGRectGetWidth(snackbar.view.frame), CGRectGetHeight(snackbar.view.frame));
+//        } else {
+//            CGRect screenRect = [[UIScreen mainScreen] bounds];
+//            snackbar.parentHeight = CGRectGetHeight(screenRect);
+//            snackbar.frame = CGRectMake(0, CGRectGetHeight(screenRect) - CGRectGetHeight(snackbar.view.frame) - [[MLKeyboardInfo sharedInstance] keyboardHeight], CGRectGetWidth(screenRect), CGRectGetHeight(snackbar.view.frame));
+//        }
 
         if (snackbar.isShowingSnackbar) {
             snackbar.pendingAction = ^{[weakSnackbar setUpSnackbarWithTitle:title actionTitle:buttonTitle actionBlock:actionBlock type:type duration:duration dismissGestureEnabled:dismissGestureEnabled dismissBlock:dismissBlock viewController:viewController];
@@ -192,8 +193,8 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 
     //CLEAN THIS
     [self updateLayoutWith:viewController];
-	self.snackbarFrame = self.frame;
-	self.snackbarInitialFrame = CGRectMake(CGRectGetMinX(self.snackbarFrame), CGRectGetMaxY(self.snackbarFrame), CGRectGetWidth(self.snackbarFrame), CGRectGetHeight(self.snackbarFrame));
+//    self.snackbarFrame = self.frame;
+//    self.snackbarInitialFrame = CGRectMake(CGRectGetMinX(self.snackbarFrame), CGRectGetMaxY(self.snackbarFrame), CGRectGetWidth(self.snackbarFrame), CGRectGetHeight(self.snackbarFrame));
 
     [self show];
 
@@ -228,27 +229,16 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 
 		[self addSubview:self.view];
 
-        [self.view autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self];
-        [self.view autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self];
+        [self.view autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self];
         [self.view autoMatchDimension:ALDimensionHeight toDimension:ALDimensionHeight ofView:self];
-        self.snackbarViewTopConstraint = [self.view autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self withOffset:0];
+        self.snackbarViewLeftConstraint = [self.view autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self];
+        self.snackbarViewTopConstraint = [self.view autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self];
 
         self.layer.borderWidth = 1;
         self.layer.borderColor = [UIColor orangeColor].CGColor;
         self.view.layer.borderColor = [UIColor yellowColor].CGColor;
         self.view.layer.borderWidth = 3;
         self.clipsToBounds = YES;
-
-
-//        NSDictionary *views = @{@"view" : self.view};
-//        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view]-0-|"
-//                                                                     options:0
-//                                                                     metrics:nil
-//                                                                       views:views]];
-//        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[view]-0-|"
-//                                                                     options:0
-//                                                                     metrics:nil
-//                                                                       views:views]];
 	}
 
 	return self;
@@ -264,14 +254,18 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 	UIViewAnimationCurve curve = [[info objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
 	double duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
 
-	BOOL movingUp = [notification.name isEqualToString:UIKeyboardWillShowNotification];
-
-	CGFloat newY = CGRectGetMinY(self.frame) + (movingUp ? -1 : 1) * [[MLKeyboardInfo sharedInstance] keyboardHeight];
+//    BOOL movingUp = [notification.name isEqualToString:UIKeyboardWillShowNotification];
+//
+//    CGFloat newY = CGRectGetMinY(self.frame) + (movingUp ? -1 : 1) * [[MLKeyboardInfo sharedInstance] keyboardHeight];
 
 	__weak typeof(self) weakSelf = self;
 
 	[UIView animateWithDuration:duration delay:0 options:curve << 16 animations: ^{
-	    weakSelf.frame = CGRectMake(CGRectGetMinX(weakSelf.frame), newY, CGRectGetWidth(weakSelf.frame), CGRectGetHeight(weakSelf.frame));
+        weakSelf.bottomConstraint.constant = [[MLKeyboardInfo sharedInstance] keyboardHeight];
+        [weakSelf layoutIfNeeded];
+
+
+//        weakSelf.frame = CGRectMake(CGRectGetMinX(weakSelf.frame), newY, CGRectGetWidth(weakSelf.frame), CGRectGetHeight(weakSelf.frame));
 		} completion:nil];
 }
 
@@ -295,6 +289,7 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
     [self autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:presentingView];
     [self autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:presentingView];
     CGFloat keyboardHeight = [[MLKeyboardInfo sharedInstance] keyboardHeight];
+
     self.heightConstraint = [self autoSetDimension:ALDimensionHeight toSize:snackBarHeight];
     self.bottomConstraint = [self autoPinEdge:ALEdgeBottom
                                        toEdge:ALEdgeBottom
@@ -305,61 +300,6 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
     self.labelTopConstraint.constant = labelTopConstraintSpacing;
 
     [self layoutIfNeeded];
-
-//    if (self.presentingViewController) {
-//
-//        [self.presentingViewController.view addSubview:self];
-//
-//        [self autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.presentingViewController.view];
-//        [self autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self.presentingViewController.view];
-//        CGFloat keyboardHeight = [[MLKeyboardInfo sharedInstance] keyboardHeight];
-//        self.heightConstraint = [self autoSetDimension:ALDimensionHeight toSize:snackBarHeight];
-//        self.bottomConstraint = [self autoPinEdge:ALEdgeBottom
-//                                                     toEdge:ALEdgeBottom
-//                                                     ofView:self.presentingViewController.view
-//                                                 withOffset:[self bottomInsetWithKeyboardHeight:keyboardHeight]];
-//
-//
-//        self.labelTopConstraint.constant = labelTopConstraintSpacing;
-//
-//        [self layoutIfNeeded];
-//    } else {
-
-//        CGFloat keyboardHeight = [[MLKeyboardInfo sharedInstance] keyboardHeight];
-//        if (CGRectGetHeight(self.messageLabel.frame) > kMLSnackbarOneLineComponentHeight) {
-//            self.frame = CGRectMake(self.frame.origin.x, self.parentHeight - kMLSnackbarTwoLineViewHeight - keyboardHeight, self.frame.size.width, kMLSnackbarTwoLineViewHeight);
-//            self.labelTopConstraint.constant = kMLSnackbarTwoLineTopSpacing;
-//        } else {
-//            self.frame = CGRectMake(self.frame.origin.x, self.parentHeight - kMLSnackbarOneLineViewHeight - keyboardHeight, self.frame.size.width, kMLSnackbarOneLineViewHeight);
-//            self.labelTopConstraint.constant = kMLSnackbarOneLineTopSpacing;
-//        }
-//
-//        [self layoutIfNeeded];
-//    }
-
-
-
-
-
-//    if (viewController != nil) {
-////        CGFloat assd = [viewController.view convertPoint:viewController.view.frame.origin toView:nil].y;
-////        CGRect asd = [viewController.view convertRect:viewController.view.frame toView:nil];
-//        self.parentHeight = CGRectGetHeight(viewController.view.frame);
-//
-////        self.parentHeight = CGRectGetMaxX(asd);
-////        self.parentHeight = asd.size.height + asd.origin.y;
-//    }
-//
-//    CGFloat keyboardHeight = [[MLKeyboardInfo sharedInstance] keyboardHeight];
-//    if (CGRectGetHeight(self.messageLabel.frame) > kMLSnackbarOneLineComponentHeight) {
-//        self.frame = CGRectMake(self.frame.origin.x, self.parentHeight - kMLSnackbarTwoLineViewHeight - keyboardHeight, self.frame.size.width, kMLSnackbarTwoLineViewHeight);
-//        self.labelTopConstraint.constant = kMLSnackbarTwoLineTopSpacing;
-//    } else {
-//        self.frame = CGRectMake(self.frame.origin.x, self.parentHeight - kMLSnackbarOneLineViewHeight - keyboardHeight, self.frame.size.width, kMLSnackbarOneLineViewHeight);
-//        self.labelTopConstraint.constant = kMLSnackbarOneLineTopSpacing;
-//    }
-//
-//    [self layoutIfNeeded];
 }
 
 - (CGFloat)bottomInsetWithKeyboardHeight:(CGFloat)keyboardHeight
@@ -427,8 +367,8 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 - (void)show
 {
 	// get the current position
-	CGRect currentFrame = [[self.layer presentationLayer] frame];
-	CGFloat currentMinY = CGRectGetMinY(currentFrame);
+//    CGRect currentFrame = [[self.layer presentationLayer] frame];
+//    CGFloat currentMinY = CGRectGetMinY(currentFrame);
 
 	// weakSelf
 	__weak typeof(self) weakSelf = self;
@@ -436,11 +376,11 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 	// if other snackbar is animating, we need to disappear it before showing new one
 	if (self.isAnimating) {
 		// if snackbar isn't visible, set the default initial position for animation
-		if (currentMinY == 0 || currentMinY < CGRectGetMinY(self.snackbarFrame)) {
-			self.snackbarInitialFrame = CGRectMake(CGRectGetMinX(self.snackbarFrame), CGRectGetMaxY(self.snackbarFrame), CGRectGetWidth(self.snackbarFrame), CGRectGetHeight(self.snackbarFrame));
-		} else {
-			self.snackbarInitialFrame = currentFrame;
-		}
+//        if (currentMinY == 0 || currentMinY < CGRectGetMinY(self.snackbarFrame)) {
+//            self.snackbarInitialFrame = CGRectMake(CGRectGetMinX(self.snackbarFrame), CGRectGetMaxY(self.snackbarFrame), CGRectGetWidth(self.snackbarFrame), CGRectGetHeight(self.snackbarFrame));
+//        } else {
+//            self.snackbarInitialFrame = currentFrame;
+//        }
 		self.pendingAction = ^{[weakSelf show];
 		};
 		if (!self.isDesappearing) {
@@ -462,30 +402,6 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
             weakSelf.isShowingSnackbar = YES;
             weakSelf.isAnimating = NO;
         }];
-
-
-//        // get remaining distance constant
-//        CGFloat distance2 = CGRectGetMinY(self.snackbarInitialFrame) / CGRectGetMaxY(self.snackbarFrame);
-//
-//        // perform animation
-//        self.view.frame = self.snackbarInitialFrame;
-//        weakSelf.frame = weakSelf.snackbarFrame;
-//        [UIView animateWithDuration:kMLSnackbarAnimationDuration * distance delay:0 options:UIViewAnimationOptionCurveEaseOut animations: ^{
-//            weakSelf.view.frame = weakSelf.snackbarFrame;
-//
-//            if (self.presentingViewController) {
-//                [self.presentingViewController.view addSubview:weakSelf];
-//            } else {
-//                UIViewController *topViewController = [weakSelf topViewController];
-//                UIView *parentView = topViewController.view;
-//                [parentView addSubview:weakSelf];
-//            }
-//
-//            weakSelf.isAnimating = YES;
-//        } completion: ^(BOOL finished) {
-//            weakSelf.isShowingSnackbar = YES;
-//            weakSelf.isAnimating = NO;
-//        }];
 	}
 }
 
@@ -547,65 +463,117 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 
 - (void)swipeAnimation:(UIPanGestureRecognizer *)gesture
 {
-	CGRect frame = self.snackbarFrame;
 
-	CGPoint translate = [gesture translationInView:gesture.view];
-	CGFloat percent = translate.x / gesture.view.bounds.size.width;
-	UIPercentDrivenInteractiveTransition *interactionController;
+    CGPoint translate = [gesture translationInView:gesture.view];
+    CGFloat percent = translate.x / gesture.view.bounds.size.width;
+    UIPercentDrivenInteractiveTransition *interactionController;
 
-	if (gesture.state == UIGestureRecognizerStateBegan) {
-		interactionController = [[UIPercentDrivenInteractiveTransition alloc] init];
-		// cancel timer while swipe interaction is occuring
-		[self.timer invalidate];
-	} else if (gesture.state == UIGestureRecognizerStateChanged) {
-		self.frame = CGRectMake(translate.x, CGRectGetMinY(frame), CGRectGetWidth(frame), CGRectGetHeight(frame));
-		self.alpha = 1 - fabs(percent);
-		[interactionController updateInteractiveTransition:percent];
-	} else if (gesture.state == UIGestureRecognizerStateEnded) {
-		CGRect finalFrame;
-		if (translate.x > 0) {
-			finalFrame = CGRectMake(CGRectGetMaxX(frame), CGRectGetMinY(frame), CGRectGetWidth(frame), CGRectGetHeight(frame));
-		} else {
-			finalFrame = CGRectMake(CGRectGetMinX(frame) - CGRectGetWidth(frame), CGRectGetMinY(frame), CGRectGetWidth(frame), CGRectGetHeight(frame));
-		}
-		if (fabs(percent) > 0.2) {
-			__weak typeof(self) weakSelf = self;
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        interactionController = [[UIPercentDrivenInteractiveTransition alloc] init];
+        // cancel timer while swipe interaction is occuring
+        [self.timer invalidate];
+    } else if (gesture.state == UIGestureRecognizerStateChanged) {
+        self.snackbarViewLeftConstraint.constant = translate.x;
+        self.alpha = 1 - fabs(percent);
+        [interactionController updateInteractiveTransition:percent];
+    } else if (gesture.state == UIGestureRecognizerStateEnded) {
+        if (fabs(percent) > 0.2) {
+            __weak typeof(self) weakSelf = self;
 
-			[UIView animateWithDuration:kMLSnackbarAnimationDuration animations: ^{
-			    weakSelf.frame = finalFrame;
-			    weakSelf.alpha = 0;
-			} completion: ^(BOOL finished) {
-			    [interactionController finishInteractiveTransition];
-			    [weakSelf removeFromSuperview];
-			    weakSelf.frame = frame;
-			    weakSelf.alpha = 1;
-			    weakSelf.isShowingSnackbar = NO;
-			    [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
-			    [weakSelf removeGestureRecognizer:gesture];
-			    if (weakSelf.dismissBlock != nil) {
-			        weakSelf.dismissBlock(MLSnackbarDismissCauseSwipe);
-				}
-			}];
-		} else {
-			__weak typeof(self) weakSelf = self;
+            [UIView animateWithDuration:kMLSnackbarAnimationDuration animations: ^{
+                weakSelf.snackbarViewLeftConstraint.constant = 500;
+                [weakSelf layoutIfNeeded];
+                weakSelf.alpha = 0;
+            } completion: ^(BOOL finished) {
+                [interactionController finishInteractiveTransition];
+                [weakSelf removeFromSuperview];
+                weakSelf.snackbarViewLeftConstraint.constant = 0;
+                [weakSelf layoutIfNeeded];
+                weakSelf.alpha = 1;
+                weakSelf.isShowingSnackbar = NO;
+                [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
+                [weakSelf removeGestureRecognizer:gesture];
+                if (weakSelf.dismissBlock != nil) {
+                    weakSelf.dismissBlock(MLSnackbarDismissCauseSwipe);
+                }
+            }];
+        } else {
+            __weak typeof(self) weakSelf = self;
 
-			[UIView animateWithDuration:kMLSnackbarAnimationDuration animations: ^{
-			    weakSelf.frame = frame;
-			    weakSelf.alpha = 1;
-			}];
-			[interactionController cancelInteractiveTransition];
+            [UIView animateWithDuration:kMLSnackbarAnimationDuration animations: ^{
+                weakSelf.snackbarViewLeftConstraint.constant = 0;
+                [weakSelf layoutIfNeeded];
+                weakSelf.alpha = 1;
+            }];
+            [interactionController cancelInteractiveTransition];
 
-			// if swipe was canceled, the timer needs to restart
-			if (self.durationInMillis > 0) {
-				self.timer = [NSTimer scheduledTimerWithTimeInterval:self.durationInMillis / 1000.0 target:self selector:@selector(snackbarTimeOut) userInfo:nil repeats:NO];
-			}
-		}
-	}
+            // if swipe was canceled, the timer needs to restart
+            if (self.durationInMillis > 0) {
+                self.timer = [NSTimer scheduledTimerWithTimeInterval:self.durationInMillis / 1000.0 target:self selector:@selector(snackbarTimeOut) userInfo:nil repeats:NO];
+            }
+        }
+    }
+
+
+//    CGRect frame = self.snackbarFrame;
+//
+//    CGPoint translate = [gesture translationInView:gesture.view];
+//    CGFloat percent = translate.x / gesture.view.bounds.size.width;
+//    UIPercentDrivenInteractiveTransition *interactionController;
+//
+//    if (gesture.state == UIGestureRecognizerStateBegan) {
+//        interactionController = [[UIPercentDrivenInteractiveTransition alloc] init];
+//        // cancel timer while swipe interaction is occuring
+//        [self.timer invalidate];
+//    } else if (gesture.state == UIGestureRecognizerStateChanged) {
+//        self.frame = CGRectMake(translate.x, CGRectGetMinY(frame), CGRectGetWidth(frame), CGRectGetHeight(frame));
+//        self.alpha = 1 - fabs(percent);
+//        [interactionController updateInteractiveTransition:percent];
+//    } else if (gesture.state == UIGestureRecognizerStateEnded) {
+//        CGRect finalFrame;
+//        if (translate.x > 0) {
+//            finalFrame = CGRectMake(CGRectGetMaxX(frame), CGRectGetMinY(frame), CGRectGetWidth(frame), CGRectGetHeight(frame));
+//        } else {
+//            finalFrame = CGRectMake(CGRectGetMinX(frame) - CGRectGetWidth(frame), CGRectGetMinY(frame), CGRectGetWidth(frame), CGRectGetHeight(frame));
+//        }
+//        if (fabs(percent) > 0.2) {
+//            __weak typeof(self) weakSelf = self;
+//
+//            [UIView animateWithDuration:kMLSnackbarAnimationDuration animations: ^{
+//                weakSelf.frame = finalFrame;
+//                weakSelf.alpha = 0;
+//            } completion: ^(BOOL finished) {
+//                [interactionController finishInteractiveTransition];
+//                [weakSelf removeFromSuperview];
+//                weakSelf.frame = frame;
+//                weakSelf.alpha = 1;
+//                weakSelf.isShowingSnackbar = NO;
+//                [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
+//                [weakSelf removeGestureRecognizer:gesture];
+//                if (weakSelf.dismissBlock != nil) {
+//                    weakSelf.dismissBlock(MLSnackbarDismissCauseSwipe);
+//                }
+//            }];
+//        } else {
+//            __weak typeof(self) weakSelf = self;
+//
+//            [UIView animateWithDuration:kMLSnackbarAnimationDuration animations: ^{
+//                weakSelf.frame = frame;
+//                weakSelf.alpha = 1;
+//            }];
+//            [interactionController cancelInteractiveTransition];
+//
+//            // if swipe was canceled, the timer needs to restart
+//            if (self.durationInMillis > 0) {
+//                self.timer = [NSTimer scheduledTimerWithTimeInterval:self.durationInMillis / 1000.0 target:self selector:@selector(snackbarTimeOut) userInfo:nil repeats:NO];
+//            }
+//        }
+//    }
 }
 
 - (void)removeSnackbarWithAnimation:(MLSnackbarDismissCause)cause
 {
-	CGRect frame = self.frame;
+//    CGRect frame = self.frame;
 
 	__weak typeof(self) weakSelf = self;
 
@@ -647,38 +615,6 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
             weakSelf.pendingAction = nil;
         }
     }];
-
-//    [UIView animateWithDuration:kMLSnackbarAnimationDuration delay:0 options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationCurveEaseOut animations: ^{
-//        weakSelf.isAnimating = YES;
-//        weakSelf.isDesappearing = YES;
-//        [weakSelf.timer invalidate];
-//        weakSelf.view.frame = CGRectMake(CGRectGetMinX(frame), CGRectGetMaxY(frame), CGRectGetWidth(frame), CGRectGetHeight(frame));
-//    } completion: ^(BOOL finished) {
-//        weakSelf.alpha = 1;
-//        [weakSelf removeFromSuperview];
-//        [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
-//        [weakSelf removeGestureRecognizer:weakSelf.gesture];
-//        weakSelf.isShowingSnackbar = NO;
-//        weakSelf.isDesappearing = NO;
-//        weakSelf.isAnimating = NO;
-//
-//        // perfom the action block if dismiss ocurred beacuse the Action Button was pressed
-//        if (cause == MLSnackbarDismissCauseActionButton) {
-//            if (actionBlock) {
-//                actionBlock();
-//            }
-//        }
-//
-//        if (dismissBlock != nil) {
-//            dismissBlock(cause);
-//        }
-//
-//        // perfom any pending action after the animation finished
-//        if (weakSelf.pendingAction) {
-//            weakSelf.pendingAction();
-//            weakSelf.pendingAction = nil;
-//        }
-//    }];
 }
 
 - (void)didRotate:(NSNotification *)notification
