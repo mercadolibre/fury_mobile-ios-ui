@@ -222,10 +222,6 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
         self.snackbarViewLeftConstraint = [self.view autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self];
         self.snackbarViewTopConstraint = [self.view autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self];
 
-        self.layer.borderWidth = 1;
-        self.layer.borderColor = [UIColor orangeColor].CGColor;
-        self.view.layer.borderColor = [UIColor yellowColor].CGColor;
-        self.view.layer.borderWidth = 3;
         self.clipsToBounds = YES;
 	}
 
@@ -269,67 +265,6 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 
     [self layoutIfNeeded];
 }
-
-- (CGFloat)bottomInsetWithKeyboardHeight:(CGFloat)keyboardHeight
-{
-    UITabBar *tabBar = [self findTabBarForViewController:self.presentingViewController];
-    CGFloat tabBarOffsetHeight = (tabBar && !tabBar.hidden) ? CGRectGetHeight(tabBar.bounds) : 0;
-    CGFloat offset = 0;
-
-    // To define the offset height, the only thing I do care is if the view extends or not at bottom behind the tabbar.
-    if ([self viewExtendsAtBottomForViewController:self.presentingViewController]) {
-        /* If it extends,
-         * If the keyboard exists, the maximum value is going to be the keyboardHeight.
-         * If the keyboard does not exist, the maximum value will be the tabBarOffset.
-         */
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wgnu"
-        offset = MAX(keyboardHeight, tabBarOffsetHeight);
-#pragma clang diagnostic pop
-    } else {
-        /* If it does not extend,
-         * If the keyboard does not exist, the 0 is actually 49 (the tabBar height) so the offset needs to be 0.
-         * If it exists, the offset can't be just the keyboard height because it also starts in 49, so i need to
-         * substract 49 (the tabBarHeight).
-         */
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wgnu"
-        offset = MAX(0, keyboardHeight - tabBarOffsetHeight);
-#pragma clang diagnostic pop
-    }
-
-    return -offset;
-}
-
-/*Returns the tabbar if exists.*/
-- (nullable __kindof UITabBar *)findTabBarForViewController:(UIViewController *)viewController
-{
-    UIViewController *current = viewController;
-
-    while (current) {
-        UIViewController *parent = current.parentViewController;
-
-        if ([parent isKindOfClass:[UITabBarController class]]) {
-            return ((UITabBarController *)parent).tabBar;
-        }
-
-        current = parent;
-    }
-    return nil;
-}
-
-/*Checks if the view can extend behind the tabbar, filling the whole screen or not.*/
-- (BOOL)viewExtendsAtBottomForViewController:(UIViewController *)viewController
-{
-    BOOL bottomEdgesCanExtend = ((viewController.edgesForExtendedLayout & UIRectEdgeBottom) == UIRectEdgeBottom);
-
-    // I also include opaque bars because the tabbar is opaque by default and if not is not considered in the
-    // above condition.
-    return bottomEdgesCanExtend && viewController.extendedLayoutIncludesOpaqueBars;
-}
-
 
 - (void)show
 {
@@ -522,6 +457,66 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 	CGRect screenRect = [[UIScreen mainScreen] bounds];
 	// take keyboard height into account when device rotates
 	self.frame = CGRectMake(0, CGRectGetHeight(screenRect) - CGRectGetHeight(self.view.frame) - [[MLKeyboardInfo sharedInstance] keyboardHeight], CGRectGetWidth(screenRect), CGRectGetHeight(self.view.frame));
+}
+
+- (CGFloat)bottomInsetWithKeyboardHeight:(CGFloat)keyboardHeight
+{
+    UITabBar *tabBar = [self findTabBarForViewController:self.presentingViewController];
+    CGFloat tabBarOffsetHeight = (tabBar && !tabBar.hidden) ? CGRectGetHeight(tabBar.bounds) : 0;
+    CGFloat offset = 0;
+
+    // To define the offset height, the only thing I do care is if the view extends or not at bottom behind the tabbar.
+    if ([self viewExtendsAtBottomForViewController:self.presentingViewController]) {
+        /* If it extends,
+         * If the keyboard exists, the maximum value is going to be the keyboardHeight.
+         * If the keyboard does not exist, the maximum value will be the tabBarOffset.
+         */
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu"
+        offset = MAX(keyboardHeight, tabBarOffsetHeight);
+#pragma clang diagnostic pop
+    } else {
+        /* If it does not extend,
+         * If the keyboard does not exist, the 0 is actually 49 (the tabBar height) so the offset needs to be 0.
+         * If it exists, the offset can't be just the keyboard height because it also starts in 49, so i need to
+         * substract 49 (the tabBarHeight).
+         */
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu"
+        offset = MAX(0, keyboardHeight - tabBarOffsetHeight);
+#pragma clang diagnostic pop
+    }
+
+    return -offset;
+}
+
+/*Returns the tabbar if exists.*/
+- (nullable __kindof UITabBar *)findTabBarForViewController:(UIViewController *)viewController
+{
+    UIViewController *current = viewController;
+
+    while (current) {
+        UIViewController *parent = current.parentViewController;
+
+        if ([parent isKindOfClass:[UITabBarController class]]) {
+            return ((UITabBarController *)parent).tabBar;
+        }
+
+        current = parent;
+    }
+    return nil;
+}
+
+/*Checks if the view can extend behind the tabbar, filling the whole screen or not.*/
+- (BOOL)viewExtendsAtBottomForViewController:(UIViewController *)viewController
+{
+    BOOL bottomEdgesCanExtend = ((viewController.edgesForExtendedLayout & UIRectEdgeBottom) == UIRectEdgeBottom);
+
+    // I also include opaque bars because the tabbar is opaque by default and if not is not considered in the
+    // above condition.
+    return bottomEdgesCanExtend && viewController.extendedLayoutIncludesOpaqueBars;
 }
 
 @end
