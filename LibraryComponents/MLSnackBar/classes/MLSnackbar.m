@@ -9,7 +9,6 @@
 #import "MLSnackbar.h"
 #import "UIFont+MLFonts.h"
 #import "MLUIBundle.h"
-#import "PureLayout.h"
 
 @interface MLSnackbarButton : UIButton
 @property (nonatomic, strong) UIColor *backgroundHighlightedColor;
@@ -212,15 +211,28 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 		                                          options:nil].firstObject;
 
 		self.snackbarView.translatesAutoresizingMaskIntoConstraints = NO;
+        self.translatesAutoresizingMaskIntoConstraints = NO;
+
+
+        self.layer.borderWidth = 1;
+        self.layer.borderColor = [UIColor orangeColor].CGColor;
+        self.snackbarView.layer.borderColor = [UIColor yellowColor].CGColor;
+        self.snackbarView.layer.borderWidth = 3;
 
         //Set presenting view controller
         self.presentingViewController = [self topViewController];
 
-		[self addSubview:self.snackbarView];
-        [self.snackbarView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self];
-        [self.snackbarView autoMatchDimension:ALDimensionHeight toDimension:ALDimensionHeight ofView:self];
-        self.snackbarViewLeftConstraint = [self.snackbarView autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self];
-        self.snackbarViewTopConstraint = [self.snackbarView autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self];
+        [self addSubview:self.snackbarView];
+
+        //Snackvar view constraints
+        [self.snackbarView.widthAnchor constraintEqualToAnchor:self.widthAnchor constant:0.0].active = YES;
+        [self.snackbarView.heightAnchor constraintEqualToAnchor:self.heightAnchor constant:0.0].active = YES;
+
+        self.snackbarViewLeftConstraint = [self.snackbarView.leftAnchor constraintEqualToAnchor:self.leftAnchor constant:0.0];
+        self.snackbarViewLeftConstraint.active = YES;
+
+        self.snackbarViewTopConstraint = [self.snackbarView.topAnchor constraintEqualToAnchor:self.topAnchor constant:0.0];
+        self.snackbarViewTopConstraint.active = YES;
 
         self.clipsToBounds = YES;
 	}
@@ -250,12 +262,16 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
     CGFloat snackBarHeight = (CGRectGetHeight(self.messageLabel.frame) > kMLSnackbarOneLineComponentHeight) ? kMLSnackbarTwoLineViewHeight : kMLSnackbarOneLineViewHeight;
     CGFloat labelTopConstraintSpacing = snackBarHeight == kMLSnackbarOneLineComponentHeight ? kMLSnackbarOneLineTopSpacing : kMLSnackbarTwoLineTopSpacing;
 
-    [self autoPinEdgeToSuperviewSafeArea:ALEdgeLeft];
-    [self autoPinEdgeToSuperviewSafeArea:ALEdgeRight];
+    //Constraints
+    [self.leftAnchor constraintEqualToAnchor:self.superview.leftAnchor constant:0.0].active = YES;
+    [self.rightAnchor constraintEqualToAnchor:self.superview.rightAnchor constant:0.0].active = YES;
+
+    self.heightConstraint = [self.heightAnchor constraintEqualToConstant:snackBarHeight];
+    self.heightConstraint.active = YES;
 
     CGFloat keyboardHeight = [[MLKeyboardInfo sharedInstance] keyboardHeight];
-    self.heightConstraint = [self autoSetDimension:ALDimensionHeight toSize:snackBarHeight];
-    self.bottomConstraint = [self autoPinEdgeToSuperviewSafeArea:ALEdgeBottom withInset:[self bottomInsetWithKeyboardHeight:keyboardHeight]];
+    self.bottomConstraint = [self.bottomAnchor constraintEqualToAnchor:self.superview.safeAreaLayoutGuide.bottomAnchor constant:[self bottomInsetWithKeyboardHeight:keyboardHeight]];
+    self.bottomConstraint.active = YES;
 
     self.labelTopConstraint.constant = labelTopConstraintSpacing;
 
