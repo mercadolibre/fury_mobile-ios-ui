@@ -119,6 +119,12 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
     return [MLSnackbar showWithTitle:title actionTitle:nil actionBlock:nil type:type duration:duration dismissGestureEnabled:YES dismissBlock:dismissBlock viewController:nil];
 }
 
+// New methods with "ViewController" parameter
++ (instancetype)showWithTitle:(NSString *)title type:(MLSnackbarType *)type duration:(MLSnackbarDuration)duration viewController:(UIViewController*)viewController
+{
+    return [MLSnackbar showWithTitle:title actionTitle:nil actionBlock:nil type:type duration:duration dismissGestureEnabled:YES dismissBlock:nil viewController:viewController];
+}
+
 + (instancetype)showWithTitle:(NSString *)title actionTitle:(NSString *)buttonTitle actionBlock:(void (^)(void))actionBlock type:(MLSnackbarType *)type duration:(MLSnackbarDuration)duration dismissGestureEnabled:(BOOL)dismissGestureEnabled dismissBlock:(MLSnackbarDismissBlock)dismissBlock viewController:(UIViewController*)viewController
 {
     MLSnackbar *snackbar = [MLSnackbar sharedInstance];
@@ -212,12 +218,6 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 
 		self.snackbarView.translatesAutoresizingMaskIntoConstraints = NO;
         self.translatesAutoresizingMaskIntoConstraints = NO;
-
-
-        self.layer.borderWidth = 1;
-        self.layer.borderColor = [UIColor orangeColor].CGColor;
-        self.snackbarView.layer.borderColor = [UIColor yellowColor].CGColor;
-        self.snackbarView.layer.borderWidth = 3;
 
         //Set presenting view controller
         self.presentingViewController = [self topViewController];

@@ -101,6 +101,18 @@ typedef void (^MLSnackbarDismissBlock)(MLSnackbarDismissCause cause);
  */
 + (instancetype)showWithTitle:(NSString *)title actionTitle:(NSString *)buttonTitle actionBlock:(void (^)(void))actionBlock type:(MLSnackbarType *)type duration:(MLSnackbarDuration)duration dismissGestureEnabled:(BOOL)dismissGestureEnabled dismissBlock:(MLSnackbarDismissBlock)dismissBlock;
 
+// New methods with "ViewController" parameter
+
+/**
+ *  Shows a snackbar with no button that can be dismiss by a geture.
+ *
+ *  @param title                    snackbar message
+ *  @param type                     snackbar type. Determines the style of the snackbar
+ *  @param duration                 time for the snackbar to disappear
+ *  @param viewController           viewController where the snackbar will be presented
+ */
++ (instancetype)showWithTitle:(NSString *)title type:(MLSnackbarType *)type duration:(MLSnackbarDuration)duration viewController:(UIViewController*)viewController;
+
 /**
  *  Shows the snackbar in viewController. If buttonTitle or actionBlock are nil, the snackbar wont show the actionButton.
  *
