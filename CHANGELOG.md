@@ -1,3 +1,7 @@
+# 5.5.0
+## Agregado
+- Add MLFullscreenModal sub module
+
 # 5.4.0
 ## Agregado
 - Se agrega fuente para tarjetas al protocolo de MLStyleSheetProtocol
