@@ -1,3 +1,7 @@
+# Sin Publicar
+## Arreglado
+- Se cambia el nombre del método creditCardFontOfSize a monospaceFontOfSize
+
 # 5.2.0
 ## Arreglado
 - Safe Areas on MLModal
