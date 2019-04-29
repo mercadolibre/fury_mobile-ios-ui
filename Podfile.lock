@@ -10,7 +10,9 @@ PODS:
     - MLUI/MLColorPalette (= 5.3.0)
     - MLUI/MLContextualMenu (= 5.3.0)
     - MLUI/MLFonts (= 5.3.0)
+    - MLUI/MLFullscreenModal (= 5.3.0)
     - MLUI/MLGenericErrorView (= 5.3.0)
+    - MLUI/MLHeader (= 5.3.0)
     - MLUI/MLHtml (= 5.3.0)
     - MLUI/MLModal (= 5.3.0)
     - MLUI/MLRadioButton (= 5.3.0)
@@ -44,10 +46,21 @@ PODS:
     - JRSwizzle (= 1.0)
     - MLUI/Helpers
     - MLUI/StyleSheet
+  - MLUI/MLFullscreenModal (5.3.0):
+    - FXBlurView (~> 1.6)
+    - MLUI/Core
+    - MLUI/MLButton
+    - MLUI/MLColorPalette
+    - MLUI/MLFonts
+    - MLUI/MLHeader
+    - MLUI/StyleSheet
   - MLUI/MLGenericErrorView (5.3.0):
     - MLUI/MLButton
     - MLUI/MLColorPalette
     - MLUI/MLSpacing
+  - MLUI/MLHeader (5.3.0):
+    - MLUI/MLColorPalette
+    - MLUI/StyleSheet
   - MLUI/MLHtml (5.3.0):
     - MLUI/MLFonts
   - MLUI/MLModal (5.3.0):
@@ -113,7 +126,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
-  MLUI: f67e1958dc73b0379558786d87f0945d0901ca14
+  MLUI: 369b3fbda8ac2a80220ee402eaa40fe7bdaac6d9
   OCMock: 2cd0716969bab32a2283ff3a46fd26a8c8b4c5e3
 
 PODFILE CHECKSUM: d65eb06a9c9e82b3edb1b830bfe1ccd9a3ad44f5
