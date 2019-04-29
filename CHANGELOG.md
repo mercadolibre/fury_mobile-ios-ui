@@ -1,3 +1,7 @@
+# 5.6.0
+## Arreglado
+- Se cambia el nombre del método creditCardFontOfSize a monospaceFontOfSize
+
 # 5.5.0
 ## Agregado
 - Add MLFullscreenModal sub module
