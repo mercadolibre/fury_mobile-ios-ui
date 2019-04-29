@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<device id="retina4_7" orientation="portrait">
+<adaptation id="fullscreen"/>
+</device>
+<dependencies>
+<deployment identifier="iOS"/>
+<plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+<capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+</dependencies>
+<objects>
+<placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MLHeaderControllerDemoSixthViewController">
+<connections>
+<outlet property="content" destination="WtD-BU-Aqi" id="RKv-U3-IDA"/>
+<outlet property="tableView" destination="WtD-BU-Aqi" id="7pQ-p4-UP5"/>
+<outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+</connections>
+</placeholder>
+<placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+<view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+<rect key="frame" x="0.0" y="0.0" width="320" height="578"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<color key="backgroundColor" red="0.96046418373574294" green="0.44445543550356448" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<nil key="simulatedStatusBarMetrics"/>
+<nil key="simulatedTopBarMetrics"/>
+<freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+<point key="canvasLocation" x="574" y="686"/>
+</view>
+<tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="WtD-BU-Aqi">
+<rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+<autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+<color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<connections>
+<outlet property="dataSource" destination="-1" id="8Y4-VA-FvE"/>
+<outlet property="delegate" destination="-1" id="4z3-lJ-5Ig"/>
+</connections>
+</tableView>
+</objects>
+</document>

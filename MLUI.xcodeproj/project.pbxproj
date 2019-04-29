@@ -8,6 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		0AF7A37C4754AF0730AF5407 /* Pods_MLUIUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424B92398C21CFBAA7A2FF7F /* Pods_MLUIUnitTests.framework */; };
+		2C0E9DD32241103900FAA1FD /* MLFullscreenModalInnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0E9DD12241103900FAA1FD /* MLFullscreenModalInnerViewController.m */; };
+		2C0E9DD42241103900FAA1FD /* MLFullscreenModalInnerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C0E9DD22241103900FAA1FD /* MLFullscreenModalInnerViewController.xib */; };
+		2C559068225B7C1A000405A0 /* MLHeaderControllerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C559066225B7C1A000405A0 /* MLHeaderControllerDemoViewController.m */; };
+		2C559069225B7C1A000405A0 /* MLHeaderControllerDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C559067225B7C1A000405A0 /* MLHeaderControllerDemoViewController.xib */; };
+		2C55906D225B7D8C000405A0 /* MLHeaderControllerDemoSimpleHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55906C225B7D8C000405A0 /* MLHeaderControllerDemoSimpleHeaderViewController.m */; };
+		2C559072225B7E16000405A0 /* MLSimpleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C559070225B7E16000405A0 /* MLSimpleHeaderView.m */; };
+		2C559073225B7E16000405A0 /* MLSimpleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C559071225B7E16000405A0 /* MLSimpleHeaderView.xib */; };
+		2C559077225B7EE6000405A0 /* MLHeaderControllerDemoFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C559075225B7EE6000405A0 /* MLHeaderControllerDemoFirstViewController.m */; };
+		2C559078225B7EE6000405A0 /* MLHeaderControllerDemoFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C559076225B7EE6000405A0 /* MLHeaderControllerDemoFirstViewController.xib */; };
+		2C55907C225B7FB2000405A0 /* MLHeaderControllerDemoSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55907A225B7FB2000405A0 /* MLHeaderControllerDemoSecondViewController.m */; };
+		2C55907D225B7FB2000405A0 /* MLHeaderControllerDemoSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C55907B225B7FB2000405A0 /* MLHeaderControllerDemoSecondViewController.xib */; };
+		2C559081225B8036000405A0 /* MLCreditCardHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55907F225B8036000405A0 /* MLCreditCardHeaderView.m */; };
+		2C559082225B8036000405A0 /* MLCreditCardHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C559080225B8036000405A0 /* MLCreditCardHeaderView.xib */; };
+		2C559086225B80F6000405A0 /* MLHeaderControllerDemoThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C559084225B80F6000405A0 /* MLHeaderControllerDemoThirdViewController.m */; };
+		2C559087225B80F6000405A0 /* MLHeaderControllerDemoThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C559085225B80F6000405A0 /* MLHeaderControllerDemoThirdViewController.xib */; };
+		2C55908B225B81A7000405A0 /* MLHeaderControllerDemoFourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C559089225B81A7000405A0 /* MLHeaderControllerDemoFourthViewController.m */; };
+		2C55908C225B81A7000405A0 /* MLHeaderControllerDemoFourthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C55908A225B81A7000405A0 /* MLHeaderControllerDemoFourthViewController.xib */; };
+		2C559090225B820E000405A0 /* MLHeaderControllerDemoFifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C55908E225B820E000405A0 /* MLHeaderControllerDemoFifthViewController.m */; };
+		2C559091225B820E000405A0 /* MLHeaderControllerDemoFifthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C55908F225B820E000405A0 /* MLHeaderControllerDemoFifthViewController.xib */; };
+		2C559095225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C559093225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.m */; };
+		2C559096225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C559094225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.xib */; };
 		3B4689321A6D7F9700F2F4A5 /* MLUIActionButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4689291A6D7F9700F2F4A5 /* MLUIActionButtonViewController.m */; };
 		3B4689351A6D7F9700F2F4A5 /* PriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4689301A6D7F9700F2F4A5 /* PriceViewController.m */; };
 		3B4689361A6D7F9700F2F4A5 /* PriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B4689311A6D7F9700F2F4A5 /* PriceViewController.xib */; };
@@ -103,6 +124,38 @@
 
 /* Begin PBXFileReference section */
 		1DAEE9511E2429E9008647FB /* MLUIAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MLUIAssets.bundle; path = MLFonts/MLUIAssets.bundle; sourceTree = "<group>"; };
+		2C0E9DD02241103900FAA1FD /* MLFullscreenModalInnerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MLFullscreenModalInnerViewController.h; path = MLFullscreenModal/MLFullscreenModalInnerViewController.h; sourceTree = "<group>"; };
+		2C0E9DD12241103900FAA1FD /* MLFullscreenModalInnerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MLFullscreenModalInnerViewController.m; path = MLFullscreenModal/MLFullscreenModalInnerViewController.m; sourceTree = "<group>"; };
+		2C0E9DD22241103900FAA1FD /* MLFullscreenModalInnerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MLFullscreenModalInnerViewController.xib; path = MLFullscreenModal/MLFullscreenModalInnerViewController.xib; sourceTree = "<group>"; };
+		2C559065225B7C1A000405A0 /* MLHeaderControllerDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MLHeaderControllerDemoViewController.h; path = MLHeader/MLHeaderControllerDemoViewController.h; sourceTree = "<group>"; };
+		2C559066225B7C1A000405A0 /* MLHeaderControllerDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MLHeaderControllerDemoViewController.m; path = MLHeader/MLHeaderControllerDemoViewController.m; sourceTree = "<group>"; };
+		2C559067225B7C1A000405A0 /* MLHeaderControllerDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MLHeaderControllerDemoViewController.xib; path = MLHeader/MLHeaderControllerDemoViewController.xib; sourceTree = "<group>"; };
+		2C55906B225B7D8C000405A0 /* MLHeaderControllerDemoSimpleHeaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MLHeaderControllerDemoSimpleHeaderViewController.h; path = MLHeader/ViewControllers/MLHeaderControllerDemoSimpleHeaderViewController.h; sourceTree = "<group>"; };
+		2C55906C225B7D8C000405A0 /* MLHeaderControllerDemoSimpleHeaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MLHeaderControllerDemoSimpleHeaderViewController.m; path = MLHeader/ViewControllers/MLHeaderControllerDemoSimpleHeaderViewController.m; sourceTree = "<group>"; };
+		2C55906F225B7E16000405A0 /* MLSimpleHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MLSimpleHeaderView.h; path = MLHeader/Header/MLSimpleHeaderView.h; sourceTree = "<group>"; };
+		2C559070225B7E16000405A0 /* MLSimpleHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MLSimpleHeaderView.m; path = MLHeader/Header/MLSimpleHeaderView.m; sourceTree = "<group>"; };
+		2C559071225B7E16000405A0 /* MLSimpleHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MLSimpleHeaderView.xib; path = MLHeader/Header/MLSimpleHeaderView.xib; sourceTree = "<group>"; };
+		2C559074225B7EE6000405A0 /* MLHeaderControllerDemoFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MLHeaderControllerDemoFirstViewController.h; path = MLHeader/ViewControllers/MLHeaderControllerDemoFirstViewController.h; sourceTree = "<group>"; };
+		2C559075225B7EE6000405A0 /* MLHeaderControllerDemoFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MLHeaderControllerDemoFirstViewController.m; path = MLHeader/ViewControllers/MLHeaderControllerDemoFirstViewController.m; sourceTree = "<group>"; };
+		2C559076225B7EE6000405A0 /* MLHeaderControllerDemoFirstViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MLHeaderControllerDemoFirstViewController.xib; path = MLHeader/ViewControllers/MLHeaderControllerDemoFirstViewController.xib; sourceTree = "<group>"; };
+		2C559079225B7FB2000405A0 /* MLHeaderControllerDemoSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MLHeaderControllerDemoSecondViewController.h; path = MLHeader/ViewControllers/MLHeaderControllerDemoSecondViewController.h; sourceTree = "<group>"; };
+		2C55907A225B7FB2000405A0 /* MLHeaderControllerDemoSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MLHeaderControllerDemoSecondViewController.m; path = MLHeader/ViewControllers/MLHeaderControllerDemoSecondViewController.m; sourceTree = "<group>"; };
+		2C55907B225B7FB2000405A0 /* MLHeaderControllerDemoSecondViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MLHeaderControllerDemoSecondViewController.xib; path = MLHeader/ViewControllers/MLHeaderControllerDemoSecondViewController.xib; sourceTree = "<group>"; };
+		2C55907E225B8036000405A0 /* MLCreditCardHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MLCreditCardHeaderView.h; path = MLHeader/Header/MLCreditCardHeaderView.h; sourceTree = "<group>"; };
+		2C55907F225B8036000405A0 /* MLCreditCardHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MLCreditCardHeaderView.m; path = MLHeader/Header/MLCreditCardHeaderView.m; sourceTree = "<group>"; };
+		2C559080225B8036000405A0 /* MLCreditCardHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MLCreditCardHeaderView.xib; path = MLHeader/Header/MLCreditCardHeaderView.xib; sourceTree = "<group>"; };
+		2C559083225B80F6000405A0 /* MLHeaderControllerDemoThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MLHeaderControllerDemoThirdViewController.h; path = MLHeader/ViewControllers/MLHeaderControllerDemoThirdViewController.h; sourceTree = "<group>"; };
+		2C559084225B80F6000405A0 /* MLHeaderControllerDemoThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MLHeaderControllerDemoThirdViewController.m; path = MLHeader/ViewControllers/MLHeaderControllerDemoThirdViewController.m; sourceTree = "<group>"; };
+		2C559085225B80F6000405A0 /* MLHeaderControllerDemoThirdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MLHeaderControllerDemoThirdViewController.xib; path = MLHeader/ViewControllers/MLHeaderControllerDemoThirdViewController.xib; sourceTree = "<group>"; };
+		2C559088225B81A7000405A0 /* MLHeaderControllerDemoFourthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MLHeaderControllerDemoFourthViewController.h; path = MLHeader/ViewControllers/MLHeaderControllerDemoFourthViewController.h; sourceTree = "<group>"; };
+		2C559089225B81A7000405A0 /* MLHeaderControllerDemoFourthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MLHeaderControllerDemoFourthViewController.m; path = MLHeader/ViewControllers/MLHeaderControllerDemoFourthViewController.m; sourceTree = "<group>"; };
+		2C55908A225B81A7000405A0 /* MLHeaderControllerDemoFourthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MLHeaderControllerDemoFourthViewController.xib; path = MLHeader/ViewControllers/MLHeaderControllerDemoFourthViewController.xib; sourceTree = "<group>"; };
+		2C55908D225B820E000405A0 /* MLHeaderControllerDemoFifthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MLHeaderControllerDemoFifthViewController.h; path = MLHeader/ViewControllers/MLHeaderControllerDemoFifthViewController.h; sourceTree = "<group>"; };
+		2C55908E225B820E000405A0 /* MLHeaderControllerDemoFifthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MLHeaderControllerDemoFifthViewController.m; path = MLHeader/ViewControllers/MLHeaderControllerDemoFifthViewController.m; sourceTree = "<group>"; };
+		2C55908F225B820E000405A0 /* MLHeaderControllerDemoFifthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MLHeaderControllerDemoFifthViewController.xib; path = MLHeader/ViewControllers/MLHeaderControllerDemoFifthViewController.xib; sourceTree = "<group>"; };
+		2C559092225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MLHeaderControllerDemoSixthViewController.h; path = MLHeader/ViewControllers/MLHeaderControllerDemoSixthViewController.h; sourceTree = "<group>"; };
+		2C559093225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MLHeaderControllerDemoSixthViewController.m; path = MLHeader/ViewControllers/MLHeaderControllerDemoSixthViewController.m; sourceTree = "<group>"; };
+		2C559094225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MLHeaderControllerDemoSixthViewController.xib; path = MLHeader/ViewControllers/MLHeaderControllerDemoSixthViewController.xib; sourceTree = "<group>"; };
 		3B4689281A6D7F9700F2F4A5 /* MLUIActionButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUIActionButtonViewController.h; sourceTree = "<group>"; };
 		3B4689291A6D7F9700F2F4A5 /* MLUIActionButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUIActionButtonViewController.m; sourceTree = "<group>"; };
 		3B46892F1A6D7F9700F2F4A5 /* PriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceViewController.h; sourceTree = "<group>"; };
@@ -230,6 +283,17 @@
 		6A9583971E27D8C5009306AC /* MLUIBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUIBundle.h; sourceTree = "<group>"; };
 		6A9583981E27D8C5009306AC /* MLUIBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUIBundle.m; sourceTree = "<group>"; };
 		78A39CBAD61E64A4A2DBF119 /* Pods-MLUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MLUI/Pods-MLUI.debug.xcconfig"; sourceTree = "<group>"; };
+		7CB826D7226F5F3600E0C4A3 /* MLFullscreenModal.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = MLFullscreenModal.xcassets; path = MLFullscreenModal/assets/MLFullscreenModal.xcassets; sourceTree = "<group>"; };
+		7CB826DA226F5F6400E0C4A3 /* MLFullscreenModalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLFullscreenModalHeader.h; path = MLFullscreenModal/classes/MLFullscreenModalHeader.h; sourceTree = "<group>"; };
+		7CB826DB226F5F6400E0C4A3 /* MLFullscreenModalHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLFullscreenModalHeader.m; path = MLFullscreenModal/classes/MLFullscreenModalHeader.m; sourceTree = "<group>"; };
+		7CB826DC226F5F6400E0C4A3 /* MLFullscreenModalHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MLFullscreenModalHeader.xib; path = MLFullscreenModal/classes/MLFullscreenModalHeader.xib; sourceTree = "<group>"; };
+		7CB826DD226F5F6500E0C4A3 /* MLFullscreenModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLFullscreenModal.h; path = MLFullscreenModal/classes/MLFullscreenModal.h; sourceTree = "<group>"; };
+		7CB826DE226F5F6500E0C4A3 /* MLFullscreenModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLFullscreenModal.m; path = MLFullscreenModal/classes/MLFullscreenModal.m; sourceTree = "<group>"; };
+		7CB826DF226F5F6500E0C4A3 /* MLFullscreenModal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MLFullscreenModal.xib; path = MLFullscreenModal/classes/MLFullscreenModal.xib; sourceTree = "<group>"; };
+		7CB826E9226FAF7300E0C4A3 /* MLUIHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MLUIHeader.m; path = MLHeader/classes/MLUIHeader.m; sourceTree = "<group>"; };
+		7CB826EA226FAF7300E0C4A3 /* MLUIHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MLUIHeader.h; path = MLHeader/classes/MLUIHeader.h; sourceTree = "<group>"; };
+		7CB826EB226FAF7300E0C4A3 /* MLUIHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MLUIHeader.xib; path = MLHeader/classes/MLUIHeader.xib; sourceTree = "<group>"; };
+		7CB826EC226FAF7300E0C4A3 /* MLUIHeaderDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MLUIHeaderDelegate.h; path = MLHeader/classes/MLUIHeaderDelegate.h; sourceTree = "<group>"; };
 		863E9A8D1CF3460900240FE0 /* MLTitledTextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTitledTextFieldViewController.h; sourceTree = "<group>"; };
 		863E9A8E1CF3460900240FE0 /* MLTitledTextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTitledTextFieldViewController.m; sourceTree = "<group>"; };
 		863E9A8F1CF3460900240FE0 /* MLTitledTextFieldViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLTitledTextFieldViewController.xib; sourceTree = "<group>"; };
@@ -332,6 +396,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C0E9DCF22410FFC00FAA1FD /* MLFullscreenModal */ = {
+			isa = PBXGroup;
+			children = (
+				2C0E9DD02241103900FAA1FD /* MLFullscreenModalInnerViewController.h */,
+				2C0E9DD12241103900FAA1FD /* MLFullscreenModalInnerViewController.m */,
+				2C0E9DD22241103900FAA1FD /* MLFullscreenModalInnerViewController.xib */,
+			);
+			name = MLFullscreenModal;
+			sourceTree = "<group>";
+		};
+		2C559064225B7BD6000405A0 /* MLHeader */ = {
+			isa = PBXGroup;
+			children = (
+				2C55906E225B7DF3000405A0 /* Headers */,
+				2C55906A225B7D6A000405A0 /* ViewControllers */,
+				2C559065225B7C1A000405A0 /* MLHeaderControllerDemoViewController.h */,
+				2C559066225B7C1A000405A0 /* MLHeaderControllerDemoViewController.m */,
+				2C559067225B7C1A000405A0 /* MLHeaderControllerDemoViewController.xib */,
+			);
+			name = MLHeader;
+			sourceTree = "<group>";
+		};
+		2C55906A225B7D6A000405A0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C55906B225B7D8C000405A0 /* MLHeaderControllerDemoSimpleHeaderViewController.h */,
+				2C55906C225B7D8C000405A0 /* MLHeaderControllerDemoSimpleHeaderViewController.m */,
+				2C559074225B7EE6000405A0 /* MLHeaderControllerDemoFirstViewController.h */,
+				2C559075225B7EE6000405A0 /* MLHeaderControllerDemoFirstViewController.m */,
+				2C559076225B7EE6000405A0 /* MLHeaderControllerDemoFirstViewController.xib */,
+				2C559079225B7FB2000405A0 /* MLHeaderControllerDemoSecondViewController.h */,
+				2C55907A225B7FB2000405A0 /* MLHeaderControllerDemoSecondViewController.m */,
+				2C55907B225B7FB2000405A0 /* MLHeaderControllerDemoSecondViewController.xib */,
+				2C559083225B80F6000405A0 /* MLHeaderControllerDemoThirdViewController.h */,
+				2C559084225B80F6000405A0 /* MLHeaderControllerDemoThirdViewController.m */,
+				2C559085225B80F6000405A0 /* MLHeaderControllerDemoThirdViewController.xib */,
+				2C559088225B81A7000405A0 /* MLHeaderControllerDemoFourthViewController.h */,
+				2C559089225B81A7000405A0 /* MLHeaderControllerDemoFourthViewController.m */,
+				2C55908A225B81A7000405A0 /* MLHeaderControllerDemoFourthViewController.xib */,
+				2C55908D225B820E000405A0 /* MLHeaderControllerDemoFifthViewController.h */,
+				2C55908E225B820E000405A0 /* MLHeaderControllerDemoFifthViewController.m */,
+				2C55908F225B820E000405A0 /* MLHeaderControllerDemoFifthViewController.xib */,
+				2C559092225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.h */,
+				2C559093225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.m */,
+				2C559094225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2C55906E225B7DF3000405A0 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				2C55906F225B7E16000405A0 /* MLSimpleHeaderView.h */,
+				2C559070225B7E16000405A0 /* MLSimpleHeaderView.m */,
+				2C559071225B7E16000405A0 /* MLSimpleHeaderView.xib */,
+				2C55907E225B8036000405A0 /* MLCreditCardHeaderView.h */,
+				2C55907F225B8036000405A0 /* MLCreditCardHeaderView.m */,
+				2C559080225B8036000405A0 /* MLCreditCardHeaderView.xib */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
 		3B4689271A6D7F9700F2F4A5 /* ActionButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -860,6 +986,55 @@
 			path = MLBooleanWidget;
 			sourceTree = "<group>";
 		};
+		7CB826D5226F5EE900E0C4A3 /* MLFullscreenModal */ = {
+			isa = PBXGroup;
+			children = (
+				7CB826D6226F5F2800E0C4A3 /* assets */,
+				7CB826D9226F5F3D00E0C4A3 /* classes */,
+			);
+			name = MLFullscreenModal;
+			sourceTree = "<group>";
+		};
+		7CB826D6226F5F2800E0C4A3 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				7CB826D7226F5F3600E0C4A3 /* MLFullscreenModal.xcassets */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+		7CB826D9226F5F3D00E0C4A3 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				7CB826DD226F5F6500E0C4A3 /* MLFullscreenModal.h */,
+				7CB826DE226F5F6500E0C4A3 /* MLFullscreenModal.m */,
+				7CB826DF226F5F6500E0C4A3 /* MLFullscreenModal.xib */,
+				7CB826DA226F5F6400E0C4A3 /* MLFullscreenModalHeader.h */,
+				7CB826DB226F5F6400E0C4A3 /* MLFullscreenModalHeader.m */,
+				7CB826DC226F5F6400E0C4A3 /* MLFullscreenModalHeader.xib */,
+			);
+			name = classes;
+			sourceTree = "<group>";
+		};
+		7CB826E7226FAF4A00E0C4A3 /* MLHeader */ = {
+			isa = PBXGroup;
+			children = (
+				7CB826E8226FAF6000E0C4A3 /* classes */,
+			);
+			name = MLHeader;
+			sourceTree = "<group>";
+		};
+		7CB826E8226FAF6000E0C4A3 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				7CB826EA226FAF7300E0C4A3 /* MLUIHeader.h */,
+				7CB826E9226FAF7300E0C4A3 /* MLUIHeader.m */,
+				7CB826EB226FAF7300E0C4A3 /* MLUIHeader.xib */,
+				7CB826EC226FAF7300E0C4A3 /* MLUIHeaderDelegate.h */,
+			);
+			name = classes;
+			sourceTree = "<group>";
+		};
 		863E9A8C1CF3460900240FE0 /* MLTitledTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -1025,7 +1200,9 @@
 				4DFD2CC21C44182A0093CAE5 /* MLColorPalette */,
 				4DB11C001C45425000570E2F /* MLFonts */,
 				C081796A1CDD1D4A0024BECC /* MLContextualMenu */,
+				2C559064225B7BD6000405A0 /* MLHeader */,
 				8EAF22021D2D51B20005F1F1 /* MLHtml */,
+				2C0E9DCF22410FFC00FAA1FD /* MLFullscreenModal */,
 				4D18549E1C8DCC8F00676993 /* MLModal */,
 				4D89066F1C80A41C00BD0EEE /* MLSnackbar */,
 				4DC88F0D1D46608300570845 /* MLStyle */,
@@ -1092,6 +1269,8 @@
 				4DB11BFA1C453D0100570E2F /* MLFonts */,
 				4DA59A471C3EA5EC00AA439D /* MLColorPalette */,
 				C0B960A51CD1542000094F7A /* MLContextualMenu */,
+				7CB826D5226F5EE900E0C4A3 /* MLFullscreenModal */,
+				7CB826E7226FAF4A00E0C4A3 /* MLHeader */,
 				4D1854A01C8DCD1B00676993 /* MLModal */,
 				4D8906671C8084D100BD0EEE /* MLSnackbar */,
 				4D0D97CE1CC52F5B00FFF679 /* MLSpinner */,
@@ -1392,16 +1571,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D0D97D91CC532CD00FFF679 /* MLSpinnerViewController.xib in Resources */,
+				2C559096225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.xib in Resources */,
 				4DB11C051C4542D200570E2F /* MLFontsViewController.xib in Resources */,
+				2C55908C225B81A7000405A0 /* MLHeaderControllerDemoFourthViewController.xib in Resources */,
+				2C559078225B7EE6000405A0 /* MLHeaderControllerDemoFirstViewController.xib in Resources */,
 				CD141FA519C14A9600DBF568 /* Images.xcassets in Resources */,
 				BB5CF3AA20240FF5006484D8 /* MLStyleSheetViewController.xib in Resources */,
 				863E9A911CF3460900240FE0 /* MLTitledTextFieldViewController.xib in Resources */,
 				8EAF22071D2D51D40005F1F1 /* MLHtmlViewController.xib in Resources */,
+				2C55907D225B7FB2000405A0 /* MLHeaderControllerDemoSecondViewController.xib in Resources */,
+				2C559073225B7E16000405A0 /* MLSimpleHeaderView.xib in Resources */,
 				50C059F91CB852E900F6EE12 /* MLModalInnerViewController.xib in Resources */,
 				4D1B1D791C9CA0D9003571C1 /* MLModalViewController.xib in Resources */,
+				2C559069225B7C1A000405A0 /* MLHeaderControllerDemoViewController.xib in Resources */,
 				6A4459431D22DABF0069EFBC /* MLBooleanWidgetViewController.xib in Resources */,
 				C081796F1CDD1D8B0024BECC /* MLContextualMenuTableViewController.xib in Resources */,
+				2C559091225B820E000405A0 /* MLHeaderControllerDemoFifthViewController.xib in Resources */,
 				4DFD2CC11C4416AA0093CAE5 /* ExampleViewController.xib in Resources */,
+				2C559082225B8036000405A0 /* MLCreditCardHeaderView.xib in Resources */,
 				EE014FB71ECE185B00372EBB /* MLTextViewController.xib in Resources */,
 				4DB11C111C47D77C00570E2F /* MLButtonViewController.xib in Resources */,
 				CD141FA319C14A9600DBF568 /* LaunchScreen.xib in Resources */,
@@ -1409,7 +1596,9 @@
 				4DFD2CC71C4418510093CAE5 /* MLColorPaletteViewController.xib in Resources */,
 				4D1B1D7E1CA9C0F1003571C1 /* MLWidgetsViewController.xib in Resources */,
 				4D8906741C80A46700BD0EEE /* MLSnackbarViewController.xib in Resources */,
+				2C559087225B80F6000405A0 /* MLHeaderControllerDemoThirdViewController.xib in Resources */,
 				3B4689361A6D7F9700F2F4A5 /* PriceViewController.xib in Resources */,
+				2C0E9DD42241103900FAA1FD /* MLFullscreenModalInnerViewController.xib in Resources */,
 				4DFD2CBC1C440F760093CAE5 /* MainViewController.xib in Resources */,
 				A470E05F1B6934A200B0E9FD /* MLUIActionButtonInXibViewController.xib in Resources */,
 			);
@@ -1511,15 +1700,22 @@
 				CD141FA819C14A9600DBF568 /* LegacyExampleViewController.m in Sources */,
 				8EAF22061D2D51D40005F1F1 /* MLHtmlViewController.m in Sources */,
 				BB5CF3AB20240FF5006484D8 /* MLStyleSheetViewController.m in Sources */,
+				2C55907C225B7FB2000405A0 /* MLHeaderControllerDemoSecondViewController.m in Sources */,
 				4DFD2CC61C4418510093CAE5 /* MLColorPaletteViewController.m in Sources */,
+				2C559090225B820E000405A0 /* MLHeaderControllerDemoFifthViewController.m in Sources */,
 				4DB11C031C4542A700570E2F /* MLFontsViewController.m in Sources */,
+				2C0E9DD32241103900FAA1FD /* MLFullscreenModalInnerViewController.m in Sources */,
 				A470E0621B69442000B0E9FD /* MLUIActionButtonInXibViewController.m in Sources */,
 				6A4459421D22DABF0069EFBC /* MLBooleanWidgetViewController.m in Sources */,
+				2C55908B225B81A7000405A0 /* MLHeaderControllerDemoFourthViewController.m in Sources */,
 				4D8906731C80A46700BD0EEE /* MLSnackbarViewController.m in Sources */,
+				2C559086225B80F6000405A0 /* MLHeaderControllerDemoThirdViewController.m in Sources */,
 				4DFD2CBF1C4416600093CAE5 /* ExampleViewController.m in Sources */,
+				2C55906D225B7D8C000405A0 /* MLHeaderControllerDemoSimpleHeaderViewController.m in Sources */,
 				4D1B1D7D1CA9C0F1003571C1 /* MLWidgetsViewController.m in Sources */,
 				EE014FB61ECE185B00372EBB /* MLTextViewController.m in Sources */,
 				BB5CF39B2023B00D006484D8 /* MLStyleSheetTest.m in Sources */,
+				2C559081225B8036000405A0 /* MLCreditCardHeaderView.m in Sources */,
 				3B4689351A6D7F9700F2F4A5 /* PriceViewController.m in Sources */,
 				3B4689611A6D80EC00F2F4A5 /* TestAppDelegate.m in Sources */,
 				6A2518F11D2ECA55009A673B /* MLViewController.m in Sources */,
@@ -1527,13 +1723,17 @@
 				C081796E1CDD1D8B0024BECC /* MLContextualMenuTableViewController.m in Sources */,
 				4D0D97D81CC532CD00FFF679 /* MLSpinnerViewController.m in Sources */,
 				3B6150EF1B5E8DE5007A07B4 /* MLUISnackBarExampleViewController.m in Sources */,
+				2C559068225B7C1A000405A0 /* MLHeaderControllerDemoViewController.m in Sources */,
 				863E9A901CF3460900240FE0 /* MLTitledTextFieldViewController.m in Sources */,
+				2C559095225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.m in Sources */,
 				50C059F81CB852E900F6EE12 /* MLModalInnerViewController.m in Sources */,
+				2C559077225B7EE6000405A0 /* MLHeaderControllerDemoFirstViewController.m in Sources */,
 				4DFD2CBA1C440F490093CAE5 /* MainViewController.m in Sources */,
 				CD141FA719C14A9600DBF568 /* main.m in Sources */,
 				CD141FA219C14A9600DBF568 /* AppDelegate.m in Sources */,
 				4D1B1D781C9CA0D9003571C1 /* MLModalViewController.m in Sources */,
 				3B4689321A6D7F9700F2F4A5 /* MLUIActionButtonViewController.m in Sources */,
+				2C559072225B7E16000405A0 /* MLSimpleHeaderView.m in Sources */,
 				4DB11C101C47D77C00570E2F /* MLButtonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
