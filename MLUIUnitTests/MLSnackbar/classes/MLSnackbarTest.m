@@ -27,7 +27,8 @@
 @interface MLKeyboardInfo : NSObject
 @property (nonatomic) CGFloat keyboardHeight;
 + (instancetype)sharedInstance;
-- (void)keyboardWillShow:(NSNotification *)notification;
+//- (void)keyboardWillShow:(NSNotification *)notification;
+- (void)keyboardWillChange:(NSNotification *)notification;
 @end
 
 @interface MLSnackbarTest : XCTestCase
@@ -130,9 +131,10 @@
 	OCMStub([keyboardInfo keyboardHeight]).andReturn(10);
 
 	NSNotification *not = [NSNotification notificationWithName:@"Keyboard Appeared" object:nil];
-	[keyboardInfo keyboardWillShow:not];
+//    [keyboardInfo keyboardWillShow:not];
+    [keyboardInfo keyboardWillChange:not];
 
-	[[self.snackbarMock reject]animateForKeyboardNotification:not];
+	[[self.snackbarMock reject] animateForKeyboardNotification:not];
 }
 
 - (void)testNumberOfLines

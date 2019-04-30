@@ -53,7 +53,7 @@
 
 - (void)showErrorSnackbar
 {
-	self.currentSnackbar = [MLSnackbar showWithTitle:@"Short duration Snackbar" actionTitle:nil actionBlock:nil type:[MLSnackbarType errorType] duration:MLSnackbarDurationIndefinitely dismissGestureEnabled:YES];
+	self.currentSnackbar = [MLSnackbar showWithTitle:@"Short duration Snackbar" actionTitle:nil actionBlock:nil type:[MLSnackbarType errorType] duration:MLSnackbarDurationShort dismissGestureEnabled:YES];
 }
 
 - (void)showDefaultSnackbar

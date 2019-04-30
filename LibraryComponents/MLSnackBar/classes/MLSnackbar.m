@@ -116,7 +116,7 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 
 + (instancetype)showWithTitle:(NSString *)title actionTitle:(NSString *)buttonTitle actionBlock:(void (^)(void))actionBlock type:(MLSnackbarType *)type duration:(MLSnackbarDuration)duration dismissGestureEnabled:(BOOL)dismissGestureEnabled dismissBlock:(MLSnackbarDismissBlock)dismissBlock
 {
-    return [MLSnackbar showWithTitle:title actionTitle:nil actionBlock:nil type:type duration:duration dismissGestureEnabled:YES dismissBlock:dismissBlock viewController:nil];
+    return [MLSnackbar showWithTitle:title actionTitle:buttonTitle actionBlock:actionBlock type:type duration:duration dismissGestureEnabled:dismissGestureEnabled dismissBlock:dismissBlock viewController:nil];
 }
 
 // New methods with "ViewController" parameter
@@ -146,6 +146,11 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
     }
 
     return snackbar;
+}
+
+- (void)setUpSnackbarWithTitle:(NSString *)title actionTitle:(NSString *)buttonTitle actionBlock:(void (^)(void))actionBlock type:(MLSnackbarType *)type duration:(MLSnackbarDuration)duration dismissGestureEnabled:(BOOL)dismissGestureEnabled dismissBlock:(MLSnackbarDismissBlock)dismissBlock
+{
+    [self setUpSnackbarWithTitle:title actionTitle:buttonTitle actionBlock:actionBlock type:type duration:duration dismissGestureEnabled:dismissGestureEnabled dismissBlock:dismissBlock viewController:nil];
 }
 
 - (void)setUpSnackbarWithTitle:(NSString *)title actionTitle:(NSString *)buttonTitle actionBlock:(void (^)(void))actionBlock type:(MLSnackbarType *)type duration:(MLSnackbarDuration)duration dismissGestureEnabled:(BOOL)dismissGestureEnabled dismissBlock:(MLSnackbarDismissBlock)dismissBlock viewController:(UIViewController*)viewController
@@ -184,9 +189,10 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 	self.dismissBlock = dismissBlock;
 
     //Set presenting view controller
-    if (viewController) {
-        self.presentingViewController = viewController;
-    }
+    self.presentingViewController = viewController ?: [self topViewController];
+//    if (viewController) {
+//        self.presentingViewController = viewController;
+//    }
 
     [self updateLayout];
     [self show];
@@ -213,14 +219,14 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 {
 	if (self = [super init]) {
 		self.snackbarView = [[MLUIBundle mluiBundle] loadNibNamed:NSStringFromClass([MLSnackbar class])
-		                                            owner:self
-		                                          options:nil].firstObject;
+                                                            owner:self
+                                                          options:nil].firstObject;
 
 		self.snackbarView.translatesAutoresizingMaskIntoConstraints = NO;
         self.translatesAutoresizingMaskIntoConstraints = NO;
 
         //Set presenting view controller
-        self.presentingViewController = [self topViewController];
+//        self.presentingViewController = [self topViewController];
 
         [self addSubview:self.snackbarView];
 
@@ -263,16 +269,18 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
     CGFloat labelTopConstraintSpacing = snackBarHeight == kMLSnackbarOneLineComponentHeight ? kMLSnackbarOneLineTopSpacing : kMLSnackbarTwoLineTopSpacing;
 
     //Constraints
-    [self.leftAnchor constraintEqualToAnchor:self.superview.leftAnchor constant:0.0].active = YES;
-    [self.rightAnchor constraintEqualToAnchor:self.superview.rightAnchor constant:0.0].active = YES;
-
-    self.heightConstraint = [self.heightAnchor constraintEqualToConstant:snackBarHeight];
-    self.heightConstraint.active = YES;
-
-    CGFloat keyboardHeight = [[MLKeyboardInfo sharedInstance] keyboardHeight];
-    self.bottomConstraint = [self.bottomAnchor constraintEqualToAnchor:self.superview.safeAreaLayoutGuide.bottomAnchor constant:[self bottomInsetWithKeyboardHeight:keyboardHeight]];
-    self.bottomConstraint.active = YES;
-
+    if (self.superview) {
+        [self.leftAnchor constraintEqualToAnchor:self.superview.leftAnchor constant:0.0].active = YES;
+        [self.rightAnchor constraintEqualToAnchor:self.superview.rightAnchor constant:0.0].active = YES;
+        
+        self.heightConstraint = [self.heightAnchor constraintEqualToConstant:snackBarHeight];
+        self.heightConstraint.active = YES;
+        
+        CGFloat keyboardHeight = [[MLKeyboardInfo sharedInstance] keyboardHeight];
+        self.bottomConstraint = [self.bottomAnchor constraintEqualToAnchor:self.superview.safeAreaLayoutGuide.bottomAnchor constant:[self bottomInsetWithKeyboardHeight:keyboardHeight]];
+        self.bottomConstraint.active = YES;
+    }
+    
     self.labelTopConstraint.constant = labelTopConstraintSpacing;
 
     [self layoutIfNeeded];
