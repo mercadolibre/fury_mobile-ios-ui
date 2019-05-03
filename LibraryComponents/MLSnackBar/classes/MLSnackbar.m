@@ -190,9 +190,6 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 
     //Set presenting view controller
     self.presentingViewController = viewController ?: [self topViewController];
-//    if (viewController) {
-//        self.presentingViewController = viewController;
-//    }
 
     [self updateLayout];
     [self show];
@@ -224,9 +221,6 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 
 		self.snackbarView.translatesAutoresizingMaskIntoConstraints = NO;
         self.translatesAutoresizingMaskIntoConstraints = NO;
-
-        //Set presenting view controller
-//        self.presentingViewController = [self topViewController];
 
         [self addSubview:self.snackbarView];
 
@@ -277,7 +271,11 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
         self.heightConstraint.active = YES;
         
         CGFloat keyboardHeight = [[MLKeyboardInfo sharedInstance] keyboardHeight];
-        self.bottomConstraint = [self.bottomAnchor constraintEqualToAnchor:self.superview.safeAreaLayoutGuide.bottomAnchor constant:[self bottomInsetWithKeyboardHeight:keyboardHeight]];
+        NSLayoutYAxisAnchor *bottomAnchor = self.superview.bottomAnchor;
+        if (@available(iOS 11.0, *)) {
+            bottomAnchor = self.superview.safeAreaLayoutGuide.bottomAnchor;
+        }
+        self.bottomConstraint = [self.bottomAnchor constraintEqualToAnchor:bottomAnchor constant:[self bottomInsetWithKeyboardHeight:keyboardHeight]];
         self.bottomConstraint.active = YES;
     }
     
@@ -570,18 +568,29 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 	return self;
 }
 
+- (UIWindow *)window
+{
+    return [[[UIApplication sharedApplication] delegate] window];
+}
+
 - (void)keyboardWillChange:(NSNotification *)notification
 {
     MLSnackbar *snackbar = [MLSnackbar sharedInstance];
+    
+    NSDictionary *info = [notification userInfo];
+    CGFloat mainScreenHeight = CGRectGetHeight([UIScreen mainScreen].bounds);
+    CGFloat keyboardEndPosition = [info[UIKeyboardFrameEndUserInfoKey] CGRectValue].origin.y;
+    if (@available(iOS 11.0, *)) {
+        UIWindow *window = [self window];
+        CGFloat bottomPadding = window.safeAreaInsets.bottom;
+        keyboardEndPosition += bottomPadding;
+    }
+    CGFloat newKeyboardHeight = mainScreenHeight - keyboardEndPosition;
+    self.keyboardHeight = newKeyboardHeight;
 
     if (!snackbar.snackbarView || !snackbar.bottomConstraint) {
         return;
     }
-
-    NSDictionary *info = [notification userInfo];
-    CGFloat mainScreenHeight = CGRectGetHeight([UIScreen mainScreen].bounds);
-    CGFloat keyboardEndPosition = [info[UIKeyboardFrameEndUserInfoKey] CGRectValue].origin.y;
-    CGFloat newKeyboardHeight = mainScreenHeight - keyboardEndPosition;
 
     CGFloat finalHeight = [snackbar bottomInsetWithKeyboardHeight:newKeyboardHeight];
     NSTimeInterval animationDuration = [info[UIKeyboardAnimationDurationUserInfoKey] doubleValue];

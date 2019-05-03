@@ -19,7 +19,7 @@
 - (long)durationInMilliseconds:(MLSnackbarDuration)duration;
 - (void)disappearAnimation:(MLSnackbarDismissCause)cause;
 - (void)removeSnackbarWithAnimation:(MLSnackbarDismissCause)cause;
-- (void)animateForKeyboardNotification:(NSNotification *)notification;
+- (void)updateBottomConstraintWithBottomInset:(CGFloat)inset withKeyboardAnimationDuration:(NSTimeInterval)animationDuration;
 + (instancetype)sharedInstance;
 
 @end
@@ -27,8 +27,8 @@
 @interface MLKeyboardInfo : NSObject
 @property (nonatomic) CGFloat keyboardHeight;
 + (instancetype)sharedInstance;
-//- (void)keyboardWillShow:(NSNotification *)notification;
 - (void)keyboardWillChange:(NSNotification *)notification;
+- (UIWindow *)window;
 @end
 
 @interface MLSnackbarTest : XCTestCase
@@ -129,12 +129,13 @@
 {
 	MLKeyboardInfo *keyboardInfo = OCMPartialMock([MLKeyboardInfo sharedInstance]);
 	OCMStub([keyboardInfo keyboardHeight]).andReturn(10);
+    // Fix to use [app keyWindow] instead of [[app delegate] window]
+    [OCMStub([keyboardInfo window]) andReturn:[[UIApplication sharedApplication] keyWindow]];
 
 	NSNotification *not = [NSNotification notificationWithName:@"Keyboard Appeared" object:nil];
-//    [keyboardInfo keyboardWillShow:not];
     [keyboardInfo keyboardWillChange:not];
 
-	[[self.snackbarMock reject] animateForKeyboardNotification:not];
+    [[self.snackbarMock reject] updateBottomConstraintWithBottomInset:100 withKeyboardAnimationDuration:100];
 }
 
 - (void)testNumberOfLines
