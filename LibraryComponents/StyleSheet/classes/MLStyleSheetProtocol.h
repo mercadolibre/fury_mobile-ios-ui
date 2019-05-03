@@ -55,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
    Not every stylesheet must override these methods
  */
 @optional
-- (UIFont *)creditCardFontOfSize:(CGFloat)fontSize;
+- (UIFont *)monospaceFontOfSize:(CGFloat)fontSize;
 
 @end
 
