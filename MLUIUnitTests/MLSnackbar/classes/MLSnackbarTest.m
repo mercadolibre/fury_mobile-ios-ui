@@ -129,13 +129,13 @@
 {
 	MLKeyboardInfo *keyboardInfo = OCMPartialMock([MLKeyboardInfo sharedInstance]);
 	OCMStub([keyboardInfo keyboardHeight]).andReturn(10);
-    // Fix to use [app keyWindow] instead of [[app delegate] window]
-    [OCMStub([keyboardInfo window]) andReturn:[[UIApplication sharedApplication] keyWindow]];
+	// Fix to use [app keyWindow] instead of [[app delegate] window]
+	[OCMStub([keyboardInfo window]) andReturn:[[UIApplication sharedApplication] keyWindow]];
 
 	NSNotification *not = [NSNotification notificationWithName:@"Keyboard Appeared" object:nil];
-    [keyboardInfo keyboardWillChange:not];
+	[keyboardInfo keyboardWillChange:not];
 
-    [[self.snackbarMock reject] updateBottomConstraintWithBottomInset:100 withKeyboardAnimationDuration:100];
+	[[self.snackbarMock reject] updateBottomConstraintWithBottomInset:100 withKeyboardAnimationDuration:100];
 }
 
 - (void)testNumberOfLines
