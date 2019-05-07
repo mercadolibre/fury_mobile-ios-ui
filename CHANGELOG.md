@@ -1,3 +1,7 @@
+# 5.7.0
+## Agregado
+- Se agrega soporte para safe areas y tabbars en MLSnackbar.
+
 # 5.6.0
 ## Arreglado
 - Se cambia el nombre del método creditCardFontOfSize a monospaceFontOfSize
