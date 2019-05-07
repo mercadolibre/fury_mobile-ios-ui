@@ -1,7 +1,15 @@
-# Sin Publicar
+# 5.6.0
 ## Arreglado
 - Se cambia el nombre del método creditCardFontOfSize a monospaceFontOfSize
 - Se agrega soporte para safe areas y tabbars en MLSnackbar.
+
+# 5.5.0
+## Agregado
+- Add MLFullscreenModal sub module
+
+# 5.4.0
+## Agregado
+- Se agrega fuente para tarjetas al protocolo de MLStyleSheetProtocol
 
 # 5.2.0
 ## Arreglado
