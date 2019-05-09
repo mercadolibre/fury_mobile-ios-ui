@@ -1,3 +1,7 @@
+# Sin Publicar
+### Arreglado
+- `MLSnackbar`: Se corrige el espaciado derecho para snackbars con title multiline cuando no hay button.
+
 # 5.6.0
 ## Arreglado
 - Se cambia el nombre del método creditCardFontOfSize a monospaceFontOfSize
