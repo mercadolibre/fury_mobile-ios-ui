@@ -52,7 +52,6 @@
 @property (nonatomic, copy) MLSnackbarDismissBlock dismissBlock;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelButtonSpacing;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonTrailingConstraint;
 @property (nonatomic) MLSnackbarDuration duration;
 @property (nonatomic) BOOL isShowingSnackbar;
 @property (nonatomic) BOOL isAnimating;
@@ -174,13 +173,11 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 		self.actionButton.hidden = NO;
 		self.labelButtonSpacing.constant = kMLSnackbarLabelButtonSpacing;
 		[self.actionButton setContentCompressionResistancePriority:751 forAxis:UILayoutConstraintAxisHorizontal];
-		self.buttonTrailingConstraint.constant = 24;
 	} else {
 		// si no se recibe título del botón o un bloque de acción, se esconde el botón
 		self.actionButton.hidden = YES;
 		self.labelButtonSpacing.constant = 0;
 		[self.actionButton setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisHorizontal];
-		self.buttonTrailingConstraint.constant = 0;
 	}
 	if (dismissGestureEnabled) {
 		self.gesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(swipeAnimation:)];
