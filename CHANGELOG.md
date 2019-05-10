@@ -1,21 +1,25 @@
-# Sin Publicar
+# v5.7.1
 ### Arreglado
 - `MLSnackbar`: Se corrige el espaciado derecho para snackbars con title multiline cuando no hay button.
 
-# 5.6.0
+# v5.7.0
+## Agregado
+- Se agrega soporte para safe areas y tabbars en MLSnackbar.
+
+# v5.6.0
 ## Arreglado
 - Se cambia el nombre del método creditCardFontOfSize a monospaceFontOfSize
 - Se agrega soporte para safe areas y tabbars en MLSnackbar.
 
-# 5.5.0
+# v5.5.0
 ## Agregado
 - Add MLFullscreenModal sub module
 
-# 5.4.0
+# v5.4.0
 ## Agregado
 - Se agrega fuente para tarjetas al protocolo de MLStyleSheetProtocol
 
-# 5.2.0
+# v5.2.0
 ## Arreglado
 - Safe Areas on MLModal
 - Crash when HTML parsing fails
