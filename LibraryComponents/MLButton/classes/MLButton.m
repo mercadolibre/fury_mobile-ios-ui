@@ -29,7 +29,7 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 @property (nonatomic, strong) UIImageView *iconView;
 @property (nonatomic, strong) UIView *innerView;
 @property (nonatomic, strong) MLSpinnerConfig *spinnerConfig;
-@property (nonatomic, strong) NSLayoutConstraint *iconLeftContraint;
+@property (nonatomic, strong) NSLayoutConstraint *innerViewLeftContraint;
 
 @property (nonatomic, assign) BOOL isLoading;
 
@@ -120,6 +120,13 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
     
     [self.innerView addSubview: self.iconView];
     
+    if(self.iconView.image!=nil){
+        [self.iconView.rightAnchor constraintEqualToAnchor:self.innerView.rightAnchor].active = YES;
+    }else{
+        self.innerViewLeftContraint = [self.label.rightAnchor constraintEqualToAnchor:self.innerView.rightAnchor];
+        self.innerViewLeftContraint.active = YES;
+    }
+    
     [self.innerView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
     
     [self.innerView.topAnchor constraintEqualToAnchor:self.label.topAnchor].active = YES;
@@ -129,9 +136,6 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
     [self.bottomAnchor constraintEqualToAnchor:self.innerView.bottomAnchor constant:kMLButtonHorizontalPadding].active = YES;
     
     [self.label.leftAnchor constraintEqualToAnchor:self.innerView.leftAnchor].active = YES;
-
-    self.innerView.backgroundColor = UIColor.blackColor;
-    self.label.backgroundColor = UIColor.blueColor;
 }
 
 
@@ -178,7 +182,7 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 
 - (void)setupLoadingStyle
 {
-    self.label.hidden = NO;
+    self.label.hidden = YES;
     self.spinner.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:self.spinner];
     [self addConstraint:[NSLayoutConstraint constraintWithItem:self.spinner attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
@@ -254,15 +258,14 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 {
     if (buttonIcon!=nil){
         self.iconView.image = buttonIcon;
+        
         [self.iconView.heightAnchor constraintEqualToConstant:24].active = YES;
         [self.iconView.widthAnchor constraintEqualToConstant: 24].active = YES;
         [self.iconView.leftAnchor constraintEqualToAnchor:self.label.rightAnchor constant:10].active = YES;
         [self.iconView.rightAnchor constraintEqualToAnchor:self.innerView.rightAnchor].active = YES;
         [self.iconView.centerYAnchor constraintEqualToAnchor:self.innerView.centerYAnchor].active = YES;
-        self.iconView.backgroundColor  = UIColor.greenColor;
-    } else{
-        self.iconView.hidden = YES;
-        [self.label.rightAnchor constraintEqualToAnchor:self.innerView.rightAnchor].active = YES;
+        self.innerViewLeftContraint.active = NO;
+        [self.iconView.rightAnchor constraintEqualToAnchor:self.innerView.rightAnchor];
     }
 }
 

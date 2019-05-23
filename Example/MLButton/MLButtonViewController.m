@@ -88,7 +88,7 @@
     self.secondaryIconButton = [[MLButton alloc] initWithConfig: [MLButtonStylesFactory configForButtonType:MLButtonTypeSecondaryAction]];
     [self.secondaryIconButton setButtonTitle:@"Secondary Icon Button"];
     
-    UIImage *icon = [UIImage imageNamed:@"MLUI_ic_share"];
+    UIImage *icon = [UIImage imageNamed:@"icon-wssp"];
     [self.secondaryIconButton setButtonIcon:icon];
     [self.view addSubview:self.secondaryIconButton];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[previous]-8-[button]" options:0 metrics:nil views:@{@"button" : self.secondaryIconButton, @"previous" : self.loadingButton}]];
