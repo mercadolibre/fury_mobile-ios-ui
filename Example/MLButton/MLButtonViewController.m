@@ -21,6 +21,7 @@
 @property (strong, nonatomic)  MLButton *primaryOptionDisabledButton;
 @property (strong, nonatomic)  MLButton *secondaryOptionButton;
 @property (strong, nonatomic)  MLButton *loadingButton;
+@property (strong, nonatomic)  MLButton *secondaryIconButton;
 
 @end
 
@@ -83,6 +84,15 @@
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[button]-8-|" options:0 metrics:nil views:@{@"button" : self.loadingButton}]];
 	[self.loadingButton showLoadingStyle];
 	self.title = @"Buttons";
+    
+    self.secondaryIconButton = [[MLButton alloc] initWithConfig: [MLButtonStylesFactory configForButtonType:MLButtonTypeSecondaryAction]];
+    [self.secondaryIconButton setButtonTitle:@"Secondary Icon Button"];
+    
+    UIImage *icon = [UIImage imageNamed:@"MLUI_ic_share"];
+    [self.secondaryIconButton setButtonIcon:icon];
+    [self.view addSubview:self.secondaryIconButton];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[previous]-8-[button]" options:0 metrics:nil views:@{@"button" : self.secondaryIconButton, @"previous" : self.loadingButton}]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[button]-8-|" options:0 metrics:nil views:@{@"button" : self.secondaryIconButton}]];
 }
 
 @end

@@ -26,7 +26,10 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) CALayer *backgroundLayer;
 @property (nonatomic, strong) MLSpinner *spinner;
+@property (nonatomic, strong) UIImageView *iconView;
+@property (nonatomic, strong) UIView *innerView;
 @property (nonatomic, strong) MLSpinnerConfig *spinnerConfig;
+@property (nonatomic, strong) NSLayoutConstraint *iconLeftContraint;
 
 @property (nonatomic, assign) BOOL isLoading;
 
@@ -95,16 +98,42 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 	[self.layer addSublayer:self.backgroundLayer];
 
 	self.backgroundLayer.borderWidth = kMLButtonBorderWidth;
-
-	self.label = [[UILabel alloc] initWithFrame:CGRectZero];
-	self.label.translatesAutoresizingMaskIntoConstraints = NO;
-	self.label.numberOfLines = 0;
-
-	[self addSubview:self.label];
-
-	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-p-[label]-p-|" options:0 metrics:@{@"p" : @(kMLButtonHorizontalPadding)} views:@{@"label" : self.label}]];
-	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-p@priority-[label]-p@priority-|" options:0 metrics:@{@"p" : @(kMLButtonVerticalPadding), @"priority" : @999} views:@{@"label" : self.label}]];
+    
+    [self setUpInnerViewConstrainst];
 }
+
+- (void)setUpInnerViewConstrainst
+{
+    self.innerView = [[UIView alloc] init];
+    self.innerView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.innerView.userInteractionEnabled = NO;
+    [self addSubview:self.innerView];
+    
+    self.label = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.label.translatesAutoresizingMaskIntoConstraints = NO;
+    self.label.numberOfLines = 0;
+    
+    [self.innerView addSubview:self.label];
+    
+    self.iconView = [[UIImageView alloc] init];
+    self.iconView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.innerView addSubview: self.iconView];
+    
+    [self.innerView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
+    
+    [self.innerView.topAnchor constraintEqualToAnchor:self.label.topAnchor].active = YES;
+    [self.innerView.bottomAnchor constraintEqualToAnchor:self.label.bottomAnchor].active = YES;
+    
+    [self.topAnchor constraintEqualToAnchor:self.innerView.topAnchor constant:-kMLButtonHorizontalPadding].active = YES;
+    [self.bottomAnchor constraintEqualToAnchor:self.innerView.bottomAnchor constant:kMLButtonHorizontalPadding].active = YES;
+    
+    [self.label.leftAnchor constraintEqualToAnchor:self.innerView.leftAnchor].active = YES;
+
+    self.innerView.backgroundColor = UIColor.blackColor;
+    self.label.backgroundColor = UIColor.blueColor;
+}
+
 
 - (void)setupStatesConfig
 {
@@ -149,7 +178,7 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 
 - (void)setupLoadingStyle
 {
-    self.label.hidden = YES;
+    self.label.hidden = NO;
     self.spinner.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:self.spinner];
     [self addConstraint:[NSLayoutConstraint constraintWithItem:self.spinner attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
@@ -159,6 +188,21 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
     self.backgroundLayer.borderColor = self.config.loadingState.borderColor.CGColor;
 
     [self.spinner showSpinner];
+}
+
+- (void)setupIconStyle
+{
+
+    self.backgroundLayer.backgroundColor = self.config.loadingState.backgroundColor.CGColor;
+    self.backgroundLayer.borderColor = self.config.loadingState.borderColor.CGColor;
+}
+
+- (void)showIconStyle
+{
+    if (self.config.loadingState) {
+        self.enabled = NO;
+        [self setupIconStyle];
+    }
 }
 
 - (void)showLoadingStyle
@@ -204,6 +248,22 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 - (NSString *)buttonTitle
 {
     return [self.label.attributedText string];
+}
+
+- (void)setButtonIcon:(UIImage *)buttonIcon
+{
+    if (buttonIcon!=nil){
+        self.iconView.image = buttonIcon;
+        [self.iconView.heightAnchor constraintEqualToConstant:24].active = YES;
+        [self.iconView.widthAnchor constraintEqualToConstant: 24].active = YES;
+        [self.iconView.leftAnchor constraintEqualToAnchor:self.label.rightAnchor constant:10].active = YES;
+        [self.iconView.rightAnchor constraintEqualToAnchor:self.innerView.rightAnchor].active = YES;
+        [self.iconView.centerYAnchor constraintEqualToAnchor:self.innerView.centerYAnchor].active = YES;
+        self.iconView.backgroundColor  = UIColor.greenColor;
+    } else{
+        self.iconView.hidden = YES;
+        [self.label.rightAnchor constraintEqualToAnchor:self.innerView.rightAnchor].active = YES;
+    }
 }
 
 - (void)setButtonTitle:(NSString *)buttonTitle
