@@ -81,7 +81,6 @@ typedef NS_ENUM (NSInteger, MLButtonStyle) {
  *  Setup the loading state
  */
 - (void)showLoadingStyle;
-- (void)showIconStyle;
 - (void)hideLoadingStyle;
 
 @end
