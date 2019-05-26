@@ -1495,6 +1495,7 @@
 				CD16659D19C1406400EE6243 /* Resources */,
 				4BBA11567B8A4FF1ABCD8190 /* Frameworks */,
 				956BDD9D7075D31696469CC6 /* [CP] Embed Pods Frameworks */,
+				A2465CABD6AE94532D6CB1A0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1514,6 +1515,7 @@
 				FC570F311A66A30F0021DCF4 /* Frameworks */,
 				FC570F321A66A30F0021DCF4 /* Resources */,
 				D54BBDAC34A134C537224AC1 /* [CP] Embed Pods Frameworks */,
+				1118A08C6400E807366C1712 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1614,6 +1616,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1118A08C6400E807366C1712 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MLUIUnitTests/Pods-MLUIUnitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		119C905CBF66DE0CE37E81E8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1670,6 +1691,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MLUI/Pods-MLUI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2465CABD6AE94532D6CB1A0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MLUI/Pods-MLUI-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D54BBDAC34A134C537224AC1 /* [CP] Embed Pods Frameworks */ = {
