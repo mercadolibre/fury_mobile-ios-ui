@@ -261,40 +261,40 @@
 
 - (void)testDelegateHasMinCharacters
 {
-    id protocolMock = OCMProtocolMock(@protocol(MLTitledTextFieldDelegate));
-    
-    NSString *initialText = @"Aa";
-    NSString *longerText = @"Aaaa";
-    MLTitledSingleLineTextField *textField = self.textField;
-    [textField setDelegate:protocolMock];
-    textField.minCharacters = 4;
-    
-    OCMExpect([protocolMock textField:textField hasMinCharacters:NO]);
-    [textField textField:textField.textField shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:initialText];
-    OCMVerifyAll(protocolMock);
-    
-    OCMExpect([protocolMock textField:textField hasMinCharacters:YES]);
-    [textField textField:textField.textField shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:longerText];
-    OCMVerifyAll(protocolMock);
+	id protocolMock = OCMProtocolMock(@protocol(MLTitledTextFieldDelegate));
+
+	NSString *initialText = @"Aa";
+	NSString *longerText = @"Aaaa";
+	MLTitledSingleLineTextField *textField = self.textField;
+	[textField setDelegate:protocolMock];
+	textField.minCharacters = 4;
+
+	OCMExpect([protocolMock textField:textField hasMinCharacters:NO]);
+	[textField textField:textField.textField shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:initialText];
+	OCMVerifyAll(protocolMock);
+
+	OCMExpect([protocolMock textField:textField hasMinCharacters:YES]);
+	[textField textField:textField.textField shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:longerText];
+	OCMVerifyAll(protocolMock);
 }
 
 - (void)testDelegateHasMinCharactersDontChange
 {
-    id protocolMock = OCMProtocolMock(@protocol(MLTitledTextFieldDelegate));
-    
-    NSString *initialText = @"Aa";
-    NSString *longerText = @"Aaaa";
-    MLTitledSingleLineTextField *textField = self.textField;
-    [textField setDelegate:protocolMock];
-    textField.minCharacters = 6;
-    
-    OCMExpect([protocolMock textField:textField hasMinCharacters:NO]);
-    [textField textField:textField.textField shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:initialText];
-    OCMVerifyAll(protocolMock);
-    
-    OCMExpect([protocolMock textField:textField hasMinCharacters:NO]);
-    [textField textField:textField.textField shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:longerText];
-    OCMVerifyAll(protocolMock);
+	id protocolMock = OCMProtocolMock(@protocol(MLTitledTextFieldDelegate));
+
+	NSString *initialText = @"Aa";
+	NSString *longerText = @"Aaaa";
+	MLTitledSingleLineTextField *textField = self.textField;
+	[textField setDelegate:protocolMock];
+	textField.minCharacters = 6;
+
+	OCMExpect([protocolMock textField:textField hasMinCharacters:NO]);
+	[textField textField:textField.textField shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:initialText];
+	OCMVerifyAll(protocolMock);
+
+	OCMExpect([protocolMock textField:textField hasMinCharacters:NO]);
+	[textField textField:textField.textField shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:longerText];
+	OCMVerifyAll(protocolMock);
 }
 
 @end
