@@ -90,6 +90,16 @@
 	return [UIColor colorWithRed:0.20 green:0.20 blue:0.20 alpha:1.0];
 }
 
+- (UIColor *)primaryBackgroundColor
+{
+    return [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1.0];
+}
+
+- (UIColor *)secondaryBackgroundColor
+{
+    return [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.0];
+}
+
 #pragma mark Fonts
 - (UIFont *)regularSystemFontOfSize:(CGFloat)fontSize
 {

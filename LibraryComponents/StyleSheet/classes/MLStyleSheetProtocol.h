@@ -52,11 +52,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIFont *)blackSystemFontOfSize:(CGFloat)fontSize;
 
 /*
-   Not every stylesheet must override these methods
+   Not every stylesheet must override these methods or properties
  */
 @optional
 - (UIFont *)monospaceFontOfSize:(CGFloat)fontSize;
-
+@property (nonatomic, readonly) UIColor *primaryBackgroundColor;
+@property (nonatomic, readonly) UIColor *secondaryBackgroundColor;
 @end
 
 NS_ASSUME_NONNULL_END
