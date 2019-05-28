@@ -1,6 +1,7 @@
-# Sin publicar
+# v5.8.0
 ### Agregado
 - Min characters attribute and delegate for MLTitledSingleLineTextField
+- Two main app background colors added to the StyleSheet as optionals
 
 # v5.7.1
 ### Arreglado
