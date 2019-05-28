@@ -75,6 +75,11 @@ typedef NS_ENUM (NSInteger, MLTitledTextFieldState) {
  */
 - (BOOL)textFieldShouldReturn:(MLTitledSingleLineTextField *)textField;
 
+/**
+ * Tells the delegate that the textfield has more characters than the minCharacters
+ */
+- (void)textField:(MLTitledSingleLineTextField *)textField hasMinCharacters:(BOOL)hasMinCharacters;
+
 @end
 
 /**
@@ -111,6 +116,11 @@ typedef NS_ENUM (NSInteger, MLTitledTextFieldState) {
  * The maximum number of characters of the textfield.
  */
 @property (nonatomic, assign) IBInspectable NSUInteger maxCharacters;
+
+/**
+ * The minimum number of characters of the textfield.
+ */
+@property (nonatomic, assign) IBInspectable NSUInteger minCharacters;
 
 /**
  * Whether this component should display a label with the number of characters in the text property.

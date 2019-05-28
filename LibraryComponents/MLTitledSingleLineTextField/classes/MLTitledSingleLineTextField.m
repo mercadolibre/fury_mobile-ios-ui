@@ -264,6 +264,11 @@ static const CGFloat kMLTextFieldThickLine = 2;
 	[self updateCharacterCount];
 }
 
+- (void)setMinCharacters:(NSUInteger)minCharacters
+{
+	_minCharacters = minCharacters;
+}
+
 - (void)setCharactersCountVisible:(BOOL)charactersCountVisible
 {
 	_charactersCountVisible = charactersCountVisible;
@@ -420,6 +425,14 @@ static const CGFloat kMLTextFieldThickLine = 2;
 
 	if (shouldChange) {
 		self.textCache = finalString;
+	}
+
+	if ([self.delegate respondsToSelector:@selector(textField:hasMinCharacters:)] && _minCharacters) {
+		if ((textField.text.length + (string.length == 0 ? (range.length == 1 ? -1 : -range.length) : string.length)) < self.minCharacters) {
+			[self.delegate textField:self hasMinCharacters:NO];
+		} else {
+			[self.delegate textField:self hasMinCharacters:YES];
+		}
 	}
 
 	return shouldChange;
