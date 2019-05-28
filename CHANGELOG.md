@@ -1,3 +1,7 @@
+# Sin publicar
+### Agregado
+- Min characters attribute and delegate for MLTitledSingleLineTextField
+
 # v5.7.1
 ### Arreglado
 - `MLSnackbar`: Se corrige el espaciado derecho para snackbars con title multiline cuando no hay button.
