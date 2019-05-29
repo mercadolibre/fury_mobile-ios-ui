@@ -115,7 +115,7 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 
     //TitleLabel Constraints
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[label]-p@priority-|" options:0 metrics:@{@"p" : @0, @"priority": @250} views:@{@"label" : self.label}]];
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[label]|" options:0 metrics:@{@"p" : @(kMLButtonVerticalPadding), @"priority" : @999} views:@{@"label" : self.label}]];
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[label]|" options:0 metrics:0 views:@{@"label" : self.label}]];
 }
 
 - (void)setupIconView {
@@ -193,13 +193,6 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
     self.backgroundLayer.borderColor = self.config.loadingState.borderColor.CGColor;
 
     [self.spinner showSpinner];
-}
-
-- (void)setupIconStyle
-{
-
-    self.backgroundLayer.backgroundColor = self.config.loadingState.backgroundColor.CGColor;
-    self.backgroundLayer.borderColor = self.config.loadingState.borderColor.CGColor;
 }
 
 - (void)showLoadingStyle
