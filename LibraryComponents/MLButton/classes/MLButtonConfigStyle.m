@@ -12,16 +12,10 @@
 
 - (instancetype)initWithContentColor:(UIColor *)contentColor backgroundColor:(UIColor *)backgroundColor borderColor:(UIColor *)borderColor
 {
-    return [self initWithContentColor:contentColor backgroundColor:backgroundColor borderColor:borderColor iconImage:nil];
-}
-
-- (instancetype)initWithContentColor:(UIColor *)contentColor backgroundColor:(UIColor *)backgroundColor borderColor:(UIColor *)borderColor iconImage:(UIImage * _Nullable)iconImage
-{
 	if (self = [super init]) {
 		_contentColor = contentColor;
 		_backgroundColor = backgroundColor;
 		_borderColor = borderColor;
-        _iconImage = iconImage;
 	}
 	return self;
 }
@@ -34,9 +28,7 @@
 	BOOL haveEqualContentColor = (!self.contentColor && !buttonConfigStyle.contentColor) || [self.contentColor isEqual:buttonConfigStyle.contentColor];
 	BOOL haveEqualBackgroundColor = (!self.backgroundColor && !buttonConfigStyle.backgroundColor) || [self.backgroundColor isEqual:buttonConfigStyle.backgroundColor];
 	BOOL haveEqualBorderColor = (!self.borderColor && !buttonConfigStyle.borderColor) || [self.borderColor isEqual:buttonConfigStyle.borderColor];
-    BOOL haveEqualIconImage = (!self.iconImage && !buttonConfigStyle.iconImage) || [self.iconImage isEqual:buttonConfigStyle.iconImage];
-
-    return haveEqualContentColor && haveEqualBackgroundColor && haveEqualBorderColor && haveEqualIconImage;
+	return haveEqualContentColor && haveEqualBackgroundColor && haveEqualBorderColor;
 }
 
 - (BOOL)isEqual:(id)object
@@ -52,7 +44,7 @@
 
 - (NSUInteger)hash
 {
-	return self.contentColor.hash ^ self.backgroundColor.hash ^ self.borderColor.hash ^ self.iconImage.hash;
+	return self.contentColor.hash ^ self.backgroundColor.hash ^ self.borderColor.hash;
 }
 
 @end

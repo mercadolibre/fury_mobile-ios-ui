@@ -8,7 +8,6 @@
 
 #import <XCTest/XCTest.h>
 #import <MLUI/MLButtonConfigStyle.h>
-#import "UIImage+Misc.h"
 
 @interface MLButtonConfigStyleTest : XCTestCase
 
@@ -18,15 +17,13 @@
 
 - (void)testEqualsSelf
 {
-    UIImage * image = [UIImage ml_imageWithColor:UIColor.blueColor];
-	MLButtonConfigStyle *style = [[MLButtonConfigStyle alloc] initWithContentColor:UIColor.blueColor backgroundColor:UIColor.blackColor borderColor:UIColor.brownColor iconImage:image];
+	MLButtonConfigStyle *style = [[MLButtonConfigStyle alloc] initWithContentColor:UIColor.blueColor backgroundColor:UIColor.blackColor borderColor:UIColor.brownColor];
 	XCTAssertTrue([style isEqual:style]);
 }
 
 - (void)testEqualNotNilWithNil
 {
-    UIImage * image = [UIImage ml_imageWithColor:UIColor.blueColor];
-    MLButtonConfigStyle *styleOne = [[MLButtonConfigStyle alloc] initWithContentColor:UIColor.blueColor backgroundColor:UIColor.blackColor borderColor:UIColor.brownColor iconImage:image];
+	MLButtonConfigStyle *styleOne = [[MLButtonConfigStyle alloc] initWithContentColor:UIColor.blueColor backgroundColor:UIColor.blackColor borderColor:UIColor.brownColor];
 	MLButtonConfigStyle *styleTwo = nil;
 	XCTAssertNotEqual(styleOne, styleTwo);
 	XCTAssertNotEqualObjects(styleOne, styleTwo);
@@ -36,10 +33,8 @@
 
 - (void)testEqualStyles
 {
-    UIImage * image = [UIImage ml_imageWithColor:UIColor.blueColor];
-
-	MLButtonConfigStyle *styleOne = [[MLButtonConfigStyle alloc] initWithContentColor:UIColor.blueColor backgroundColor:UIColor.blackColor borderColor:UIColor.brownColor iconImage:image];
-	MLButtonConfigStyle *styleTwo = [[MLButtonConfigStyle alloc] initWithContentColor:UIColor.blueColor backgroundColor:UIColor.blackColor borderColor:UIColor.brownColor iconImage:image];
+	MLButtonConfigStyle *styleOne = [[MLButtonConfigStyle alloc] initWithContentColor:UIColor.blueColor backgroundColor:UIColor.blackColor borderColor:UIColor.brownColor];
+	MLButtonConfigStyle *styleTwo = [[MLButtonConfigStyle alloc] initWithContentColor:UIColor.blueColor backgroundColor:UIColor.blackColor borderColor:UIColor.brownColor];
 	XCTAssertNotEqual(styleOne, styleTwo);
 	XCTAssertEqualObjects(styleOne, styleTwo);
 	XCTAssertEqualObjects(styleTwo, styleOne);
@@ -48,11 +43,8 @@
 
 - (void)testNotEqualStyles
 {
-    UIImage * image1 = [UIImage ml_imageWithColor:UIColor.blueColor];
-    UIImage * image2 = [UIImage ml_imageWithColor:UIColor.blueColor];
-
-	MLButtonConfigStyle *styleOne = [[MLButtonConfigStyle alloc] initWithContentColor:UIColor.blueColor backgroundColor:UIColor.blackColor borderColor:UIColor.brownColor iconImage:image1];
-	MLButtonConfigStyle *styleTwo = [[MLButtonConfigStyle alloc] initWithContentColor:UIColor.blueColor backgroundColor:UIColor.blackColor borderColor:UIColor.redColor iconImage:image2];
+	MLButtonConfigStyle *styleOne = [[MLButtonConfigStyle alloc] initWithContentColor:UIColor.blueColor backgroundColor:UIColor.blackColor borderColor:UIColor.brownColor];
+	MLButtonConfigStyle *styleTwo = [[MLButtonConfigStyle alloc] initWithContentColor:UIColor.blueColor backgroundColor:UIColor.blackColor borderColor:UIColor.redColor];
 	XCTAssertNotEqual(styleOne, styleTwo);
 	XCTAssertNotEqualObjects(styleOne, styleTwo);
 	XCTAssertNotEqualObjects(styleTwo, styleOne);
