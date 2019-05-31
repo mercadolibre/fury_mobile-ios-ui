@@ -262,7 +262,7 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 #pragma mark - Color Getter Methods
 - (UIColor *)enabledOnColor
 {
-	return [[MLStyleSheetManager styleSheet] primaryColor];
+	return [[MLStyleSheetManager styleSheet] secondaryColor];
 }
 
 - (UIColor *)enabledOffColor

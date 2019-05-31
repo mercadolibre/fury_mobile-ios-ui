@@ -1,3 +1,7 @@
+# Sin Publicar
+### Arreglado
+- `MLCheckBox`: Se corrigen los colores para que muestre los correspondientes a cada plataforma.  
+
 # v5.8.0
 ### Agregado
 - Min characters attribute and delegate for MLTitledSingleLineTextField
