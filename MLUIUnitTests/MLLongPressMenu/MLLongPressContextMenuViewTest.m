@@ -36,7 +36,7 @@
 - (void)setupView;
 - (void)highlightMenuItemForPoint;
 - (void)viewInitializations;
-- (void)setDataSource:(id <MLContextualMenuDataSource>)dataSource;
+- (void)setDataSource:(id <MLContextualMenuDataSource> )dataSource;
 - (void)reloadData;
 - (BOOL)shouldShowMenuAtPoint:(CGPoint)point;
 - (void)dismissWithSelectedIndexForMenuAtPoint:(CGPoint)point;

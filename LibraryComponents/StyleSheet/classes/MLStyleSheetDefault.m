@@ -131,7 +131,8 @@
 	return [UIFont systemFontOfSize:fontSize weight:UIFontWeightBlack];
 }
 
-- (UIFont *)monospaceFontOfSize:(CGFloat)fontSize {
+- (UIFont *)monospaceFontOfSize:(CGFloat)fontSize
+{
 	return [UIFont systemFontOfSize:fontSize weight:UIFontWeightRegular];
 }
 

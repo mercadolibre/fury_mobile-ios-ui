@@ -62,8 +62,8 @@ static const CGFloat kMLTextFieldThickLine = 2;
 {
 	NSString *nibName = @"MLTitledLineTextField";
 	NSArray *nibArray = [[MLUIBundle mluiBundle] loadNibNamed:nibName
-	                                                    owner:self
-	                                                  options:nil];
+		                                                owner:self
+		                                              options:nil];
 	UIView *view = nibArray.firstObject;
 	view.translatesAutoresizingMaskIntoConstraints = NO;
 	[self addSubview:view];
@@ -144,7 +144,7 @@ static const CGFloat kMLTextFieldThickLine = 2;
 		}
 	}
 
-	__weak typeof(self) weakSelf = self;
+	__weak typeof(self)weakSelf = self;
 
 	[UIView animateWithDuration:.25f animations: ^{
 	    weakSelf.placeholderLabel.alpha = weakSelf.text.length ? 0 : 1;
@@ -229,7 +229,7 @@ static const CGFloat kMLTextFieldThickLine = 2;
 	}
 
 	_errorDescription = errorDescription.copy;
-	__weak typeof(self) weakSelf = self;
+	__weak typeof(self)weakSelf = self;
 
 	if (!_errorDescription && self.helperDescription.length) {
 		[self updateCharacterCount];

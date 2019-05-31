@@ -65,7 +65,7 @@
 - (void)sortArrayByName:(NSArray *)array
 {
 	NSArray *sortedArray = [array sortedArrayUsingSelector:
-	                        @selector(localizedCaseInsensitiveCompare:)];
+		                    @selector(localizedCaseInsensitiveCompare:)];
 	self.componentsNamesArray = [[NSMutableArray alloc] initWithArray:sortedArray];
 }
 

@@ -17,7 +17,7 @@
  *
  *  @parms delegate    Any object that implements MLBooleanWidgetDelegate
  */
-+ (instancetype)booleanWidgetWithDelegate:(id <MLBooleanWidgetDelegate>)delegate;
++ (instancetype)booleanWidgetWithDelegate:(id <MLBooleanWidgetDelegate> )delegate;
 
 /**
  *  Any object that implements MLSelectionWidgetDelegate, this protocol will alert the object when

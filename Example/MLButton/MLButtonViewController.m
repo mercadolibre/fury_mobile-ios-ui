@@ -85,18 +85,17 @@
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[button]-8-|" options:0 metrics:nil views:@{@"button" : self.loadingButton}]];
 	[self.loadingButton showLoadingStyle];
 	self.title = @"Buttons";
-    
-    
-    UIImage *icon = [UIImage imageNamed:@"icon-wssp"];
 
-    MLButtonConfig * config = [MLButtonStylesFactory configForButtonType:MLButtonTypeSecondaryAction];
-    self.secondaryIconButton = [[MLButton alloc] initWithConfig:config];
-    [self.secondaryIconButton setButtonIcon:icon];
-    [self.secondaryIconButton setButtonTitle:@"Secondary Icon Button"];
-    
-    [self.view addSubview:self.secondaryIconButton];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[previous]-8-[button]" options:0 metrics:nil views:@{@"button" : self.secondaryIconButton, @"previous" : self.loadingButton}]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[button]-8-|" options:0 metrics:nil views:@{@"button" : self.secondaryIconButton}]];
+	UIImage *icon = [UIImage imageNamed:@"icon-wssp"];
+
+	MLButtonConfig *config = [MLButtonStylesFactory configForButtonType:MLButtonTypeSecondaryAction];
+	self.secondaryIconButton = [[MLButton alloc] initWithConfig:config];
+	[self.secondaryIconButton setButtonIcon:icon];
+	[self.secondaryIconButton setButtonTitle:@"Secondary Icon Button"];
+
+	[self.view addSubview:self.secondaryIconButton];
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[previous]-8-[button]" options:0 metrics:nil views:@{@"button" : self.secondaryIconButton, @"previous" : self.loadingButton}]];
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[button]-8-|" options:0 metrics:nil views:@{@"button" : self.secondaryIconButton}]];
 }
 
 @end

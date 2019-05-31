@@ -27,8 +27,8 @@
 @property (nonatomic, strong) UIImage *iconImage;
 
 - (void)updateLookAndFeel;
-- (void) updateButtonIcon:(UIImage * _Nullable)image;
-- (void) setupIconView;
+- (void)updateButtonIcon:(UIImage *_Nullable)image;
+- (void)setupIconView;
 
 @end
 
@@ -226,14 +226,14 @@
 
 - (void)testUpdateLookAndFeel_shouldUpdateIconView
 {
-    // Given
-    MLButton *button = [[MLButton alloc]init];
-    button.style = MLButtonStyleSecondaryOption;
-    button.iconImage = [UIImage ml_imageWithColor:UIColor.redColor];
-    // When
-    [button updateLookAndFeel];
-    // Then
-    XCTAssertNotNil(button.iconView.image);
+	// Given
+	MLButton *button = [[MLButton alloc]init];
+	button.style = MLButtonStyleSecondaryOption;
+	button.iconImage = [UIImage ml_imageWithColor:UIColor.redColor];
+	// When
+	[button updateLookAndFeel];
+	// Then
+	XCTAssertNotNil(button.iconView.image);
 }
 
 - (void)testSetButtonTitleNil
@@ -245,63 +245,63 @@
 
 - (void)testSetButtonIcon_shouldAddIconView
 {
-    // Given
-    MLButton *button = [[MLButton alloc] init];
-    UIImage * redImage = [UIImage ml_imageWithColor:UIColor.redColor];
-    // When
-    [button setButtonIcon:redImage];
-    // Then
-    XCTAssertEqual(button.contentView.subviews.count, 2);
-    XCTAssertNotNil(button.iconView.image);
+	// Given
+	MLButton *button = [[MLButton alloc] init];
+	UIImage *redImage = [UIImage ml_imageWithColor:UIColor.redColor];
+	// When
+	[button setButtonIcon:redImage];
+	// Then
+	XCTAssertEqual(button.contentView.subviews.count, 2);
+	XCTAssertNotNil(button.iconView.image);
 }
 
 - (void)testUpdateButtonIcon_shouldAddView_whenImageIsNotNil
 {
-    // Given
-    MLButton *button = [[MLButton alloc] init];
-    UIImage * redImage = [UIImage ml_imageWithColor:UIColor.redColor];
-    // When
-    XCTAssertEqual(button.contentView.subviews.count, 1);//Lable
-    [button updateButtonIcon:redImage];
-    // Then
-    XCTAssertEqual(button.iconView.image, redImage);
-    XCTAssertEqual(button.contentView.subviews.count, 2);//Lable+image
+	// Given
+	MLButton *button = [[MLButton alloc] init];
+	UIImage *redImage = [UIImage ml_imageWithColor:UIColor.redColor];
+	// When
+	XCTAssertEqual(button.contentView.subviews.count, 1);// Lable
+	[button updateButtonIcon:redImage];
+	// Then
+	XCTAssertEqual(button.iconView.image, redImage);
+	XCTAssertEqual(button.contentView.subviews.count, 2);// Lable+image
 }
 
 - (void)testUpdateButtonIcon_shouldRemoveView_whenImageIsNil
 {
-    // Given
-    MLButton *button = [[MLButton alloc] init];
-    [button setupIconView];
-    // When
-    XCTAssertEqual(button.contentView.subviews.count, 2);//Lable+image
-    [button updateButtonIcon:nil];
-    // Then
-    XCTAssertEqual(button.contentView.subviews.count, 1);//label
-    XCTAssertNil(button.iconView.image);
+	// Given
+	MLButton *button = [[MLButton alloc] init];
+	[button setupIconView];
+	// When
+	XCTAssertEqual(button.contentView.subviews.count, 2);// Lable+image
+	[button updateButtonIcon:nil];
+	// Then
+	XCTAssertEqual(button.contentView.subviews.count, 1);// label
+	XCTAssertNil(button.iconView.image);
 }
 
 - (void)testContentView_shouldBeSetupOnInit
 {
-    // When
-    MLButton *button = [[MLButton alloc] init];
-    // Then
-    XCTAssertEqualObjects(button.contentView.superview, button);
-    XCTAssertEqualObjects(button.label.superview, button.contentView);
-    XCTAssertEqual(button.contentView.subviews.count, 1);//Only the label
-    XCTAssertNil(button.iconView.superview);
+	// When
+	MLButton *button = [[MLButton alloc] init];
+	// Then
+	XCTAssertEqualObjects(button.contentView.superview, button);
+	XCTAssertEqualObjects(button.label.superview, button.contentView);
+	XCTAssertEqual(button.contentView.subviews.count, 1);// Only the label
+	XCTAssertNil(button.iconView.superview);
 }
 
 - (void)testSetupIconView_shouldAddIconView
 {
-    // Given
-    MLButton *button = [[MLButton alloc] init];
-    // When
-    [button setupIconView];
-    // Then
-    XCTAssertEqualObjects(button.iconView.superview, button.contentView);
-    XCTAssertEqualObjects(button.label.superview, button.contentView);
-    XCTAssertEqual(button.contentView.subviews.count, 2);//Lable+image
+	// Given
+	MLButton *button = [[MLButton alloc] init];
+	// When
+	[button setupIconView];
+	// Then
+	XCTAssertEqualObjects(button.iconView.superview, button.contentView);
+	XCTAssertEqualObjects(button.label.superview, button.contentView);
+	XCTAssertEqual(button.contentView.subviews.count, 2);// Lable+image
 }
 
 @end

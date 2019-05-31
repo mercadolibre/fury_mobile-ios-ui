@@ -30,7 +30,6 @@ typedef NS_ENUM (NSInteger, MLButtonStyle) {
  */
 @property (nonatomic, copy, nullable) NSString *buttonTitle;
 
-
 @property (nonatomic, copy, nullable) UIImage *buttonIcon;
 
 /**

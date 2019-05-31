@@ -44,8 +44,8 @@
 - (void)loadViewsFromNib
 {
 	UIView *view = [[[MLUIBundle mluiBundle] loadNibNamed:NSStringFromClass([MLUISnackBarView class])
-	                                                owner:self
-	                                              options:nil] lastObject];
+		                                            owner:self
+		                                          options:nil] lastObject];
 
 	[self addSubview:view];
 	view.translatesAutoresizingMaskIntoConstraints = NO;
