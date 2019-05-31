@@ -113,9 +113,15 @@ DEPENDENCIES:
   - MLUI (from `./`)
   - OCMock (= 3.4.1)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FXBlurView
+    - JRSwizzle
+    - OCMock
+
 EXTERNAL SOURCES:
   MLUI:
-    :path: ./
+    :path: "./"
 
 SPEC CHECKSUMS:
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
@@ -125,4 +131,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: d65eb06a9c9e82b3edb1b830bfe1ccd9a3ad44f5
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

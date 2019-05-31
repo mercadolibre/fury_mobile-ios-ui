@@ -13,6 +13,7 @@
 #import "MLButtonConfig.h"
 #import "MLSpinner.h"
 #import "MLButtonStylesFactory.h"
+#import "UIImage+Misc.h"
 #import <QuartzCore/QuartzCore.h>
 
 static const CGFloat kMLButtonHorizontalPadding = 15.0f;
@@ -29,6 +30,7 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 @property (nonatomic, strong) CALayer *backgroundLayer;
 @property (nonatomic, strong) MLSpinner *spinner;
 @property (nonatomic, strong) UIImageView *iconView;
+@property (nonatomic, strong) UIImage *iconImage;
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) MLSpinnerConfig *spinnerConfig;
 
@@ -114,14 +116,14 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
     [self.contentView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
 
     //TitleLabel Constraints
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[label]-p@priority-|" options:0 metrics:@{@"p" : @0, @"priority": @250} views:@{@"label" : self.label}]];
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-p@priority-[label]|" options:0 metrics:@{@"p" : @0, @"priority": @250} views:@{@"label" : self.label}]];
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[label]|" options:0 metrics:0 views:@{@"label" : self.label}]];
 }
 
 - (void)setupIconView {
     [self.contentView addSubview:self.iconView];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[label]-p-[icon(size)]|" options:0 metrics:@{@"p" : @(kMLButtonIconLeftPadding), @"size": @(kMLButtonIconSize)} views:@{@"label" : self.label, @"icon": self.iconView}]];
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[icon(size)]-p-[label]" options:0 metrics:@{@"p" : @(kMLButtonIconLeftPadding), @"size": @(kMLButtonIconSize)} views:@{@"label" : self.label, @"icon": self.iconView}]];
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[icon(size)]" options:0 metrics:@{@"size": @(kMLButtonIconSize)} views:@{@"icon" : self.iconView}]];
     [self.contentView.centerYAnchor constraintEqualToAnchor:self.iconView.centerYAnchor].active = YES;
 }
@@ -156,16 +158,12 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 - (void)updateLookAndFeel
 {
     self.label.font = [UIFont ml_regularSystemFontOfSize:kMLFontsSizeMedium];
-    self.label.textColor = self.isEnabled ? (self.isHighlighted ? self.config.highlightedState.contentColor : self.config.defaultState.contentColor) : self.config.disableState.contentColor;
+    UIColor * contentColor = self.isEnabled ? (self.isHighlighted ? self.config.highlightedState.contentColor : self.config.defaultState.contentColor) : self.config.disableState.contentColor;
+    self.label.textColor = contentColor;
     self.backgroundLayer.backgroundColor = self.isEnabled ? (self.isHighlighted ? self.config.highlightedState.backgroundColor.CGColor : self.config.defaultState.backgroundColor.CGColor) : self.config.disableState.backgroundColor.CGColor;
     self.backgroundLayer.borderColor = self.isEnabled ? (self.isHighlighted ? self.config.highlightedState.borderColor.CGColor : self.config.defaultState.borderColor.CGColor) : self.config.disableState.borderColor.CGColor;
     self.backgroundLayer.cornerRadius = kMLButtonCornerRadius;
-    [self updateButtonIcon:self.stateIconImage];
-}
-
-- (UIImage * _Nullable) stateIconImage
-{
-    return  self.isEnabled ? (self.isHighlighted ? self.config.highlightedState.iconImage : self.config.defaultState.iconImage) : self.config.disableState.iconImage;;
+    [self updateButtonIcon:[self.iconImage ml_tintedImageWithColor:contentColor]];
 }
 
 - (void) updateButtonIcon:(UIImage * _Nullable)image
@@ -242,8 +240,13 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 
 - (void)setButtonIcon:(UIImage *)buttonIcon
 {
-    self.config.defaultState.iconImage = self.config.highlightedState.iconImage = self.config.disableState.iconImage = buttonIcon;
+    self.iconImage = buttonIcon;
     [self updateLookAndFeel];
+}
+
+- (UIImage * _Nullable) buttonIcon
+{
+    return self.iconView.image;
 }
 
 - (void)setButtonTitle:(NSString *)buttonTitle

@@ -24,9 +24,9 @@
 @property (nonatomic, strong) CALayer *backgroundLayer;
 @property (nonatomic, strong) UIImageView *iconView;
 @property (nonatomic, strong) UIView *contentView;
+@property (nonatomic, strong) UIImage *iconImage;
 
 - (void)updateLookAndFeel;
-- (UIImage * _Nullable) stateIconImage;
 - (void) updateButtonIcon:(UIImage * _Nullable)image;
 - (void) setupIconView;
 
@@ -224,17 +224,16 @@
 	XCTAssertTrue(CGColorEqualToColor(button.label.textColor.CGColor, MLStyleSheetManager.styleSheet.lightGreyColor.CGColor));
 }
 
-- (void)testUpdateLookAndFeelForDefaultIconImage
+- (void)testUpdateLookAndFeel_shouldUpdateIconView
 {
     // Given
     MLButton *button = [[MLButton alloc]init];
     button.style = MLButtonStyleSecondaryOption;
-    UIImage * redImage = [UIImage ml_imageWithColor:UIColor.redColor];
-    button.config.defaultState.iconImage = redImage;
+    button.iconImage = [UIImage ml_imageWithColor:UIColor.redColor];
     // When
     [button updateLookAndFeel];
     // Then
-    XCTAssertEqual(button.iconView.image, redImage);
+    XCTAssertNotNil(button.iconView.image);
 }
 
 - (void)testSetButtonTitleNil
@@ -252,8 +251,8 @@
     // When
     [button setButtonIcon:redImage];
     // Then
-    XCTAssertEqual(button.iconView.image, redImage);
     XCTAssertEqual(button.contentView.subviews.count, 2);
+    XCTAssertNotNil(button.iconView.image);
 }
 
 - (void)testUpdateButtonIcon_shouldAddView_whenImageIsNotNil
@@ -304,63 +303,5 @@
     XCTAssertEqualObjects(button.label.superview, button.contentView);
     XCTAssertEqual(button.contentView.subviews.count, 2);//Lable+image
 }
-
-- (void)testStateIconImage_shouldBeDisabled_whenButttonIsDisabled
-{
-    // Given
-    UIImage * redImage = [UIImage ml_imageWithColor:UIColor.redColor];
-    UIImage * blueImage = [UIImage ml_imageWithColor:UIColor.blueColor];
-
-    MLButtonConfig *config = [MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction];
-    config.disableState.iconImage = redImage;
-    config.defaultState.iconImage = blueImage;
-    config.highlightedState.iconImage = blueImage;
-    
-    MLButton *button = [[MLButton alloc] initWithConfig:config];
-    button.enabled = NO;
-    
-    // When
-    UIImage * result = button.stateIconImage;
-    // Then
-    XCTAssertEqualObjects(result, redImage);
-}
-
-- (void)testStateIconImage_shouldBeDefault_whenButttonIsEnabled_andNotHightLighted
-{
-    // Given
-    UIImage * redImage = [UIImage ml_imageWithColor:UIColor.redColor];
-    UIImage * blueImage = [UIImage ml_imageWithColor:UIColor.blueColor];
-    
-    MLButtonConfig *config = [MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction];
-    config.disableState.iconImage = blueImage;
-    config.defaultState.iconImage = redImage;
-    config.highlightedState.iconImage = blueImage;
-    
-    MLButton *button = [[MLButton alloc] initWithConfig:config];
-    // When
-    UIImage * result = button.stateIconImage;
-    // Then
-    XCTAssertEqualObjects(result, redImage);
-}
-
-- (void)testStateIconImage_shouldBeHighlighted_whenButttonIsHightLighted
-{
-    // Given
-    UIImage * redImage = [UIImage ml_imageWithColor:UIColor.redColor];
-    UIImage * blueImage = [UIImage ml_imageWithColor:UIColor.blueColor];
-    
-    MLButtonConfig *config = [MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction];
-    config.disableState.iconImage = blueImage;
-    config.defaultState.iconImage = blueImage;
-    config.highlightedState.iconImage = redImage;
-    
-    MLButton *button = [[MLButton alloc] initWithConfig:config];
-    button.highlighted = YES;
-    // When
-    UIImage * result = button.stateIconImage;
-    // Then
-    XCTAssertEqualObjects(result, redImage);
-}
-
 
 @end

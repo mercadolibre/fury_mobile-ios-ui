@@ -90,11 +90,8 @@
     UIImage *icon = [UIImage imageNamed:@"icon-wssp"];
 
     MLButtonConfig * config = [MLButtonStylesFactory configForButtonType:MLButtonTypeSecondaryAction];
-    config.defaultState.iconImage = [icon ml_tintedImageWithColor:UIColor.blueColor];
-    config.highlightedState.iconImage = [icon ml_tintedImageWithColor:UIColor.lightGrayColor];
-    config.disableState.iconImage = [icon ml_tintedImageWithColor:UIColor.orangeColor];
-
     self.secondaryIconButton = [[MLButton alloc] initWithConfig:config];
+    [self.secondaryIconButton setButtonIcon:icon];
     [self.secondaryIconButton setButtonTitle:@"Secondary Icon Button"];
     
     [self.view addSubview:self.secondaryIconButton];
