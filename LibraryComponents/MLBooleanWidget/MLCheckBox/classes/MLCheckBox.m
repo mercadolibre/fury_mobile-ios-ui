@@ -10,6 +10,7 @@
 
 #import "UIColor+MLColorPalette.h"
 #import "MLBooleanWidget_Protected.h"
+#import "MLStyleSheetManager.h"
 
 static const CGFloat kMLCheckBoxExternalLineWidth = 2;
 static const CGFloat kMLCheckBoxExternalCornerRadius = 1;
@@ -261,17 +262,17 @@ static const CGFloat kMLCheckBoxNotAnimationDuration = 0;
 #pragma mark - Color Getter Methods
 - (UIColor *)enabledOnColor
 {
-	return [UIColor ml_meli_blue];
+	return [[MLStyleSheetManager styleSheet] primaryColor];
 }
 
 - (UIColor *)enabledOffColor
 {
-	return [UIColor ml_meli_grey];
+	return [[MLStyleSheetManager styleSheet] greyColor];
 }
 
 - (UIColor *)disabledColor
 {
-	return [UIColor ml_meli_mid_grey];
+	return [[MLStyleSheetManager styleSheet] midGreyColor];
 }
 
 @end
