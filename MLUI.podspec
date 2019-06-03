@@ -98,6 +98,7 @@ Pod::Spec.new do |s|
     mlbutton.dependency 'MLUI/MLFonts'
     mlbutton.dependency 'MLUI/MLSpinner'
     mlbutton.dependency 'MLUI/StyleSheet'
+    mlbutton.dependency 'MLUI/Core'
   end
 
   s.subspec 'MLModal' do |mlmodal|
