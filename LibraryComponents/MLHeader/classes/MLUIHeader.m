@@ -226,7 +226,7 @@ static NSString *const kMLHeaderControllerHeaderBoundsKey = @"bounds";
 		CGFloat contentViewHeight = [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
 
 		if (contentViewHeight == 0.0f) {
-			[self.scrollView addConstraint:[NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeHeight multiplier:1.0f constant:self.shouldScrollContent ? -navigationBarHeight : -self.headerViewHeight]];
+		    [self.scrollView addConstraint:[NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeHeight multiplier:1.0f constant:self.shouldScrollContent ? -navigationBarHeight : -self.headerViewHeight]];
 		}
 	}
 
@@ -243,251 +243,251 @@ static NSString *const kMLHeaderControllerHeaderBoundsKey = @"bounds";
 
 - (void)updateContentInset
 {
-	CGFloat navigationBarHeight = self.navigationBarHeight + self.statusbarHeight;
+    CGFloat navigationBarHeight = self.navigationBarHeight + self.statusbarHeight;
 
-	CGFloat headerAddedTopInset;
-	if (self.mode == MLUIHeaderModeDefault) {
-		headerAddedTopInset = self.headerViewHeight;
+    CGFloat headerAddedTopInset;
+    if (self.mode == MLUIHeaderModeDefault) {
+        headerAddedTopInset = self.headerViewHeight;
 	} else {
-		headerAddedTopInset = navigationBarHeight;
+        headerAddedTopInset = navigationBarHeight;
 	}
 
-	self.scrollView.contentInset = UIEdgeInsetsMake(self.scrollViewOriginalTopInset + headerAddedTopInset, self.scrollView.contentInset.left, self.scrollView.contentInset.bottom, self.scrollView.contentInset.right);
+    self.scrollView.contentInset = UIEdgeInsetsMake(self.scrollViewOriginalTopInset + headerAddedTopInset, self.scrollView.contentInset.left, self.scrollView.contentInset.bottom, self.scrollView.contentInset.right);
 
-	if (self.mode == MLUIHeaderModeDefault) {
-		self.scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(navigationBarHeight, self.scrollView.scrollIndicatorInsets.left, self.scrollView.scrollIndicatorInsets.bottom, self.scrollView.scrollIndicatorInsets.right);
+    if (self.mode == MLUIHeaderModeDefault) {
+        self.scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(navigationBarHeight, self.scrollView.scrollIndicatorInsets.left, self.scrollView.scrollIndicatorInsets.bottom, self.scrollView.scrollIndicatorInsets.right);
 	} else {
-		self.scrollView.scrollIndicatorInsets = self.scrollView.contentInset;
+        self.scrollView.scrollIndicatorInsets = self.scrollView.contentInset;
 	}
 }
 
 - (void)addContent
 {
-	// Dependending on the scroll view being used, we need to add a different
-	// subview into the view hierarchy.
-	UIView *subview = self.scrollView;
+    // Dependending on the scroll view being used, we need to add a different
+    // subview into the view hierarchy.
+    UIView *subview = self.scrollView;
 
-	// Get rid of the autoresizing mask.
-	subview.translatesAutoresizingMaskIntoConstraints = NO;
-	[self.view addSubview:subview];
+    // Get rid of the autoresizing mask.
+    subview.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:subview];
 
-	// Add the anchors.
-	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[v]|" options:0 metrics:0 views:@{@"v" : subview}]];
-	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[v]|" options:0 metrics:0 views:@{@"v" : subview}]];
+    // Add the anchors.
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[v]|" options:0 metrics:0 views:@{@"v" : subview}]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[v]|" options:0 metrics:0 views:@{@"v" : subview}]];
 
-	// We need to layout as we need to get the scroll view width.
-	[self.view setNeedsLayout];
-	[self.view layoutIfNeeded];
+    // We need to layout as we need to get the scroll view width.
+    [self.view setNeedsLayout];
+    [self.view layoutIfNeeded];
 
-	// Update the header view.
-	[self updateHeaderView];
+    // Update the header view.
+    [self updateHeaderView];
 }
 
 - (void)updateHeaderView
 {
-	[self.headerViewContainer removeFromSuperview];
+    [self.headerViewContainer removeFromSuperview];
 
-	if (self.mode != MLUIHeaderModeAlwaysCollapsed) {
-		// We need to use a container for the header view because:
-		// 1. It is useful to achieve the parallax effect.
+    if (self.mode != MLUIHeaderModeAlwaysCollapsed) {
+        // We need to use a container for the header view because:
+        // 1. It is useful to achieve the parallax effect.
 
-		self.headerViewContainer = [[UIView alloc] initWithFrame:CGRectMake(0.0f, -self.scrollView.contentInset.top, CGRectGetWidth(self.scrollView.frame), self.headerViewHeight)];
-		self.headerViewContainer.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-		self.headerViewContainer.clipsToBounds = YES;
-		self.headerViewContainer.translatesAutoresizingMaskIntoConstraints = YES;
+        self.headerViewContainer = [[UIView alloc] initWithFrame:CGRectMake(0.0f, -self.scrollView.contentInset.top, CGRectGetWidth(self.scrollView.frame), self.headerViewHeight)];
+        self.headerViewContainer.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        self.headerViewContainer.clipsToBounds = YES;
+        self.headerViewContainer.translatesAutoresizingMaskIntoConstraints = YES;
 
-		[self.scrollView addSubview:self.headerViewContainer];
+        [self.scrollView addSubview:self.headerViewContainer];
 
-		self.headerView.translatesAutoresizingMaskIntoConstraints = NO;
-		[self.headerViewContainer addSubview:self.headerView];
-		self.headerViewContainer.backgroundColor = self.headerView.backgroundColor;
-		[self.headerViewContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[v]|" options:0 metrics:nil views:@{@"v" : self.headerView}]];
-		[self.headerViewContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[v]|" options:0 metrics:nil views:@{@"v" : self.headerView}]];
+        self.headerView.translatesAutoresizingMaskIntoConstraints = NO;
+        [self.headerViewContainer addSubview:self.headerView];
+        self.headerViewContainer.backgroundColor = self.headerView.backgroundColor;
+        [self.headerViewContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[v]|" options:0 metrics:nil views:@{@"v" : self.headerView}]];
+        [self.headerViewContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[v]|" options:0 metrics:nil views:@{@"v" : self.headerView}]];
 	}
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary <NSString *, id> *)change context:(void *)context
 {
-	if (object == self.scrollView && [keyPath isEqualToString:kMLHeaderControllerContentOffsetKey]) {
-		// Here we are observing any "contentOffset" change over the scroll view.
-		if (self.mode == MLUIHeaderModeDefault) {
-			[self updateNavigationBar];
+    if (object == self.scrollView && [keyPath isEqualToString:kMLHeaderControllerContentOffsetKey]) {
+        // Here we are observing any "contentOffset" change over the scroll view.
+        if (self.mode == MLUIHeaderModeDefault) {
+            [self updateNavigationBar];
 
-			[self updateHeaderPosition];
+            [self updateHeaderPosition];
 		}
 	} else if (object == self.parentViewController && [keyPath isEqualToString:kMLHeaderControllerTitleKey]) {
-		// Here we are observing any "title" change.
-		if (![self.parentViewController.title isEqualToString:@""]) {
-			if (self.viewTitle != self.parentViewController.title) {
-				self.viewTitle = self.parentViewController.title;
-				if (!self.titleHidden) {
-					self.delegate.title = self.viewTitle;
+        // Here we are observing any "title" change.
+        if (![self.parentViewController.title isEqualToString:@""]) {
+            if (self.viewTitle != self.parentViewController.title) {
+                self.viewTitle = self.parentViewController.title;
+                if (!self.titleHidden) {
+                    self.delegate.title = self.viewTitle;
 				} else {
-					self.delegate.title = @"";
+                    self.delegate.title = @"";
 				}
 			} else if (self.titleHidden) {
-				self.delegate.title = @"";
+                self.delegate.title = @"";
 			}
 		}
 	} else if (object == self.headerView && [keyPath isEqualToString:kMLHeaderControllerHeaderBoundsKey]) {
-		// Observes for changes in bounds that could change header size
-		// Update header layout
-		CGFloat newHeaderHeight = CGRectGetHeight(self.headerView.frame);
+        // Observes for changes in bounds that could change header size
+        // Update header layout
+        CGFloat newHeaderHeight = CGRectGetHeight(self.headerView.frame);
 
-		// Checks if header size should be updated.
-		// In order to avoid infinite loop, header will be update only when height diff is major or equal to kMLHeaderControllerMinHeightDiffForUpdate
-		CGFloat heightDiff = fabs(newHeaderHeight - self.headerViewHeight);
-		if (heightDiff >= 0.5F) {
-			CGPoint prevContentOffset = self.scrollView.contentOffset;  // Saves old contentOffset
-			CGFloat prevHeaderHeight = self.headerViewHeight;  // Saves old header height
-			self.headerViewHeight = newHeaderHeight;  // Set new contentOffset
-			[self updateContentInset];  // Update Insets
-			[self updateHeaderView];  // Update header container
-			self.scrollView.contentOffset = CGPointMake(prevContentOffset.x, prevContentOffset.y + (prevHeaderHeight - self.headerViewHeight));  // Adds size delta to contentOffset
-			[self updateHeaderPosition];
+        // Checks if header size should be updated.
+        // In order to avoid infinite loop, header will be update only when height diff is major or equal to kMLHeaderControllerMinHeightDiffForUpdate
+        CGFloat heightDiff = fabs(newHeaderHeight - self.headerViewHeight);
+        if (heightDiff >= 0.5F) {
+            CGPoint prevContentOffset = self.scrollView.contentOffset;  // Saves old contentOffset
+            CGFloat prevHeaderHeight = self.headerViewHeight;  // Saves old header height
+            self.headerViewHeight = newHeaderHeight;  // Set new contentOffset
+            [self updateContentInset];  // Update Insets
+            [self updateHeaderView];  // Update header container
+            self.scrollView.contentOffset = CGPointMake(prevContentOffset.x, prevContentOffset.y + (prevHeaderHeight - self.headerViewHeight));  // Adds size delta to contentOffset
+            [self updateHeaderPosition];
 		}
 	}
 }
 
 - (void)updateHeaderPosition
 {
-	CGFloat posY = MIN(self.scrollView.contentOffset.y, -self.headerViewHeight);
-	CGFloat height = -posY;
-	self.headerViewContainer.frame = CGRectMake(0, posY, CGRectGetWidth(self.headerViewContainer.frame), height);
+    CGFloat posY = MIN(self.scrollView.contentOffset.y, -self.headerViewHeight);
+    CGFloat height = -posY;
+    self.headerViewContainer.frame = CGRectMake(0, posY, CGRectGetWidth(self.headerViewContainer.frame), height);
 
-	// Should we do parallax?
-	if (self.parallaxEffectCoefficient > 0.0f) {
-		// Determine how much parallax we should apply.
-		CGFloat parallaxDisplacement = MAX((height - self.headerViewHeight), MIN(CGRectGetHeight(self.headerView.superview.frame), self.parallaxEffectCoefficient * (self.scrollView.contentOffset.y + self.scrollView.contentInset.top)));
-		parallaxDisplacement = ceil(parallaxDisplacement);
-		// Apply the parallax effect :)
-		self.headerView.frame = CGRectMake(CGRectGetMinX(self.headerView.frame), parallaxDisplacement, CGRectGetWidth(self.headerView.frame), CGRectGetHeight(self.headerView.frame));
+    // Should we do parallax?
+    if (self.parallaxEffectCoefficient > 0.0f) {
+        // Determine how much parallax we should apply.
+        CGFloat parallaxDisplacement = MAX((height - self.headerViewHeight), MIN(CGRectGetHeight(self.headerView.superview.frame), self.parallaxEffectCoefficient * (self.scrollView.contentOffset.y + self.scrollView.contentInset.top)));
+        parallaxDisplacement = ceil(parallaxDisplacement);
+        // Apply the parallax effect :)
+        self.headerView.frame = CGRectMake(CGRectGetMinX(self.headerView.frame), parallaxDisplacement, CGRectGetWidth(self.headerView.frame), CGRectGetHeight(self.headerView.frame));
 	}
 }
 
 - (void)setupSystemNavigationBar
 {
-	// Get rid of the system navigation bar background color.
-	[self.delegate.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-	self.delegate.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
-	self.delegate.navigationController.navigationBar.translucent = YES;
-	self.delegate.navigationController.navigationBar.opaque = NO;
+    // Get rid of the system navigation bar background color.
+    [self.delegate.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    self.delegate.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+    self.delegate.navigationController.navigationBar.translucent = YES;
+    self.delegate.navigationController.navigationBar.opaque = NO;
 
-	if (self.delegate.title.length > 0) {
-		self.viewTitle = self.delegate.title;
-		self.delegate.title = @"";
-		self.titleHidden = YES;
+    if (self.delegate.title.length > 0) {
+        self.viewTitle = self.delegate.title;
+        self.delegate.title = @"";
+        self.titleHidden = YES;
 	}
 }
 
 - (CGFloat)calculateNavigationBarAlpha
 {
-	if (self.mode == MLUIHeaderModeAlwaysCollapsed) {
-		return 1.0f;
+    if (self.mode == MLUIHeaderModeAlwaysCollapsed) {
+        return 1.0f;
 	}
-	CGFloat navigationBarHeight = self.navigationBarHeight + self.statusbarHeight;
+    CGFloat navigationBarHeight = self.navigationBarHeight + self.statusbarHeight;
 
-	// Determine how much alpha we should apply to our navigation bar.
-	CGFloat headerVisibleProportion = MAX(0.0f, MIN(1.0f, (self.scrollView.contentOffset.y + self.scrollView.contentInset.top) / (self.headerViewHeight - navigationBarHeight)));
-	return MAX(0.0f, MIN(1.0f, (headerVisibleProportion - self.minNavigationBarVisibilityThreshold) / (self.maxNavigationBarVisibilityThreshold - self.minNavigationBarVisibilityThreshold)));
+    // Determine how much alpha we should apply to our navigation bar.
+    CGFloat headerVisibleProportion = MAX(0.0f, MIN(1.0f, (self.scrollView.contentOffset.y + self.scrollView.contentInset.top) / (self.headerViewHeight - navigationBarHeight)));
+    return MAX(0.0f, MIN(1.0f, (headerVisibleProportion - self.minNavigationBarVisibilityThreshold) / (self.maxNavigationBarVisibilityThreshold - self.minNavigationBarVisibilityThreshold)));
 }
 
 - (void)updateNavigationBar
 {
-	[self setupSystemNavigationBar];
+    [self setupSystemNavigationBar];
 
-	CGFloat alpha = [self calculateNavigationBarAlpha];
-	UIColor *colorWithAlpha = [self.navigationBarBackgroundcolor colorWithAlphaComponent:alpha];
+    CGFloat alpha = [self calculateNavigationBarAlpha];
+    UIColor *colorWithAlpha = [self.navigationBarBackgroundcolor colorWithAlphaComponent:alpha];
 
-	self.statusBarView.backgroundColor = colorWithAlpha;
+    self.statusBarView.backgroundColor = colorWithAlpha;
 
-	// Animate the appearance of our navigation bar title.
-	bool showTitle = alpha == 1.f;
-	if (showTitle && self.titleHidden) {
-		self.titleHidden = NO;
-		self.delegate.title = self.viewTitle;
+    // Animate the appearance of our navigation bar title.
+    bool showTitle = alpha == 1.f;
+    if (showTitle && self.titleHidden) {
+        self.titleHidden = NO;
+        self.delegate.title = self.viewTitle;
 	} else if (!showTitle && !self.titleHidden) {
-		self.delegate.title = @"";
-		self.titleHidden = YES;
+        self.delegate.title = @"";
+        self.titleHidden = YES;
 	}
 
-	if (self.titleHidden) {
-		self.delegate.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
-		self.delegate.navigationController.navigationBar.layer.shadowOpacity = 0;
+    if (self.titleHidden) {
+        self.delegate.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+        self.delegate.navigationController.navigationBar.layer.shadowOpacity = 0;
 	} else if (self.hasShadow) {
-		UIImage *shadowImage = [[UIImage alloc] init];
+        UIImage *shadowImage = [[UIImage alloc] init];
 
-		self.delegate.navigationController.navigationBar.shadowImage = shadowImage;
+        self.delegate.navigationController.navigationBar.shadowImage = shadowImage;
 
-		CGSize size = CGSizeMake(1, 1);
-		UIGraphicsBeginImageContextWithOptions(size, YES, 0);
-		[[[MLStyleSheetManager styleSheet] whiteColor] setFill];
-		UIRectFill(CGRectMake(0, 0, 1, 1));
-		UIImage *shadowedImage = UIGraphicsGetImageFromCurrentImageContext();
-		UIGraphicsEndImageContext();
+        CGSize size = CGSizeMake(1, 1);
+        UIGraphicsBeginImageContextWithOptions(size, YES, 0);
+        [[[MLStyleSheetManager styleSheet] whiteColor] setFill];
+        UIRectFill(CGRectMake(0, 0, 1, 1));
+        UIImage *shadowedImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
 
-		[self.delegate.navigationController.navigationBar setBackgroundImage:shadowedImage forBarMetrics:UIBarMetricsDefault];
-		self.delegate.navigationController.navigationBar.layer.shadowColor = [UIColor ml_meli_mid_grey].CGColor;
-		self.delegate.navigationController.navigationBar.layer.shadowOffset = CGSizeMake(0, 4);
-		self.delegate.navigationController.navigationBar.layer.shadowOpacity = 0.8;
-		self.delegate.navigationController.navigationBar.layer.shadowRadius = 2;
+        [self.delegate.navigationController.navigationBar setBackgroundImage:shadowedImage forBarMetrics:UIBarMetricsDefault];
+        self.delegate.navigationController.navigationBar.layer.shadowColor = [UIColor ml_meli_mid_grey].CGColor;
+        self.delegate.navigationController.navigationBar.layer.shadowOffset = CGSizeMake(0, 4);
+        self.delegate.navigationController.navigationBar.layer.shadowOpacity = 0.8;
+        self.delegate.navigationController.navigationBar.layer.shadowRadius = 2;
 	}
 }
 
 - (void)setNavigationBarBackgroundcolor:(UIColor *)navigationBarBackgroundcolor
 {
-	_navigationBarBackgroundcolor = navigationBarBackgroundcolor;
-	_navBarColorChanged = YES;
+    _navigationBarBackgroundcolor = navigationBarBackgroundcolor;
+    _navBarColorChanged = YES;
 
-	UIColor *oldColor = self.delegate.navigationController.navigationBar.backgroundColor;
-	CGFloat alpha = CGColorGetAlpha([oldColor CGColor]);
+    UIColor *oldColor = self.delegate.navigationController.navigationBar.backgroundColor;
+    CGFloat alpha = CGColorGetAlpha([oldColor CGColor]);
 
-	self.delegate.navigationController.navigationBar.backgroundColor = [_navigationBarBackgroundcolor colorWithAlphaComponent:alpha];
-	self.statusBarView.backgroundColor = [_navigationBarBackgroundcolor colorWithAlphaComponent:alpha];
+    self.delegate.navigationController.navigationBar.backgroundColor = [_navigationBarBackgroundcolor colorWithAlphaComponent:alpha];
+    self.statusBarView.backgroundColor = [_navigationBarBackgroundcolor colorWithAlphaComponent:alpha];
 }
 
 - (void)setMode:(MLUIHeaderMode)mode
 {
-	// If no header is provided, we force the always collapsed mode.
-	if (self.headerViewHeight == 0.0f || self.headerView == nil) {
-		_mode = MLUIHeaderModeAlwaysCollapsed;
+    // If no header is provided, we force the always collapsed mode.
+    if (self.headerViewHeight == 0.0f || self.headerView == nil) {
+        _mode = MLUIHeaderModeAlwaysCollapsed;
 	}
 
-	// Update the field.
-	_mode = mode;
+    // Update the field.
+    _mode = mode;
 
-	// Update the content inset and the header view once again, as we are changing
-	// the mode.
-	[self updateContentInset];
-	[self updateHeaderView];
+    // Update the content inset and the header view once again, as we are changing
+    // the mode.
+    [self updateContentInset];
+    [self updateHeaderView];
 
-	if (mode == MLUIHeaderModeDefault) {
-		[self updateHeaderPosition];
+    if (mode == MLUIHeaderModeDefault) {
+        [self updateHeaderPosition];
 	}
 
-	[self updateNavigationBar];
+    [self updateNavigationBar];
 }
 
 - (void)removeContentOffsetObserver
 {
-	if (self.isObserving) {
-		[self.scrollView removeObserver:self forKeyPath:kMLHeaderControllerContentOffsetKey];
-		[self.parentViewController removeObserver:self forKeyPath:kMLHeaderControllerTitleKey];
-		[self.headerView removeObserver:self forKeyPath:kMLHeaderControllerHeaderBoundsKey];
-		self.isObserving = NO;
+    if (self.isObserving) {
+        [self.scrollView removeObserver:self forKeyPath:kMLHeaderControllerContentOffsetKey];
+        [self.parentViewController removeObserver:self forKeyPath:kMLHeaderControllerTitleKey];
+        [self.headerView removeObserver:self forKeyPath:kMLHeaderControllerHeaderBoundsKey];
+        self.isObserving = NO;
 	}
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-	[super viewWillDisappear:animated];
-	[self removeContentOffsetObserver];
+    [super viewWillDisappear:animated];
+    [self removeContentOffsetObserver];
 }
 
 - (void)dealloc
 {
-	// we make sure to remove the observer in case viewWillDisappear isn't called before dealloc
-	[self removeContentOffsetObserver];
+    // we make sure to remove the observer in case viewWillDisappear isn't called before dealloc
+    [self removeContentOffsetObserver];
 }
 
 @end

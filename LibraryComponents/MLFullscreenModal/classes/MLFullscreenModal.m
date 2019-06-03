@@ -58,8 +58,8 @@ static int const kTransitionDuration = 0.4f;
 	self.simpleHeaderView.scrollEnabled = [UIScreen mainScreen].bounds.size.height < self.innerViewController.view.bounds.size.height;
 
 	UIImage *closeImg = [UIImage imageNamed:@"MLFullscreenModalClose"
-		                           inBundle:[MLUIBundle mluiBundle]
-		      compatibleWithTraitCollection:nil];
+	                               inBundle:[MLUIBundle mluiBundle]
+	          compatibleWithTraitCollection:nil];
 
 	UIButton *buttonWithCustomImage = [UIButton buttonWithType:UIButtonTypeCustom];
 	buttonWithCustomImage.bounds = CGRectMake(0, 0, closeImg.size.width, closeImg.size.height);

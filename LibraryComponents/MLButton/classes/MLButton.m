@@ -122,16 +122,16 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 
 - (void)setupIconView
 {
-	[self.contentView addSubview:self.iconView];
+    [self.contentView addSubview:self.iconView];
 
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[icon(size)]-p-[label]" options:0 metrics:@{@"p" : @(kMLButtonIconLeftPadding), @"size" : @(kMLButtonIconSize)} views:@{@"label" : self.label, @"icon" : self.iconView}]];
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[icon(size)]" options:0 metrics:@{@"size" : @(kMLButtonIconSize)} views:@{@"icon" : self.iconView}]];
-	[self.contentView.centerYAnchor constraintEqualToAnchor:self.iconView.centerYAnchor].active = YES;
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[icon(size)]-p-[label]" options:0 metrics:@{@"p" : @(kMLButtonIconLeftPadding), @"size" : @(kMLButtonIconSize)} views:@{@"label" : self.label, @"icon" : self.iconView}]];
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[icon(size)]" options:0 metrics:@{@"size" : @(kMLButtonIconSize)} views:@{@"icon" : self.iconView}]];
+    [self.contentView.centerYAnchor constraintEqualToAnchor:self.iconView.centerYAnchor].active = YES;
 }
 
 - (void)setupStatesConfig
 {
-	switch (self.style) {
+    switch (self.style) {
 		case MLButtonStylePrimaryAction: {
 			self.config = [MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction];
 			break;
@@ -153,171 +153,171 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 		}
 	}
 
-	[self updateLookAndFeel];
+    [self updateLookAndFeel];
 }
 
 - (void)updateLookAndFeel
 {
-	self.label.font = [UIFont ml_regularSystemFontOfSize:kMLFontsSizeMedium];
-	UIColor *contentColor = self.isEnabled ? (self.isHighlighted ? self.config.highlightedState.contentColor : self.config.defaultState.contentColor) : self.config.disableState.contentColor;
-	self.label.textColor = contentColor;
-	self.backgroundLayer.backgroundColor = self.isEnabled ? (self.isHighlighted ? self.config.highlightedState.backgroundColor.CGColor : self.config.defaultState.backgroundColor.CGColor) : self.config.disableState.backgroundColor.CGColor;
-	self.backgroundLayer.borderColor = self.isEnabled ? (self.isHighlighted ? self.config.highlightedState.borderColor.CGColor : self.config.defaultState.borderColor.CGColor) : self.config.disableState.borderColor.CGColor;
-	self.backgroundLayer.cornerRadius = kMLButtonCornerRadius;
-	[self updateButtonIcon:[self.iconImage ml_tintedImageWithColor:contentColor]];
+    self.label.font = [UIFont ml_regularSystemFontOfSize:kMLFontsSizeMedium];
+    UIColor *contentColor = self.isEnabled ? (self.isHighlighted ? self.config.highlightedState.contentColor : self.config.defaultState.contentColor) : self.config.disableState.contentColor;
+    self.label.textColor = contentColor;
+    self.backgroundLayer.backgroundColor = self.isEnabled ? (self.isHighlighted ? self.config.highlightedState.backgroundColor.CGColor : self.config.defaultState.backgroundColor.CGColor) : self.config.disableState.backgroundColor.CGColor;
+    self.backgroundLayer.borderColor = self.isEnabled ? (self.isHighlighted ? self.config.highlightedState.borderColor.CGColor : self.config.defaultState.borderColor.CGColor) : self.config.disableState.borderColor.CGColor;
+    self.backgroundLayer.cornerRadius = kMLButtonCornerRadius;
+    [self updateButtonIcon:[self.iconImage ml_tintedImageWithColor:contentColor]];
 }
 
 - (void)updateButtonIcon:(UIImage *_Nullable)image
 {
-	if (image && self.iconView.superview == nil) {
-		[self setupIconView];
+    if (image && self.iconView.superview == nil) {
+        [self setupIconView];
 	}
-	image ? self.iconView.image = image : [self.iconView removeFromSuperview];
+    image ? self.iconView.image = image : [self.iconView removeFromSuperview];
 }
 
 - (void)updateStatesConfig:(MLButtonConfig *)buttonStates
 {
-	self.config = buttonStates;
+    self.config = buttonStates;
 }
 
 - (void)setupLoadingStyle
 {
-	self.contentView.hidden = YES;
-	self.spinner.translatesAutoresizingMaskIntoConstraints = NO;
-	[self addSubview:self.spinner];
-	[self addConstraint:[NSLayoutConstraint constraintWithItem:self.spinner attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
-	[self addConstraint:[NSLayoutConstraint constraintWithItem:self.spinner attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
+    self.contentView.hidden = YES;
+    self.spinner.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addSubview:self.spinner];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.spinner attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.spinner attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
 
-	self.backgroundLayer.backgroundColor = self.config.loadingState.backgroundColor.CGColor;
-	self.backgroundLayer.borderColor = self.config.loadingState.borderColor.CGColor;
+    self.backgroundLayer.backgroundColor = self.config.loadingState.backgroundColor.CGColor;
+    self.backgroundLayer.borderColor = self.config.loadingState.borderColor.CGColor;
 
-	[self.spinner showSpinner];
+    [self.spinner showSpinner];
 }
 
 - (void)showLoadingStyle
 {
-	if (self.config.loadingState) {
-		self.enabled = NO;
-		self.isLoading = YES;
-		[self setupLoadingStyle];
+    if (self.config.loadingState) {
+        self.enabled = NO;
+        self.isLoading = YES;
+        [self setupLoadingStyle];
 	}
 }
 
 - (void)hideLoadingStyle
 {
-	self.enabled = YES;
-	self.contentView.hidden = NO;
-	self.isLoading = NO;
-	[self.spinner hideSpinner];
-	[self updateLookAndFeel];
+    self.enabled = YES;
+    self.contentView.hidden = NO;
+    self.isLoading = NO;
+    [self.spinner hideSpinner];
+    [self updateLookAndFeel];
 }
 
 #pragma mark setters and getters
 
 - (void)setStyle:(MLButtonStyle)style
 {
-	_style = style;
-	[self setupStatesConfig];
+    _style = style;
+    [self setupStatesConfig];
 }
 
 - (void)setEnabled:(BOOL)enabled
 {
-	if (!self.isLoading) {
-		[super setEnabled:enabled];
-		[self updateLookAndFeel];
+    if (!self.isLoading) {
+        [super setEnabled:enabled];
+        [self updateLookAndFeel];
 	}
 }
 
 - (void)setHighlighted:(BOOL)highlighted
 {
-	[super setHighlighted:highlighted];
-	[self updateLookAndFeel];
+    [super setHighlighted:highlighted];
+    [self updateLookAndFeel];
 }
 
 - (NSString *)buttonTitle
 {
-	return [self.label.attributedText string];
+    return [self.label.attributedText string];
 }
 
 - (void)setButtonIcon:(UIImage *)buttonIcon
 {
-	self.iconImage = buttonIcon;
-	[self updateLookAndFeel];
+    self.iconImage = buttonIcon;
+    [self updateLookAndFeel];
 }
 
 - (UIImage *_Nullable)buttonIcon
 {
-	return self.iconView.image;
+    return self.iconView.image;
 }
 
 - (void)setButtonTitle:(NSString *)buttonTitle
 {
-	NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-	paragraphStyle.lineSpacing = kMLButtonLineSpacing;
-	paragraphStyle.alignment = NSTextAlignmentCenter;
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineSpacing = kMLButtonLineSpacing;
+    paragraphStyle.alignment = NSTextAlignmentCenter;
 
-	NSString *title = buttonTitle ? : @"";
-	NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:title];
-	[attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, title.length)];
+    NSString *title = buttonTitle ? : @"";
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:title];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, title.length)];
 
-	self.label.attributedText = attributedString;
+    self.label.attributedText = attributedString;
 }
 
 - (void)setConfig:(MLButtonConfig *)config
 {
-	_config = config;
-	[self updateLookAndFeel];
+    _config = config;
+    [self updateLookAndFeel];
 }
 
 #pragma mark lazy initializations
 
 - (MLSpinner *)spinner
 {
-	if (!_spinner) {
-		_spinner = [[MLSpinner alloc] initWithConfig:self.spinnerConfig text:nil];
+    if (!_spinner) {
+        _spinner = [[MLSpinner alloc] initWithConfig:self.spinnerConfig text:nil];
 	}
-	return _spinner;
+    return _spinner;
 }
 
 - (MLSpinnerConfig *)spinnerConfig
 {
-	if (!_spinnerConfig) {
-		_spinnerConfig = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeSmall primaryColor:[UIColor whiteColor] secondaryColor:[UIColor whiteColor]];
+    if (!_spinnerConfig) {
+        _spinnerConfig = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeSmall primaryColor:[UIColor whiteColor] secondaryColor:[UIColor whiteColor]];
 	}
-	return _spinnerConfig;
+    return _spinnerConfig;
 }
 
 - (UIView *)contentView
 {
-	if (!_contentView) {
-		_contentView = [[UIView alloc] init];
-		_contentView.translatesAutoresizingMaskIntoConstraints = NO;
-		_contentView.userInteractionEnabled = NO;
-		_contentView.clipsToBounds = NO;
-		_contentView.backgroundColor = UIColor.clearColor;
+    if (!_contentView) {
+        _contentView = [[UIView alloc] init];
+        _contentView.translatesAutoresizingMaskIntoConstraints = NO;
+        _contentView.userInteractionEnabled = NO;
+        _contentView.clipsToBounds = NO;
+        _contentView.backgroundColor = UIColor.clearColor;
 	}
 
-	return _contentView;
+    return _contentView;
 }
 
 - (UILabel *)label
 {
-	if (!_label) {
-		_label = [[UILabel alloc] initWithFrame:CGRectZero];
-		_label.translatesAutoresizingMaskIntoConstraints = NO;
-		_label.numberOfLines = 0;
+    if (!_label) {
+        _label = [[UILabel alloc] initWithFrame:CGRectZero];
+        _label.translatesAutoresizingMaskIntoConstraints = NO;
+        _label.numberOfLines = 0;
 	}
 
-	return _label;
+    return _label;
 }
 
 - (UIImageView *)iconView
 {
-	if (!_iconView) {
-		_iconView = [[UIImageView alloc] init];
-		_iconView.translatesAutoresizingMaskIntoConstraints = NO;
+    if (!_iconView) {
+        _iconView = [[UIImageView alloc] init];
+        _iconView.translatesAutoresizingMaskIntoConstraints = NO;
 	}
-	return _iconView;
+    return _iconView;
 }
 
 @end

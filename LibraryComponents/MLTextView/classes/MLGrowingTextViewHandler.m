@@ -95,9 +95,9 @@ static NSInteger kMaximumNumberOfLines = INT_MAX;
 {
 	CGFloat width = self.textView.bounds.size.width - 2.0 * self.textView.textContainer.lineFragmentPadding;
 	CGRect boundingRect = [self.textView.text boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX)
-		                                                   options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-		                                                attributes:@{NSFontAttributeName : self.textView.font}
-		                                                   context:nil];
+	                                                       options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+	                                                    attributes:@{NSFontAttributeName : self.textView.font}
+	                                                       context:nil];
 	CGFloat heightByBoundingRect = CGRectGetHeight(boundingRect) + self.textView.font.lineHeight;
 	return MAX(heightByBoundingRect, self.textView.contentSize.height);
 }
