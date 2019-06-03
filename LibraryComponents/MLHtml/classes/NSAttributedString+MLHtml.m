@@ -23,14 +23,14 @@
 }
 
 + (NSAttributedString *)ml_attributedStringWithHtml:(NSString *)htmlText
-                                 attributesProvider:(id <MLHtmlAttributeProvider> )attributesProvider
+                                 attributesProvider:(id <MLHtmlAttributeProvider>)attributesProvider
                                               error:(NSError *__autoreleasing *)error
 {
 	return [MLHtml attributedStringWithHtml:htmlText attributesProvider:attributesProvider error:error];
 }
 
 + (NSAttributedString *)ml_attributedStringWithHtml:(NSString *)htmlText
-                                 attributesProvider:(id <MLHtmlAttributeProvider> )attributesProvider
+                                 attributesProvider:(id <MLHtmlAttributeProvider>)attributesProvider
                                          attributes:(nullable NSDictionary <NSAttributedStringKey, id> *)attrs
                                               error:(NSError *__autoreleasing *)error
 {

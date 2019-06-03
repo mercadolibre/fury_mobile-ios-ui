@@ -127,7 +127,7 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 + (instancetype)showWithTitle:(NSString *)title actionTitle:(NSString *)buttonTitle actionBlock:(void (^)(void))actionBlock type:(MLSnackbarType *)type duration:(MLSnackbarDuration)duration dismissGestureEnabled:(BOOL)dismissGestureEnabled dismissBlock:(MLSnackbarDismissBlock)dismissBlock viewController:(UIViewController *)viewController
 {
 	MLSnackbar *snackbar = [MLSnackbar sharedInstance];
-	__weak typeof(snackbar)weakSnackbar = snackbar;
+	__weak typeof(snackbar) weakSnackbar = snackbar;
 
 	if (snackbar.isDesappearing) {
 		snackbar.pendingAction = ^{[weakSnackbar setUpSnackbarWithTitle:title actionTitle:buttonTitle actionBlock:actionBlock type:type duration:duration dismissGestureEnabled:dismissGestureEnabled dismissBlock:dismissBlock viewController:viewController];
@@ -213,8 +213,8 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 {
 	if (self = [super init]) {
 		self.snackbarView = [[MLUIBundle mluiBundle] loadNibNamed:NSStringFromClass([MLSnackbar class])
-			                                                owner:self
-			                                              options:nil].firstObject;
+		                                                    owner:self
+		                                                  options:nil].firstObject;
 
 		self.snackbarView.translatesAutoresizingMaskIntoConstraints = NO;
 		self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -284,7 +284,7 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 - (void)show
 {
 	// weakSelf
-	__weak typeof(self)weakSelf = self;
+	__weak typeof(self) weakSelf = self;
 
 	// if other snackbar is animating, we need to disappear it before showing new one
 	if (self.isAnimating) {
@@ -383,7 +383,7 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 		[interactionController updateInteractiveTransition:percent];
 	} else if (gesture.state == UIGestureRecognizerStateEnded) {
 		if (fabs(percent) > 0.2) {
-			__weak typeof(self)weakSelf = self;
+			__weak typeof(self) weakSelf = self;
 
 			[UIView animateWithDuration:kMLSnackbarAnimationDuration animations: ^{
 			    CGFloat mainScreenWidth = CGRectGetWidth([UIScreen mainScreen].bounds) * (swipingRight ? 1 : -1);
@@ -404,7 +404,7 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 				}
 			}];
 		} else {
-			__weak typeof(self)weakSelf = self;
+			__weak typeof(self) weakSelf = self;
 
 			[UIView animateWithDuration:kMLSnackbarAnimationDuration animations: ^{
 			    weakSelf.snackbarViewLeftConstraint.constant = 0;
@@ -423,7 +423,7 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 
 - (void)removeSnackbarWithAnimation:(MLSnackbarDismissCause)cause
 {
-	__weak typeof(self)weakSelf = self;
+	__weak typeof(self) weakSelf = self;
 
 	MLSnackbarDismissBlock dismissBlock = [self.dismissBlock copy];
 	void (^actionBlock)(void) = [self.actionBlock copy];

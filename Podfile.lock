@@ -32,6 +32,10 @@ PODS:
     - MLUI/MLFonts
   - MLUI/Helpers (5.8.0)
   - MLUI/MLButton (5.8.0):
+<<<<<<< HEAD
+=======
+    - MLUI/Core
+>>>>>>> 08b334489ce8761bbe7d73846743cda847771a5b
     - MLUI/MLColorPalette
     - MLUI/MLFonts
     - MLUI/MLSpinner
@@ -126,7 +130,11 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
+<<<<<<< HEAD
   MLUI: 36d6e93550af00ce599e73dbe7fa267dc1ab6c0b
+=======
+  MLUI: 531d1138aa541188882673f7cebb3caeff080447
+>>>>>>> 08b334489ce8761bbe7d73846743cda847771a5b
   OCMock: 2cd0716969bab32a2283ff3a46fd26a8c8b4c5e3
 
 PODFILE CHECKSUM: d65eb06a9c9e82b3edb1b830bfe1ccd9a3ad44f5

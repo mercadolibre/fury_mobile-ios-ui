@@ -42,7 +42,7 @@ static const CGFloat kMLFullscreenModalHeaderTitleLabelTopConstraintWithoutScrol
 
 - (void)setTitle:(NSString *)title
 {
-	__weak typeof(self)weakSelf = self;
+	__weak typeof(self) weakSelf = self;
 
 	[UIView transitionWithView:self.titleLabel duration:kMLFullscreenModalHeaderViewAnimationDuration options:UIViewAnimationOptionTransitionCrossDissolve animations: ^{
 	    weakSelf.titleLabel.text = title;

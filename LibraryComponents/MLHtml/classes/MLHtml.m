@@ -255,14 +255,14 @@ static const CGFloat kBigSmallFontIncrement = 3;
 }
 
 + (NSAttributedString *)attributedStringWithHtml:(NSString *)htmlText
-                              attributesProvider:(id <MLHtmlAttributeProvider> )attributesProvider
+                              attributesProvider:(id <MLHtmlAttributeProvider>)attributesProvider
                                            error:(NSError *__autoreleasing *)error
 {
 	return [self attributedStringWithHtml:htmlText attributes:nil attributesProvider:attributesProvider error:error];
 }
 
 + (NSAttributedString *)attributedStringWithHtml:(NSString *)htmlText
-                              attributesProvider:(id <MLHtmlAttributeProvider> )attributesProvider
+                              attributesProvider:(id <MLHtmlAttributeProvider>)attributesProvider
                                       attributes:(nullable NSDictionary <NSAttributedStringKey, id> *)attrs
                                            error:(NSError *__autoreleasing *)error
 {
@@ -281,7 +281,7 @@ static const CGFloat kBigSmallFontIncrement = 3;
  */
 + (NSAttributedString *)attributedStringWithHtml:(NSString *)htmlText
                                       attributes:(nullable NSDictionary <NSAttributedStringKey, id> *)attrs
-                              attributesProvider:(id <MLHtmlAttributeProvider> )attributesProvider
+                              attributesProvider:(id <MLHtmlAttributeProvider>)attributesProvider
                                            error:(NSError *__autoreleasing *)error
 {
 	if (!htmlText) {
@@ -316,8 +316,8 @@ static const CGFloat kBigSmallFontIncrement = 3;
 
 	// add default attributes to attributes stack
 	NSDictionary *defaultAttributes = @{
-		NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
-		NSForegroundColorAttributeName : kDefaultColor
+	        NSFontAttributeName : [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXXSmall],
+	        NSForegroundColorAttributeName : kDefaultColor
 	};
 
 	NSMutableDictionary *firstAttributes = [defaultAttributes mutableCopy];
@@ -362,80 +362,80 @@ static const CGFloat kBigSmallFontIncrement = 3;
 			if (tagStack.count > 0 && [self needCloseTag:tagStack.lastObject]) {
 				if (error != nil) {
 					*error = [NSError errorWithDomain:kMLHtmlErrorDomain
-						                         code:kMLHtmlSyntaxErrorCode
-						                     userInfo:@{
-						          NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Open tag not found: %@", tagStack.lastObject]
-							  }];
+					                             code:kMLHtmlSyntaxErrorCode
+					                         userInfo:@{
+					              NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Open tag not found: %@", tagStack.lastObject]
+					}];
 				}
 				return nil;
 			}
 		} else {
-			// if exists a text before the next open/close tag, then it uses the last attributes
-			if (nearestResult.range.location > currentFrom) {
-				NSRange subrange = NSMakeRange(currentFrom, nearestResult.range.location - currentFrom);
-				NSString *subString = [htmlText substringWithRange:subrange];
-				NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:subString attributes:[attributesStack lastObject]];
-				[composedAttrString appendAttributedString:attrString];
+		    // if exists a text before the next open/close tag, then it uses the last attributes
+		    if (nearestResult.range.location > currentFrom) {
+		        NSRange subrange = NSMakeRange(currentFrom, nearestResult.range.location - currentFrom);
+		        NSString *subString = [htmlText substringWithRange:subrange];
+		        NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:subString attributes:[attributesStack lastObject]];
+		        [composedAttrString appendAttributedString:attrString];
 			}
 
-			BOOL isOpenTag = nearestResult == firstClosedTagResult || nearestResult == firstOpenResult;
+		    BOOL isOpenTag = nearestResult == firstClosedTagResult || nearestResult == firstOpenResult;
 
-			if (isOpenTag) {
-				// overrides attributes based on the html tag, for example, the tag <b> makes a font be bold
-				NSRange tagRange = [firstOpenResult rangeAtIndex:1];
-				NSString *tag = [htmlText substringWithRange:tagRange];
+		    if (isOpenTag) {
+		        // overrides attributes based on the html tag, for example, the tag <b> makes a font be bold
+		        NSRange tagRange = [firstOpenResult rangeAtIndex:1];
+		        NSString *tag = [htmlText substringWithRange:tagRange];
 
-				// if the next tag is an open tag, then push new attributes based on the last attributes of the stack
-				// overrided with the details of the html tag
-				NSMutableDictionary *currentAttributes = [[attributesStack lastObject] mutableCopy];
-				[self overrideAttributesWithTag:tag dictionary:currentAttributes];
+		        // if the next tag is an open tag, then push new attributes based on the last attributes of the stack
+		        // overrided with the details of the html tag
+		        NSMutableDictionary *currentAttributes = [[attributesStack lastObject] mutableCopy];
+		        [self overrideAttributesWithTag:tag dictionary:currentAttributes];
 
-				// overrides attributes based on the html tag attributes, at this moment only 'color' is supported with hexa values
-				// only open tags are supported for colors
-				if (nearestResult == firstOpenResult) {
-					NSRange colorRange = [firstOpenResult rangeAtIndex:2];
-					if (colorRange.location != NSNotFound) {
-						NSString *color = [htmlText substringWithRange:colorRange];
-						[self overrideAttributesWithColor:color dictionary:currentAttributes];
+		        // overrides attributes based on the html tag attributes, at this moment only 'color' is supported with hexa values
+		        // only open tags are supported for colors
+		        if (nearestResult == firstOpenResult) {
+		            NSRange colorRange = [firstOpenResult rangeAtIndex:2];
+		            if (colorRange.location != NSNotFound) {
+		                NSString *color = [htmlText substringWithRange:colorRange];
+		                [self overrideAttributesWithColor:color dictionary:currentAttributes];
 					}
 				}
 
-				// If exist an attributesProvider, use it to process current attributes
-				if ([attributesProvider respondsToSelector:@selector(processAttributesForTag:attributes:)]) {
-					[attributesProvider processAttributesForTag:tag attributes:currentAttributes];
+		        // If exist an attributesProvider, use it to process current attributes
+		        if ([attributesProvider respondsToSelector:@selector(processAttributesForTag:attributes:)]) {
+		            [attributesProvider processAttributesForTag:tag attributes:currentAttributes];
 				}
 
-				// update if necesary
-				[self updateAttributedString:composedAttrString withTag:tag attributes:currentAttributes];
+		        // update if necesary
+		        [self updateAttributedString:composedAttrString withTag:tag attributes:currentAttributes];
 
-				// add to stack the current tag and the attributes
-				if ([self needCloseTag:tag]) {
-					[tagStack addObject:tag];
-					[attributesStack addObject:currentAttributes];
+		        // add to stack the current tag and the attributes
+		        if ([self needCloseTag:tag]) {
+		            [tagStack addObject:tag];
+		            [attributesStack addObject:currentAttributes];
 				}
 			} else {
-				NSRange tagRange = [firstEndTagResult rangeAtIndex:1];
-				NSString *tag = [htmlText substringWithRange:tagRange];
+		        NSRange tagRange = [firstEndTagResult rangeAtIndex:1];
+		        NSString *tag = [htmlText substringWithRange:tagRange];
 
-				// check if html is well formed
-				if (tagStack.count  == 0 || ![tagStack.lastObject isEqualToString:tag]) {
-					if (error != nil) {
-						*error = [NSError errorWithDomain:kMLHtmlErrorDomain
-							                         code:kMLHtmlSyntaxErrorCode
-							                     userInfo:@{
-							          NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Open tag not found: %@", tagStack.lastObject]
-								  }];
+		        // check if html is well formed
+		        if (tagStack.count  == 0 || ![tagStack.lastObject isEqualToString:tag]) {
+		            if (error != nil) {
+		                *error = [NSError errorWithDomain:kMLHtmlErrorDomain
+		                                             code:kMLHtmlSyntaxErrorCode
+		                                         userInfo:@{
+		                              NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Open tag not found: %@", tagStack.lastObject]
+						}];
 					}
-					return nil;
+		            return nil;
 				}
 
-				// pop from stack last attributes and tag
-				[attributesStack removeLastObject];
-				[tagStack removeLastObject];
+		        // pop from stack last attributes and tag
+		        [attributesStack removeLastObject];
+		        [tagStack removeLastObject];
 			}
 
-			// processes the next content
-			currentFrom = nearestResult.range.location + nearestResult.range.length;
+		    // processes the next content
+		    currentFrom = nearestResult.range.location + nearestResult.range.length;
 		}
 	} while (currentFrom <= to);
 

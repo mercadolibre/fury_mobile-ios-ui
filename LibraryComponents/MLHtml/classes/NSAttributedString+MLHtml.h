@@ -44,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return NSAttributedString with html
  */
 + (NSAttributedString *)ml_attributedStringWithHtml:(NSString *)htmlText
-                                 attributesProvider:(id <MLHtmlAttributeProvider> )attributesProvider
+                                 attributesProvider:(id <MLHtmlAttributeProvider>)attributesProvider
                                               error:(NSError *__autoreleasing *)error;
 
 /**
@@ -60,7 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return NSAttributedString with html
  */
 + (NSAttributedString *)ml_attributedStringWithHtml:(NSString *)htmlText
-                                 attributesProvider:(id <MLHtmlAttributeProvider> )attributesProvider
+                                 attributesProvider:(id <MLHtmlAttributeProvider>)attributesProvider
                                          attributes:(nullable NSDictionary <NSAttributedStringKey, id> *)attrs
                                               error:(NSError *__autoreleasing *)error;
 
