@@ -1,6 +1,6 @@
 # v5.9.0
 ### Agregado
-- Se agrega ícono a MLButton según el guideline de AndesUI
+- Se agrega ícono a MLButton según el guideline de AndesUI 
 
 # v5.8.0
 ### Agregado
