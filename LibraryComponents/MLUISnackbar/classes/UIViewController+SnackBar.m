@@ -50,7 +50,7 @@
 	[self.view addConstraints:constraintsArray];
 
 	if (animated) {
-		__weak typeof(self) weakSelf = self;
+		__weak typeof(self)weakSelf = self;
 
 		[UIView animateWithDuration:0.3 delay:0.0 options:0 animations: ^{
 		    snackBarView.alpha = 1;
@@ -66,7 +66,7 @@
 
 - (void)ml_delayedDismissSnackBarIfNeeded:(UIView <MLUISnackBarProtocol> *)snackBarView animated:(BOOL)animated
 {
-	__weak typeof(self) weakSelf = self;
+	__weak typeof(self)weakSelf = self;
 
 	long duration = [snackBarView durationInMilliseconds];
 	if (duration >= 0) {

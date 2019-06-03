@@ -34,7 +34,7 @@
  *  @param enable                   indicates if viewcontroller should be added to a scrollView
  *  @param type                     indicates style of modal
  */
-+ (instancetype)showModalWithViewController:(UIViewController *)innerViewController title:(NSString *)title actionTitle:(NSString *)actionTitle actionBlock:(void (^)(void))actionBlock secondaryActionTitle:(NSString *)secondaryTitle secondaryActionBlock:(void (^)(void))secondaryActionBlock dismissBlock:(void (^)(void))dismissBlock enableScroll:(BOOL)enable type:(MLModalType) type __deprecated_msg("This method is deprecated, use some of the others initializers");
++ (instancetype)showModalWithViewController:(UIViewController *)innerViewController title:(NSString *)title actionTitle:(NSString *)actionTitle actionBlock:(void (^)(void))actionBlock secondaryActionTitle:(NSString *)secondaryTitle secondaryActionBlock:(void (^)(void))secondaryActionBlock dismissBlock:(void (^)(void))dismissBlock enableScroll:(BOOL)enable type:(MLModalType)type __deprecated_msg("This method is deprecated, use some of the others initializers");
 
 /**
  *  Shows a modal with title and two buttons. If actionTitle or actionBlock are nil, the modal wont show the

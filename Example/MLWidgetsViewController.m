@@ -123,11 +123,11 @@
 {
 	UIViewController *errorViewController = [[UIViewController alloc] init];
 	MLGenericErrorView *errorView = [MLGenericErrorView genericErrorViewWithImage:[UIImage imageNamed:@"MLNetworkError"]
-	                                                                        title:@"¡Parece que no hay Internet!"
-	                                                                     subtitle:@"Revisa tu conexión para seguir navegando."
-	                                                                  buttonTitle:@"Reintentar"
-	                                                                  actionBlock: ^{
-	    NSLog(@"For test app, retry button can have a nil action.");
+		                                                                    title:@"¡Parece que no hay Internet!"
+		                                                                 subtitle:@"Revisa tu conexión para seguir navegando."
+		                                                              buttonTitle:@"Reintentar"
+		                                                              actionBlock: ^{
+		NSLog(@"For test app, retry button can have a nil action.");
 	}];
 	errorViewController.view = errorView;
 	[self.navigationController pushViewController:errorViewController animated:YES];

@@ -11,7 +11,7 @@
 
 static id <MLStyleSheetProtocol> _styleSheet;
 
-+ (id <MLStyleSheetProtocol>)styleSheet
++ (id <MLStyleSheetProtocol> )styleSheet
 {
 	static dispatch_once_t onceToken;
 
@@ -23,7 +23,7 @@ static id <MLStyleSheetProtocol> _styleSheet;
 	return _styleSheet;
 }
 
-+ (void)setStyleSheet:(id <MLStyleSheetProtocol>)styleSheet
++ (void)setStyleSheet:(id <MLStyleSheetProtocol> )styleSheet
 {
 	NSAssert(styleSheet, @"The styleSheet must not be nil");
 	_styleSheet = styleSheet;

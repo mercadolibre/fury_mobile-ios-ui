@@ -73,13 +73,13 @@ static const CGFloat kDefaultBorderWidth = 0.f;
 		self.heightConstraint.constant = kDefaultHeigth;
 	} else {
 		self.heightConstraint = [NSLayoutConstraint
-		                         constraintWithItem:self
-		                                  attribute:NSLayoutAttributeHeight
-		                                  relatedBy:NSLayoutRelationEqual
-		                                     toItem:nil
-		                                  attribute:NSLayoutAttributeHeight
-		                                 multiplier:1
-		                                   constant:kDefaultHeigth];
+			                     constraintWithItem:self
+			                              attribute:NSLayoutAttributeHeight
+			                              relatedBy:NSLayoutRelationEqual
+			                                 toItem:nil
+			                              attribute:NSLayoutAttributeHeight
+			                             multiplier:1
+			                               constant:kDefaultHeigth];
 		[self addConstraint:self.heightConstraint];
 	}
 }

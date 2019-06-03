@@ -46,7 +46,7 @@
 {
 	id textField = OCMPartialMock(self.textField);
 	UITextView *textView = (UITextView *)[textField textInputControl];
-	id <UITextViewDelegate> delegate = (id <UITextViewDelegate>)textField;
+	id <UITextViewDelegate> delegate = (id <UITextViewDelegate> )textField;
 
 	[delegate textViewDidChange:textView];
 	[delegate textViewDidBeginEditing:textView];

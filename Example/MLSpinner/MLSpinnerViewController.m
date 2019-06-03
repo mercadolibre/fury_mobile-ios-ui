@@ -54,59 +54,59 @@
 #pragma mark - Setup
 - (void)bigBlueSpinnerWithText:(id)sender
 {
-    [self.spinner hideSpinner];
-    [self.smallSpinner hideSpinner];
-    MLSpinnerConfig *config = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeBig primaryColor:MLStyleSheetManager.styleSheet.primaryColor secondaryColor:MLStyleSheetManager.styleSheet.secondaryColor];
-    [self.spinner setUpSpinnerWithConfig:config];
-    [self.spinner setText:@"Texto de soporte de hasta dos líneas"];
-    [self.spinner showSpinner];
+	[self.spinner hideSpinner];
+	[self.smallSpinner hideSpinner];
+	MLSpinnerConfig *config = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeBig primaryColor:MLStyleSheetManager.styleSheet.primaryColor secondaryColor:MLStyleSheetManager.styleSheet.secondaryColor];
+	[self.spinner setUpSpinnerWithConfig:config];
+	[self.spinner setText:@"Texto de soporte de hasta dos líneas"];
+	[self.spinner showSpinner];
 }
 
 - (void)bigWhiteSpinnerWithText:(id)sender
 {
-    [self.spinner hideSpinner];
-    [self.smallSpinner hideSpinner];
-    MLSpinnerConfig *config = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeBig primaryColor:MLStyleSheetManager.styleSheet.whiteColor secondaryColor:MLStyleSheetManager.styleSheet.secondaryColor];
-    [self.spinner setUpSpinnerWithConfig:config];
-    [self.spinner setText:@"Texto"];
-    [self.spinner showSpinner];
+	[self.spinner hideSpinner];
+	[self.smallSpinner hideSpinner];
+	MLSpinnerConfig *config = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeBig primaryColor:MLStyleSheetManager.styleSheet.whiteColor secondaryColor:MLStyleSheetManager.styleSheet.secondaryColor];
+	[self.spinner setUpSpinnerWithConfig:config];
+	[self.spinner setText:@"Texto"];
+	[self.spinner showSpinner];
 }
 
 - (void)bigWhiteSpinner:(id)sender
 {
-    [self.spinner hideSpinner];
-    [self.smallSpinner hideSpinner];
-    MLSpinnerConfig *config = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeBig primaryColor:MLStyleSheetManager.styleSheet.whiteColor secondaryColor:MLStyleSheetManager.styleSheet.secondaryColor];
-    [self.spinner setUpSpinnerWithConfig:config];
-    [self.spinner setText:nil];
-    [self.spinner showSpinner];
+	[self.spinner hideSpinner];
+	[self.smallSpinner hideSpinner];
+	MLSpinnerConfig *config = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeBig primaryColor:MLStyleSheetManager.styleSheet.whiteColor secondaryColor:MLStyleSheetManager.styleSheet.secondaryColor];
+	[self.spinner setUpSpinnerWithConfig:config];
+	[self.spinner setText:nil];
+	[self.spinner showSpinner];
 }
 
 - (void)bigBlueSpinner:(id)sender
 {
-    [self.smallSpinner hideSpinner];
-    MLSpinnerConfig *config = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeBig primaryColor:MLStyleSheetManager.styleSheet.primaryColor secondaryColor:MLStyleSheetManager.styleSheet.secondaryColor];
-    [self.spinner setUpSpinnerWithConfig:config];
-    [self.spinner setText:nil];
-    [self.spinner showSpinner];
+	[self.smallSpinner hideSpinner];
+	MLSpinnerConfig *config = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeBig primaryColor:MLStyleSheetManager.styleSheet.primaryColor secondaryColor:MLStyleSheetManager.styleSheet.secondaryColor];
+	[self.spinner setUpSpinnerWithConfig:config];
+	[self.spinner setText:nil];
+	[self.spinner showSpinner];
 }
 
 - (void)smallWhiteSpinner:(id)sender
 {
-    [self.spinner hideSpinner];
-    [self.smallSpinner hideSpinner];
-    MLSpinnerConfig *config = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeSmall primaryColor:MLStyleSheetManager.styleSheet.whiteColor secondaryColor:MLStyleSheetManager.styleSheet.whiteColor];
-    [self.spinner setUpSpinnerWithConfig:config];
-    [self.spinner showSpinner];
+	[self.spinner hideSpinner];
+	[self.smallSpinner hideSpinner];
+	MLSpinnerConfig *config = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeSmall primaryColor:MLStyleSheetManager.styleSheet.whiteColor secondaryColor:MLStyleSheetManager.styleSheet.whiteColor];
+	[self.spinner setUpSpinnerWithConfig:config];
+	[self.spinner showSpinner];
 }
 
 - (void)smallBlueSpinner:(id)sender
 {
-    [self.spinner hideSpinner];
-    [self.smallSpinner hideSpinner];
-    MLSpinnerConfig *config = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeSmall primaryColor:MLStyleSheetManager.styleSheet.secondaryColor secondaryColor:MLStyleSheetManager.styleSheet.secondaryColor];
-    [self.spinner setUpSpinnerWithConfig:config];
-    [self.spinner showSpinner];
+	[self.spinner hideSpinner];
+	[self.smallSpinner hideSpinner];
+	MLSpinnerConfig *config = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeSmall primaryColor:MLStyleSheetManager.styleSheet.secondaryColor secondaryColor:MLStyleSheetManager.styleSheet.secondaryColor];
+	[self.spinner setUpSpinnerWithConfig:config];
+	[self.spinner showSpinner];
 }
 
 @end

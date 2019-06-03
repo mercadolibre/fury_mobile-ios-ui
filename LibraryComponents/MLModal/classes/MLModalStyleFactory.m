@@ -20,10 +20,10 @@
 		case MLModalTypeML:
 		case MLModalTypeMP: {
 			style = [[MLModalConfigStyle alloc] initWithBackgroundColor:MLStyleSheetManager.styleSheet.modalBackgroundColor
-			                                      headerBackgroundColor:MLStyleSheetManager.styleSheet.lightGreyColor
-			                                                  tintColor:MLStyleSheetManager.styleSheet.modalTintColor
-			                                                 titleColor:MLStyleSheetManager.styleSheet.blackColor
-			                                                  titleFont:[UIFont ml_lightSystemFontOfSize:kMLFontsSizeLarge] showBlurView:YES];
+				                                  headerBackgroundColor:MLStyleSheetManager.styleSheet.lightGreyColor
+				                                              tintColor:MLStyleSheetManager.styleSheet.modalTintColor
+				                                             titleColor:MLStyleSheetManager.styleSheet.blackColor
+				                                              titleFont:[UIFont ml_lightSystemFontOfSize:kMLFontsSizeLarge] showBlurView:YES];
 			break;
 		}
 	}

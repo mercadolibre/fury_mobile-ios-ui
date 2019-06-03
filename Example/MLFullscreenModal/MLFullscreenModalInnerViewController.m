@@ -14,7 +14,8 @@
 
 @implementation MLFullscreenModalInnerViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
 	[super viewDidLoad];
 }
 

@@ -33,7 +33,7 @@
  *
  *  @return gesturerecognizer
  */
-- (UILongPressGestureRecognizer *)gestureRecognizerWithDelegate:(id <UIGestureRecognizerDelegate>)delegate;
+- (UILongPressGestureRecognizer *)gestureRecognizerWithDelegate:(id <UIGestureRecognizerDelegate> )delegate;
 
 @end
 

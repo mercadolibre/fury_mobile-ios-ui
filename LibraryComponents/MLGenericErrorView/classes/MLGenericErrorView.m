@@ -32,8 +32,8 @@ static CGFloat const kMLUIScreenHeight = 667;
 {
 	NSString *nibName = NSStringFromClass([self class]);
 	self = [[MLUIBundle mluiBundle] loadNibNamed:nibName
-	                                       owner:nil
-	                                     options:nil].firstObject;
+		                                   owner:nil
+		                                 options:nil].firstObject;
 	return self;
 }
 
