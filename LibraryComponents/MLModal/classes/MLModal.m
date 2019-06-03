@@ -266,9 +266,9 @@ static int const kMLModalStatusBarHeight = 20;
 	self.navigationBar.shadowImage = [UIImage new];
 	UIImage *closeImg = [UIImage imageNamed:@"MLModalClose" inBundle:[MLUIBundle mluiBundle] compatibleWithTraitCollection:nil];
 	UIBarButtonItem *closeBtn = [[UIBarButtonItem alloc] initWithImage:closeImg
-		                                                         style:UIBarButtonItemStylePlain
-		                                                        target:self
-		                                                        action:@selector(onCloseButtonDidTouch:)];
+	                                                             style:UIBarButtonItemStylePlain
+	                                                            target:self
+	                                                            action:@selector(onCloseButtonDidTouch:)];
 	closeBtn.tintColor = configStyle.tintColor;
 	[self.navigationItem setLeftBarButtonItem:closeBtn];
 }
@@ -279,8 +279,8 @@ static int const kMLModalStatusBarHeight = 20;
 	[self.topViewController addChildViewController:self.innerViewController];
 
 	NSDictionary *views = @{
-		@"modalView" : self.modalView,
-		@"innerView" : self.innerViewController.view
+	        @"modalView" : self.modalView,
+	        @"innerView" : self.innerViewController.view
 	};
 
 	if ([self.innerViewController.view isKindOfClass:[UIScrollView class]] || !self.scrollEnabled) {
@@ -292,22 +292,22 @@ static int const kMLModalStatusBarHeight = 20;
 		[self.scrollView addSubview:self.innerViewController.view];
 
 		NSLayoutConstraint *widthConstraint = [NSLayoutConstraint
-			                                   constraintWithItem:self.scrollView
-			                                            attribute:NSLayoutAttributeWidth
-			                                            relatedBy:NSLayoutRelationEqual
-			                                               toItem:self.innerViewController.view
-			                                            attribute:NSLayoutAttributeWidth
-			                                           multiplier:1.0
-			                                             constant:0.0];
+		                                       constraintWithItem:self.scrollView
+		                                                attribute:NSLayoutAttributeWidth
+		                                                relatedBy:NSLayoutRelationEqual
+		                                                   toItem:self.innerViewController.view
+		                                                attribute:NSLayoutAttributeWidth
+		                                               multiplier:1.0
+		                                                 constant:0.0];
 		[self.scrollView addConstraint:widthConstraint];
 
 		NSLayoutConstraint *heightConstraint = [NSLayoutConstraint
-			                                    constraintWithItem:self.scrollView
-			                                             attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual
-			                                                toItem:self.innerViewController.view
-			                                             attribute:NSLayoutAttributeHeight
-			                                            multiplier:1.0
-			                                              constant:0.0];
+		                                        constraintWithItem:self.scrollView
+		                                                 attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual
+		                                                    toItem:self.innerViewController.view
+		                                                 attribute:NSLayoutAttributeHeight
+		                                                multiplier:1.0
+		                                                  constant:0.0];
 		heightConstraint.priority = UILayoutPriorityDefaultLow;
 		[self.scrollView addConstraint:heightConstraint];
 
@@ -316,13 +316,13 @@ static int const kMLModalStatusBarHeight = 20;
 	}
 
 	self.containerViewCenterYConstraint = [NSLayoutConstraint
-		                                   constraintWithItem:self.containerView
-		                                            attribute:NSLayoutAttributeCenterY
-		                                            relatedBy:NSLayoutRelationEqual
-		                                               toItem:self.backgroundView
-		                                            attribute:NSLayoutAttributeCenterY
-		                                           multiplier:1.0
-		                                             constant:0.0];
+	                                       constraintWithItem:self.containerView
+	                                                attribute:NSLayoutAttributeCenterY
+	                                                relatedBy:NSLayoutRelationEqual
+	                                                   toItem:self.backgroundView
+	                                                attribute:NSLayoutAttributeCenterY
+	                                               multiplier:1.0
+	                                                 constant:0.0];
 	[self.backgroundView addConstraint:self.containerViewCenterYConstraint];
 
 	[self.topViewController.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[modalView]-0-|" options:0 metrics:nil views:views]];
@@ -348,7 +348,7 @@ static int const kMLModalStatusBarHeight = 20;
 	CGRect containerFinalFrame = self.innerContainerView.frame;
 	self.innerContainerView.frame = CGRectOffset(containerFinalFrame, 0, 20);
 
-	__weak typeof(self)weakSelf = self;
+	__weak typeof(self) weakSelf = self;
 
 	[UIView animateWithDuration:kMLModalAnimationDuration animations: ^{
 	    weakSelf.innerContainerView.frame = containerFinalFrame;
@@ -398,144 +398,144 @@ static int const kMLModalStatusBarHeight = 20;
 
 - (IBAction)onCloseButtonDidTouch:(id)sender
 {
-	[self closeModal];
+    [self closeModal];
 }
 
 - (void)closeModal
 {
-	CGRect containerFinalFrame = self.innerContainerView.frame;
+    CGRect containerFinalFrame = self.innerContainerView.frame;
 
-	[self.innerViewController willMoveToParentViewController:nil];
-	if (![self.topViewController shouldAutomaticallyForwardAppearanceMethods]) {
-		[self.innerViewController beginAppearanceTransition:NO animated:YES];
+    [self.innerViewController willMoveToParentViewController:nil];
+    if (![self.topViewController shouldAutomaticallyForwardAppearanceMethods]) {
+        [self.innerViewController beginAppearanceTransition:NO animated:YES];
 	}
 
-	__weak typeof(self)weakSelf = self;
+    __weak typeof(self) weakSelf = self;
 
-	[UIView animateWithDuration:kMLModalAnimationDuration animations: ^{
-	    weakSelf.innerContainerView.frame = CGRectOffset(containerFinalFrame, 0, 20);
-	    weakSelf.modalView.alpha = 0;
+    [UIView animateWithDuration:kMLModalAnimationDuration animations: ^{
+        weakSelf.innerContainerView.frame = CGRectOffset(containerFinalFrame, 0, 20);
+        weakSelf.modalView.alpha = 0;
 	} completion: ^(BOOL finished) {
-	    [weakSelf.modalView removeFromSuperview];
+        [weakSelf.modalView removeFromSuperview];
 
-	    [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
-	    [weakSelf.innerViewController removeFromParentViewController];
+        [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
+        [weakSelf.innerViewController removeFromParentViewController];
 
-	    // Enable the interactive pop gesture back again, if we are dealing with an UINavigationController.
-	    if ([weakSelf.topViewController isKindOfClass:[UINavigationController class]]) {
-	        ((UINavigationController *)weakSelf.topViewController).interactivePopGestureRecognizer.enabled = YES;
+        // Enable the interactive pop gesture back again, if we are dealing with an UINavigationController.
+        if ([weakSelf.topViewController isKindOfClass:[UINavigationController class]]) {
+            ((UINavigationController *)weakSelf.topViewController).interactivePopGestureRecognizer.enabled = YES;
 		}
 
-	    if (![weakSelf.topViewController shouldAutomaticallyForwardAppearanceMethods]) {
-	        [weakSelf.innerViewController endAppearanceTransition];
+        if (![weakSelf.topViewController shouldAutomaticallyForwardAppearanceMethods]) {
+            [weakSelf.innerViewController endAppearanceTransition];
 		}
 
-	    if (self.dismissBlock) {
-	        self.dismissBlock();
+        if (self.dismissBlock) {
+            self.dismissBlock();
 		}
 	}];
 }
 
 - (void)onActionButtonDidTouch:(id)sender
 {
-	if (self.actionBlock) {
-		self.actionBlock();
+    if (self.actionBlock) {
+        self.actionBlock();
 	}
 
-	[self closeModal];
+    [self closeModal];
 }
 
 - (void)onSecondaryActionButtonDidTouch:(id)sender
 {
-	if (self.secondaryActionBlock) {
-		self.secondaryActionBlock();
+    if (self.secondaryActionBlock) {
+        self.secondaryActionBlock();
 	}
 
-	[self closeModal];
+    [self closeModal];
 }
 
 - (void)dismissModal
 {
-	[self closeModal];
+    [self closeModal];
 }
 
 #pragma mark -  UIGesturRecognizerDelegate
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
-	return touch.view == self.backgroundView;
+    return touch.view == self.backgroundView;
 }
 
 #pragma mark -  Rotation
 - (void)willRotate:(NSNotification *)notification
 {
-	// Interface orientation indicates the orientation the device has before rotation
-	UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    // Interface orientation indicates the orientation the device has before rotation
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
 
-	if (UIInterfaceOrientationIsPortrait(orientation)) {
-		self.containerViewLeadingConstraint.constant = kMLModalLandscapeHorizontalSpacing;
-		self.containerViewTopConstraint.constant = kMLModalLandscapeTopSpacing;
-		self.containerViewBottomConstraint.constant = kMLModalLandscapeTopSpacing;
+    if (UIInterfaceOrientationIsPortrait(orientation)) {
+        self.containerViewLeadingConstraint.constant = kMLModalLandscapeHorizontalSpacing;
+        self.containerViewTopConstraint.constant = kMLModalLandscapeTopSpacing;
+        self.containerViewBottomConstraint.constant = kMLModalLandscapeTopSpacing;
 	} else {
-		self.containerViewLeadingConstraint.constant = kMLModalPortraitHorizontalSpacing;
-		self.containerViewTopConstraint.constant = self.topSpacing;
-		self.containerViewBottomConstraint.constant = self.topSpacing;
+        self.containerViewLeadingConstraint.constant = kMLModalPortraitHorizontalSpacing;
+        self.containerViewTopConstraint.constant = self.topSpacing;
+        self.containerViewBottomConstraint.constant = self.topSpacing;
 	}
 }
 
 #pragma mark - Keyboard
 - (void)keyboardWillShow:(NSNotification *)notification
 {
-	NSDictionary *info = [notification userInfo];
-	self.keyboardHeight = CGRectGetHeight([[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]);
-	UIViewAnimationOptions curve = [[info objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue] << 16;
-	double duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-	[self placeContainerViewForVisibleKeyboardWithHeight:self.keyboardHeight];
+    NSDictionary *info = [notification userInfo];
+    self.keyboardHeight = CGRectGetHeight([[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]);
+    UIViewAnimationOptions curve = [[info objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue] << 16;
+    double duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    [self placeContainerViewForVisibleKeyboardWithHeight:self.keyboardHeight];
 
-	__weak typeof(self)weakSelf = self;
+    __weak typeof(self) weakSelf = self;
 
-	[UIView animateWithDuration:duration delay:0 options:curve animations: ^{
-	    [weakSelf.modalView layoutIfNeeded];
+    [UIView animateWithDuration:duration delay:0 options:curve animations: ^{
+        [weakSelf.modalView layoutIfNeeded];
 	} completion:nil];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification
 {
-	NSDictionary *info = [notification userInfo];
-	UIViewAnimationOptions curve = [[info objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue] << 16;
-	double duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    NSDictionary *info = [notification userInfo];
+    UIViewAnimationOptions curve = [[info objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue] << 16;
+    double duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
 
-	self.containerViewTopConstraint.constant = self.topSpacing;
-	self.containerViewBottomConstraint.constant = self.topSpacing - kMLModalStatusBarHeight;
+    self.containerViewTopConstraint.constant = self.topSpacing;
+    self.containerViewBottomConstraint.constant = self.topSpacing - kMLModalStatusBarHeight;
 
-	self.containerViewCenterYConstraint = [NSLayoutConstraint constraintWithItem:self.containerView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.backgroundView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0];
-	[self.backgroundView addConstraint:self.containerViewCenterYConstraint];
+    self.containerViewCenterYConstraint = [NSLayoutConstraint constraintWithItem:self.containerView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.backgroundView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0];
+    [self.backgroundView addConstraint:self.containerViewCenterYConstraint];
 
-	__weak typeof(self)weakSelf = self;
+    __weak typeof(self) weakSelf = self;
 
-	[UIView animateWithDuration:duration delay:0 options:curve animations: ^{
-	    [weakSelf.modalView layoutIfNeeded];
+    [UIView animateWithDuration:duration delay:0 options:curve animations: ^{
+        [weakSelf.modalView layoutIfNeeded];
 	} completion:nil];
 }
 
 - (void)placeContainerViewForVisibleKeyboardWithHeight:(CGFloat)height
 {
-	[self.backgroundView removeConstraint:self.containerViewCenterYConstraint];
-	CGFloat remainingSpace = CGRectGetHeight([[UIScreen mainScreen]bounds]) - height - [self calculateContentHeight] - kMLModalStatusBarHeight;
-	CGFloat verticalSpacing = 0.5 * remainingSpace;
+    [self.backgroundView removeConstraint:self.containerViewCenterYConstraint];
+    CGFloat remainingSpace = CGRectGetHeight([[UIScreen mainScreen]bounds]) - height - [self calculateContentHeight] - kMLModalStatusBarHeight;
+    CGFloat verticalSpacing = 0.5 * remainingSpace;
 
-	if (verticalSpacing < kMLModalLandscapeTopSpacing) {
-		self.containerViewTopConstraint.constant = kMLModalKeyboardVerticalTopSpacing + kMLModalStatusBarHeight;
-		self.containerViewBottomConstraint.constant = height + self.containerBottomSpacing;
+    if (verticalSpacing < kMLModalLandscapeTopSpacing) {
+        self.containerViewTopConstraint.constant = kMLModalKeyboardVerticalTopSpacing + kMLModalStatusBarHeight;
+        self.containerViewBottomConstraint.constant = height + self.containerBottomSpacing;
 	} else {
-		self.containerViewTopConstraint.constant = verticalSpacing + kMLModalStatusBarHeight;
-		self.containerViewBottomConstraint.constant = height + verticalSpacing;
+        self.containerViewTopConstraint.constant = verticalSpacing + kMLModalStatusBarHeight;
+        self.containerViewBottomConstraint.constant = height + verticalSpacing;
 	}
 }
 
 - (CGFloat)calculateContentHeight
 {
-	return CGRectGetHeight(self.containerView.frame);
+    return CGRectGetHeight(self.containerView.frame);
 }
 
 @end

@@ -24,7 +24,7 @@ static NSInteger kLowestPriority = 1;
 	if (finalAlpha == self.alpha) {
 		return;
 	}
-	__weak __typeof__(self)weakSelf = self;
+	__weak __typeof__(self) weakSelf = self;
 
 	[UIView animateWithDuration:.25f animations: ^{
 	    weakSelf.alpha = finalAlpha;
@@ -88,8 +88,8 @@ static NSInteger kLowestPriority = 1;
 {
 	NSString *nibName = @"MLTextView";
 	NSArray *nibArray = [[MLUIBundle mluiBundle] loadNibNamed:nibName
-		                                                owner:self
-		                                              options:nil];
+	                                                    owner:self
+	                                                  options:nil];
 	UIView *view = nibArray.firstObject;
 	view.translatesAutoresizingMaskIntoConstraints = NO;
 	[self addSubview:view];

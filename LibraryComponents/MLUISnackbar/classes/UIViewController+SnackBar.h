@@ -20,7 +20,7 @@
  *  @param snackBarView Snackbar to be displayed
  *  @param animated     flag if needs animation
  */
-- (void)ml_presentSnackBar:(id <MLUISnackBarProtocol> )snackBarView animated:(BOOL)animated;
+- (void)ml_presentSnackBar:(id <MLUISnackBarProtocol>)snackBarView animated:(BOOL)animated;
 
 /**
  *  Hides a snackbar with animation
