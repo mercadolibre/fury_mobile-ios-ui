@@ -116,7 +116,7 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 	[self.contentView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
 
 	// TitleLabel Constraints
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-p@priority-[label]|" options:0 metrics:@{@"p" : @0, @"priority" : @250} views:@{@"label" : self.label}]];
+	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-p@priority-[label]|" options:0 metrics:@{@"p" : @0, @"priority" : @999} views:@{@"label" : self.label}]];
 	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[label]|" options:0 metrics:0 views:@{@"label" : self.label}]];
 }
 
