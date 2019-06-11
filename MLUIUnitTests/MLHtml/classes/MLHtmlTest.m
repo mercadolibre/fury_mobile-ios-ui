@@ -178,6 +178,11 @@ static const CGFloat kBigSmallFontIncrement = 3;
 	XCTAssertEqual(targetFont.pointSize, expectedFont.pointSize);
 }
 
+- (void)testNothing
+{
+    XCTAssertTrue(true);
+}
+
 #pragma mark - Test for nearest:values
 
 - (void)testNearest
