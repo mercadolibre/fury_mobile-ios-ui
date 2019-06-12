@@ -1,3 +1,7 @@
+# Sin Publicar
+### Arreglado
+- `MLCheckBox`: Se corrigen los colores para que muestre los correspondientes a cada plataforma.  
+
 # v5.9.1
 ### Arreglado
 - Se ajusta prioridad del constraint en MLButton 
