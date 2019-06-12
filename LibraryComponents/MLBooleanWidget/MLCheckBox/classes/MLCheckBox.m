@@ -9,8 +9,8 @@
 #import "MLCheckBox.h"
 
 #import "UIColor+MLColorPalette.h"
-#import "MLBooleanWidget_Protected.h"
 #import "MLStyleSheetManager.h"
+#import "MLBooleanWidget_Protected.h"
 
 static const CGFloat kMLCheckBoxExternalLineWidth = 2;
 static const CGFloat kMLCheckBoxExternalCornerRadius = 1;
