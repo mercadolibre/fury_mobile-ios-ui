@@ -7,7 +7,7 @@
 //
 
 #import "UITextView+MLStyle.h"
-#import "JRSwizzle.h"
+#import <JRSwizzle/JRSwizzle.h>
 
 @implementation UITextView (MLStyle)
 
