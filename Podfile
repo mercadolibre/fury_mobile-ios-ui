@@ -7,7 +7,7 @@ use_frameworks!
 
 platform :ios, '9.0'
 
-target 'MLUI' do
+target 'MLUI-Example' do
     pod 'MLUI', :path => "./"
     pod 'FXBlurView', '~> 1.6'
 
