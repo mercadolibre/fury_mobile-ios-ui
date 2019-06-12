@@ -1656,7 +1656,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MLUI/Pods-MLUI-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MLUI/Pods-MLUI-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FXBlurView/FXBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/JRSwizzle/JRSwizzle.framework",
 				"${BUILT_PRODUCTS_DIR}/MLUI/MLUI.framework",
@@ -1669,7 +1669,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MLUI/Pods-MLUI-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MLUI/Pods-MLUI-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D54BBDAC34A134C537224AC1 /* [CP] Embed Pods Frameworks */ = {
@@ -1678,7 +1678,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MLUIUnitTests/Pods-MLUIUnitTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MLUIUnitTests/Pods-MLUIUnitTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1687,7 +1687,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MLUIUnitTests/Pods-MLUIUnitTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MLUIUnitTests/Pods-MLUIUnitTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
