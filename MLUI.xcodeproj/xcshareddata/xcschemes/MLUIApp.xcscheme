@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CD16659E19C1406400EE6243"
-               BuildableName = "MLUI.app"
-               BlueprintName = "MLUI"
+               BuildableName = "MLUI-Example.app"
+               BlueprintName = "MLUI-Example"
                ReferencedContainer = "container:MLUI.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,8 +40,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      codeCoverageEnabled = "YES"
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -81,8 +81,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD16659E19C1406400EE6243"
-            BuildableName = "MLUI.app"
-            BlueprintName = "MLUI"
+            BuildableName = "MLUI-Example.app"
+            BlueprintName = "MLUI-Example"
             ReferencedContainer = "container:MLUI.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -100,8 +100,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD16659E19C1406400EE6243"
-            BuildableName = "MLUI.app"
-            BlueprintName = "MLUI"
+            BuildableName = "MLUI-Example.app"
+            BlueprintName = "MLUI-Example"
             ReferencedContainer = "container:MLUI.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

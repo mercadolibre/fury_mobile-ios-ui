@@ -7,7 +7,11 @@ use_frameworks!
 
 platform :ios, '10.0'
 
-target 'MLUI' do
+install! 'cocoapods',
+    :generate_multiple_pod_projects => true,
+    :incremental_installation => true
+
+target 'MLUI-Example' do
     pod 'MLUI', :path => "./"
     pod 'FXBlurView', '~> 1.6'
 

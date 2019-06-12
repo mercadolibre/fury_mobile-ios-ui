@@ -36,6 +36,7 @@
 		3B4689621A6D823600F2F4A5 /* MLUIPriceViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4689591A6D801200F2F4A5 /* MLUIPriceViewTest.m */; };
 		3B6150EA1B5E8CA9007A07B4 /* MLUISnackBarViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6150E91B5E8CA9007A07B4 /* MLUISnackBarViewTest.m */; };
 		3B6150EF1B5E8DE5007A07B4 /* MLUISnackBarExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6150EE1B5E8DE5007A07B4 /* MLUISnackBarExampleViewController.m */; };
+		4BAE3F95856FE3F64E839D3B /* Pods_MLUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C99D6E86CC6525F989026E3 /* Pods_MLUI_Example.framework */; };
 		4C926D401E5F6AA30028DFFB /* MLGenericErrorViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C926D3F1E5F6AA30028DFFB /* MLGenericErrorViewTest.m */; };
 		4D0D97D81CC532CD00FFF679 /* MLSpinnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0D97D61CC532CD00FFF679 /* MLSpinnerViewController.m */; };
 		4D0D97D91CC532CD00FFF679 /* MLSpinnerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0D97D71CC532CD00FFF679 /* MLSpinnerViewController.xib */; };
@@ -88,7 +89,6 @@
 		8EAF21FB1D2D47FA0005F1F1 /* MLHtmlTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF21FA1D2D47FA0005F1F1 /* MLHtmlTest.m */; };
 		8EAF22061D2D51D40005F1F1 /* MLHtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF22041D2D51D40005F1F1 /* MLHtmlViewController.m */; };
 		8EAF22071D2D51D40005F1F1 /* MLHtmlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EAF22051D2D51D40005F1F1 /* MLHtmlViewController.xib */; };
-		97FBBD986F1E8F23EB3D9A7B /* Pods_MLUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B341D13CAC52E9479C0F7EF2 /* Pods_MLUI.framework */; };
 		A470E05F1B6934A200B0E9FD /* MLUIActionButtonInXibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A470E05E1B6934A200B0E9FD /* MLUIActionButtonInXibViewController.xib */; };
 		A470E0621B69442000B0E9FD /* MLUIActionButtonInXibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A470E0611B69442000B0E9FD /* MLUIActionButtonInXibViewController.m */; };
 		BB5CF39B2023B00D006484D8 /* MLStyleSheetTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5CF39A2023B00D006484D8 /* MLStyleSheetTest.m */; };
@@ -282,6 +282,8 @@
 		6A5B20451D22C6E5001F93DC /* MLRadioButtonCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRadioButtonCollection.m; sourceTree = "<group>"; };
 		6A9583971E27D8C5009306AC /* MLUIBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUIBundle.h; sourceTree = "<group>"; };
 		6A9583981E27D8C5009306AC /* MLUIBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUIBundle.m; sourceTree = "<group>"; };
+		6C99D6E86CC6525F989026E3 /* Pods_MLUI_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MLUI_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E0F8145C41CDD2E7644AD99 /* Pods-MLUI-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLUI-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MLUI-Example/Pods-MLUI-Example.release.xcconfig"; sourceTree = "<group>"; };
 		78A39CBAD61E64A4A2DBF119 /* Pods-MLUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MLUI/Pods-MLUI.debug.xcconfig"; sourceTree = "<group>"; };
 		7CB826D7226F5F3600E0C4A3 /* MLFullscreenModal.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = MLFullscreenModal.xcassets; path = MLFullscreenModal/assets/MLFullscreenModal.xcassets; sourceTree = "<group>"; };
 		7CB826DA226F5F6400E0C4A3 /* MLFullscreenModalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLFullscreenModalHeader.h; path = MLFullscreenModal/classes/MLFullscreenModalHeader.h; sourceTree = "<group>"; };
@@ -330,7 +332,7 @@
 		A4DAE2241C58F14F00612DC3 /* UILabel+MLFonts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UILabel+MLFonts.m"; path = "MLFonts/classes/UILabel+MLFonts.m"; sourceTree = "<group>"; };
 		A4DAE2271C59234E00612DC3 /* UITextView+MLFonts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UITextView+MLFonts.h"; path = "MLFonts/classes/UITextView+MLFonts.h"; sourceTree = "<group>"; };
 		A4DAE2281C59234E00612DC3 /* UITextView+MLFonts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UITextView+MLFonts.m"; path = "MLFonts/classes/UITextView+MLFonts.m"; sourceTree = "<group>"; };
-		B341D13CAC52E9479C0F7EF2 /* Pods_MLUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MLUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA84D2C43AF6CB980D3CF62D /* Pods-MLUI-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLUI-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MLUI-Example/Pods-MLUI-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		BB5CF3992023B00D006484D8 /* MLStyleSheetTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLStyleSheetTest.h; sourceTree = "<group>"; };
 		BB5CF39A2023B00D006484D8 /* MLStyleSheetTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLStyleSheetTest.m; sourceTree = "<group>"; };
 		BB5CF3A720240FF4006484D8 /* MLStyleSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLStyleSheetViewController.h; path = MLStyleSheet/MLStyleSheetViewController.h; sourceTree = "<group>"; };
@@ -353,7 +355,7 @@
 		CD141F9F19C14A9600DBF568 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CD141FA019C14A9600DBF568 /* LegacyExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegacyExampleViewController.h; sourceTree = "<group>"; };
 		CD141FA119C14A9600DBF568 /* LegacyExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegacyExampleViewController.m; sourceTree = "<group>"; };
-		CD16659F19C1406400EE6243 /* MLUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD16659F19C1406400EE6243 /* MLUI-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MLUI-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1B9F2219C3A497002EDF66 /* MLUIActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUIActionButton.h; sourceTree = "<group>"; };
 		CD1B9F2319C3A497002EDF66 /* MLUIActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUIActionButton.m; sourceTree = "<group>"; };
 		CFA85B1FBC9C408513BDECF7 /* Pods-MLUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLUI.release.xcconfig"; path = "Pods/Target Support Files/Pods-MLUI/Pods-MLUI.release.xcconfig"; sourceTree = "<group>"; };
@@ -381,7 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DB11C151C47F1D800570E2F /* QuartzCore.framework in Frameworks */,
-				97FBBD986F1E8F23EB3D9A7B /* Pods_MLUI.framework in Frameworks */,
+				4BAE3F95856FE3F64E839D3B /* Pods_MLUI_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -838,6 +840,8 @@
 				CFA85B1FBC9C408513BDECF7 /* Pods-MLUI.release.xcconfig */,
 				FB4CEE559D00AB502DACED6E /* Pods-MLUIUnitTests.debug.xcconfig */,
 				48C493E73C3947EB4174E4C9 /* Pods-MLUIUnitTests.release.xcconfig */,
+				AA84D2C43AF6CB980D3CF62D /* Pods-MLUI-Example.debug.xcconfig */,
+				6E0F8145C41CDD2E7644AD99 /* Pods-MLUI-Example.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1254,7 +1258,7 @@
 		CD1665A019C1406400EE6243 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CD16659F19C1406400EE6243 /* MLUI.app */,
+				CD16659F19C1406400EE6243 /* MLUI-Example.app */,
 				FC570F341A66A30F0021DCF4 /* MLUIUnitTests.xctest */,
 			);
 			name = Products;
@@ -1357,8 +1361,8 @@
 			isa = PBXGroup;
 			children = (
 				4DB11C141C47F1D800570E2F /* QuartzCore.framework */,
-				B341D13CAC52E9479C0F7EF2 /* Pods_MLUI.framework */,
 				424B92398C21CFBAA7A2FF7F /* Pods_MLUIUnitTests.framework */,
+				6C99D6E86CC6525F989026E3 /* Pods_MLUI_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1486,9 +1490,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CD16659E19C1406400EE6243 /* MLUI */ = {
+		CD16659E19C1406400EE6243 /* MLUI-Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD1665C219C1406400EE6243 /* Build configuration list for PBXNativeTarget "MLUI" */;
+			buildConfigurationList = CD1665C219C1406400EE6243 /* Build configuration list for PBXNativeTarget "MLUI-Example" */;
 			buildPhases = (
 				119C905CBF66DE0CE37E81E8 /* [CP] Check Pods Manifest.lock */,
 				CD16659B19C1406400EE6243 /* Sources */,
@@ -1500,9 +1504,9 @@
 			);
 			dependencies = (
 			);
-			name = MLUI;
+			name = "MLUI-Example";
 			productName = MLUI;
-			productReference = CD16659F19C1406400EE6243 /* MLUI.app */;
+			productReference = CD16659F19C1406400EE6243 /* MLUI-Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FC570F331A66A30F0021DCF4 /* MLUIUnitTests */ = {
@@ -1549,6 +1553,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				es,
@@ -1559,7 +1564,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CD16659E19C1406400EE6243 /* MLUI */,
+				CD16659E19C1406400EE6243 /* MLUI-Example */,
 				FC570F331A66A30F0021DCF4 /* MLUIUnitTests */,
 			);
 		};
@@ -1625,7 +1630,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MLUI-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MLUI-Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1656,7 +1661,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MLUI/Pods-MLUI-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MLUI-Example/Pods-MLUI-Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FXBlurView/FXBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/JRSwizzle/JRSwizzle.framework",
 				"${BUILT_PRODUCTS_DIR}/MLUI/MLUI.framework",
@@ -1669,7 +1674,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MLUI/Pods-MLUI-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MLUI-Example/Pods-MLUI-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D54BBDAC34A134C537224AC1 /* [CP] Embed Pods Frameworks */ = {
@@ -1781,7 +1786,7 @@
 /* Begin PBXTargetDependency section */
 		FC570F3B1A66A30F0021DCF4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CD16659E19C1406400EE6243 /* MLUI */;
+			target = CD16659E19C1406400EE6243 /* MLUI-Example */;
 			targetProxy = FC570F3A1A66A30F0021DCF4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1886,7 +1891,7 @@
 		};
 		CD1665C319C1406400EE6243 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78A39CBAD61E64A4A2DBF119 /* Pods-MLUI.debug.xcconfig */;
+			baseConfigurationReference = AA84D2C43AF6CB980D3CF62D /* Pods-MLUI-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1900,7 +1905,7 @@
 		};
 		CD1665C419C1406400EE6243 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CFA85B1FBC9C408513BDECF7 /* Pods-MLUI.release.xcconfig */;
+			baseConfigurationReference = 6E0F8145C41CDD2E7644AD99 /* Pods-MLUI-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1965,7 +1970,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD1665C219C1406400EE6243 /* Build configuration list for PBXNativeTarget "MLUI" */ = {
+		CD1665C219C1406400EE6243 /* Build configuration list for PBXNativeTarget "MLUI-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD1665C319C1406400EE6243 /* Debug */,
