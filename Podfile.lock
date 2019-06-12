@@ -39,6 +39,7 @@ PODS:
     - MLUI/StyleSheet
   - MLUI/MLCheckBox (5.8.0):
     - MLUI/MLColorPalette
+    - MLUI/StyleSheet
   - MLUI/MLColorPalette (5.8.0)
   - MLUI/MLContextualMenu (5.8.0):
     - MLUI/MLColorPalette
@@ -127,7 +128,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
-  MLUI: 847691d4485abb2fea8d3b1405182e0912b0f5f2
+  MLUI: e207bedeee72473861110984d120b3bdf4f42d59
   OCMock: 2cd0716969bab32a2283ff3a46fd26a8c8b4c5e3
 
 PODFILE CHECKSUM: d65eb06a9c9e82b3edb1b830bfe1ccd9a3ad44f5

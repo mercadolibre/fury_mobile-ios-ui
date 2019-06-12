@@ -8,7 +8,7 @@
 
 #import "UIFont+MLFonts.h"
 #import <objc/runtime.h>
-#import "JRSwizzle.h"
+#import <JRSwizzle/JRSwizzle.h>
 #import "UILabel+MLFonts.h"
 #import "UITextView+MLFonts.h"
 #import "MLUIBundle.h"

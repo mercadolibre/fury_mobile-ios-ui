@@ -7,7 +7,7 @@
 //
 
 #import "MLModal.h"
-#import "FXBlurView.h"
+#import <FXBlurView/FXBlurView.h>
 #import "UIImage+Misc.h"
 #import "UIFont+MLFonts.h"
 #import "MLUIBundle.h"

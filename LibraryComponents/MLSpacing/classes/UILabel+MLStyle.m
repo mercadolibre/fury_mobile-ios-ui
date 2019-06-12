@@ -7,7 +7,7 @@
 //
 
 #import "UILabel+MLStyle.h"
-#import "JRSwizzle.h"
+#import <JRSwizzle/JRSwizzle.h>
 
 @implementation UILabel (MLStyle)
 
