@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "MLUI"
-  s.version          = "5.8.0"
+  s.version          = "5.9.1"
   s.summary          = "MercadoLibre mobile ios UI components"
   s.homepage         = "https://github.com/mercadolibre"
   s.license          = "Apache License, Version 2.0"
@@ -143,6 +143,7 @@ Pod::Spec.new do |s|
   s.subspec 'MLCheckBox' do |mlcheckbox|
     mlcheckbox.source_files = ["LibraryComponents/MLBooleanWidget/MLCheckBox/classes/*.{h,m}", "LibraryComponents/MLBooleanWidget/classes/*.{h,m}"]
     mlcheckbox.dependency 'MLUI/MLColorPalette'
+    mlcheckbox.dependency 'MLUI/StyleSheet'
   end
 
   s.subspec 'MLSwitch' do |mlswitch|
