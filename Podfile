@@ -7,6 +7,10 @@ use_frameworks!
 
 platform :ios, '9.0'
 
+install! 'cocoapods',
+  :generate_multiple_pod_projects => true,
+  :incremental_installation => true
+
 target 'MLUI-Example' do
     pod 'MLUI', :path => "./"
     pod 'FXBlurView', '~> 1.6'
@@ -18,10 +22,10 @@ target 'MLUI-Example' do
 end
 
 post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-		preprocessor_macros = config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
-		preprocessor_macros << 'MLUI_OVERRIDE_FONT=1'
-	end
+    installer.generated_projects.each do |project|
+        project.build_configurations.each do |config|
+            preprocessor_macros = config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
+            preprocessor_macros << 'MLUI_OVERRIDE_FONT=1'
+        end
     end
 end
