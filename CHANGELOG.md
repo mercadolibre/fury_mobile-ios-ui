@@ -1,6 +1,7 @@
-# Sin Publicar
+# v5.10.1
 ### Arreglado
 - `MLCheckBox`: Se corrigen los colores para que muestre los correspondientes a cada plataforma.  
+- Se traen fixes de la version 5.9.1
 
 # v5.9.1
 ### Arreglado
