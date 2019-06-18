@@ -1,3 +1,7 @@
+# v5.11.0
+### Cambiado
+- Se generarn multiples pod projects
+
 # v5.10.1
 ### Arreglado
 - `MLCheckBox`: Se corrigen los colores para que muestre los correspondientes a cada plataforma.  
