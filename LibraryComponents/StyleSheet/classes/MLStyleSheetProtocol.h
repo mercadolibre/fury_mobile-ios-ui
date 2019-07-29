@@ -58,6 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIFont *)monospaceFontOfSize:(CGFloat)fontSize;
 @property (nonatomic, readonly) UIColor *primaryBackgroundColor;
 @property (nonatomic, readonly) UIColor *secondaryBackgroundColor;
+@property (nonatomic, readonly) UIStatusBarStyle statusBarStyle;
 @end
 
 NS_ASSUME_NONNULL_END

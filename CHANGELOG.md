@@ -1,6 +1,7 @@
 # Sin Publicar
 ### Arreglado
 - `MLCheckBox`: Se corrigen los colores para que muestre los correspondientes a cada plataforma.  
+- Se agrega al stylesheet la property statusBarStyle como opcional de MLStyleSheetProtocol.
 
 # v5.9.1
 ### Arreglado
