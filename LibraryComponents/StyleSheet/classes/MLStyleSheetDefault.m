@@ -146,4 +146,10 @@
 	return [UIFont systemFontOfSize:fontSize weight:UIFontWeightRegular];
 }
 
+#pragma mark Style
+- (UIStatusBarStyle)statusBarStyle
+{
+    return UIStatusBarStyleDefault;
+}
+
 @end
