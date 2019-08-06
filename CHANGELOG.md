@@ -1,7 +1,15 @@
-# Sin Publicar
+# v5.12.0
+### Agregado
+- Se agrega al stylesheet la property statusBarStyle como opcional de MLStyleSheetProtocol.
+
+# v5.11.0
+### Cambiado
+- Se generarn multiples pod projects
+
+# v5.10.1
 ### Arreglado
 - `MLCheckBox`: Se corrigen los colores para que muestre los correspondientes a cada plataforma.  
-- Se agrega al stylesheet la property statusBarStyle como opcional de MLStyleSheetProtocol.
+- Se traen fixes de la version 5.9.1
 
 # v5.9.1
 ### Arreglado
