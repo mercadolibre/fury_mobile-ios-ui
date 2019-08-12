@@ -149,7 +149,7 @@
 #pragma mark Style
 - (UIStatusBarStyle)statusBarStyle
 {
-    return UIStatusBarStyleDefault;
+	return UIStatusBarStyleDefault;
 }
 
 @end

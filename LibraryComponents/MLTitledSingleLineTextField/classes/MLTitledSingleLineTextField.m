@@ -343,7 +343,7 @@ static const CGFloat kMLTextFieldThickLine = 2;
 	if (!self.textField) {
 		self.textField = [[MLTitledSingleLineCharacter alloc] init];
 		self.textField.delegate = self;
-        self.textField.characterDelegate = self;
+		self.textField.characterDelegate = self;
 		[self.textField addTarget:self
 		                   action:@selector(textFieldDidChange:)
 		         forControlEvents:UIControlEventEditingChanged];
@@ -468,9 +468,9 @@ static const CGFloat kMLTextFieldThickLine = 2;
 
 - (void)textFieldDidPressDeleteKey:(UITextField *)textField
 {
-    if ([self.delegate respondsToSelector:@selector(textFieldDidPressDeleteKey:)]) {
-        [self.delegate textFieldDidPressDeleteKey:self];
-    }
+	if ([self.delegate respondsToSelector:@selector(textFieldDidPressDeleteKey:)]) {
+		[self.delegate textFieldDidPressDeleteKey:self];
+	}
 }
 
 #pragma mark UIResponder
