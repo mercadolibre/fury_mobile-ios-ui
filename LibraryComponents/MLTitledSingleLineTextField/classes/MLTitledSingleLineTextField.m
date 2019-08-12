@@ -11,11 +11,12 @@
 #import "MLUIBundle.h"
 #import "MLStyleSheetManager.h"
 #import "MLTitledSingleLineStringProvider.h"
+#import "MLTitledSingleLineCharacter.h"
 
 static const CGFloat kMLTextFieldThinLine = 1;
 static const CGFloat kMLTextFieldThickLine = 2;
 
-@interface MLTitledSingleLineTextField () <UITextFieldDelegate>
+@interface MLTitledSingleLineTextField () <UITextFieldDelegate, MLTitledSingleLineCharacterDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIView *lineView;
 @property (weak, nonatomic) IBOutlet UILabel *accessoryLabel;
@@ -24,7 +25,7 @@ static const CGFloat kMLTextFieldThickLine = 2;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lineViewHeight;
 @property (weak, nonatomic) IBOutlet UIView *accessoryViewContainer;
 
-@property (strong, nonatomic) UITextField *textField;
+@property (strong, nonatomic) MLTitledSingleLineCharacter *textField;
 @property (copy, nonatomic) NSString *textCache;
 
 @end
@@ -340,8 +341,9 @@ static const CGFloat kMLTextFieldThickLine = 2;
 - (UIView <UITextInputTraits, UITextInput> *)textInputControl
 {
 	if (!self.textField) {
-		self.textField = [[UITextField alloc] init];
+		self.textField = [[MLTitledSingleLineCharacter alloc] init];
 		self.textField.delegate = self;
+        self.textField.characterDelegate = self;
 		[self.textField addTarget:self
 		                   action:@selector(textFieldDidChange:)
 		         forControlEvents:UIControlEventEditingChanged];
@@ -460,6 +462,15 @@ static const CGFloat kMLTextFieldThickLine = 2;
 		return [self.delegate textFieldShouldReturn:self];
 	}
 	return YES;
+}
+
+#pragma mark MLTitledSingleLineCharacterDelegate
+
+- (void)textFieldDidPressDeleteKey:(UITextField *)textField
+{
+    if ([self.delegate respondsToSelector:@selector(textFieldDidPressDeleteKey:)]) {
+        [self.delegate textFieldDidPressDeleteKey:self];
+    }
 }
 
 #pragma mark UIResponder

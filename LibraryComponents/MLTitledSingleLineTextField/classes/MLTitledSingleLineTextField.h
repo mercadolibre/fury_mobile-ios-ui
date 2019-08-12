@@ -80,6 +80,12 @@ typedef NS_ENUM (NSInteger, MLTitledTextFieldState) {
  */
 - (void)textField:(MLTitledSingleLineTextField *)textField hasMinCharacters:(BOOL)hasMinCharacters;
 
+/**
+ * Tells the delegate that the textfield has press delete key
+ * @param textField The text field containing the text.
+ */
+- (void)textFieldDidPressDeleteKey:(MLTitledSingleLineTextField *)textField;
+
 @end
 
 /**
