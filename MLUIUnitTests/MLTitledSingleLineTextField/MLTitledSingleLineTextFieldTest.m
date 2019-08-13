@@ -299,15 +299,15 @@
 
 - (void)testDelegateTextFieldDidPressDeleteKey
 {
-    id protocolMock = OCMProtocolMock(@protocol(MLTitledTextFieldDelegate));
-    MLTitledSingleLineTextField *textField = self.textField;
-    textField.textField = [[MLUITextField alloc] init];
-    textField.textField.textFieldDelegate = textField;
-    [textField setDelegate:protocolMock];
-    
-    OCMExpect([protocolMock textFieldDidPressDeleteKey:textField]);
-    [textField.textField deleteBackward];
-    OCMVerifyAll(protocolMock);
+	id protocolMock = OCMProtocolMock(@protocol(MLTitledTextFieldDelegate));
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.textField = [[MLUITextField alloc] init];
+	textField.textField.textFieldDelegate = textField;
+	[textField setDelegate:protocolMock];
+
+	OCMExpect([protocolMock textFieldDidPressDeleteKey:textField]);
+	[textField.textField deleteBackward];
+	OCMVerifyAll(protocolMock);
 }
 
 @end
