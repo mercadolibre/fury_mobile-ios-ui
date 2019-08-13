@@ -30,5 +30,6 @@
 - (void)testSetAutocorrectionType;
 - (void)testErrorState;
 - (void)testDisabledState;
+- (void)testDelegateTextFieldDidPressDeleteKey;
 
 @end

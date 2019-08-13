@@ -6,8 +6,10 @@
 //
 #import <Foundation/Foundation.h>
 
+@class MLUITextField;
+
 @protocol MLUITextFieldDelegate <NSObject>
-- (void)textFieldDidPressDeleteKey:(UITextField *)textField;
+- (void)textFieldDidPressDeleteKey:(MLUITextField *)textField;
 @end
 
 @interface MLUITextField : UITextField

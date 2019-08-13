@@ -464,9 +464,9 @@ static const CGFloat kMLTextFieldThickLine = 2;
 	return YES;
 }
 
-#pragma mark MLTitledSingleLineCharacterDelegate
+#pragma mark MLUITextFieldDelegate
 
-- (void)textFieldDidPressDeleteKey:(UITextField *)textField
+- (void)textFieldDidPressDeleteKey:(MLUITextField *)textField
 {
 	if ([self.delegate respondsToSelector:@selector(textFieldDidPressDeleteKey:)]) {
 		[self.delegate textFieldDidPressDeleteKey:self];
