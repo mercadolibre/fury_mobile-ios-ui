@@ -1,8 +1,19 @@
-# Sin Publicar
+# v5.13.0
+### Agregado
+- `MLTitledLineTextField`: Se agrega clase para sobre escribir método de borrado.
+
+# v5.12.0
+### Agregado
+- Se agrega al stylesheet la property statusBarStyle como opcional de MLStyleSheetProtocol.
+
+# v5.11.0
+### Cambiado
+- Se generan múltiples pod projects
+
+# v5.10.1
 ### Arreglado
 - `MLCheckBox`: Se corrigen los colores para que muestre los correspondientes a cada plataforma.  
-- Se agrega al stylesheet la property statusBarStyle como opcional de MLStyleSheetProtocol.
-- `MLTitledLineTextField`: Se agrega clase para sobre escribir método de borrado.
+- Se traen fixes de la version 5.9.1
 
 # v5.9.1
 ### Arreglado
