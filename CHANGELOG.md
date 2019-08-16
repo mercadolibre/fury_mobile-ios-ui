@@ -2,6 +2,7 @@
 ### Arreglado
 - `MLCheckBox`: Se corrigen los colores para que muestre los correspondientes a cada plataforma.  
 - Se agrega al stylesheet la property statusBarStyle como opcional de MLStyleSheetProtocol.
+- `MLTitledLineTextField`: Se agrega clase para sobre escribir método de borrado.
 
 # v5.9.1
 ### Arreglado

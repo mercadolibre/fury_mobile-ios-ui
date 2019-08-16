@@ -9,16 +9,16 @@
 #import "MLTitledSingleLineTextFieldTest.h"
 #import <OCMock/OCMock.h>
 #import <MLUI/MLTitledSingleLineTextField.h>
-
+#import <MLUI/MLUITextField.h>
 // Must declare that textfield implements UITextFieldDelegate to call shouldChangeCharactersInRange:raplacementString:
-@interface MLTitledSingleLineTextField () <UITextFieldDelegate>
+@interface MLTitledSingleLineTextField () <UITextFieldDelegate, MLUITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *accessoryLabel;
 @property (weak, nonatomic) IBOutlet UIView *accessoryViewContainer;
 
-@property (strong, nonatomic) UITextField *textField;
+@property (strong, nonatomic) MLUITextField *textField;
 
 @end
 
@@ -206,7 +206,7 @@
 	textField.maxCharacters = 4;
 	textField.delegate = protocolMock;
 
-	UITextField *internalTextField = [[UITextField alloc] init];
+	MLUITextField *internalTextField = [[MLUITextField alloc] init];
 	internalTextField.text = @"";
 
 	// Might simulate user using actual textfield
@@ -294,6 +294,19 @@
 
 	OCMExpect([protocolMock textField:textField hasMinCharacters:NO]);
 	[textField textField:textField.textField shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:longerText];
+	OCMVerifyAll(protocolMock);
+}
+
+- (void)testDelegateTextFieldDidPressDeleteKey
+{
+	id protocolMock = OCMProtocolMock(@protocol(MLTitledTextFieldDelegate));
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.textField = [[MLUITextField alloc] init];
+	textField.textField.textFieldDelegate = textField;
+	[textField setDelegate:protocolMock];
+
+	OCMExpect([protocolMock textFieldDidPressDeleteKey:textField]);
+	[textField.textField deleteBackward];
 	OCMVerifyAll(protocolMock);
 }
 
