@@ -285,7 +285,7 @@
 		return NO;
 	}
 	if ([self.delegate respondsToSelector:@selector(textField:shouldChangeCharactersInRange:replacementString:)]) {
-		[self.delegate textField:self shouldChangeCharactersInRange:range replacementString:text];
+		return [self.delegate textField:self shouldChangeCharactersInRange:range replacementString:text];
 	}
 
 	if ([text isEqualToString:@"\n"] &&

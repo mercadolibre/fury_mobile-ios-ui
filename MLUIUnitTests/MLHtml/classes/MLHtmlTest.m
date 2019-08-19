@@ -172,7 +172,7 @@ static const CGFloat kBigSmallFontIncrement = 3;
 	[MLHtml overrideAttributesWithTag:tag dictionary:attrs];
 
 	UIFont *targetFont = attrs[NSFontAttributeName];
-	UIFont *expectedFont = [UIFont fontWithName:@".SFUIText-Light" size:0];
+	UIFont *expectedFont = [UIFont fontWithName:@".SFUIText-Light" size:1];
 
 	XCTAssertEqualObjects(targetFont.fontName, expectedFont.fontName);
 	XCTAssertEqual(targetFont.pointSize, expectedFont.pointSize);
