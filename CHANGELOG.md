@@ -1,3 +1,7 @@
+# v5.14.0
+### Arreglado
+- 🛠 Fix `MLTitledMultiLineTextField` ignores delegate
+
 # v5.13.0
 ### Agregado
 - `MLTitledLineTextField`: Se agrega clase para sobre escribir método de borrado.
@@ -17,7 +21,7 @@
 
 # v5.9.1
 ### Arreglado
-- Se ajusta prioridad del constraint en MLButton 
+- Se ajusta prioridad del constraint en MLButton
 
 # v5.9.0
 ### Agregado
