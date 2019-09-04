@@ -15,10 +15,15 @@
 
 + (MLButtonConfig *)configForButtonType:(MLButtonType)buttonType
 {
-	return [self setupStyleForButton:buttonType];
+	return [self setupStyleForButton:buttonType withSize:MLButtonSizeLarge]; // Large size is default
 }
 
-+ (MLButtonConfig *)setupStyleForButton:(MLButtonType)buttonType
++ (MLButtonConfig *)configForButtonType:(MLButtonType)buttonType withSize:(MLButtonSize)buttonSize
+{
+    return [self setupStyleForButton:buttonType withSize:buttonSize];
+}
+
++ (MLButtonConfig *)setupStyleForButton:(MLButtonType)buttonType withSize:(MLButtonSize)size
 {
 	MLButtonConfig *buttonStates = [[MLButtonConfig alloc] init];
 
@@ -82,6 +87,7 @@
 			break;
 		}
 	}
+    buttonStates.buttonSize = size;
 	return buttonStates;
 }
 
