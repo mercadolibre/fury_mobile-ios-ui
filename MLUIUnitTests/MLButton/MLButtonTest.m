@@ -25,10 +25,14 @@
 @property (nonatomic, strong) UIImageView *iconView;
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) UIImage *iconImage;
+@property (nonatomic, assign) CGFloat verticalPadding;
+@property (nonatomic, assign) CGFloat fontSize;
+@property (nonatomic, strong) NSArray<NSLayoutConstraint*> *verticalPaddingConstraints;
 
 - (void)updateLookAndFeel;
 - (void)updateButtonIcon:(UIImage *_Nullable)image;
 - (void)setupIconView;
+- (void)setup;
 
 @end
 
@@ -302,6 +306,23 @@
 	XCTAssertEqualObjects(button.iconView.superview, button.contentView);
 	XCTAssertEqualObjects(button.label.superview, button.contentView);
 	XCTAssertEqual(button.contentView.subviews.count, 2);// Lable+image
+}
+
+-(void)testDefaultInit_shouldHaveVerticalPaddingAndFontSize
+{
+    // When
+    MLButton *button = [[MLButton alloc] init];
+    [button setup];
+    
+    XCTAssertEqual(button.verticalPadding, 15.0f);
+    XCTAssertEqual(button.fontSize, kMLFontsSizeMedium);
+
+    
+}
+
+-(void)testSetupWithSmallSizeConfig_shouldSetSmallVerticalPadding
+{
+    
 }
 
 @end

@@ -134,9 +134,12 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
         self.verticalPadding = kMLButtonVerticalPadding;
         self.fontSize = kMLFontsSizeMedium;
     }
-    for (NSLayoutConstraint *constraint in self.verticalPaddingConstraints) {
-        constraint.constant = self.verticalPadding;
+    if (self.verticalPaddingConstraints.count > 0){
+        for (NSLayoutConstraint *constraint in self.verticalPaddingConstraints) {
+            constraint.constant = self.verticalPadding;
+        }
     }
+  
 }
 
 - (void)setUpContentView
@@ -147,7 +150,11 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
 	// ContentView Constraints
 	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|->=p-[content]->=p-|" options:0 metrics:@{@"p" : @(kMLButtonHorizontalPadding)} views:@{@"content" : self.contentView}]];
     self.verticalPaddingConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-p@priority-[content]-p@priority-|" options:0 metrics:@{@"p" : @(self.verticalPadding), @"priority" : @999} views:@{@"content" : self.contentView}];
-	[self addConstraints: self.verticalPaddingConstraints];
+    
+    if (self.verticalPaddingConstraints != nil){
+        [self addConstraints: self.verticalPaddingConstraints];
+    }
+    
 	[self.contentView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
 
 	// TitleLabel Constraints
