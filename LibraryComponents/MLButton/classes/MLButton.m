@@ -122,7 +122,7 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
                 // init with small size
                 self.verticalPadding = kMLButtonSmallVerticalPadding;
                 self.horizontalPadding = kMLButtonSmallHorizontalPadding;
-                self.fontSize = kMLFontsSizeSmall;
+                self.fontSize = kMLFontsSizeXSmall;
                 break;
                 
             default:
