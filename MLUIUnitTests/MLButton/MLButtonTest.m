@@ -314,6 +314,7 @@
     MLButton *button = [[MLButton alloc] init];
     [button setup];
     
+    // Then
     XCTAssertEqual(button.verticalPadding, 15.0f);
     XCTAssertEqual(button.fontSize, kMLFontsSizeMedium);
 
@@ -322,7 +323,12 @@
 
 -(void)testSetupWithSmallSizeConfig_shouldSetSmallVerticalPadding
 {
-    
+    // when
+    MLButton *button = [[MLButton alloc] initWithConfig: [MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeSmall]];
+    // Then
+    XCTAssertEqual(button.verticalPadding, 11.0f);
+    XCTAssertEqual(button.fontSize, kMLFontsSizeXSmall);
+
 }
 
 @end
