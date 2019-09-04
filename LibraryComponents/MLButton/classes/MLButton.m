@@ -132,6 +132,10 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
                  self.fontSize = kMLFontsSizeMedium;
                 break;
         }
+    } else {
+        self.verticalPadding = kMLButtonVerticalPadding;
+        self.horizontalPadding = kMLButtonHorizontalPadding;
+        self.fontSize = kMLFontsSizeMedium;
     }
 }
 
@@ -296,6 +300,7 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
 - (void)setConfig:(MLButtonConfig *)config
 {
     _config = config;
+    [self setUpWithSize];
     [self updateLookAndFeel];
 }
 
