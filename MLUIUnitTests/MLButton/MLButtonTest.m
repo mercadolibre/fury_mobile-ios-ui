@@ -27,7 +27,7 @@
 @property (nonatomic, strong) UIImage *iconImage;
 @property (nonatomic, assign) CGFloat verticalPadding;
 @property (nonatomic, assign) CGFloat fontSize;
-@property (nonatomic, strong) NSArray<NSLayoutConstraint*> *verticalPaddingConstraints;
+@property (nonatomic, strong) NSArray <NSLayoutConstraint *> *verticalPaddingConstraints;
 
 - (void)updateLookAndFeel;
 - (void)updateButtonIcon:(UIImage *_Nullable)image;
@@ -308,27 +308,24 @@
 	XCTAssertEqual(button.contentView.subviews.count, 2);// Lable+image
 }
 
--(void)testDefaultInit_shouldHaveVerticalPaddingAndFontSize
+- (void)testDefaultInit_shouldHaveVerticalPaddingAndFontSize
 {
-    // When
-    MLButton *button = [[MLButton alloc] init];
-    [button setup];
-    
-    // Then
-    XCTAssertEqual(button.verticalPadding, 15.0f);
-    XCTAssertEqual(button.fontSize, kMLFontsSizeMedium);
+	// When
+	MLButton *button = [[MLButton alloc] init];
+	[button setup];
 
-    
+	// Then
+	XCTAssertEqual(button.verticalPadding, 15.0f);
+	XCTAssertEqual(button.fontSize, kMLFontsSizeMedium);
 }
 
--(void)testSetupWithSmallSizeConfig_shouldSetSmallVerticalPadding
+- (void)testSetupWithSmallSizeConfig_shouldSetSmallVerticalPadding
 {
-    // when
-    MLButton *button = [[MLButton alloc] initWithConfig: [MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeSmall]];
-    // Then
-    XCTAssertEqual(button.verticalPadding, 11.0f);
-    XCTAssertEqual(button.fontSize, kMLFontsSizeXSmall);
-
+	// when
+	MLButton *button = [[MLButton alloc] initWithConfig:[MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeSmall]];
+	// Then
+	XCTAssertEqual(button.verticalPadding, 11.0f);
+	XCTAssertEqual(button.fontSize, kMLFontsSizeXSmall);
 }
 
 @end

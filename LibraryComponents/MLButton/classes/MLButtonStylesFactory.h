@@ -20,9 +20,9 @@ typedef NS_ENUM (NSInteger, MLButtonType) {
 	MLButtonTypeLoading
 };
 
-typedef NS_ENUM(NSInteger, MLButtonSize) {
-    MLButtonSizeLarge = 0,
-    MLButtonSizeSmall
+typedef NS_ENUM (NSInteger, MLButtonSize) {
+	MLButtonSizeLarge = 0,
+	MLButtonSizeSmall
 };
 
 @interface MLButtonStylesFactory : NSObject

@@ -20,7 +20,7 @@
 
 + (MLButtonConfig *)configForButtonType:(MLButtonType)buttonType withSize:(MLButtonSize)buttonSize
 {
-    return [self setupStyleForButton:buttonType withSize:buttonSize];
+	return [self setupStyleForButton:buttonType withSize:buttonSize];
 }
 
 + (MLButtonConfig *)setupStyleForButton:(MLButtonType)buttonType withSize:(MLButtonSize)size
@@ -87,7 +87,7 @@
 			break;
 		}
 	}
-    buttonStates.buttonSize = size;
+	buttonStates.buttonSize = size;
 	return buttonStates;
 }
 

@@ -42,10 +42,10 @@
 
 - (void)testNotEqualWithDifferentSizes
 {
-    MLButtonConfig *configOne = [MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeSmall];
-    MLButtonConfig *configTwo = [MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeLarge];
-    XCTAssertNotEqual(configOne, configTwo);
-    XCTAssertNotEqualObjects(configOne, configTwo);
+	MLButtonConfig *configOne = [MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeSmall];
+	MLButtonConfig *configTwo = [MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeLarge];
+	XCTAssertNotEqual(configOne, configTwo);
+	XCTAssertNotEqualObjects(configOne, configTwo);
 }
 
 @end

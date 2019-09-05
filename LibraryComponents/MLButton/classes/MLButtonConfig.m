@@ -19,8 +19,8 @@
 	BOOL haveEqualHighlightedState = (!self.highlightedState && !buttonConfig.highlightedState) || [self.highlightedState isEqual:buttonConfig.highlightedState];
 	BOOL haveEqualDisableState = (!self.disableState && !buttonConfig.disableState) || [self.disableState isEqual:buttonConfig.disableState];
 	BOOL haveEqualLoadingState = (!self.loadingState && !buttonConfig.loadingState) || [self.loadingState isEqual:buttonConfig.loadingState];
-    BOOL haveEqualSizes = self.buttonSize == buttonConfig.buttonSize;
-    
+	BOOL haveEqualSizes = self.buttonSize == buttonConfig.buttonSize;
+
 	return haveEqualDefaultState && haveEqualHighlightedState && haveEqualDisableState && haveEqualLoadingState && haveEqualSizes;
 }
 
