@@ -115,6 +115,9 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
 
 - (void)setUpWithSize
 {
+	self.verticalPadding = kMLButtonVerticalPadding;
+	self.fontSize = kMLFontsSizeMedium;
+
 	if (self.config != nil) {
 		switch (self.config.buttonSize) {
 			case MLButtonSizeSmall: {
@@ -126,14 +129,9 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
 
 			default: {
 				// init with default size (large button)
-				self.verticalPadding = kMLButtonVerticalPadding;
-				self.fontSize = kMLFontsSizeMedium;
 				break;
 			}
 		}
-	} else {
-		self.verticalPadding = kMLButtonVerticalPadding;
-		self.fontSize = kMLFontsSizeMedium;
 	}
 	if (self.verticalPaddingConstraints.count > 0) {
 		for (NSLayoutConstraint *constraint in self.verticalPaddingConstraints) {
@@ -151,9 +149,7 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
 	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|->=p-[content]->=p-|" options:0 metrics:@{@"p" : @(kMLButtonHorizontalPadding)} views:@{@"content" : self.contentView}]];
 	self.verticalPaddingConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-p@priority-[content]-p@priority-|" options:0 metrics:@{@"p" : @(self.verticalPadding), @"priority" : @999} views:@{@"content" : self.contentView}];
 
-	if (self.verticalPaddingConstraints != nil) {
-	    [self addConstraints:self.verticalPaddingConstraints];
-	}
+	[self addConstraints:self.verticalPaddingConstraints];
 
 	[self.contentView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
 

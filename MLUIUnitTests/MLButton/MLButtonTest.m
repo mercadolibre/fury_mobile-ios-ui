@@ -328,4 +328,26 @@
 	XCTAssertEqual(button.fontSize, kMLFontsSizeXSmall);
 }
 
+- (void)testConstraintSetupwithSmallSize
+{
+	// when
+	MLButton *button = [[MLButton alloc] initWithConfig:[MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeSmall]];
+
+	// Then
+	for (NSLayoutConstraint *constraint in  button.verticalPaddingConstraints) {
+		XCTAssertEqual(constraint.constant, 11.0f);
+	}
+}
+
+- (void)testConstraintSetupwithLargeSize
+{
+	// when
+	MLButton *button = [[MLButton alloc] initWithConfig:[MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeLarge]];
+
+	// Then
+	for (NSLayoutConstraint *constraint in  button.verticalPaddingConstraints) {
+		XCTAssertEqual(constraint.constant, 15.0f);
+	}
+}
+
 @end
