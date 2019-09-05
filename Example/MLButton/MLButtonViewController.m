@@ -25,7 +25,6 @@
 @property (strong, nonatomic)  MLButton *secondaryIconButton;
 @property (strong, nonatomic)  MLButton *primaryActionButtonSmall;
 
-
 @end
 
 @implementation MLButtonViewController
@@ -98,14 +97,13 @@
 	[self.view addSubview:self.secondaryIconButton];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[previous]-8-[button]" options:0 metrics:nil views:@{@"button" : self.secondaryIconButton, @"previous" : self.loadingButton}]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[button]-8-|" options:0 metrics:nil views:@{@"button" : self.secondaryIconButton}]];
-    
-    
-    MLButtonConfig *smallButtonConfig = [MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize: MLButtonSizeSmall];
-    self.primaryActionButtonSmall = [[MLButton alloc] initWithConfig: smallButtonConfig];
-    [self.primaryActionButtonSmall setButtonTitle:@"small button"];
-    [self.view addSubview: self.primaryActionButtonSmall];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[previous]-8-[button]" options:0 metrics:nil views:@{@"button" : self.primaryActionButtonSmall, @"previous" : self.secondaryIconButton}]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[button]-8-|" options:0 metrics:nil views:@{@"button" : self.primaryActionButtonSmall}]];
+
+	MLButtonConfig *smallButtonConfig = [MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeSmall];
+	self.primaryActionButtonSmall = [[MLButton alloc] initWithConfig:smallButtonConfig];
+	[self.primaryActionButtonSmall setButtonTitle:@"small button"];
+	[self.view addSubview:self.primaryActionButtonSmall];
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[previous]-8-[button]" options:0 metrics:nil views:@{@"button" : self.primaryActionButtonSmall, @"previous" : self.secondaryIconButton}]];
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[button]-8-|" options:0 metrics:nil views:@{@"button" : self.primaryActionButtonSmall}]];
 }
 
 @end
