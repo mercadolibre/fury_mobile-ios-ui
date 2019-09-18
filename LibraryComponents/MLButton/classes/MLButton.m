@@ -24,6 +24,8 @@ static const CGFloat kMLButtonCornerRadius = 4.0f;
 static const CGFloat kMLButtonBorderWidth = 1.0f;
 static const CGFloat kMLButtonLineSpacing = 7.0f;
 
+static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
+
 @interface MLButton ()
 
 @property (nonatomic, strong) UILabel *label;
@@ -35,6 +37,11 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 @property (nonatomic, strong) MLSpinnerConfig *spinnerConfig;
 
 @property (nonatomic, assign) BOOL isLoading;
+
+@property (nonatomic, assign) CGFloat verticalPadding;
+@property (nonatomic, assign) CGFloat fontSize;
+
+@property (nonatomic, strong) NSArray <NSLayoutConstraint *> *verticalPaddingConstraints;
 
 @end
 
@@ -102,7 +109,35 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 
 	self.backgroundLayer.borderWidth = kMLButtonBorderWidth;
 
+	[self setUpWithSize];
 	[self setUpContentView];
+}
+
+- (void)setUpWithSize
+{
+	self.verticalPadding = kMLButtonVerticalPadding;
+	self.fontSize = kMLFontsSizeMedium;
+
+	if (self.config != nil) {
+		switch (self.config.buttonSize) {
+			case MLButtonSizeSmall: {
+				// init with small size
+				self.verticalPadding = kMLButtonSmallVerticalPadding;
+				self.fontSize = kMLFontsSizeXSmall;
+				break;
+			}
+
+			default: {
+				// init with default size (large button)
+				break;
+			}
+		}
+	}
+	if (self.verticalPaddingConstraints.count > 0) {
+		for (NSLayoutConstraint *constraint in self.verticalPaddingConstraints) {
+			constraint.constant = self.verticalPadding;
+		}
+	}
 }
 
 - (void)setUpContentView
@@ -110,9 +145,12 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 	[self addSubview:self.contentView];
 	[self.contentView addSubview:self.label];
 
-	// ContentView Constarints
+	// ContentView Constraints
 	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|->=p-[content]->=p-|" options:0 metrics:@{@"p" : @(kMLButtonHorizontalPadding)} views:@{@"content" : self.contentView}]];
-	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-p@priority-[content]-p@priority-|" options:0 metrics:@{@"p" : @(kMLButtonVerticalPadding), @"priority" : @999} views:@{@"content" : self.contentView}]];
+	self.verticalPaddingConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-p@priority-[content]-p@priority-|" options:0 metrics:@{@"p" : @(self.verticalPadding), @"priority" : @999} views:@{@"content" : self.contentView}];
+
+	[self addConstraints:self.verticalPaddingConstraints];
+
 	[self.contentView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
 
 	// TitleLabel Constraints
@@ -158,7 +196,7 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 
 - (void)updateLookAndFeel
 {
-    self.label.font = [UIFont ml_regularSystemFontOfSize:kMLFontsSizeMedium];
+    self.label.font = [UIFont ml_regularSystemFontOfSize:self.fontSize];
     UIColor *contentColor = self.isEnabled ? (self.isHighlighted ? self.config.highlightedState.contentColor : self.config.defaultState.contentColor) : self.config.disableState.contentColor;
     self.label.textColor = contentColor;
     self.backgroundLayer.backgroundColor = self.isEnabled ? (self.isHighlighted ? self.config.highlightedState.backgroundColor.CGColor : self.config.defaultState.backgroundColor.CGColor) : self.config.disableState.backgroundColor.CGColor;
@@ -266,6 +304,7 @@ static const CGFloat kMLButtonLineSpacing = 7.0f;
 - (void)setConfig:(MLButtonConfig *)config
 {
     _config = config;
+    [self setUpWithSize];
     [self updateLookAndFeel];
 }
 

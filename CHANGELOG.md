@@ -1,3 +1,7 @@
+# v5.15.0
+### Agregado
+- Se agrega size Large (default) y small a MLButton
+
 # v5.14.0
 ### Arreglado
 - 🛠 Fix `MLTitledMultiLineTextField` ignores delegate
