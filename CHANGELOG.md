@@ -1,3 +1,7 @@
+# v5.15.1
+### Arreglado
+- Se hace expandir el headercontroller para que ocupe el frame del controller padre 
+
 # v5.15.0
 ### Agregado
 - Se agrega size Large (default) y small a MLButton
