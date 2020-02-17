@@ -150,6 +150,11 @@ typedef NS_ENUM (NSInteger, MLTitledTextFieldState) {
 @property (strong, nonatomic, nullable) IBOutlet UIView *accessoryView;
 
 /**
+ * Prefix that you want to place
+ */
+@property (nonatomic, copy, nullable) IBInspectable NSString *prefix;
+
+/**
  * Textfield keyboard type.
  * Default is UIKeyboardTypeDefault
  */
