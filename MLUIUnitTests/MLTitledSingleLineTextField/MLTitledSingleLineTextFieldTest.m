@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *accessoryLabel;
 @property (weak, nonatomic) IBOutlet UIView *accessoryViewContainer;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *placeholderLeadingConstraint;
 
 @property (strong, nonatomic) MLUITextField *textField;
 
@@ -308,6 +309,62 @@
 	OCMExpect([protocolMock textFieldDidPressDeleteKey:textField]);
 	[textField.textField deleteBackward];
 	OCMVerifyAll(protocolMock);
+}
+
+- (void)testSetPrefix
+{
+	NSString *prefix = @"A prefix text";
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.textField = [[MLUITextField alloc] init];
+	textField.prefix = prefix;
+
+	XCTAssertNotNil(textField.textField.leftView);
+	XCTAssertEqual(textField.textField.leftView.subviews.count, 1);
+	XCTAssertTrue([textField.textField.leftView.subviews.firstObject isKindOfClass:UIView.class]);
+}
+
+- (void)testSetPrefixWithNilValue
+{
+	NSString *prefix = nil;
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.textField = [[MLUITextField alloc] init];
+	textField.prefix = prefix;
+
+	XCTAssertNil(textField.textField.leftView);
+}
+
+- (void)testSetPrefixWithEmptyValue
+{
+	NSString *prefix = @"";
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.textField = [[MLUITextField alloc] init];
+	textField.prefix = prefix;
+
+	XCTAssertNil(textField.textField.leftView);
+}
+
+- (void)testChangePlaceHolderContraint_withSetPrefix
+{
+	NSString *prefix = @"BsF.";
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.textField = [[MLUITextField alloc] init];
+	textField.prefix = prefix;
+
+	[textField layoutSubviews];
+
+	XCTAssertTrue(textField.placeholderLeadingConstraint.constant > 0);
+}
+
+- (void)testChangePlaceHolderContraint_withPrefixNil
+{
+	NSString *prefix = nil;
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.textField = [[MLUITextField alloc] init];
+	textField.prefix = prefix;
+
+	[textField layoutSubviews];
+
+	XCTAssertTrue(textField.placeholderLeadingConstraint.constant == 0);
 }
 
 @end

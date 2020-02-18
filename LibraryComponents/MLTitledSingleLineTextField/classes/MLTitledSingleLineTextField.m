@@ -28,9 +28,16 @@ static const CGFloat kMLTextFieldThickLine = 2;
 @property (strong, nonatomic) MLUITextField *textField;
 @property (copy, nonatomic) NSString *textCache;
 
+@property (weak, nonatomic) UIView *prefixContainer;
+@property (weak, nonatomic) UILabel *prefixLabel;
+@property (weak, nonatomic) NSLayoutConstraint *prefixToTextContraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *placeholderLeadingConstraint;
+
 @end
 
 @implementation MLTitledSingleLineTextField
+
+@dynamic prefix;
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
@@ -154,6 +161,7 @@ static const CGFloat kMLTextFieldThickLine = 2;
 	[UIView animateWithDuration:.5f animations: ^{
 	    weakSelf.textField.textColor = textColor;
 	    weakSelf.titleLabel.textColor = labelColor;
+	    weakSelf.prefixLabel.textColor = labelColor;
 	    weakSelf.lineView.backgroundColor = lineColor;
 	    weakSelf.textField.tintColor = lineColor;
 	    weakSelf.lineViewHeight.constant = lineHeight;
@@ -331,6 +339,11 @@ static const CGFloat kMLTextFieldThickLine = 2;
 	self.textField.secureTextEntry = secureTextEntry;
 }
 
+- (void)layoutSubviews {
+	[super layoutSubviews];
+	[self updatePrefixConstraints];
+}
+
 #pragma mark Custom getters
 
 - (NSString *)text
@@ -505,6 +518,79 @@ static const CGFloat kMLTextFieldThickLine = 2;
 - (BOOL)validateLength:(NSString *)string
 {
 	return !(self.maxCharacters && string.length > self.maxCharacters);
+}
+
+#pragma mark Prefix
+
+- (NSString *)prefix {
+	return self.prefixLabel.text;
+}
+
+- (void)setPrefix:(NSString *)prefix {
+	if (prefix.length == 0) {
+		self.textField.leftView = nil;
+		self.textField.leftViewMode = UITextFieldViewModeNever;
+		return;
+	}
+
+	if (self.prefixContainer) {
+		self.prefixLabel.text = prefix;
+		[self updatePrefixConstraints];
+		return;
+	}
+
+	[self initializePrefixContainerWithText:prefix];
+}
+
+- (void)initializePrefixContainerWithText:(NSString *)prefix {
+	UIView *prefixContainer = [[UIView alloc] init];
+	self.prefixContainer = prefixContainer;
+	self.prefixContainer.translatesAutoresizingMaskIntoConstraints = NO;
+
+	UILabel *prefixLabel = [[UILabel alloc] init];
+	self.prefixLabel = prefixLabel;
+	self.prefixLabel.text = prefix;
+	self.prefixLabel.font = [UIFont ml_regularSystemFontOfSize:kMLFontsSizeMedium];
+	self.prefixLabel.textColor = self.titleLabel.textColor;
+
+	self.prefixLabel.translatesAutoresizingMaskIntoConstraints = NO;
+
+	[self.prefixContainer addSubview:self.prefixLabel];
+
+	NSDictionary *views = @{@"view" : self.prefixLabel};
+	self.prefixToTextContraint = [NSLayoutConstraint constraintWithItem:self.prefixContainer
+	                                                          attribute:NSLayoutAttributeTrailing
+	                                                          relatedBy:NSLayoutRelationEqual
+	                                                             toItem:self.prefixLabel
+	                                                          attribute:NSLayoutAttributeTrailing
+	                                                         multiplier:1
+	                                                           constant:0];
+	[self.prefixContainer addConstraint:self.prefixToTextContraint];
+	[self.prefixContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view]-0-|"
+	                                                                             options:0
+	                                                                             metrics:nil
+	                                                                               views:views]];
+	[self.prefixContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[view]"
+	                                                                             options:0
+	                                                                             metrics:nil
+	                                                                               views:views]];
+	self.textField.leftView = self.prefixContainer;
+	self.textField.leftViewMode = UITextFieldViewModeAlways;
+
+	[self updatePrefixConstraints];
+}
+
+- (void)updatePrefixConstraints {
+	CGFloat defaultHorizontalMargin = 4;
+
+	BOOL isPrefixBlank = (self.prefixLabel.text.length == 0);
+	self.prefixToTextContraint.constant = isPrefixBlank ? 0 : defaultHorizontalMargin;
+
+	[self.prefixContainer setNeedsLayout];
+	[self.prefixContainer layoutIfNeeded];
+
+	CGRect prefixFrame = self.prefixContainer.frame;
+	self.placeholderLeadingConstraint.constant = prefixFrame.size.width;
 }
 
 #pragma mark KVO
