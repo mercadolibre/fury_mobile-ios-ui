@@ -92,8 +92,8 @@ static int const kTransitionDuration = 0.4f;
 
 - (void)viewDidLayoutSubviews
 {
-    [super viewDidLayoutSubviews];
-    self.headerViewController.view.frame = self.view.frame;
+	[super viewDidLayoutSubviews];
+	self.headerViewController.view.frame = self.view.frame;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
