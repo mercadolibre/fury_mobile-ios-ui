@@ -5,7 +5,7 @@ project 'MLUI.xcodeproj'
 
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 install! 'cocoapods',
   :generate_multiple_pod_projects => true,

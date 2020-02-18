@@ -6,7 +6,7 @@
 default: &defaultJob
   # Set the xcode version this virtual machine will use
   macos:
-    xcode: "10.1.0"
+    xcode: "10.2.1"
   # We need to set this for RVM.
   shell: /bin/bash --login
 # Default workflow will run on all branches except releases
@@ -53,8 +53,8 @@ jobs:
           name: Run tests on iOS 10.3.1
           command: ./scripts/run_tests.sh 10.3.1
       - run:
-          name: Run test on iOS 11.2
-          command: ./scripts/run_tests.sh 11.2
+          name: Run test on iOS 11.4
+          command: ./scripts/run_tests.sh 11.4
       - run:
           name: Run Coverage Report
           command: ./scripts/run_coverage_report.sh
