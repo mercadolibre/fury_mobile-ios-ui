@@ -1,6 +1,8 @@
-# v5.15.1
+# v5.16.0 (Sin Publicar)
 ### Arreglado
-- Se hace expandir el headercontroller para que ocupe el frame del controller padre 
+- Se hace expandir el headercontroller para que ocupe el frame del controller padre
+### Agregado
+- Se agrega soporte de prefix en `MLTitledSingleLineTextField`
 
 # v5.15.0
 ### Agregado

@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet MLTitledSingleLineTextField *textField1;
 @property (weak, nonatomic) IBOutlet MLTitledSingleLineTextField *textField2;
 @property (weak, nonatomic) IBOutlet MLTitledSingleLineTextField *textFieldAlignCenter;
+@property (weak, nonatomic) IBOutlet MLTitledSingleLineTextField *textFieldWithPrefix;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) UIView *activeTextField;
 
@@ -40,6 +41,7 @@
 	self.textField2.textInputControl.keyboardType = UIKeyboardTypeNumberPad;
 	[self.textFieldAlignCenter setupInnerTextWithAlignment:NSTextAlignmentCenter];
 	self.textFieldAlignCenter.helperDescription = @"Helper Description Centered";
+	[self setupTextFieldWithPrefix];
 }
 
 #pragma mark - Memory
@@ -69,6 +71,19 @@
 	self.textFieldAlignCenter.errorDescription = @"A longer error description that may take up to two lines or maybe three who knows";
 }
 
+- (IBAction)addPrefix:(id)sender {
+	NSArray *prefixes = @[@"R$", @"Name:", @"Enter something here"];
+
+	NSUInteger randoxPrefix = rand() % prefixes.count;
+	NSString *prefix = prefixes[randoxPrefix];
+
+	self.textFieldWithPrefix.prefix = prefix;
+}
+
+- (IBAction)removePrefix:(id)sender {
+	self.textFieldWithPrefix.prefix = nil;
+}
+
 #pragma mark Keyboard changes
 
 - (void)keyboardWasShown:(NSNotification *)aNotification
@@ -92,6 +107,12 @@
 	UIEdgeInsets contentInsets = UIEdgeInsetsZero;
 	self.scrollView.contentInset = contentInsets;
 	self.scrollView.scrollIndicatorInsets = contentInsets;
+}
+
+- (void)setupTextFieldWithPrefix {
+	self.textFieldWithPrefix.title = @"Renta mensual";
+	self.textFieldWithPrefix.placeholder = @"Aquí va el texto...";
+	self.textFieldWithPrefix.prefix = @"Prefix:";
 }
 
 #pragma mark TextField delegate
