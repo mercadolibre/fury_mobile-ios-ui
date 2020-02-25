@@ -71,6 +71,18 @@
 	self.textFieldAlignCenter.errorDescription = @"A longer error description that may take up to two lines or maybe three who knows";
 }
 
+- (IBAction)addErrorsWithoutAnimation:(id)sender
+{
+	[self.textField1 setErrorDescription:@"A short error description"
+	                            animated:NO];
+
+	[self.textField2 setErrorDescription:@"A longer error description that may take up to two lines or maybe three who knows"
+	                            animated:NO];
+
+	[self.textFieldAlignCenter setErrorDescription:@"A longer error description that may take up to two lines or maybe three who knows"
+	                                      animated:NO];
+}
+
 - (IBAction)addPrefix:(id)sender {
 	NSArray *prefixes = @[@"R$", @"Name:", @"Enter something here"];
 

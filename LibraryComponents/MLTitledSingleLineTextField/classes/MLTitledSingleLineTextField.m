@@ -609,7 +609,7 @@ static const CGFloat kMLTextFieldThickLine = 2;
 {
 	if ([keyPath isEqualToString:NSStringFromSelector(@selector(text))]) {
 		[self updateCharacterCount];
-		[self setErrorDescription:nil animated:YES];
+		self.errorDescription = nil;
 		[self style];
 	}
 }
