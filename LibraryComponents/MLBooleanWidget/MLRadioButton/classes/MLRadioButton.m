@@ -8,8 +8,8 @@
 
 #import "MLRadioButton.h"
 
-#import "UIColor+MLColorPalette.h"
 #import "MLBooleanWidget_Protected.h"
+#import "MLStyleSheetManager.h"
 
 static const CGFloat kMLRadioButtonInternalCircleRadiousRatio = 3 / 7.5; // If view has a radious of 7.5 then the radios has to be 1
 static const CGFloat kMLRadioButtonExternalLineWidth = 2;
@@ -78,14 +78,14 @@ static const CGFloat kMLRadioButtonNotAnimationDuration = 0;
 	// Color animation
 	CABasicAnimation *colorFillAnimation = [CABasicAnimation animationWithKeyPath:@"strokeColor"];
 	colorFillAnimation.beginTime = 0;
-	colorFillAnimation.fromValue = (id)[UIColor ml_meli_grey].CGColor;
-	colorFillAnimation.toValue = (id)[UIColor ml_meli_blue].CGColor;
+	colorFillAnimation.fromValue = (id)[[MLStyleSheetManager styleSheet] greyColor].CGColor;
+	colorFillAnimation.toValue = (id)[[MLStyleSheetManager styleSheet] secondaryColor].CGColor;
 	colorFillAnimation.fillMode = kCAFillModeForwards;
 	colorFillAnimation.duration = animated ? kMLRadioButtonAnimationDuration : kMLRadioButtonNotAnimationDuration;
 
 	[self.radioButtonExternalLayer addAnimation:colorFillAnimation forKey:@"animateFill"];
 
-	self.radioButtonExternalLayer.strokeColor = [UIColor ml_meli_blue].CGColor;
+	self.radioButtonExternalLayer.strokeColor = [[MLStyleSheetManager styleSheet] secondaryColor].CGColor;
 }
 
 - (void)fillRadioButtonInternalAnimated:(BOOL)animated
@@ -99,7 +99,7 @@ static const CGFloat kMLRadioButtonNotAnimationDuration = 0;
 
 	UIBezierPath *internalCircle = [UIBezierPath bezierPathWithOvalInRect:[self internalCircleRect]];
 
-	self.radioButtonInternalLayer.fillColor = [UIColor ml_meli_blue].CGColor;
+	self.radioButtonInternalLayer.fillColor = [[MLStyleSheetManager styleSheet] secondaryColor].CGColor;
 	float lineWidth = kMLRadioButtonExternalLineWidth;
 
 	self.radioButtonInternalLayer.lineWidth = lineWidth;
@@ -121,8 +121,8 @@ static const CGFloat kMLRadioButtonNotAnimationDuration = 0;
 	// Color animation
 	CABasicAnimation *colorFillAnimation = [CABasicAnimation animationWithKeyPath:@"strokeColor"];
 	colorFillAnimation.beginTime = 0;
-	colorFillAnimation.fromValue = (id)[UIColor ml_meli_grey].CGColor;
-	colorFillAnimation.toValue = (id)[UIColor ml_meli_blue].CGColor;
+	colorFillAnimation.fromValue = (id)[[MLStyleSheetManager styleSheet] greyColor].CGColor;
+	colorFillAnimation.toValue = (id)[[MLStyleSheetManager styleSheet] secondaryColor].CGColor;
 	colorFillAnimation.fillMode = kCAFillModeForwards;
 
 	// Compaund animation
@@ -132,7 +132,7 @@ static const CGFloat kMLRadioButtonNotAnimationDuration = 0;
 
 	[self.radioButtonInternalLayer addAnimation:fillAnimation forKey:@"animateFill"];
 
-	self.radioButtonInternalLayer.strokeColor = [UIColor ml_meli_blue].CGColor;
+	self.radioButtonInternalLayer.strokeColor = [[MLStyleSheetManager styleSheet] secondaryColor].CGColor;
 	self.radioButtonInternalLayer.path = internalCircle.CGPath;
 	self.radioButtonInternalLayer.opacity = 1;
 }
@@ -160,14 +160,14 @@ static const CGFloat kMLRadioButtonNotAnimationDuration = 0;
 	// Color animation
 	CABasicAnimation *colorFillAnimation = [CABasicAnimation animationWithKeyPath:@"strokeColor"];
 	colorFillAnimation.beginTime = 0;
-	colorFillAnimation.fromValue = (id)[UIColor ml_meli_blue].CGColor;
-	colorFillAnimation.toValue = (id)[UIColor ml_meli_grey].CGColor;
+	colorFillAnimation.fromValue = (id)[[MLStyleSheetManager styleSheet] secondaryColor].CGColor;
+	colorFillAnimation.toValue = (id)[[MLStyleSheetManager styleSheet] greyColor].CGColor;
 	colorFillAnimation.fillMode = kCAFillModeForwards;
 	colorFillAnimation.duration = animated ? kMLRadioButtonAnimationDuration : kMLRadioButtonNotAnimationDuration;
 
 	[self.radioButtonExternalLayer addAnimation:colorFillAnimation forKey:@"animateFill"];
 
-	self.radioButtonExternalLayer.strokeColor = [UIColor ml_meli_grey].CGColor;
+	self.radioButtonExternalLayer.strokeColor = [[MLStyleSheetManager styleSheet] greyColor].CGColor;
 }
 
 - (void)clearRadioButtonInternalAnimated:(BOOL)animated
@@ -204,8 +204,8 @@ static const CGFloat kMLRadioButtonNotAnimationDuration = 0;
 	// Color animation
 	CABasicAnimation *colorClearAnimation = [CABasicAnimation animationWithKeyPath:@"strokeColor"];
 	colorClearAnimation.beginTime = 0;
-	colorClearAnimation.fromValue = (id)[UIColor ml_meli_blue].CGColor;
-	colorClearAnimation.toValue = (id)[UIColor ml_meli_grey].CGColor;
+	colorClearAnimation.fromValue = (id)[[MLStyleSheetManager styleSheet] secondaryColor].CGColor;
+	colorClearAnimation.toValue = (id)[[MLStyleSheetManager styleSheet] greyColor].CGColor;
 	colorClearAnimation.fillMode = kCAFillModeForwards;
 
 	// Compaund animation
@@ -215,7 +215,7 @@ static const CGFloat kMLRadioButtonNotAnimationDuration = 0;
 
 	[self.radioButtonInternalLayer addAnimation:clearAnimation forKey:@"animateClear"];
 
-	self.radioButtonInternalLayer.strokeColor = [UIColor ml_meli_grey].CGColor;
+	self.radioButtonInternalLayer.strokeColor = [[MLStyleSheetManager styleSheet] greyColor].CGColor;
 	self.radioButtonInternalLayer.path = externalCircle.CGPath;
 	self.radioButtonInternalLayer.opacity = 0;
 }
