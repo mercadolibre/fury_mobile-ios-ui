@@ -137,7 +137,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'MLRadioButton' do |mlradiobutton|
     mlradiobutton.source_files = ["LibraryComponents/MLBooleanWidget/MLRadioButton/classes/*.{h,m}", "LibraryComponents/MLBooleanWidget/classes/*.{h,m}"]
-    mlradiobutton.dependency 'MLUI/MLColorPalette'
+    mlradiobutton.dependency 'MLUI/StyleSheet'
   end
 
   s.subspec 'MLCheckBox' do |mlcheckbox|

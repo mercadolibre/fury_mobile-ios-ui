@@ -1,3 +1,7 @@
+# v5.17.0 (Sin Publicar)
+### Agregado
+- 'MLRadioButton': se corrigen los colores para que muestre los correspondientes a cada plataforma.  
+
 # v5.16.0 (Sin Publicar)
 ### Agregado
 - Se agrega soporte de prefix en `MLTitledSingleLineTextField`
