@@ -1,6 +1,6 @@
 # v5.17.0 (Sin Publicar)
 ### Agregado
-- 'MLRadioButton': corrigen los colores para que muestre los correspondientes a cada plataforma.  
+- 'MLRadioButton': se corrigen los colores para que muestre los correspondientes a cada plataforma.  
 
 # v5.16.0 (Sin Publicar)
 ### Agregado
