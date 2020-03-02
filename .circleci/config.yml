@@ -6,7 +6,7 @@
 default: &defaultJob
   # Set the xcode version this virtual machine will use
   macos:
-    xcode: "10.2.1"
+    xcode: "11.3.1"
   # We need to set this for RVM.
   shell: /bin/bash --login
 # Default workflow will run on all branches except releases
@@ -31,6 +31,9 @@ jobs:
       - add_ssh_keys
       - restore_cache:
           key: gem-cache-{{ checksum "Gemfile.lock" }}-v2
+      - run:
+          name: Set Ruby Version
+          command: echo 'chruby `cat .ruby-version`' >> ~/.bash_profile
       - run:
           name: Install Bundler
           command: gem install bundler
@@ -66,6 +69,9 @@ jobs:
       - restore_cache:
           key: gem-cache-{{ checksum "Gemfile.lock" }}-v2
       - run:
+          name: Set Ruby Version
+          command: echo 'chruby `cat .ruby-version`' >> ~/.bash_profile
+      - run:
           name: Install Bundler
           command: gem install bundler
       - run:
@@ -95,6 +101,9 @@ jobs:
       - add_ssh_keys
       - restore_cache:
           key: gem-cache-{{ checksum "Gemfile.lock" }}-v2
+      - run:
+          name: Set Ruby Version
+          command: echo 'chruby `cat .ruby-version`' >> ~/.bash_profile
       - run:
           name: Install Bundler
           command: gem install bundler

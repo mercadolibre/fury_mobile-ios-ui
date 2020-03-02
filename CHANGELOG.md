@@ -2,7 +2,9 @@
 ### Agregado
 - 'MLRadioButton': se corrigen los colores para que muestre los correspondientes a cada plataforma.  
 
-# v5.16.0 (Sin Publicar)
+# v5.16.0
+### Cambiado
+- Se migra a xcode 11.3.1
 ### Agregado
 - Se agrega soporte de prefix en `MLTitledSingleLineTextField`
 
