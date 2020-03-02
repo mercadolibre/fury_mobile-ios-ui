@@ -8,6 +8,8 @@ IOS_DEVICE="${2:-iPhone 7}"
 export XCPRETTY_JSON_FILE_OUTPUT="build/reports/result_$IOS_VERSION.json"
 FORMATTER="xcpretty -f `bundle exec xcpretty-json-formatter`"
 
+xcrun instruments -s devices
+
 IOS_SIMULATOR_UDID=$(xcrun instruments -s devices | grep "$IOS_DEVICE ($IOS_VERSION)" | sed -E 's/.*\[([0-9A-F-]+)\].*/\1/g' | head -n 1)
 
 echo "Prelaunching iOS simulator"
