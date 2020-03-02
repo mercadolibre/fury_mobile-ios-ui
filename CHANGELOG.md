@@ -1,6 +1,9 @@
-# v5.17.0 (Sin Publicar)
+# v5.17.0 
 ### Agregado
-- 'MLRadioButton': se corrigen los colores para que muestre los correspondientes a cada plataforma.  
+- 'MLRadioButton': se corrigen los colores para que muestre los correspondientes a cada plataforma. 
+ 
+### Cambiado 
+- `MLTitledSingleLineTextField`: Soporte para setear error en MLTitledSingleLineTextField sin animación.
 
 # v5.16.0
 ### Cambiado
