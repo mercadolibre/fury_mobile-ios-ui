@@ -230,7 +230,12 @@ static const CGFloat kMLTextFieldThickLine = 2;
 	self.accessoryLabel.text = _helperDescription;
 }
 
-- (void)setErrorDescription:(NSString *)errorDescription
+- (void)setErrorDescription:(nullable NSString *)errorDescription
+{
+	[self setErrorDescription:errorDescription animated:YES];
+}
+
+- (void)setErrorDescription:(nullable NSString *)errorDescription animated:(BOOL)animated
 {
 	if (errorDescription == _errorDescription
 	    || [errorDescription isEqualToString:_errorDescription]) {
@@ -246,12 +251,17 @@ static const CGFloat kMLTextFieldThickLine = 2;
 		return;
 	}
 
-	[UIView animateWithDuration:0.3 animations: ^{
-	    weakSelf.accessoryLabel.text = errorDescription;
-	    [weakSelf.accessoryLabel invalidateIntrinsicContentSize];
-	    [weakSelf setNeedsLayout];
-	    [weakSelf layoutIfNeeded];
-	}];
+	if (!animated) {
+		weakSelf.accessoryLabel.text = errorDescription;
+	} else {
+		[UIView animateWithDuration:0.3 animations: ^{
+		    weakSelf.accessoryLabel.text = errorDescription;
+		    [weakSelf.accessoryLabel invalidateIntrinsicContentSize];
+		    [weakSelf setNeedsLayout];
+		    [weakSelf layoutIfNeeded];
+		}];
+	}
+
 	[self style];
 }
 

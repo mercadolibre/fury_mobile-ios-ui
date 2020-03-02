@@ -109,7 +109,8 @@ typedef NS_ENUM (NSInteger, MLTitledTextFieldState) {
 @property (nonatomic, copy, nullable) IBInspectable NSString *placeholder;
 
 /**
- * An error string to be displayed.
+ * An error string to be displayed. By default the setting is animated.
+ * To set it without animation use "setErrorDescription: animated:"
  */
 @property (nonatomic, copy, nullable) IBInspectable NSString *errorDescription;
 
@@ -196,6 +197,12 @@ typedef NS_ENUM (NSInteger, MLTitledTextFieldState) {
  * @return a text input control to be used by this component.
  */
 - (UIView <UITextInputTraits, UITextInput> *)textInputControl;
+
+/**
+   Permits to set errorDescription without animation.
+   Default setter does it with animation
+ */
+- (void)setErrorDescription:(nullable NSString *)errorDescription animated:(BOOL)animated;
 
 @end
 

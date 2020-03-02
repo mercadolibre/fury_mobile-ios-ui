@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2o-1J-LLS">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="621"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="599"/>
                     <subviews>
                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="76" translatesAutoresizingMaskIntoConstraints="NO" id="ZcJ-1b-FDZ" customClass="MLTitledSingleLineTextField">
                             <rect key="frame" x="8" y="30" width="359" height="76"/>
@@ -239,21 +239,37 @@
                         <constraint firstItem="wu0-NA-T0p" firstAttribute="top" secondItem="ZcJ-1b-FDZ" secondAttribute="bottom" constant="8" id="zY1-kd-8Hm"/>
                     </constraints>
                 </scrollView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAv-wm-cNf">
-                    <rect key="frame" x="8" y="629" width="73" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAv-wm-cNf" userLabel="Add errors with animation">
+                    <rect key="frame" x="8" y="607" width="73" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="xuE-wc-iBG"/>
+                    </constraints>
                     <state key="normal" title="Add errors"/>
                     <connections>
                         <action selector="addErrors:" destination="-1" eventType="touchUpInside" id="2jH-th-oDZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CpM-qc-TRQ" userLabel="Add errors without animation">
+                    <rect key="frame" x="169" y="607" width="198" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="341-LK-0bo"/>
+                    </constraints>
+                    <state key="normal" title="Add errors without animation"/>
+                    <connections>
+                        <action selector="addErrorsWithoutAnimation:" destination="-1" eventType="touchUpInside" id="euv-9b-tvh"/>
                     </connections>
                 </button>
             </subviews>
             <constraints>
                 <constraint firstItem="P2o-1J-LLS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3EE-1z-LMU"/>
                 <constraint firstItem="ZcJ-1b-FDZ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" constant="-16" id="45f-05-wy6"/>
-                <constraint firstAttribute="bottom" secondItem="YAv-wm-cNf" secondAttribute="bottom" constant="8" id="L4M-z0-gnE"/>
+                <constraint firstItem="CpM-qc-TRQ" firstAttribute="top" secondItem="P2o-1J-LLS" secondAttribute="bottom" constant="8" id="Hfe-5r-jCY"/>
+                <constraint firstAttribute="bottom" secondItem="YAv-wm-cNf" secondAttribute="bottom" constant="16" id="L4M-z0-gnE"/>
                 <constraint firstItem="YAv-wm-cNf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Ohm-oc-g3L"/>
                 <constraint firstItem="P2o-1J-LLS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XK0-02-e2S"/>
                 <constraint firstAttribute="trailing" secondItem="P2o-1J-LLS" secondAttribute="trailing" id="bdE-t5-dZU"/>
+                <constraint firstAttribute="bottom" secondItem="CpM-qc-TRQ" secondAttribute="bottom" constant="16" id="t2g-Zk-CI5"/>
+                <constraint firstAttribute="trailing" secondItem="CpM-qc-TRQ" secondAttribute="trailing" constant="8" id="t4a-Iw-wFC"/>
                 <constraint firstItem="YAv-wm-cNf" firstAttribute="top" secondItem="P2o-1J-LLS" secondAttribute="bottom" constant="8" id="zj0-6E-q04"/>
             </constraints>
             <point key="canvasLocation" x="106.40000000000001" y="197.45127436281859"/>
