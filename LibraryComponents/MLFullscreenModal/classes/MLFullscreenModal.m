@@ -137,7 +137,7 @@ static int const kTransitionDuration = 0.4f;
 
 - (BOOL)shouldScrollContent
 {
-	return NO;
+	return YES;
 }
 
 - (IBAction)onCloseButtonDidTouch:(id)sender
