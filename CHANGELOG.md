@@ -3,6 +3,8 @@
 - 'MLRadioButton': se corrigen los colores para que muestre los correspondientes a cada plataforma.  
 
 # v5.16.0 (Sin Publicar)
+### Arreglado
+- Se hace expandir el headercontroller para que ocupe el frame del controller padre
 ### Agregado
 - Se agrega soporte de prefix en `MLTitledSingleLineTextField`
 
