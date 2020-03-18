@@ -163,7 +163,7 @@ static const CGFloat kBigSmallFontIncrement = 3;
  */
 - (void)testOverrideAttributesWithTagShouldReplaceWithDecrementedSizeFontWith0Size
 {
-	UIFont *defaultFont = [UIFont fontWithName:@".SFUIText-Light" size:1];
+	UIFont *defaultFont = [UIFont ml_regularSystemFontOfSize:1.0];
 
 	NSString *tag = @"small";
 	NSMutableDictionary *attrs = [[NSMutableDictionary alloc] init];
@@ -172,7 +172,7 @@ static const CGFloat kBigSmallFontIncrement = 3;
 	[MLHtml overrideAttributesWithTag:tag dictionary:attrs];
 
 	UIFont *targetFont = attrs[NSFontAttributeName];
-	UIFont *expectedFont = [UIFont fontWithName:@".SFUIText-Light" size:0];
+	UIFont *expectedFont = [defaultFont fontWithSize:0.0];
 
 	XCTAssertEqualObjects(targetFont.fontName, expectedFont.fontName);
 	XCTAssertEqual(targetFont.pointSize, expectedFont.pointSize);
