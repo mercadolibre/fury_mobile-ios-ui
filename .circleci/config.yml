@@ -22,7 +22,7 @@ deploy-workflow: &deployWorkflow
         - /release\/.*$/
 
 # Define the jobs we will be using
-version: 2
+version: 2.1
 jobs:
   test:
     <<: *defaultJob
@@ -58,9 +58,15 @@ jobs:
       - run:
           name: Run tests on iOS 13.3
           command: ./scripts/run_tests.sh 13.3
+          when: on_fail
+      - store_artifacts:
+          path: /Users/distiller/Library/Developer/Xcode/DerivedData/MLUI-hjvphfjkpftamwghnsuqluhfbwna/Logs/Test/
+      - store_artifacts:
+          path: /Users/distiller/Library/Logs/DiagnosticReports
       - run:
           name: Run Coverage Report
           command: ./scripts/run_coverage_report.sh
+
   lint:
     <<: *defaultJob
     steps:
