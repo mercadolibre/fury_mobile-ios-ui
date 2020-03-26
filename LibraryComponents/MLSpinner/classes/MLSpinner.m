@@ -61,7 +61,7 @@ static const CGFloat kMLSpinnerSmallDiameter = 20;
 static const CGFloat kMLSpinnerBigDiameter = 60;
 static const CGFloat kMLSpinnerSmallLineWidth = 2;
 static const CGFloat kMLSpinnerBigLineWidth = 3;
-static const CGFloat kMLSpinnerAppearenceAnimationDuration = 0.3;
+static const CGFloat kMLSpinnerAppearenceAnimationDuration = 0.05;
 
 - (id)init
 {
