@@ -1,4 +1,8 @@
-# v5.17.0 (Sin Publicar)
+# Sin publicar
+### Cambiado
+- 'MLSpinner': Se reduce el tiempo de la animacion de fadeIn/fadeOut a 50ms
+
+# v5.17.0 
 ### Agregado
 - 'MLRadioButton': se corrigen los colores para que muestre los correspondientes a cada plataforma.  
 
