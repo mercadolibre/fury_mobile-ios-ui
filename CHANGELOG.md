@@ -1,3 +1,7 @@
+# Sin publicar
+### Cambiado
+- 'MLSpinner': Se reduce el tiempo de la animacion de fadeIn/fadeOut a 50ms
+
 # v5.18.0
 - Fix modal full screen
 
