@@ -32,11 +32,8 @@ jobs:
       - restore_cache:
           key: gem-cache-{{ checksum "Gemfile.lock" }}-v2
       - run:
-          name: Set Ruby Version
-          command: echo 'chruby `cat .ruby-version`' >> ~/.bash_profile
-      - run:
           name: Install Bundler
-          command: gem install bundler
+          command: gem install bundler --user-install
       - run:
           name: Install Ruby tools
           command: bundle install --path vendor/bundle
