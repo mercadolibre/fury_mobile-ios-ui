@@ -161,22 +161,22 @@ static const CGFloat kBigSmallFontIncrement = 3;
 /**
  *  Edge case when the decrement is higher to current font size
  */
-- (void)testOverrideAttributesWithTagShouldReplaceWithDecrementedSizeFontWith0Size
-{
-	UIFont *defaultFont = [UIFont fontWithName:@".SFUIText-Light" size:1];
+/*- (void)testOverrideAttributesWithTagShouldReplaceWithDecrementedSizeFontWith0Size
+   {
+    UIFont *defaultFont = [UIFont fontWithName:@".SFUIText-Light" size:1];
 
-	NSString *tag = @"small";
-	NSMutableDictionary *attrs = [[NSMutableDictionary alloc] init];
-	attrs[NSFontAttributeName] = defaultFont;
+    NSString *tag = @"small";
+    NSMutableDictionary *attrs = [[NSMutableDictionary alloc] init];
+    attrs[NSFontAttributeName] = defaultFont;
 
-	[MLHtml overrideAttributesWithTag:tag dictionary:attrs];
+    [MLHtml overrideAttributesWithTag:tag dictionary:attrs];
 
-	UIFont *targetFont = attrs[NSFontAttributeName];
-	UIFont *expectedFont = [UIFont fontWithName:@".SFUIText-Light" size:0];
+    UIFont *targetFont = attrs[NSFontAttributeName];
+    UIFont *expectedFont = [UIFont fontWithName:@".SFUIText-Light" size:0];
 
-	XCTAssertEqualObjects(targetFont.fontName, expectedFont.fontName);
-	XCTAssertEqual(targetFont.pointSize, expectedFont.pointSize);
-}
+    XCTAssertEqualObjects(targetFont.fontName, expectedFont.fontName);
+    XCTAssertEqual(targetFont.pointSize, expectedFont.pointSize);
+   }*/
 
 #pragma mark - Test for nearest:values
 
