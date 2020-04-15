@@ -109,11 +109,16 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
 
 	self.backgroundLayer.borderWidth = kMLButtonBorderWidth;
     
-    [self.label setIsAccessibilityElement:NO];
-    [self setAccessibilityTraits:UIAccessibilityTraitButton];
-
+    [self setUpAccessibility];
 	[self setUpWithSize];
 	[self setUpContentView];
+}
+
+- (void)setUpAccessibility
+{
+    [self.label setIsAccessibilityElement:NO];
+    [self setIsAccessibilityElement:YES];
+    [self setAccessibilityTraits:UIAccessibilityTraitButton];
 }
 
 - (void)setUpWithSize
