@@ -109,8 +109,16 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
 
 	self.backgroundLayer.borderWidth = kMLButtonBorderWidth;
 
+	[self setUpAccessibility];
 	[self setUpWithSize];
 	[self setUpContentView];
+}
+
+- (void)setUpAccessibility
+{
+	[self.label setIsAccessibilityElement:NO];
+	[self setIsAccessibilityElement:YES];
+	[self setAccessibilityTraits:UIAccessibilityTraitButton];
 }
 
 - (void)setUpWithSize
@@ -156,6 +164,9 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
 	// TitleLabel Constraints
 	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-p@priority-[label]|" options:0 metrics:@{@"p" : @0, @"priority" : @999} views:@{@"label" : self.label}]];
 	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[label]|" options:0 metrics:0 views:@{@"label" : self.label}]];
+
+	// This prevent Voice Over read "possible text" before accessibility value
+	[self setLabel:self.label];
 }
 
 - (void)setupIconView
@@ -262,6 +273,7 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
 {
     if (!self.isLoading) {
         [super setEnabled:enabled];
+        [self setIsAccessibilityElement:enabled];
         [self updateLookAndFeel];
 	}
 }
@@ -299,6 +311,7 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
     [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, title.length)];
 
     self.label.attributedText = attributedString;
+    [self setAccessibilityValue:self.buttonTitle];
 }
 
 - (void)setConfig:(MLButtonConfig *)config
