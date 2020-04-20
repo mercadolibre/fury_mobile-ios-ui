@@ -1,4 +1,4 @@
-# Sin publicar
+# v5.19.0
 ### Cambiado
 - 'MLSpinner': Se reduce el tiempo de la animacion de fadeIn/fadeOut a 50ms
 - 'MLButton': Se agranda el area del tap cuando mientras se usa herramientas de accessibilidad.
