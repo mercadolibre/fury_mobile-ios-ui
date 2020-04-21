@@ -1,3 +1,7 @@
+# Sin publicar
+### Cambiado
+- 'MLButton': Se agrega accessibilityIdentifier para que Appium lo encuentre
+
 # v5.19.0
 ### Cambiado
 - 'MLSpinner': Se reduce el tiempo de la animacion de fadeIn/fadeOut a 50ms
