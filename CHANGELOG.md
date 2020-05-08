@@ -1,6 +1,10 @@
-# v5.19.1
+# v5.20.1
 ### Cambiado
 - 'MLButton': Se agrega accessibilityIdentifier para que Appium lo encuentre
+
+# v5.20.0
+### Cambiado
+- 'MLButton': Se agranda el area del tap cuando mientras se usa herramientas de accessibilidad.
 
 # v5.19.0
 ### Cambiado
