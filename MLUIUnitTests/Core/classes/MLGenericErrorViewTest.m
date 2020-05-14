@@ -44,8 +44,8 @@
 	                                                                     subtitle:@"Revisa tu conexión para seguir navegando."
 	                                                                  buttonTitle:@"Reintentar"
 	                                                                  actionBlock: ^{
-	    NSLog(@"For test, retry button can have a nil action.");
-	}];
+	                                                                      NSLog(@"For test, retry button can have a nil action.");
+																	  }];
 
 	XCTAssertTrue(errorView.imageView.image, @"Image view should have image set and it doesn't.");
 	XCTAssertTrue(errorView.title.text, @"Title label should have text set and it doesn't.");
