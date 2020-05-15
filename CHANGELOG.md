@@ -1,4 +1,4 @@
-# Sin publicar
+# v5.20.2
 ### Cambiado
 - 'MLButton': Cuando se hace set button title se configura el accessibilityIdentifier sólo si no fue configurado previamente.
 
