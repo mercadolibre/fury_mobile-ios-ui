@@ -18,14 +18,14 @@
 	                             inRange:NSMakeRange(0, attributedString.length)
 	                             options:0
 	                          usingBlock: ^(id _Nullable value, NSRange range, BOOL *_Nonnull stop) {
-	    if (value) {
-	        UIFont *systemFont = [UIFont ml_systemFontFromFont:value];
-	        if (![systemFont isEqual:value]) {
-	            [attributedString removeAttribute:NSFontAttributeName range:range];
-	            [attributedString addAttribute:NSFontAttributeName value:systemFont range:range];
-			}
-		}
-	}];
+	                              if (value) {
+									  UIFont *systemFont = [UIFont ml_systemFontFromFont:value];
+									  if (![systemFont isEqual:value]) {
+										  [attributedString removeAttribute:NSFontAttributeName range:range];
+										  [attributedString addAttribute:NSFontAttributeName value:systemFont range:range];
+									  }
+								  }
+							  }];
 	return attributedString;
 }
 

@@ -60,7 +60,7 @@ CHECK=false
  SEARCH_PATH[0]='.'
  CONFIG_FILE='uncrustify.cfg'
  REQUIRED_MAJOR_V=0
- REQUIRED_MINOR_V=66
+ REQUIRED_MINOR_V=71
 
  while [[ $# > 0 ]]; do
    key="$1"

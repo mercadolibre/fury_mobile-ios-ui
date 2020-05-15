@@ -242,10 +242,10 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 {
 	[UIView animateWithDuration:animationDuration
 	                 animations: ^{
-	    self.bottomConstraint.constant = inset;
-	    [self setNeedsLayout];
-	    [self layoutIfNeeded];
-	}];
+	                     self.bottomConstraint.constant = inset;
+	                     [self setNeedsLayout];
+	                     [self layoutIfNeeded];
+					 }];
 }
 
 - (void)updateLayout
@@ -400,7 +400,7 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 			    [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
 			    [weakSelf removeGestureRecognizer:gesture];
 			    if (weakSelf.dismissBlock != nil) {
-			        weakSelf.dismissBlock(MLSnackbarDismissCauseSwipe);
+					weakSelf.dismissBlock(MLSnackbarDismissCauseSwipe);
 				}
 			}];
 		} else {
@@ -447,19 +447,19 @@ static int const kMLSnackbarLabelButtonSpacing = 24;
 
 	    // perfom the action block if dismiss ocurred beacuse the Action Button was pressed
 	    if (cause == MLSnackbarDismissCauseActionButton) {
-	        if (actionBlock) {
-	            actionBlock();
+			if (actionBlock) {
+				actionBlock();
 			}
 		}
 
 	    if (dismissBlock != nil) {
-	        dismissBlock(cause);
+			dismissBlock(cause);
 		}
 
 	    // perfom any pending action after the animation finished
 	    if (weakSelf.pendingAction) {
-	        weakSelf.pendingAction();
-	        weakSelf.pendingAction = nil;
+			weakSelf.pendingAction();
+			weakSelf.pendingAction = nil;
 		}
 	}];
 }
