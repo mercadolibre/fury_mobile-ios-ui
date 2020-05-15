@@ -1,3 +1,7 @@
+# Sin publicar
+### Cambiado
+- 'MLButton': Cuando se hace set button title se configura el accessibilityIdentifier sólo si no fue configurado previamente.
+
 # v5.20.1
 ### Cambiado
 - 'MLButton': Se agrega accessibilityIdentifier para que Appium lo encuentre
