@@ -247,32 +247,31 @@
 	XCTAssertEqualObjects(button.buttonTitle, @"");
 }
 
-
 - (void)testSetButtonTitle_WithAccessibilityIdentifier_ShouldntOverrideAccessibilityIdentifier
 {
-    // Given
-    MLButton *button = [[MLButton alloc] init];
-    button.accessibilityIdentifier = @"ui_button";
+	// Given
+	MLButton *button = [[MLButton alloc] init];
+	button.accessibilityIdentifier = @"ui_button";
 
-    // When
-    button.buttonTitle = @"Title";
+	// When
+	button.buttonTitle = @"Title";
 
-    // Then
-    XCTAssertEqualObjects(button.buttonTitle, @"Title");
-    XCTAssertEqualObjects(button.accessibilityIdentifier, @"ui_button");
+	// Then
+	XCTAssertEqualObjects(button.buttonTitle, @"Title");
+	XCTAssertEqualObjects(button.accessibilityIdentifier, @"ui_button");
 }
 
 - (void)testSetButtonTitle_WithoutAccessibilityIdentifier_ShouldOverrideAccessibilityIdentifier
 {
-    // Given
-    MLButton *button = [[MLButton alloc] init];
+	// Given
+	MLButton *button = [[MLButton alloc] init];
 
-    // When
-    button.buttonTitle = @"Title";
+	// When
+	button.buttonTitle = @"Title";
 
-    // Then
-    XCTAssertEqualObjects(button.buttonTitle, @"Title");
-    XCTAssertEqualObjects(button.accessibilityIdentifier, @"Title");
+	// Then
+	XCTAssertEqualObjects(button.buttonTitle, @"Title");
+	XCTAssertEqualObjects(button.accessibilityIdentifier, @"Title");
 }
 
 - (void)testSetButtonIcon_shouldAddIconView

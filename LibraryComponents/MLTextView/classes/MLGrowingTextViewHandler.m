@@ -116,8 +116,8 @@ static NSInteger kMaximumNumberOfLines = INT_MAX;
 	if (animated) {
 		[UIView animateWithDuration:self.animationDuration
 		                 animations: ^{
-		    [self.textView.superview layoutIfNeeded];
-		}
+		                     [self.textView.superview layoutIfNeeded];
+						 }
 		                 completion:nil];
 	} else {
 		[self.textView.superview layoutIfNeeded];

@@ -17,7 +17,7 @@ static id <MLStyleSheetProtocol> _styleSheet;
 
 	dispatch_once(&onceToken, ^{
 		if (_styleSheet == nil) {
-		    _styleSheet = [MLStyleSheetDefault new];
+			_styleSheet = [MLStyleSheetDefault new];
 		}
 	});
 	return _styleSheet;

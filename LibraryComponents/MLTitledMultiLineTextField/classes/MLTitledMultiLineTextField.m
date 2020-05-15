@@ -72,15 +72,15 @@
 	     * the color change to take place.
 	     */
 	    if (![lineColor isEqual:weakSelf.textView.tintColor]) {
-	        weakSelf.textView.tintColor = lineColor;
+			weakSelf.textView.tintColor = lineColor;
 
-	        if (weakSelf.isFirstResponder) {
-	            weakSelf.disableStyling = YES;
-	            [UIView setAnimationsEnabled:NO];
-	            [weakSelf resignFirstResponder];
-	            [weakSelf becomeFirstResponder];
-	            [UIView setAnimationsEnabled:YES];
-	            weakSelf.disableStyling = NO;
+			if (weakSelf.isFirstResponder) {
+				weakSelf.disableStyling = YES;
+				[UIView setAnimationsEnabled:NO];
+				[weakSelf resignFirstResponder];
+				[weakSelf becomeFirstResponder];
+				[UIView setAnimationsEnabled:YES];
+				weakSelf.disableStyling = NO;
 			}
 		}
 	}];

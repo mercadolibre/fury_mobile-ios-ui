@@ -87,8 +87,8 @@
 		    snackBarView.alpha = 0;
 		} completion: ^(BOOL finished) {
 		    if (finished) {
-		        [snackBarView removeFromSuperview];
-		        [weakSelf.ml_snackBarsArray removeObject:snackBarView];
+				[snackBarView removeFromSuperview];
+				[weakSelf.ml_snackBarsArray removeObject:snackBarView];
 			}
 		}];
 	} else {

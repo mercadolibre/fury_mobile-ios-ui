@@ -21,7 +21,7 @@
 	if (font) {
 		return [self sizeWithAttributes:@{NSFontAttributeName : font}];
 	} else {
-	    return CGSizeZero;
+		return CGSizeZero;
 	}
 }
 

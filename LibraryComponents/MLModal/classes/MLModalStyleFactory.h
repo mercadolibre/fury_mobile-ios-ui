@@ -14,7 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface MLModalStyleFactory : NSObject
 
-	typedef NS_ENUM (NSInteger, MLModalType)
+typedef NS_ENUM (NSInteger, MLModalType)
 {
 	MLModalTypeML = 0,
 	MLModalTypeMP
