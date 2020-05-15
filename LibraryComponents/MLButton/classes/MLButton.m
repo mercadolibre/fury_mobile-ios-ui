@@ -312,7 +312,9 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
 
 	self.label.attributedText = attributedString;
 	[self setAccessibilityValue:self.buttonTitle];
-	[self setAccessibilityIdentifier:self.buttonTitle];
+	if (!self.accessibilityIdentifier) {
+		[self setAccessibilityIdentifier:self.buttonTitle];
+	}
 }
 
 - (void)setConfig:(MLButtonConfig *)config
