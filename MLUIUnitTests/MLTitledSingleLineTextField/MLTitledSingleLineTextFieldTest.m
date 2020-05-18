@@ -15,11 +15,14 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
-@property (weak, nonatomic) IBOutlet UILabel *accessoryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *helperDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *counterLabel;
 @property (weak, nonatomic) IBOutlet UIView *accessoryViewContainer;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *placeholderLeadingConstraint;
 
 @property (strong, nonatomic) MLUITextField *textField;
+
+- (void)setCounter:(NSString *)counter;
 
 @end
 
@@ -66,7 +69,15 @@
 	textField.helperDescription = @"Helper Description";
 
 	XCTAssertEqualObjects(textField.helperDescription, @"Helper Description");
-	XCTAssertEqualObjects(textField.accessoryLabel.text, @"Helper Description");
+	XCTAssertEqualObjects(textField.helperDescriptionLabel.text, @"Helper Description");
+}
+
+- (void)testSetCounter
+{
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.counter = @"0 de 60";
+
+	XCTAssertEqualObjects(textField.counterLabel.text, @"0 de 60");
 }
 
 - (void)testSetHelperDescriptionNil
@@ -75,7 +86,7 @@
 	textField.helperDescription = nil;
 
 	XCTAssertNil(textField.helperDescription);
-	XCTAssertEqualObjects(textField.accessoryLabel.text, @"");
+	XCTAssertEqualObjects(textField.helperDescriptionLabel.text, @"");
 }
 
 - (void)testAccessoryViewDefault
@@ -173,7 +184,7 @@
 
 	XCTAssertEqual(textField.placeholderLabel.textAlignment, NSTextAlignmentCenter);
 	XCTAssertEqual(textField.titleLabel.textAlignment, NSTextAlignmentCenter);
-	XCTAssertEqual(textField.accessoryLabel.textAlignment, NSTextAlignmentCenter);
+	XCTAssertEqual(textField.helperDescriptionLabel.textAlignment, NSTextAlignmentCenter);
 }
 
 - (void)testAlignLeft
@@ -183,7 +194,7 @@
 
 	XCTAssertEqual(textField.placeholderLabel.textAlignment, NSTextAlignmentLeft);
 	XCTAssertEqual(textField.titleLabel.textAlignment, NSTextAlignmentLeft);
-	XCTAssertEqual(textField.accessoryLabel.textAlignment, NSTextAlignmentLeft);
+	XCTAssertEqual(textField.helperDescriptionLabel.textAlignment, NSTextAlignmentLeft);
 }
 
 - (void)testAlignRight
@@ -193,7 +204,7 @@
 
 	XCTAssertEqual(textField.placeholderLabel.textAlignment, NSTextAlignmentRight);
 	XCTAssertEqual(textField.titleLabel.textAlignment, NSTextAlignmentRight);
-	XCTAssertEqual(textField.accessoryLabel.textAlignment, NSTextAlignmentRight);
+	XCTAssertEqual(textField.helperDescriptionLabel.textAlignment, NSTextAlignmentRight);
 }
 
 - (void)testDelegateDoesntModifyMaxCharacters
