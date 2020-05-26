@@ -19,7 +19,8 @@ static const CGFloat kMLTextFieldThickLine = 2;
 @interface MLTitledSingleLineTextField () <UITextFieldDelegate, MLUITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIView *lineView;
-@property (weak, nonatomic) IBOutlet UILabel *accessoryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *helperDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *counterLabel;
 @property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
 @property (weak, nonatomic) IBOutlet UIView *textInputContainer;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lineViewHeight;
@@ -113,7 +114,8 @@ static const CGFloat kMLTextFieldThickLine = 2;
 	self.textField.font = [UIFont ml_regularSystemFontOfSize:kMLFontsSizeMedium];
 	self.titleLabel.font = [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXSmall];
 	self.titleLabel.textColor = MLStyleSheetManager.styleSheet.greyColor;
-	self.accessoryLabel.font = [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXSmall];
+	self.helperDescriptionLabel.font = [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXSmall];
+	self.counterLabel.font = [UIFont ml_regularSystemFontOfSize:kMLFontsSizeXSmall];
 	self.placeholderLabel.font = [UIFont ml_regularSystemFontOfSize:kMLFontsSizeMedium];
 	self.placeholderLabel.textColor = MLStyleSheetManager.styleSheet.greyColor;
 	[self stateDependantStyle];
@@ -124,7 +126,8 @@ static const CGFloat kMLTextFieldThickLine = 2;
 	UIColor *textColor = MLStyleSheetManager.styleSheet.blackColor;
 	UIColor *lineColor = MLStyleSheetManager.styleSheet.midGreyColor;
 	UIColor *labelColor = MLStyleSheetManager.styleSheet.greyColor;
-	UIColor *accessoryLabelColor = MLStyleSheetManager.styleSheet.darkGreyColor;
+	UIColor *helperDescriptionLabelColor = MLStyleSheetManager.styleSheet.darkGreyColor;
+	UIColor *counterLabelColor = MLStyleSheetManager.styleSheet.darkGreyColor;
 	CGFloat lineHeight = kMLTextFieldThinLine;
 
 	switch (self.state) {
@@ -141,7 +144,7 @@ static const CGFloat kMLTextFieldThickLine = 2;
 		}
 
 		case MLTitledTextFieldStateError: {
-			lineColor = accessoryLabelColor = MLStyleSheetManager.styleSheet.errorColor;
+			lineColor = helperDescriptionLabelColor = MLStyleSheetManager.styleSheet.errorColor;
 			lineHeight = kMLTextFieldThickLine;
 			break;
 		}
@@ -165,7 +168,8 @@ static const CGFloat kMLTextFieldThickLine = 2;
 	    weakSelf.lineView.backgroundColor = lineColor;
 	    weakSelf.textField.tintColor = lineColor;
 	    weakSelf.lineViewHeight.constant = lineHeight;
-	    weakSelf.accessoryLabel.textColor = accessoryLabelColor;
+	    weakSelf.helperDescriptionLabel.textColor = helperDescriptionLabelColor;
+	    weakSelf.counterLabel.textColor = counterLabelColor;
 	}];
 }
 
@@ -174,7 +178,7 @@ static const CGFloat kMLTextFieldThickLine = 2;
 	self.placeholderLabel.textAlignment = textAlignment;
 	self.titleLabel.textAlignment = textAlignment;
 	self.textField.textAlignment = textAlignment;
-	self.accessoryLabel.textAlignment = textAlignment;
+	self.helperDescriptionLabel.textAlignment = textAlignment;
 }
 
 - (void)updateCharacterCount
@@ -191,7 +195,7 @@ static const CGFloat kMLTextFieldThickLine = 2;
 		countString = [NSString stringWithFormat:@"%lu", (unsigned long)self.text.length];
 	}
 
-	self.helperDescription = countString;
+	self.counter = countString;
 }
 
 - (void)observeText
@@ -227,7 +231,12 @@ static const CGFloat kMLTextFieldThickLine = 2;
 	}
 
 	_helperDescription = helperDescription;
-	self.accessoryLabel.text = _helperDescription;
+	self.helperDescriptionLabel.text = _helperDescription;
+}
+
+- (void)setCounter:(NSString *)counter
+{
+	self.counterLabel.text = counter;
 }
 
 - (void)setErrorDescription:(nullable NSString *)errorDescription
@@ -247,16 +256,16 @@ static const CGFloat kMLTextFieldThickLine = 2;
 
 	if (!_errorDescription && self.helperDescription.length) {
 		[self updateCharacterCount];
-		self.accessoryLabel.text = self.helperDescription;
+		self.helperDescriptionLabel.text = self.helperDescription;
 		return;
 	}
 
 	if (!animated) {
-		weakSelf.accessoryLabel.text = errorDescription;
+		weakSelf.helperDescriptionLabel.text = errorDescription;
 	} else {
 		[UIView animateWithDuration:0.3 animations: ^{
-		    weakSelf.accessoryLabel.text = errorDescription;
-		    [weakSelf.accessoryLabel invalidateIntrinsicContentSize];
+		    weakSelf.helperDescriptionLabel.text = errorDescription;
+		    [weakSelf.helperDescriptionLabel invalidateIntrinsicContentSize];
 		    [weakSelf setNeedsLayout];
 		    [weakSelf layoutIfNeeded];
 		}];
