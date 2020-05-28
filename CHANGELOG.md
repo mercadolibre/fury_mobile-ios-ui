@@ -1,3 +1,7 @@
+# v5.21.1
+### Cambiado
+- 'MLUITextField': Se cambia el tamaño por defecto del helper description para soportar centrado.
+
 # v5.21.0
 ### Cambiado
 - 'MLUITextField': Se agrega el helperDescription con label separado y se coloca el contador al lado derecho.
