@@ -28,6 +28,7 @@
 @property (nonatomic, assign) CGFloat verticalPadding;
 @property (nonatomic, assign) CGFloat fontSize;
 @property (nonatomic, strong) NSArray <NSLayoutConstraint *> *verticalPaddingConstraints;
+@property (nonatomic, strong) MLSpinnerConfig *spinnerConfig;
 
 - (void)updateLookAndFeel;
 - (void)updateButtonIcon:(UIImage *_Nullable)image;
@@ -375,6 +376,28 @@
 	for (NSLayoutConstraint *constraint in  button.verticalPaddingConstraints) {
 		XCTAssertEqual(constraint.constant, 15.0f);
 	}
+}
+
+- (void)testSpinnerWithCustomConfig
+{
+	// when
+	MLSpinnerConfig *spinnerConfig = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeSmall primaryColor:[UIColor redColor] secondaryColor:[UIColor redColor]];
+	MLButtonConfig *customConfig = [MLButtonStylesFactory configForButtonType:MLButtonTypeSecondaryAction];
+	customConfig.spinnerStyle = spinnerConfig;
+	customConfig.loadingState = [[MLButtonConfigStyle alloc] initWithContentColor:[UIColor blueColor] backgroundColor:[UIColor blueColor] borderColor:[UIColor blueColor]];
+	MLButton *button = [[MLButton alloc] initWithConfig:customConfig];
+	// Then
+	XCTAssertEqual(button.spinnerConfig, spinnerConfig);
+}
+
+- (void)testSpinnerWithDefaultConfig
+{
+	// when
+	MLButton *button = [[MLButton alloc] initWithConfig:[MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeSmall]];
+	// Then
+	XCTAssertEqual(button.spinnerConfig.primaryColor, [UIColor whiteColor]);
+	XCTAssertEqual(button.spinnerConfig.secondaryColor, [UIColor whiteColor]);
+	XCTAssertEqual(button.spinnerConfig.spinnerSize, MLSpinnerSizeSmall);
 }
 
 @end

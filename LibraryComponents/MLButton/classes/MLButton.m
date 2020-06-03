@@ -336,9 +336,12 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
 
 - (MLSpinnerConfig *)spinnerConfig
 {
-	if (!_spinnerConfig) {
+	if (self.config.spinnerStyle) {
+		_spinnerConfig = self.config.spinnerStyle;
+	} else if (!_spinnerConfig) {
 		_spinnerConfig = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeSmall primaryColor:[UIColor whiteColor] secondaryColor:[UIColor whiteColor]];
 	}
+
 	return _spinnerConfig;
 }
 
