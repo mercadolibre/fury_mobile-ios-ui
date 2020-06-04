@@ -22,6 +22,7 @@
 @property (strong, nonatomic)  MLButton *primaryOptionDisabledButton;
 @property (strong, nonatomic)  MLButton *secondaryOptionButton;
 @property (strong, nonatomic)  MLButton *loadingButton;
+@property (strong, nonatomic)  MLButton *customLoadingButton;
 @property (strong, nonatomic)  MLButton *secondaryIconButton;
 @property (strong, nonatomic)  MLButton *primaryActionButtonSmall;
 
@@ -85,6 +86,18 @@
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[previous]-8-[button]" options:0 metrics:nil views:@{@"button" : self.loadingButton, @"previous" : self.secondaryOptionButton}]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[button]-8-|" options:0 metrics:nil views:@{@"button" : self.loadingButton}]];
 	[self.loadingButton showLoadingStyle];
+
+	MLSpinnerConfig *spinnerConfig = [[MLSpinnerConfig alloc] initWithSize:MLSpinnerSizeSmall primaryColor:[UIColor ml_meli_blue] secondaryColor:[UIColor ml_meli_blue]];
+	MLButtonConfig *customConfig = [MLButtonStylesFactory configForButtonType:MLButtonTypeSecondaryAction];
+	customConfig.spinnerStyle = spinnerConfig;
+	customConfig.loadingState = [[MLButtonConfigStyle alloc] initWithContentColor:[UIColor ml_meli_white] backgroundColor:[UIColor ml_meli_white] borderColor:[UIColor ml_meli_blue]];
+	self.customLoadingButton = [[MLButton alloc] initWithConfig:customConfig];
+	[self.customLoadingButton setButtonTitle:@"Custom loading Button"];
+	[self.view addSubview:self.customLoadingButton];
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[previous]-8-[button]" options:0 metrics:nil views:@{@"button" : self.customLoadingButton, @"previous" : self.loadingButton}]];
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[button]-8-|" options:0 metrics:nil views:@{@"button" : self.customLoadingButton}]];
+	[self.customLoadingButton showLoadingStyle];
+
 	self.title = @"Buttons";
 
 	UIImage *icon = [UIImage imageNamed:@"icon-wssp"];
@@ -95,7 +108,7 @@
 	[self.secondaryIconButton setButtonTitle:@"Secondary Icon Button"];
 
 	[self.view addSubview:self.secondaryIconButton];
-	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[previous]-8-[button]" options:0 metrics:nil views:@{@"button" : self.secondaryIconButton, @"previous" : self.loadingButton}]];
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[previous]-8-[button]" options:0 metrics:nil views:@{@"button" : self.secondaryIconButton, @"previous" : self.customLoadingButton}]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[button]-8-|" options:0 metrics:nil views:@{@"button" : self.secondaryIconButton}]];
 
 	MLButtonConfig *smallButtonConfig = [MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeSmall];
