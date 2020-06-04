@@ -6,4 +6,4 @@
   Copyright © 2016 MercadoLibre. All rights reserved.
 */
 
-"CHARACTER_COUNT_FORMAT" = "%lu of %lu";
+"CHARACTER_COUNT_FORMAT" = "%lu / %lu";
