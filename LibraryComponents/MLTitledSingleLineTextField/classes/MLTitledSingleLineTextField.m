@@ -222,6 +222,9 @@ static const CGFloat kMLTextFieldThickLine = 2;
 {
 	_title = title.copy;
 	self.titleLabel.text = title;
+    if(!self.textField.accessibilityIdentifier) {
+        [self setAccessibilityIdentifierOnTextField:title];
+    }
 }
 
 - (void)setHelperDescription:(NSString *)helperDescription
@@ -242,6 +245,11 @@ static const CGFloat kMLTextFieldThickLine = 2;
 - (void)setErrorDescription:(nullable NSString *)errorDescription
 {
 	[self setErrorDescription:errorDescription animated:YES];
+}
+
+- (void)setAccessibilityIdentifierOnTextField:(nullable NSString *)accessibilityIdentifier
+{
+    [self.textField setAccessibilityIdentifier:accessibilityIdentifier];
 }
 
 - (void)setErrorDescription:(nullable NSString *)errorDescription animated:(BOOL)animated
