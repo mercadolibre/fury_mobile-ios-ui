@@ -356,41 +356,41 @@
 
 - (void)testSetTitle
 {
-    NSString *title = @"A title text";
-    MLTitledSingleLineTextField *textField = self.textField;
-    textField.textField = [[MLUITextField alloc] init];
-    textField.title = title;
+	NSString *title = @"A title text";
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.textField = [[MLUITextField alloc] init];
+	textField.title = title;
 
-    XCTAssertEqual(textField.title, title);
-    XCTAssertTrue(textField.textField.accessibilityIdentifier == title);
+	XCTAssertEqual(textField.title, title);
+	XCTAssertTrue(textField.textField.accessibilityIdentifier == title);
 }
 
 - (void)testSetTitleWithAccessibilityIdentifier
 {
-    NSString *title = @"A title text";
-    NSString *accessibilityIdentifier = @"AccessibilityIdentifier";
-    MLTitledSingleLineTextField *textField = self.textField;
-    textField.textField = [[MLUITextField alloc] init];
-    textField.title = title;
-    textField.textField.accessibilityIdentifier = accessibilityIdentifier;
+	NSString *title = @"A title text";
+	NSString *accessibilityIdentifier = @"AccessibilityIdentifier";
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.textField = [[MLUITextField alloc] init];
+	textField.title = title;
+	textField.textField.accessibilityIdentifier = accessibilityIdentifier;
 
-    XCTAssertEqual(textField.title, title);
-    XCTAssertTrue(textField.textField.accessibilityIdentifier == accessibilityIdentifier);
+	XCTAssertEqual(textField.title, title);
+	XCTAssertTrue(textField.textField.accessibilityIdentifier == accessibilityIdentifier);
 }
 
 - (void)testSetAccessibilityIdentifierOnTextField
 {
-    NSString *title = @"A title text";
-    NSString *accessibilityIdentifier = @"AccessibilityIdentifier";
-    MLTitledSingleLineTextField *textField = self.textField;
-    textField.textField = [[MLUITextField alloc] init];
-    textField.title = title;
+	NSString *title = @"A title text";
+	NSString *accessibilityIdentifier = @"AccessibilityIdentifier";
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.textField = [[MLUITextField alloc] init];
+	textField.title = title;
 
-    XCTAssertEqual(textField.title, title);
-    XCTAssertTrue(textField.textField.accessibilityIdentifier == title);
-    
-    [textField setAccessibilityIdentifierOnTextField:accessibilityIdentifier];
-    XCTAssertTrue(textField.textField.accessibilityIdentifier == accessibilityIdentifier);
+	XCTAssertEqual(textField.title, title);
+	XCTAssertTrue(textField.textField.accessibilityIdentifier == title);
+
+	[textField setAccessibilityIdentifierOnTextField:accessibilityIdentifier];
+	XCTAssertTrue(textField.textField.accessibilityIdentifier == accessibilityIdentifier);
 }
 
 - (void)testChangePlaceHolderContraint_withSetPrefix
