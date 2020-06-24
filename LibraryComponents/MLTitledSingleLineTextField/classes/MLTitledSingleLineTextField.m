@@ -247,11 +247,6 @@ static const CGFloat kMLTextFieldThickLine = 2;
 	[self setErrorDescription:errorDescription animated:YES];
 }
 
-- (void)setAccessibilityIdentifierOnTextField:(nullable NSString *)accessibilityIdentifier
-{
-	[self.textField setAccessibilityIdentifier:accessibilityIdentifier];
-}
-
 - (void)setAccessibilityIdentifier:(nullable NSString *)accessibilityIdentifier
 {
     [self.textField setAccessibilityIdentifier:accessibilityIdentifier];
