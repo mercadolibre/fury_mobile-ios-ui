@@ -371,7 +371,7 @@
 	NSString *accessibilityIdentifier = @"AccessibilityIdentifier";
 	MLTitledSingleLineTextField *textField = self.textField;
 	textField.textField = [[MLUITextField alloc] init];
-    [textField setAccessibilityIdentifier:accessibilityIdentifier];
+	[textField setAccessibilityIdentifier:accessibilityIdentifier];
 	textField.title = title;
 
 	XCTAssertEqual(textField.title, title);

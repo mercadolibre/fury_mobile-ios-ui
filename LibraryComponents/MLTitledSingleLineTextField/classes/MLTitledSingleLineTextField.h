@@ -210,8 +210,8 @@ typedef NS_ENUM (NSInteger, MLTitledTextFieldState) {
 - (void)setAccessibilityIdentifier:(nullable NSString *)accessibilityIdentifier;
 
 /**
-  Permits to get accessibilityIdentifier on text field
-*/
+   Permits to get accessibilityIdentifier on text field
+ */
 - (NSString *)accessibilityIdentifier;
 
 @end
