@@ -354,6 +354,45 @@
 	XCTAssertNil(textField.textField.leftView);
 }
 
+- (void)testSetTitle
+{
+	NSString *title = @"A title text";
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.textField = [[MLUITextField alloc] init];
+	textField.title = title;
+
+	XCTAssertEqual(textField.title, title);
+	XCTAssertTrue([textField accessibilityIdentifier] == title);
+}
+
+- (void)testSetTitleWithAccessibilityIdentifier
+{
+	NSString *title = @"A title text";
+	NSString *accessibilityIdentifier = @"AccessibilityIdentifier";
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.textField = [[MLUITextField alloc] init];
+	[textField setAccessibilityIdentifier:accessibilityIdentifier];
+	textField.title = title;
+
+	XCTAssertEqual(textField.title, title);
+	XCTAssertTrue([textField accessibilityIdentifier] == accessibilityIdentifier);
+}
+
+- (void)testSetAccessibilityIdentifier
+{
+	NSString *title = @"A title text";
+	NSString *accessibilityIdentifier = @"AccessibilityIdentifier";
+	MLTitledSingleLineTextField *textField = self.textField;
+	textField.textField = [[MLUITextField alloc] init];
+	textField.title = title;
+
+	XCTAssertEqual(textField.title, title);
+	XCTAssertTrue([textField accessibilityIdentifier] == title);
+
+	[textField setAccessibilityIdentifier:accessibilityIdentifier];
+	XCTAssertTrue([textField accessibilityIdentifier] == accessibilityIdentifier);
+}
+
 - (void)testChangePlaceHolderContraint_withSetPrefix
 {
 	NSString *prefix = @"BsF.";
