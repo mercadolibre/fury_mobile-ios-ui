@@ -207,7 +207,12 @@ typedef NS_ENUM (NSInteger, MLTitledTextFieldState) {
 /**
    Permits to set accessibilityIdentifier on text field
  */
-- (void)setAccessibilityIdentifierOnTextField:(nullable NSString *)accessibilityIdentifier;
+- (void)setAccessibilityIdentifier:(nullable NSString *)accessibilityIdentifier;
+
+/**
+  Permits to get accessibilityIdentifier on text field
+*/
+- (NSString *)accessibilityIdentifier;
 
 @end
 
