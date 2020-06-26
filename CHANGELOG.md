@@ -1,3 +1,7 @@
+# Sin publicar
+### Cambiado
+- Se comprimen los recursos con `kelli compress`
+
 # v5.21.1
 ### Cambiado
 - 'MLUITextField': Se cambia el formateo del contador.
