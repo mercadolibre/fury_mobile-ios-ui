@@ -119,6 +119,16 @@
 
 #pragma mark Custom Setters
 
+- (NSString *)accessibilityIdentifier
+{
+	return self.textView.accessibilityIdentifier;
+}
+
+- (void)setAccessibilityIdentifier:(NSString *)accessibilityIdentifier
+{
+	[self.textView setAccessibilityIdentifier:accessibilityIdentifier];
+}
+
 - (void)setText:(NSString *)text
 {
 	if (![self validateLength:text]) {
