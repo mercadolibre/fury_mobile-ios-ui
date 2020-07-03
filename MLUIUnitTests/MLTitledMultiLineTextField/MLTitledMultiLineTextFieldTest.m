@@ -34,6 +34,20 @@
 	return [[MLTitledMultiLineTextField alloc] init];
 }
 
+- (void)testSetAccessibilityIdentifier_ShouldSetAccessibilityIdentifierOnTextView
+{
+	// Given
+	MLTitledMultiLineTextField *textField = self.textField;
+	NSString *accessibilityIdentifier = @"textFieldAccessibilityIdentifier";
+
+	// When
+	textField.accessibilityIdentifier = accessibilityIdentifier;
+
+	// Then
+	XCTAssertEqualObjects(textField.accessibilityIdentifier, accessibilityIdentifier);
+	XCTAssertEqualObjects(textField.textView.accessibilityIdentifier, accessibilityIdentifier);
+}
+
 - (void)testSetTextNil
 {
 	MLTitledMultiLineTextField *textField = self.textField;
