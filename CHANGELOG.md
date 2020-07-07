@@ -1,6 +1,9 @@
-# v5.22.0
+# v5.23.0
 ### Cambiado
 - 'MLTitledMultiLineTextField': Al setear el accessibilityIdentifier se lo asigna al textView.
+
+# v5.22.0
+### Cambiado
 - Se comprimen los recursos con `kelli compress`
 
 # v5.21.1
