@@ -32,6 +32,10 @@ typedef NS_ENUM (NSInteger, MLButtonStyle) {
 
 @property (nonatomic, copy, nullable) UIImage *buttonIcon;
 
+@property (nonatomic, copy, nullable) UIFont *labelFont;
+
+
+
 /**
  *  Button config.
  *
@@ -81,6 +85,9 @@ typedef NS_ENUM (NSInteger, MLButtonStyle) {
  */
 - (void)showLoadingStyle;
 - (void)hideLoadingStyle;
+
+
+
 
 @end
 

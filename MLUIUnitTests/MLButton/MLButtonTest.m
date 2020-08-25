@@ -29,6 +29,7 @@
 @property (nonatomic, assign) CGFloat fontSize;
 @property (nonatomic, strong) NSArray <NSLayoutConstraint *> *verticalPaddingConstraints;
 @property (nonatomic, strong) MLSpinnerConfig *spinnerConfig;
+@property (nonatomic, strong) UIFont *fontLabel;
 
 - (void)updateLookAndFeel;
 - (void)updateButtonIcon:(UIImage *_Nullable)image;
@@ -392,12 +393,33 @@
 
 - (void)testSpinnerWithDefaultConfig
 {
-	// when
+	// When
 	MLButton *button = [[MLButton alloc] initWithConfig:[MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeSmall]];
 	// Then
 	XCTAssertEqual(button.spinnerConfig.primaryColor, [UIColor whiteColor]);
 	XCTAssertEqual(button.spinnerConfig.secondaryColor, [UIColor whiteColor]);
 	XCTAssertEqual(button.spinnerConfig.spinnerSize, MLSpinnerSizeSmall);
+}
+
+- (void)testCustomFont
+{
+	// When
+	MLButton *button = [[MLButton alloc] initWithConfig:[MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeSmall]];
+	UIFont *labelFont = [UIFont ml_boldSystemFontOfSize:kMLFontsSizeXXLarge];
+	button.labelFont = labelFont;
+	
+	//Then
+	XCTAssertEqualObjects(button.labelFont, labelFont);
+	XCTAssertEqual(button.labelFont.pointSize, kMLFontsSizeXXLarge);
+}
+
+- (void)testDefaultFont
+{
+	// When
+	MLButton *button = [[MLButton alloc] initWithConfig:[MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeSmall]];
+	
+	//Then
+	XCTAssertEqual(button.labelFont.pointSize, kMLFontsSizeXSmall);
 }
 
 @end

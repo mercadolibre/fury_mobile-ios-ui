@@ -108,7 +108,7 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
 	[self.layer addSublayer:self.backgroundLayer];
 
 	self.backgroundLayer.borderWidth = kMLButtonBorderWidth;
-
+	
 	[self setUpAccessibility];
 	[self setUpWithSize];
 	[self setUpContentView];
@@ -141,6 +141,7 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
 			}
 		}
 	}
+	self.labelFont = [UIFont ml_regularSystemFontOfSize:self.fontSize];
 	if (self.verticalPaddingConstraints.count > 0) {
 		for (NSLayoutConstraint *constraint in self.verticalPaddingConstraints) {
 			constraint.constant = self.verticalPadding;
@@ -207,7 +208,7 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
 
 - (void)updateLookAndFeel
 {
-	self.label.font = [UIFont ml_regularSystemFontOfSize:self.fontSize];
+	self.label.font = self.labelFont;
 	UIColor *contentColor = self.isEnabled ? (self.isHighlighted ? self.config.highlightedState.contentColor : self.config.defaultState.contentColor) : self.config.disableState.contentColor;
 	self.label.textColor = contentColor;
 	self.backgroundLayer.backgroundColor = self.isEnabled ? (self.isHighlighted ? self.config.highlightedState.backgroundColor.CGColor : self.config.defaultState.backgroundColor.CGColor) : self.config.disableState.backgroundColor.CGColor;
@@ -315,6 +316,12 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
 	if (!self.accessibilityIdentifier) {
 		[self setAccessibilityIdentifier:self.buttonTitle];
 	}
+}
+
+- (void)setLabelFont:(UIFont *)labelFont
+{
+	_labelFont = labelFont;
+	[self updateLookAndFeel];
 }
 
 - (void)setConfig:(MLButtonConfig *)config
