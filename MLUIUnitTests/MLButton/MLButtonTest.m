@@ -393,7 +393,7 @@
 
 - (void)testSpinnerWithDefaultConfig
 {
-	// When
+	// when
 	MLButton *button = [[MLButton alloc] initWithConfig:[MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeSmall]];
 	// Then
 	XCTAssertEqual(button.spinnerConfig.primaryColor, [UIColor whiteColor]);
