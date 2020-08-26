@@ -108,7 +108,7 @@ static const CGFloat kMLButtonSmallVerticalPadding = 11.0f;
 	[self.layer addSublayer:self.backgroundLayer];
 
 	self.backgroundLayer.borderWidth = kMLButtonBorderWidth;
-	
+
 	[self setUpAccessibility];
 	[self setUpWithSize];
 	[self setUpContentView];

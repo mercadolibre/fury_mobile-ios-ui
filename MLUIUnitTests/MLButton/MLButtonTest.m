@@ -407,8 +407,8 @@
 	MLButton *button = [[MLButton alloc] initWithConfig:[MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeSmall]];
 	UIFont *labelFont = [UIFont ml_boldSystemFontOfSize:kMLFontsSizeXXLarge];
 	button.labelFont = labelFont;
-	
-	//Then
+
+	// Then
 	XCTAssertEqualObjects(button.labelFont, labelFont);
 	XCTAssertEqual(button.labelFont.pointSize, kMLFontsSizeXXLarge);
 }
@@ -417,8 +417,8 @@
 {
 	// When
 	MLButton *button = [[MLButton alloc] initWithConfig:[MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction withSize:MLButtonSizeSmall]];
-	
-	//Then
+
+	// Then
 	XCTAssertEqual(button.labelFont.pointSize, kMLFontsSizeXSmall);
 }
 

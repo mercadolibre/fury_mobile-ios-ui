@@ -120,7 +120,7 @@
 	[self.view addSubview:self.primaryActionButtonSmall];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[previous]-8-[button]" options:0 metrics:nil views:@{@"button" : self.primaryActionButtonSmall, @"previous" : self.secondaryIconButton}]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[button]-8-|" options:0 metrics:nil views:@{@"button" : self.primaryActionButtonSmall}]];
-	
+
 	self.customFontButton = [[MLButton alloc] initWithConfig:[MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction]];
 	self.customFontButton.labelFont = [UIFont ml_semiboldSystemFontOfSize:kMLFontsSizeMedium];
 	[self.customFontButton setButtonTitle:@"Custom Font"];
