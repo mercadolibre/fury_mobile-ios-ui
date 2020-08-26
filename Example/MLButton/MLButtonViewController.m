@@ -12,6 +12,8 @@
 #import <MLUI/UIColor+MLColorPalette.h>
 #import <MLUI/UIImage+Misc.h>
 #import <MLUI/MLButtonConfig.h>
+#import <MLUI/UIFont+MLFonts.h>
+
 @interface MLButtonViewController ()
 
 @property (weak, nonatomic) IBOutlet MLButton *buttonFromXib;
@@ -25,6 +27,7 @@
 @property (strong, nonatomic)  MLButton *customLoadingButton;
 @property (strong, nonatomic)  MLButton *secondaryIconButton;
 @property (strong, nonatomic)  MLButton *primaryActionButtonSmall;
+@property (strong, nonatomic)  MLButton *customFontButton;
 
 @end
 
@@ -117,6 +120,13 @@
 	[self.view addSubview:self.primaryActionButtonSmall];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[previous]-8-[button]" options:0 metrics:nil views:@{@"button" : self.primaryActionButtonSmall, @"previous" : self.secondaryIconButton}]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[button]-8-|" options:0 metrics:nil views:@{@"button" : self.primaryActionButtonSmall}]];
+	
+	self.customFontButton = [[MLButton alloc] initWithConfig:[MLButtonStylesFactory configForButtonType:MLButtonTypePrimaryAction]];
+	self.customFontButton.labelFont = [UIFont ml_semiboldSystemFontOfSize:kMLFontsSizeMedium];
+	[self.customFontButton setButtonTitle:@"Custom Font"];
+	[self.view addSubview:self.customFontButton];
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[previous]-8-[button]" options:0 metrics:nil views:@{@"button" : self.customFontButton, @"previous" : self.primaryActionButtonSmall}]];
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[button]-8-|" options:0 metrics:nil views:@{@"button" : self.customFontButton}]];
 }
 
 @end
