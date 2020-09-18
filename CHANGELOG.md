@@ -1,3 +1,7 @@
+# v5.24.0
+### Agregado
+- Ahora se permite cambiar el font de MLButton.
+
 # v5.23.0
 ### Cambiado
 - 'MLTitledMultiLineTextField': Al setear el accessibilityIdentifier se lo asigna al textView.
