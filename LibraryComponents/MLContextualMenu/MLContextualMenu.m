@@ -483,9 +483,9 @@ static NSString *const MLLongPressContextMenuLayerType_toString[] = {
 
 - (void)animateSelectionTextAndBackgroundAtIndex:(NSInteger)index selecting:(BOOL)selecting
 {
-    if (self.menuItems.count == 0) {
-        return;
-    }
+	if (self.menuItems.count == 0) {
+		return;
+	}
 	CALayer *mainLayer = [self.menuItems objectAtIndex:index];
 
 	for (CALayer *layer in mainLayer.sublayers) {
@@ -512,9 +512,9 @@ static NSString *const MLLongPressContextMenuLayerType_toString[] = {
 
 - (void)animateSelectionScaleAtIndex:(NSInteger)closeToIndex selecting:(BOOL)selecting
 {
-    if (self.menuItems.count == 0) {
-        return;
-    }
+	if (self.menuItems.count == 0) {
+		return;
+	}
 	CALayer *mainLayer = [self.menuItems objectAtIndex:closeToIndex];
 	MLLongPressMenuItemLocation *itemLocation = [self.itemLocations objectAtIndex:closeToIndex];
 

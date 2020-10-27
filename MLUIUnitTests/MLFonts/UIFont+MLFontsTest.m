@@ -26,49 +26,49 @@
 
 - (void)testMlSystemFontShouldBeEqualToStylesheet
 {
-    NSString *styleSheetFont = [MLStyleSheetManager.styleSheet regularSystemFontOfSize:12].fontName;
+	NSString *styleSheetFont = [MLStyleSheetManager.styleSheet regularSystemFontOfSize:12].fontName;
 	XCTAssertTrue([[UIFont ml_regularSystemFontOfSize:12].fontName isEqualToString:styleSheetFont]);
 }
 
 - (void)testMlBoldSystemFontShouldBeEqualToStylesheet
 {
-    NSString *styleSheetFont = [MLStyleSheetManager.styleSheet boldSystemFontOfSize:12].fontName;
+	NSString *styleSheetFont = [MLStyleSheetManager.styleSheet boldSystemFontOfSize:12].fontName;
 	XCTAssertTrue([[UIFont ml_boldSystemFontOfSize:12].fontName isEqualToString:styleSheetFont]);
 }
 
 - (void)testMediumSystemFontShouldBeEqualToStylesheet
 {
-    NSString *styleSheetFont = [MLStyleSheetManager.styleSheet mediumSystemFontOfSize:12].fontName;
+	NSString *styleSheetFont = [MLStyleSheetManager.styleSheet mediumSystemFontOfSize:12].fontName;
 	XCTAssertTrue([[UIFont ml_mediumSystemFontOfSize:12].fontName isEqualToString:styleSheetFont]);
 }
 
 - (void)testBlackSystemFontShouldBeEqualToStylesheet
 {
-    NSString *styleSheetFont = [MLStyleSheetManager.styleSheet blackSystemFontOfSize:12].fontName;
+	NSString *styleSheetFont = [MLStyleSheetManager.styleSheet blackSystemFontOfSize:12].fontName;
 	XCTAssertTrue([[UIFont ml_blackSystemFontOfSize:12].fontName isEqualToString:styleSheetFont]);
 }
 
 - (void)testSemiboldSystemFontShouldBeEqualToStylesheet
 {
-    NSString *styleSheetFont = [MLStyleSheetManager.styleSheet semiboldSystemFontOfSize:12].fontName;
+	NSString *styleSheetFont = [MLStyleSheetManager.styleSheet semiboldSystemFontOfSize:12].fontName;
 	XCTAssertTrue([[UIFont ml_semiboldSystemFontOfSize:12].fontName isEqualToString:styleSheetFont]);
 }
 
 - (void)testLightSystemFontShouldBeEqualToStylesheet
 {
-    NSString *styleSheetFont = [MLStyleSheetManager.styleSheet lightSystemFontOfSize:12].fontName;
+	NSString *styleSheetFont = [MLStyleSheetManager.styleSheet lightSystemFontOfSize:12].fontName;
 	XCTAssertTrue([[UIFont ml_lightSystemFontOfSize:12].fontName isEqualToString:styleSheetFont]);
 }
 
 - (void)testThinSystemFontShouldBeEqualToStylesheet
 {
-    NSString *styleSheetFont = [MLStyleSheetManager.styleSheet thinSystemFontOfSize:12].fontName;
+	NSString *styleSheetFont = [MLStyleSheetManager.styleSheet thinSystemFontOfSize:12].fontName;
 	XCTAssertTrue([[UIFont ml_thinSystemFontOfSize:12].fontName isEqualToString:styleSheetFont]);
 }
 
 - (void)testExtraboldSystemFontShouldBeEqualToStylesheet
 {
-    NSString *styleSheetFont = [MLStyleSheetManager.styleSheet extraboldSystemFontOfSize:12].fontName;
+	NSString *styleSheetFont = [MLStyleSheetManager.styleSheet extraboldSystemFontOfSize:12].fontName;
 	XCTAssertTrue([[UIFont ml_extraboldSystemFontOfSize:12].fontName isEqualToString:styleSheetFont]);
 }
 

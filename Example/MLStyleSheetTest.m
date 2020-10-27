@@ -94,43 +94,42 @@
 #pragma mark Fonts
 - (UIFont *)regularSystemFontOfSize:(CGFloat)fontSize
 {
-    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightRegular];
+	return [UIFont systemFontOfSize:fontSize weight:UIFontWeightRegular];
 }
 
 - (UIFont *)boldSystemFontOfSize:(CGFloat)fontSize
 {
-    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightBold];
+	return [UIFont systemFontOfSize:fontSize weight:UIFontWeightBold];
 }
 
 - (UIFont *)thinSystemFontOfSize:(CGFloat)fontSize
 {
-    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightThin];
+	return [UIFont systemFontOfSize:fontSize weight:UIFontWeightThin];
 }
 
 - (UIFont *)lightSystemFontOfSize:(CGFloat)fontSize
 {
-    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightLight];
+	return [UIFont systemFontOfSize:fontSize weight:UIFontWeightLight];
 }
 
 - (UIFont *)mediumSystemFontOfSize:(CGFloat)fontSize
 {
-    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightMedium];
+	return [UIFont systemFontOfSize:fontSize weight:UIFontWeightMedium];
 }
 
 - (UIFont *)semiboldSystemFontOfSize:(CGFloat)fontSize
 {
-    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightSemibold];
+	return [UIFont systemFontOfSize:fontSize weight:UIFontWeightSemibold];
 }
 
 - (UIFont *)extraboldSystemFontOfSize:(CGFloat)fontSize
 {
-    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightHeavy];
+	return [UIFont systemFontOfSize:fontSize weight:UIFontWeightHeavy];
 }
 
 - (UIFont *)blackSystemFontOfSize:(CGFloat)fontSize
 {
-    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightBlack];
+	return [UIFont systemFontOfSize:fontSize weight:UIFontWeightBlack];
 }
-
 
 @end
