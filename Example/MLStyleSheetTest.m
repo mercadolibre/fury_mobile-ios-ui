@@ -94,42 +94,43 @@
 #pragma mark Fonts
 - (UIFont *)regularSystemFontOfSize:(CGFloat)fontSize
 {
-	return [UIFont fontWithName:@"HelveticaNeue" size:fontSize];
+    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightRegular];
 }
 
 - (UIFont *)boldSystemFontOfSize:(CGFloat)fontSize
 {
-	return [UIFont fontWithName:@"HelveticaNeue-Bold" size:fontSize];
+    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightBold];
 }
 
 - (UIFont *)thinSystemFontOfSize:(CGFloat)fontSize
 {
-	return [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:fontSize];
+    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightThin];
 }
 
 - (UIFont *)lightSystemFontOfSize:(CGFloat)fontSize
 {
-	return [UIFont fontWithName:@"HelveticaNeue-Light" size:fontSize];
+    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightLight];
 }
 
 - (UIFont *)mediumSystemFontOfSize:(CGFloat)fontSize
 {
-	return [UIFont fontWithName:@"HelveticaNeue-Medium" size:fontSize];
+    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightMedium];
 }
 
 - (UIFont *)semiboldSystemFontOfSize:(CGFloat)fontSize
 {
-	return [UIFont fontWithName:@"HelveticaNeue-Bold" size:fontSize];
+    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightSemibold];
 }
 
 - (UIFont *)extraboldSystemFontOfSize:(CGFloat)fontSize
 {
-	return [UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:fontSize];
+    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightHeavy];
 }
 
 - (UIFont *)blackSystemFontOfSize:(CGFloat)fontSize
 {
-	return [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:fontSize];
+    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightBlack];
 }
+
 
 @end

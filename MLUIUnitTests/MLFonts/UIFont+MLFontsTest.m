@@ -24,44 +24,52 @@
 	MLStyleSheetManager.styleSheet = [MLStyleSheetTest new];
 }
 
-- (void)testMlSystemFontShouldBeSanFrancisco
+- (void)testMlSystemFontShouldBeEqualToStylesheet
 {
-	XCTAssertTrue([[UIFont ml_regularSystemFontOfSize:12].fontName isEqualToString:@"HelveticaNeue"]);
+    NSString *styleSheetFont = [MLStyleSheetManager.styleSheet regularSystemFontOfSize:12].fontName;
+	XCTAssertTrue([[UIFont ml_regularSystemFontOfSize:12].fontName isEqualToString:styleSheetFont]);
 }
 
-- (void)testMlBoldSystemFontShouldBeSanFrancisco
+- (void)testMlBoldSystemFontShouldBeEqualToStylesheet
 {
-	XCTAssertTrue([[UIFont ml_boldSystemFontOfSize:12].fontName isEqualToString:@"HelveticaNeue-Bold"]);
+    NSString *styleSheetFont = [MLStyleSheetManager.styleSheet boldSystemFontOfSize:12].fontName;
+	XCTAssertTrue([[UIFont ml_boldSystemFontOfSize:12].fontName isEqualToString:styleSheetFont]);
 }
 
-- (void)testMediumSystemFontShouldBeSanFrancisco
+- (void)testMediumSystemFontShouldBeEqualToStylesheet
 {
-	XCTAssertTrue([[UIFont ml_mediumSystemFontOfSize:12].fontName isEqualToString:@"HelveticaNeue-Medium"]);
+    NSString *styleSheetFont = [MLStyleSheetManager.styleSheet mediumSystemFontOfSize:12].fontName;
+	XCTAssertTrue([[UIFont ml_mediumSystemFontOfSize:12].fontName isEqualToString:styleSheetFont]);
 }
 
-- (void)testBlackSystemFontShouldBeSanFrancisco
+- (void)testBlackSystemFontShouldBeEqualToStylesheet
 {
-	XCTAssertTrue([[UIFont ml_blackSystemFontOfSize:12].fontName isEqualToString:@"HelveticaNeue-CondensedBlack"]);
+    NSString *styleSheetFont = [MLStyleSheetManager.styleSheet blackSystemFontOfSize:12].fontName;
+	XCTAssertTrue([[UIFont ml_blackSystemFontOfSize:12].fontName isEqualToString:styleSheetFont]);
 }
 
-- (void)testSemiboldSystemFontShouldBeSanFrancisco
+- (void)testSemiboldSystemFontShouldBeEqualToStylesheet
 {
-	XCTAssertTrue([[UIFont ml_semiboldSystemFontOfSize:12].fontName isEqualToString:@"HelveticaNeue-Bold"]);
+    NSString *styleSheetFont = [MLStyleSheetManager.styleSheet semiboldSystemFontOfSize:12].fontName;
+	XCTAssertTrue([[UIFont ml_semiboldSystemFontOfSize:12].fontName isEqualToString:styleSheetFont]);
 }
 
-- (void)testLightSystemFontShouldBeSanFrancisco
+- (void)testLightSystemFontShouldBeEqualToStylesheet
 {
-	XCTAssertTrue([[UIFont ml_lightSystemFontOfSize:12].fontName isEqualToString:@"HelveticaNeue-Light"]);
+    NSString *styleSheetFont = [MLStyleSheetManager.styleSheet lightSystemFontOfSize:12].fontName;
+	XCTAssertTrue([[UIFont ml_lightSystemFontOfSize:12].fontName isEqualToString:styleSheetFont]);
 }
 
-- (void)testThinSystemFontShouldBeSanFrancisco
+- (void)testThinSystemFontShouldBeEqualToStylesheet
 {
-	XCTAssertTrue([[UIFont ml_thinSystemFontOfSize:12].fontName isEqualToString:@"HelveticaNeue-UltraLight"]);
+    NSString *styleSheetFont = [MLStyleSheetManager.styleSheet thinSystemFontOfSize:12].fontName;
+	XCTAssertTrue([[UIFont ml_thinSystemFontOfSize:12].fontName isEqualToString:styleSheetFont]);
 }
 
-- (void)testExtraboldSystemFontShouldBeSanFrancisco
+- (void)testExtraboldSystemFontShouldBeEqualToStylesheet
 {
-	XCTAssertTrue([[UIFont ml_extraboldSystemFontOfSize:12].fontName isEqualToString:@"HelveticaNeue-CondensedBold"]);
+    NSString *styleSheetFont = [MLStyleSheetManager.styleSheet extraboldSystemFontOfSize:12].fontName;
+	XCTAssertTrue([[UIFont ml_extraboldSystemFontOfSize:12].fontName isEqualToString:styleSheetFont]);
 }
 
 - (void)testXXLARGESystemFontShouldBeSanFrancisco
