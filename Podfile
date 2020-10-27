@@ -1,4 +1,4 @@
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://cdn.cocopods.org'
 
 workspace 'MLUI'
 project 'MLUI.xcodeproj'

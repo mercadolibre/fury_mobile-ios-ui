@@ -2,7 +2,7 @@
 set -v
 set -o pipefail
 
-IOS_VERSION="${1:-12.4}"
+IOS_VERSION="${1:-14.0}"
 IOS_DEVICE="${2:-iPhone 8}"
 
 export XCPRETTY_JSON_FILE_OUTPUT="build/reports/result_$IOS_VERSION.json"
