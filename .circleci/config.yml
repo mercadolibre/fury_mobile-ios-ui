@@ -30,13 +30,13 @@ jobs:
       - checkout
       - add_ssh_keys
       - restore_cache:
-          key: gem-cache-{{ checksum "Gemfile.lock" }}-v2
+          key: gem-cache-{{ checksum "Gemfile.lock" }}-v3.1
       - run:
           name: Set Ruby Version
           command: echo 'chruby `cat .ruby-version`' >> ~/.bash_profile
       - run:
           name: Install Bundler
-          command: gem install bundler --user-install
+          command: gem install bundler
       - run:
           name: Install Ruby tools
           command: bundle install --path vendor/bundle
@@ -47,7 +47,7 @@ jobs:
           name: Install CocoaPods
           command: bundle exec pod install
       - save_cache:
-          key: gem-cache-{{ checksum "Gemfile.lock" }}-v2
+          key: gem-cache-{{ checksum "Gemfile.lock" }}-v3.1
           paths:
             - vendor/bundle
       - run:

@@ -1,4 +1,4 @@
-source 'https://cdn.cocopods.org'
+source 'https://cdn.cocoapods.org'
 
 workspace 'MLUI'
 project 'MLUI.xcodeproj'
