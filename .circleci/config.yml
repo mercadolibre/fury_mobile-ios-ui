@@ -6,7 +6,7 @@
 default: &defaultJob
   # Set the xcode version this virtual machine will use
   macos:
-    xcode: "11.3.1"
+    xcode: "12.0.1"
   # We need to set this for RVM.
   shell: /bin/bash --login
 # Default workflow will run on all branches except releases
@@ -30,10 +30,13 @@ jobs:
       - checkout
       - add_ssh_keys
       - restore_cache:
-          key: gem-cache-{{ checksum "Gemfile.lock" }}-v2
+          key: gem-cache-{{ checksum "Gemfile.lock" }}-v3.1
+      - run:
+          name: Set Ruby Version
+          command: echo 'chruby `cat .ruby-version`' >> ~/.bash_profile
       - run:
           name: Install Bundler
-          command: gem install bundler --user-install
+          command: gem install bundler
       - run:
           name: Install Ruby tools
           command: bundle install --path vendor/bundle
@@ -42,19 +45,17 @@ jobs:
           command: ruby ./scripts/deactivate_verbose_logging.rb
       - run:
           name: Install CocoaPods
-          command: |
-            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s
-            bundle exec pod install
+          command: bundle exec pod install
       - save_cache:
-          key: gem-cache-{{ checksum "Gemfile.lock" }}-v2
+          key: gem-cache-{{ checksum "Gemfile.lock" }}-v3.1
           paths:
             - vendor/bundle
       - run:
-          name: Run tests on iOS 12.4
-          command: ./scripts/run_tests.sh 12.4
+          name: Run tests on iOS 13.5
+          command: ./scripts/run_tests.sh 13.5
       - run:
-          name: Run test on iOS 13.3
-          command: ./scripts/run_tests.sh 13.3
+          name: Run test on iOS 14.0
+          command: ./scripts/run_tests.sh 14.0
       - run:
           name: Run Coverage Report
           command: ./scripts/run_coverage_report.sh
@@ -82,9 +83,7 @@ jobs:
           command: ruby ./scripts/deactivate_verbose_logging.rb
       - run:
           name: Install CocoaPods
-          command: |
-            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s
-            bundle exec pod install
+          command: bundle exec pod install
       - run:
           name: Run Pod Lint
           command: bundle exec pod lib lint MLUI.podspec --allow-warnings --sources='https://github.com/CocoaPods/Specs'
@@ -109,9 +108,7 @@ jobs:
           command: bundle install --path vendor/bundle
       - run:
           name: Install CocoaPods
-          command: |
-            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s
-            bundle exec pod install
+          command: bundle exec pod install
       - run:
           name: Run Deploy
           command: ./scripts/run_deploy.sh

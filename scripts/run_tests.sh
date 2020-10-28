@@ -2,8 +2,14 @@
 set -v
 set -o pipefail
 
-IOS_VERSION="${1:-12.4}"
+IOS_VERSION="${1:-14.0}"
 IOS_DEVICE="${2:-iPhone 8}"
+
+# Install xcpretty if not available
+if ! xcpretty -v &> /dev/null
+then
+    gem install xcpretty
+fi
 
 export XCPRETTY_JSON_FILE_OUTPUT="build/reports/result_$IOS_VERSION.json"
 FORMATTER="xcpretty -f `bundle exec xcpretty-json-formatter`"
