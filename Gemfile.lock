@@ -96,7 +96,6 @@ DEPENDENCIES
   cocoapods (= 1.8.4)
   cocoapods-whitelist
   slather (= 2.4.3)
-  xcpretty
   xcpretty-json-formatter (~> 0.1)
 
 BUNDLED WITH

@@ -1,6 +1,6 @@
-# Sin publicar
-### Cambiado
-- Compatibilidad con Xcode 12
+# v5.25.0
+### Agregado
+- Soporte a Xcode 12
 
 # v5.24.0
 ### Agregado
