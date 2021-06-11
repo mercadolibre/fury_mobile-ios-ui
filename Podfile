@@ -1,3 +1,4 @@
+source 'git@github.com:mercadolibre/mobile-ios_specs.git'
 source 'https://cdn.cocoapods.org'
 
 workspace 'MLUI'
@@ -5,6 +6,7 @@ project 'MLUI.xcodeproj'
 
 use_frameworks!
 
+install! 'cocoapods', disable_input_output_paths: true
 platform :ios, '10.0'
 
 install! 'cocoapods',

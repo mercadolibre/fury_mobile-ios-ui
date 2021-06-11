@@ -1,3 +1,7 @@
+# v5.26.0
+### Cambiado
+- Migración a Static Framework
+
 # v5.25.0
 ### Agregado
 - Soporte a Xcode 12

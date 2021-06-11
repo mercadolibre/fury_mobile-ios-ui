@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "MLUI"
-  s.version          = "5.25.0"
+  s.version          = "5.26.0"
   s.summary          = "MercadoLibre mobile ios UI components"
   s.homepage         = "https://github.com/mercadolibre"
   s.license          = "Apache License, Version 2.0"
@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/mercadolibre/fury_mobile-ios-ui.git", :tag => s.version.to_s }
   s.platform         = :ios, '10.0'
   s.requires_arc     = true
+  s.static_framework = true
 
   s.subspec 'StyleSheet' do |styleSheet|
     styleSheet.source_files = "LibraryComponents/StyleSheet/classes/*.{h,m}"
