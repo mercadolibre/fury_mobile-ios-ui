@@ -1,3 +1,7 @@
+# v5.26.1
+### Cambiado
+- Rollback  a Static Framework debido a que hay otras libs dependientes que de momento no están migradas a estáticas
+
 # v5.26.0
 ### Cambiado
 - Migración a Static Framework
