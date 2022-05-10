@@ -7,7 +7,7 @@ project 'MLUI.xcodeproj'
 use_frameworks!
 
 install! 'cocoapods', disable_input_output_paths: true
-platform :ios, '10.0'
+platform :ios, '13.0'
 
 install! 'cocoapods',
   :generate_multiple_pod_projects => true,

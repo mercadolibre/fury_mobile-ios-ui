@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name             = "MLUI"
-  s.version          = "5.26.1"
+  s.version          = "6.0.0"
   s.summary          = "MercadoLibre mobile ios UI components"
   s.homepage         = "https://github.com/mercadolibre"
   s.license          = "Apache License, Version 2.0"
   s.author           = { "mobile arquitectura @ meli" => "mobile-arquitectura@mercadolibre.com" }
   s.source           = { :git => "https://github.com/mercadolibre/fury_mobile-ios-ui.git", :tag => s.version.to_s }
-  s.platform         = :ios, '10.0'
+  s.platform         = :ios, '13.0'
   s.requires_arc     = true
 
   s.subspec 'StyleSheet' do |styleSheet|
