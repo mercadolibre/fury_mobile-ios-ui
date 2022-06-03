@@ -28,7 +28,7 @@ post_install do |installer|
         project.build_configurations.each do |config|
             preprocessor_macros = config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
             preprocessor_macros << 'MLUI_OVERRIDE_FONT=1'
- 	    config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
             config.build_settings['SWIFT_VERSION'] = '5.5'
         end
     end
