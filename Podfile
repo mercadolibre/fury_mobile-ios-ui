@@ -1,4 +1,3 @@
-source 'https://cdn.cocoapods.org/'
 source 'git@github.com:mercadolibre/mobile-ios_specs.git'
 
 workspace 'MLUI'
