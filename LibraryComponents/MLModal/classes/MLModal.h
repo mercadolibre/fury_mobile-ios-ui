@@ -10,6 +10,7 @@
 #import "MLModalConfigStyle.h"
 #import "MLModalStyleFactory.h"
 
+__deprecated_msg("Please adopt AndesModal of AndesUI. See more in https://github.com/mercadolibre/fury_andesui-ios/blob/master/docs/guide/modal/AndesModal.md")
 @interface MLModal : NSObject
 
 /**
