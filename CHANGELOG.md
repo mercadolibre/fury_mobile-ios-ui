@@ -1,10 +1,7 @@
-# v5.26.2
-### Cambiado
-- Relevar la lib vieja de UI para eliminar y deprecar componentes.
-
 # v5.26.1
 ### Cambiado
 - Rollback  a Static Framework debido a que hay otras libs dependientes que de momento no están migradas a estáticas
+- Relevar la lib vieja de UI para eliminar y deprecar componentes.
 
 # v5.26.0
 ### Cambiado
