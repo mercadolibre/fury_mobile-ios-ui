@@ -56,7 +56,6 @@
 		4DB11C101C47D77C00570E2F /* MLButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB11C0E1C47D77C00570E2F /* MLButtonViewController.m */; };
 		4DB11C111C47D77C00570E2F /* MLButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DB11C0F1C47D77C00570E2F /* MLButtonViewController.xib */; };
 		4DB11C151C47F1D800570E2F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB11C141C47F1D800570E2F /* QuartzCore.framework */; };
-		4DC842601D67511600ABA455 /* MLCheckListTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC8425F1D67511600ABA455 /* MLCheckListTest.m */; };
 		4DC88F141D46628300570845 /* MLStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC88F121D46628300570845 /* MLStyleViewController.m */; };
 		4DC88F151D46628300570845 /* MLStyleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DC88F131D46628300570845 /* MLStyleViewController.xib */; };
 		4DD55C381D50ED08002DBDDD /* MLStyleUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD55C371D50ED08002DBDDD /* MLStyleUtilsTest.m */; };
@@ -218,7 +217,6 @@
 		4DB11C0E1C47D77C00570E2F /* MLButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLButtonViewController.m; path = MLButton/MLButtonViewController.m; sourceTree = "<group>"; };
 		4DB11C0F1C47D77C00570E2F /* MLButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MLButtonViewController.xib; path = MLButton/MLButtonViewController.xib; sourceTree = "<group>"; };
 		4DB11C141C47F1D800570E2F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		4DC8425F1D67511600ABA455 /* MLCheckListTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCheckListTest.m; sourceTree = "<group>"; };
 		4DC88F0B1D46530D00570845 /* UILabel+MLStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UILabel+MLStyle.h"; path = "MLSpacing/classes/UILabel+MLStyle.h"; sourceTree = "<group>"; };
 		4DC88F0C1D46530D00570845 /* UILabel+MLStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UILabel+MLStyle.m"; path = "MLSpacing/classes/UILabel+MLStyle.m"; sourceTree = "<group>"; };
 		4DC88F111D46628300570845 /* MLStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLStyleViewController.h; path = MLSpacing/MLStyleViewController.h; sourceTree = "<group>"; };
@@ -275,8 +273,6 @@
 		6A5B20391D22C6E5001F93DC /* MLBooleanWidget_Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLBooleanWidget_Protected.h; sourceTree = "<group>"; };
 		6A5B203C1D22C6E5001F93DC /* MLCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCheckBox.h; sourceTree = "<group>"; };
 		6A5B203D1D22C6E5001F93DC /* MLCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCheckBox.m; sourceTree = "<group>"; };
-		6A5B203E1D22C6E5001F93DC /* MLCheckList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCheckList.h; sourceTree = "<group>"; };
-		6A5B203F1D22C6E5001F93DC /* MLCheckList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCheckList.m; sourceTree = "<group>"; };
 		6A5B20421D22C6E5001F93DC /* MLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRadioButton.h; sourceTree = "<group>"; };
 		6A5B20431D22C6E5001F93DC /* MLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRadioButton.m; sourceTree = "<group>"; };
 		6A5B20441D22C6E5001F93DC /* MLRadioButtonCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRadioButtonCollection.h; sourceTree = "<group>"; };
@@ -872,14 +868,6 @@
 			path = MLCheckButton;
 			sourceTree = "<group>";
 		};
-		6A4459321D22D3630069EFBC /* MLCheckList */ = {
-			isa = PBXGroup;
-			children = (
-				4DC8425F1D67511600ABA455 /* MLCheckListTest.m */,
-			);
-			path = MLCheckList;
-			sourceTree = "<group>";
-		};
 		6A4459341D22D3630069EFBC /* MLRadioButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -938,8 +926,6 @@
 			children = (
 				6A5B203C1D22C6E5001F93DC /* MLCheckBox.h */,
 				6A5B203D1D22C6E5001F93DC /* MLCheckBox.m */,
-				6A5B203E1D22C6E5001F93DC /* MLCheckList.h */,
-				6A5B203F1D22C6E5001F93DC /* MLCheckList.m */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -1294,17 +1280,9 @@
 		CD1665F719C1413A00EE6243 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				CD1665F819C1413A00EE6243 /* assets */,
 				CD1665F919C1413A00EE6243 /* classes */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		CD1665F819C1413A00EE6243 /* assets */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = assets;
 			sourceTree = "<group>";
 		};
 		CD1665F919C1413A00EE6243 /* classes */ = {
@@ -1419,7 +1397,6 @@
 				8EAF21F81D2D47D70005F1F1 /* MLHtml */,
 				6A44593C1D22D3A10069EFBC /* MLSwitch */,
 				6A4459301D22D3630069EFBC /* MLCheckButton */,
-				6A4459321D22D3630069EFBC /* MLCheckList */,
 				6A4459341D22D3630069EFBC /* MLRadioButton */,
 				6A4459361D22D3630069EFBC /* MLRadioButtonCollection */,
 				4D5B06641C5BD395000E7378 /* MLButton */,
@@ -1751,7 +1728,6 @@
 				4DD55C381D50ED08002DBDDD /* MLStyleUtilsTest.m in Sources */,
 				EEE5C8F01ED33426004D99A7 /* MLTextViewTest.m in Sources */,
 				4DF4CF1B1CCFD415002EC519 /* MLSpinnerTest.m in Sources */,
-				4DC842601D67511600ABA455 /* MLCheckListTest.m in Sources */,
 				6A44593B1D22D3630069EFBC /* MLRadioButtonCollectionTest.m in Sources */,
 				D0D51EDC20D2CAD70044DF13 /* MLButtonConfigTest.m in Sources */,
 				BB6573132040588700FBE8DD /* MLModalStyleFactoryTest.m in Sources */,

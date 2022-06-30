@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -200,7 +196,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="34.5"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUk-nQ-NPk" customClass="MLCheckBox">
-                                                    <rect key="frame" x="0.0" y="10.5" width="15" height="15"/>
+                                                    <rect key="frame" x="0.0" y="10" width="15" height="15"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="15" id="IQL-Nx-9Us"/>
@@ -226,7 +222,7 @@
                                             <rect key="frame" x="0.0" y="34.5" width="343" height="35"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYv-fu-4hF" customClass="MLCheckBox">
-                                                    <rect key="frame" x="0.0" y="10.5" width="15" height="15"/>
+                                                    <rect key="frame" x="0.0" y="10" width="15" height="15"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="15" id="9Gv-hs-4ZM"/>
@@ -234,7 +230,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CheckBox2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dah-VB-JE4">
-                                                    <rect key="frame" x="23" y="8" width="87.5" height="20.5"/>
+                                                    <rect key="frame" x="23" y="7.5" width="87" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -252,7 +248,7 @@
                                             <rect key="frame" x="0.0" y="69.5" width="343" height="34.5"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mul-8k-KC7" customClass="MLCheckBox">
-                                                    <rect key="frame" x="0.0" y="10.5" width="15" height="15"/>
+                                                    <rect key="frame" x="0.0" y="9.5" width="15" height="15"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="mul-8k-KC7" secondAttribute="height" multiplier="1:1" id="s2Q-YR-C7e"/>
@@ -260,7 +256,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Above Checkboxes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQs-qx-UuI" userLabel="CheckBox3 Label">
-                                                    <rect key="frame" x="23" y="7" width="203" height="20.5"/>
+                                                    <rect key="frame" x="23" y="7" width="202" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -325,6 +321,7 @@
                 <constraint firstAttribute="trailing" secondItem="Afr-bT-2fE" secondAttribute="trailing" id="kZy-69-ySI"/>
                 <constraint firstItem="Afr-bT-2fE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nFJ-Id-7nY"/>
             </constraints>
+            <point key="canvasLocation" x="130" y="107"/>
         </view>
     </objects>
 </document>

@@ -11,7 +11,6 @@
 #import <MLUI/MLCheckBox.h>
 #import <MLUI/MLRadioButton.h>
 #import <MLUI/MLSwitch.h>
-#import <MLUI/MLCheckList.h>
 #import <MLUI/MLRadioButtonCollection.h>
 #import <MLUI/MLButton.h>
 #import <MLUI/UIColor+MLColorPalette.h>
@@ -25,7 +24,6 @@
 @property (weak, nonatomic) IBOutlet MLRadioButton *mlRadioButton1;
 @property (weak, nonatomic) IBOutlet MLRadioButton *mlRadioButton2;
 @property (weak, nonatomic) IBOutlet MLSwitch *mlSwitch;
-@property (strong, nonatomic) MLCheckList *mlCheckList;
 @property (strong, nonatomic) MLRadioButtonCollection *mlRadioButtonCollection;
 
 @property (weak, nonatomic) IBOutlet UILabel *checkBox1Label;
@@ -43,8 +41,6 @@
 	[super viewDidLoad];
 
 	[self setupTitle];
-	[self setupCheckBox];
-	[self setupCheckBoxLabels];
 	[self setupControlCheckbox];
 	[self setupRadioButton];
 	[self setupOptionLabels];
@@ -57,22 +53,14 @@
 	self.title = @"MLCheckBox, MLRadioButton & MLSwitch";
 }
 
-- (void)setupCheckBox
-{
-	self.mlCheckList = [MLCheckList checkListWithCheckBoxes:@[self.mlCheckBox1, self.mlCheckBox2]];
-}
-
 - (void)setupControlCheckbox
 {
 	[self.mlCheckBox3 onAnimated:NO];
-	self.mlCheckBox3.delegate = self;
+	self.mlCheckBox1.delegate = self;
+    self.mlCheckBox2.delegate = self;
+    self.mlCheckBox3.delegate = self;
 }
 
-- (void)setupCheckBoxLabels
-{
-	[self.checkBox1Label addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(checkBoxButton1DidTouch:)]];
-	[self.checkBox2Label addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(checkBoxButton2DidTouch:)]];
-}
 
 - (void)setupRadioButton
 {
@@ -102,15 +90,6 @@
 }
 
 #pragma mark - Actions
-- (void)checkBoxButton1DidTouch:(id)sender
-{
-	[self.mlCheckList toggleCheckBoxAtIndex:0];
-}
-
-- (void)checkBoxButton2DidTouch:(id)sender
-{
-	[self.mlCheckList toggleCheckBoxAtIndex:1];
-}
 
 - (void)radioButtonOption1DidTouch:(id)sender
 {
