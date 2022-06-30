@@ -91,6 +91,7 @@ typedef NS_ENUM (NSInteger, MLTitledTextFieldState) {
 /**
  * Text field with a title.
  */
+__deprecated_msg("Please adopt AndesTextField of AndesUI. See more in https://github.com/mercadolibre/fury_andesui-ios/blob/master/docs/guide/textField/AndesTextField.md")
 @interface MLTitledSingleLineTextField : UIControl
 
 /**

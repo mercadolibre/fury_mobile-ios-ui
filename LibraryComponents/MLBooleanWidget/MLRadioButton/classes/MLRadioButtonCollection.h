@@ -11,6 +11,7 @@
 /**
  *  MLRadioButtonCollection manage the exclusiveness of an array of MLRadioButtons
  */
+__deprecated_msg("Please adopt AndesRadioButtonGroup of AndesUI. See more in https://github.com/mercadolibre/fury_andesui-ios/blob/master/docs/guide/radioButtonGroup/AndesRadioButtonGroup.md")
 @interface MLRadioButtonCollection : NSObject
 
 /**

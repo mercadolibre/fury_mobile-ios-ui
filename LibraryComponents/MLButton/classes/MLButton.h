@@ -19,6 +19,7 @@ typedef NS_ENUM (NSInteger, MLButtonStyle) {
 	MLButtonStyleSecondaryOption
 };
 
+__deprecated_msg("Please adopt AndesButton of AndesUI. See more in https://github.com/mercadolibre/fury_andesui-ios/blob/master/docs/guide/button/AndesButton.md")
 @interface MLButton : UIControl
 
 ///---------------------

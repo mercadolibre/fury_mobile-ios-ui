@@ -45,6 +45,7 @@ typedef NS_ENUM (NSInteger, MLPriceSizeStyle) {
 	MLPriceSizeSmall
 };
 
+__deprecated_msg("Please adopt AndesMoneyAmountCombo of AndesUI. See more in https://github.com/mercadolibre/fury_andesui-ios/blob/master/docs/guide/MoneyAmountCombo/AndesMoneyAmountCombo.md")
 @interface MLUIPriceView : UIView
 
 /**

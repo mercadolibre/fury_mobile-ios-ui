@@ -44,6 +44,7 @@ typedef NS_ENUM (NSInteger, MLSnackbarDismissCause) {
  */
 typedef void (^MLSnackbarDismissBlock)(MLSnackbarDismissCause cause);
 
+__deprecated_msg("Please adopt AndesSnackbar of AndesUI. See more in https://github.com/mercadolibre/fury_andesui-ios/blob/master/docs/guide/snackbar/AndesSnackbar.md")
 @interface MLSnackbar : UIView
 
 /**

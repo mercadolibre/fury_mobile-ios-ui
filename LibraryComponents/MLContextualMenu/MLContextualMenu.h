@@ -14,6 +14,7 @@
 /*!
  *  @brief Contextual menu with action items to show when longpress detected
  */
+__deprecated_msg("Please adopt AndesList of AndesUI. See more in https://github.com/mercadolibre/fury_andesui-ios/blob/master/docs/guide/list/AndesList.md")
 @interface MLContextualMenu : UIView
 
 /*

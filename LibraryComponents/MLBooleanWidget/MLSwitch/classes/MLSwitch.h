@@ -10,6 +10,7 @@
 
 @protocol MLSwitchDelegate;
 
+__deprecated_msg("Please adopt AndesSwitch of AndesUI. See more in https://github.com/mercadolibre/fury_andesui-ios/blob/master/docs/guide/switch/AndesSwitch.md")
 @interface MLSwitch : MLBooleanWidget
 
 @end
