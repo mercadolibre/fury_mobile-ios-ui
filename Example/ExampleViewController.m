@@ -15,7 +15,6 @@
 #import <MLUI/UIColor+MLColorPalette.h>
 #import "MLStyleViewController.h"
 #import "MLStyleSheetViewController.h"
-#import "MLHeaderControllerDemoViewController.h"
 
 @interface ExampleViewController ()
 @property (weak, nonatomic) IBOutlet MLButton *fontsButton;
@@ -24,7 +23,6 @@
 @property (weak, nonatomic) IBOutlet MLButton *styleButton;
 @property (weak, nonatomic) IBOutlet MLButton *htmlButton;
 @property (weak, nonatomic) IBOutlet MLButton *styleSheetButton;
-@property (weak, nonatomic) IBOutlet MLButton *headerButton;
 
 @end
 
@@ -53,9 +51,6 @@
 
 	self.styleSheetButton.buttonTitle = @"StyleSheet";
 	[self.styleSheetButton addTarget:self action:@selector(showStyleSheetController:) forControlEvents:UIControlEventTouchUpInside];
-
-	self.headerButton.buttonTitle = @"Header";
-	[self.headerButton addTarget:self action:@selector(showHeaderController:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 #pragma mark - Actions
@@ -92,12 +87,6 @@
 - (void)showStyleSheetController:(id)sender
 {
 	MLStyleSheetViewController *controller = [[MLStyleSheetViewController alloc] init];
-	[self.navigationController pushViewController:controller animated:YES];
-}
-
-- (void)showHeaderController:(id)sender
-{
-	MLHeaderControllerDemoViewController *controller = [[MLHeaderControllerDemoViewController alloc] init];
 	[self.navigationController pushViewController:controller animated:YES];
 }
 
