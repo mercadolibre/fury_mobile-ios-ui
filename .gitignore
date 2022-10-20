@@ -33,3 +33,4 @@ vendor/
 
 coverage/
 .fastlane/
+pod_lib_lint.log
