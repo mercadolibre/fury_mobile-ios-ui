@@ -15,11 +15,11 @@ install! 'cocoapods',
 
 target 'MLUI-Example' do
     pod 'MLUI', :path => "./"
-    pod 'FXBlurView', '~> 1.6'
+    pod 'FXBlurView', '1.6.4'
 
     target 'MLUIUnitTests' do
 	inherit! :search_paths
-  	pod 'OCMock', '3.4.1'
+  	pod 'OCMock', '~> 3.4.1'
     end
 end
 

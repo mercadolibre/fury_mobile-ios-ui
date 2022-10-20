@@ -74,7 +74,7 @@ Pod::Spec.new do |s|
     mlfullmodal.dependency 'MLUI/MLColorPalette'
     mlfullmodal.dependency 'MLUI/MLFonts'
     mlfullmodal.dependency 'MLUI/MLButton'
-    mlfullmodal.dependency 'FXBlurView', '~> 1.6'
+    mlfullmodal.dependency 'FXBlurView', '1.6.4'
     mlfullmodal.dependency 'MLUI/Core'
     mlfullmodal.dependency 'MLUI/StyleSheet'
     mlfullmodal.dependency 'MLUI/MLHeader'
@@ -107,7 +107,7 @@ Pod::Spec.new do |s|
     mlmodal.dependency 'MLUI/MLColorPalette'
     mlmodal.dependency 'MLUI/MLFonts'
     mlmodal.dependency 'MLUI/MLButton'
-    mlmodal.dependency 'FXBlurView', '~> 1.6'
+    mlmodal.dependency 'FXBlurView', '1.6.4'
     mlmodal.dependency 'MLUI/Core'
     mlmodal.dependency 'MLUI/StyleSheet'
   end
