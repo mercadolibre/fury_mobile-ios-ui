@@ -1,0 +1,73 @@
+excluded:
+  - /app/Pods
+  - Pods
+disabled_rules:
+  - custom_rules
+opt_in_rules:
+  - attributes
+  - closure_body_length
+  - closure_end_indentation
+  - closure_spacing
+  - contains_over_filter_count
+  - contains_over_filter_is_empty
+  - contains_over_first_not_nil
+  - contains_over_range_nil_comparison
+  - convenience_type
+  - discarded_notification_center_observer
+  - discouraged_direct_init
+  - discouraged_object_literal
+  - discouraged_optional_boolean
+  - empty_collection_literal
+  - empty_count
+  - empty_xctest_method
+  - expiring_todo
+  - fatal_error_message
+  - file_name_no_space
+  - file_types_order
+  - first_where
+  - flatmap_over_map_reduce
+  - force_unwrapping
+  - ibinspectable_in_extension
+  - identical_operands
+  - implicitly_unwrapped_optional
+  - joined_default_parameter
+  - last_where
+  - legacy_random
+  - literal_expression_end_indentation
+  - lower_acl_than_parent
+  - missing_docs
+  - modifier_order
+  - multiline_arguments
+  - multiline_arguments_brackets
+  - multiline_function_chains
+  - multiline_literal_brackets
+  - multiline_parameters
+  - multiline_parameters_brackets
+  - nslocalizedstring_require_bundle
+  - operator_usage_whitespace
+  - optional_enum_case_matching
+  - override_in_extension
+  - prefer_zero_over_explicit_init
+  - prefixed_toplevel_constant
+  - private_action
+  - private_outlet
+  - reduce_into
+  - redundant_nil_coalescing
+  - sorted_first_last
+  - static_operator
+  - strong_iboutlet
+  - toggle_bool
+  - unused_declaration
+  - unused_import
+  - vertical_parameter_alignment_on_call
+  - empty_string
+  - extension_access_modifier
+  - trailing_closure
+  - unneeded_parentheses_in_closure_argument
+  - vertical_whitespace_closing_braces
+  - vertical_whitespace_opening_braces
+line_length:
+  warning: 140
+ignores_function_declarations: true
+ignores_interpolated_strings: true
+ignores_urls: true
