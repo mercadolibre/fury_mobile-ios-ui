@@ -1,0 +1,26 @@
+#! /usr/bin/env bash
+export PATH="/usr/local/bin/:$PATH"
+swiftlint version
+
+if [ $? -eq 0 ]; then
+    echo "Running SwiftLint"
+else
+    echo "SwiftLint is not installed"
+    brew install swiftlint
+fi
+
+# check modified files
+git diff --cached --name-status | while read st file; do
+
+# skip deleted files
+if [ "$st" == 'D' ]; then continue; fi
+
+if [[ $file =~ \.swift$ ]]; then
+    swiftlint --fix --path ${file} 
+    git add ${file}
+
+    if [ $? -ne 0 ]; then
+      echo "Errors running swiftlint, please fix them and commit again..."
+    fi
+fi
+done

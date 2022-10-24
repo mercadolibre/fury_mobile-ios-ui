@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name             = "MLUI"
-  s.version          = "5.26.1"
+  s.version          = "5.26.3"
   s.summary          = "MercadoLibre mobile ios UI components"
   s.homepage         = "https://github.com/mercadolibre"
   s.license          = "Apache License, Version 2.0"
   s.author           = { "mobile arquitectura @ meli" => "mobile-arquitectura@mercadolibre.com" }
-  s.source           = { :git => "https://github.com/mercadolibre/fury_mobile-ios-ui.git", :tag => s.version.to_s }
-  s.platform         = :ios, '10.0'
+  s.source           = { :git => "https://github.com/mercadolibre/fury_mobile-ios-ui.git", :tag => s.version }
+  s.platform         = :ios, '13.0'
   s.requires_arc     = true
 
   s.subspec 'StyleSheet' do |styleSheet|
@@ -74,7 +74,7 @@ Pod::Spec.new do |s|
     mlfullmodal.dependency 'MLUI/MLColorPalette'
     mlfullmodal.dependency 'MLUI/MLFonts'
     mlfullmodal.dependency 'MLUI/MLButton'
-    mlfullmodal.dependency 'FXBlurView', '~> 1.6'
+    mlfullmodal.dependency 'FXBlurView', '1.6.4'
     mlfullmodal.dependency 'MLUI/Core'
     mlfullmodal.dependency 'MLUI/StyleSheet'
     mlfullmodal.dependency 'MLUI/MLHeader'
@@ -107,7 +107,7 @@ Pod::Spec.new do |s|
     mlmodal.dependency 'MLUI/MLColorPalette'
     mlmodal.dependency 'MLUI/MLFonts'
     mlmodal.dependency 'MLUI/MLButton'
-    mlmodal.dependency 'FXBlurView', '~> 1.6'
+    mlmodal.dependency 'FXBlurView', '1.6.4'
     mlmodal.dependency 'MLUI/Core'
     mlmodal.dependency 'MLUI/StyleSheet'
   end

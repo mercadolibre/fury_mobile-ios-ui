@@ -1,0 +1,8 @@
+{
+    "project_id" : "MLUI",
+    "load": [
+        "/usr/local/opt/arc-lint"
+    ],
+    "xcodebuild.workspace": "MLUI.xcworkspace",
+    "xcodebuild.scheme": "testapp"
+}
