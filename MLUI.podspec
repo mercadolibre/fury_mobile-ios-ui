@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/mercadolibre"
   s.license          = "Apache License, Version 2.0"
   s.author           = { "mobile arquitectura @ meli" => "mobile-arquitectura@mercadolibre.com" }
-  s.source           = { :git => "https://github.com/mercadolibre/fury_mobile-ios-ui.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/mercadolibre/fury_mobile-ios-ui.git", :tag => s.version }
   s.platform         = :ios, '10.0'
   s.requires_arc     = true
 
