@@ -1,3 +1,7 @@
+# v5.26.3
+### Cambiado
+- Migracion de source publico en nexus para soportar fury
+
 # v5.26.1
 ### Cambiado
 - Rollback  a Static Framework debido a que hay otras libs dependientes que de momento no están migradas a estáticas
