@@ -1,17 +1,20 @@
-# v5.26.3
-### Cambiado
+# Changelog
+This library was deprefacted in favor of AndesUI
+
+## [5.26.3] - 2022-10-25
+### Added
 - Migracion de source publico en nexus para soportar fury
 
-# v5.26.1
-### Cambiado
+## [5.26.1] - 2020-11-09
+### Changed
 - Rollback  a Static Framework debido a que hay otras libs dependientes que de momento no están migradas a estáticas
 
-# v5.26.0
-### Cambiado
+## [5.26.0] - 2020-11-09
+### Changed
 - Migración a Static Framework
 
-# v5.25.0
-### Agregado
+## [5.25.0] - 2020-11-09
+### Added
 - Soporte a Xcode 12
 
 # v5.24.0
