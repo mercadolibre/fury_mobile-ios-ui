@@ -8,6 +8,8 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/mercadolibre/fury_mobile-ios-ui.git", :tag => s.version }
   s.platform         = :ios, '13.0'
   s.requires_arc     = true
+  s.deprecated = true
+  s.deprecated_in_favor_of = 'AndesUI'
 
   s.subspec 'StyleSheet' do |styleSheet|
     styleSheet.source_files = "LibraryComponents/StyleSheet/classes/*.{h,m}"

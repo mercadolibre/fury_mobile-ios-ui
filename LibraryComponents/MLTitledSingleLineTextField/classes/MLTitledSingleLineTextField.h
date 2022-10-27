@@ -20,6 +20,7 @@ typedef NS_ENUM (NSInteger, MLTitledTextFieldState) {
 	MLTitledTextFieldStateDisabled
 };
 
+
 @class MLTitledSingleLineTextField;
 
 /**
@@ -91,6 +92,7 @@ typedef NS_ENUM (NSInteger, MLTitledTextFieldState) {
 /**
  * Text field with a title.
  */
+API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI.", ios(1.0, 13.0))
 @interface MLTitledSingleLineTextField : UIControl
 
 /**

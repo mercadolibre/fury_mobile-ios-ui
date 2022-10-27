@@ -14,6 +14,7 @@
 /*!
  *  @brief Contextual menu with action items to show when longpress detected
  */
+API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI.", ios(1.0, 13.0))
 @interface MLContextualMenu : UIView
 
 /*

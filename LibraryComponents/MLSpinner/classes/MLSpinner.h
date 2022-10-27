@@ -18,6 +18,7 @@ typedef NS_ENUM (NSInteger, MLSpinnerStyle) {
 	MLSpinnerStyleWhiteSmall
 };
 
+API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI.", ios(1.0, 13.0))
 @interface MLSpinner : UIView
 
 @property (nonatomic, readonly) BOOL isHidden;
