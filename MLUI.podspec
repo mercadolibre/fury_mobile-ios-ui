@@ -8,6 +8,8 @@ Pod::Spec.new do |s|
   s.source           = { :http => "https://artifacts.mercadolibre.com/repository/ios-releases/MLUI/#{s.version}/MLUI.zip" }
   s.platform         = :ios, '13.0'
   s.requires_arc     = true
+  s.deprecated = true
+  s.deprecated_in_favor_of = 'AndesUI'
 
   s.subspec 'StyleSheet' do |styleSheet|
     styleSheet.source_files = "LibraryComponents/StyleSheet/classes/*.{h,m}"

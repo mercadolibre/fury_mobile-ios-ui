@@ -15,6 +15,7 @@ typedef NS_ENUM (NSInteger, MLUISnackBarDuration) {
 	MLSnackBarDurationLong
 };
 
+API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI.", ios(1.0, 13.0))
 @interface MLUISnackBarView : UIView <MLUISnackBarProtocol>
 
 @property (nonatomic, readonly) MLUISnackBarDuration duration;
