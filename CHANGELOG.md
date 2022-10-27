@@ -1,5 +1,5 @@
 # Changelog
-This library was deprefacted in favor of AndesUI
+This library was deprecated in favor of AndesUI
 
 ## [5.26.3] - 2022-10-25
 ### Added
