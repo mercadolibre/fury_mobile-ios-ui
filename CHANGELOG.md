@@ -1,6 +1,10 @@
 # Changelog
 This library was deprecated in favor of AndesUI
 
+## [Unreleased]
+### Changed
+- MLUI has been deprecated in favor of AndesUI
+
 ## [5.26.3] - 2022-10-25
 ### Added
 - Migracion de source publico en nexus para soportar fury

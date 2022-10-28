@@ -16,7 +16,9 @@ typedef enum MLUIActionButtonStyle {
 	MLUIActionButtonStyleDisabled
 }  MLUIActionButtonStyle;
 
+API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI.", ios(1.0, 13.0))
 @interface MLUIActionButton : UIButton
+
 /**
 
  *  Every MLUIActionButton created using a xib file will have the default height kDefaultHeigth (@see awakeFromNib:),the same happens if the component is initialized by code by initWithFixHeigthConstraintAndStyle:.
