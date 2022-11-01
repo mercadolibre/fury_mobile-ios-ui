@@ -1,7 +1,7 @@
 # Changelog
 This library was deprecated in favor of AndesUI
 
-## [Unreleased]
+## [5.27.0] - 2022-11-01
 ### Changed
 - MLUI has been deprecated in favor of AndesUI
 
