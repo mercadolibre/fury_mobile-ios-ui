@@ -95,7 +95,6 @@
 		BB5CF3AA20240FF5006484D8 /* MLStyleSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5CF3A820240FF4006484D8 /* MLStyleSheetViewController.xib */; };
 		BB5CF3AB20240FF5006484D8 /* MLStyleSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5CF3A920240FF5006484D8 /* MLStyleSheetViewController.m */; };
 		BB6573132040588700FBE8DD /* MLModalStyleFactoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6573122040588700FBE8DD /* MLModalStyleFactoryTest.m */; };
-		C000F3B11CDBB1DE0034437C /* MLLongPressContextMenuViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C000F3B01CDBB1DE0034437C /* MLLongPressContextMenuViewTest.m */; };
 		CD141FA219C14A9600DBF568 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD141F9819C14A9600DBF568 /* AppDelegate.m */; };
 		CD141FA319C14A9600DBF568 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD141F9919C14A9600DBF568 /* LaunchScreen.xib */; };
 		CD141FA519C14A9600DBF568 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD141F9D19C14A9600DBF568 /* Images.xcassets */; };
@@ -337,7 +336,6 @@
 		BB5CF3A820240FF4006484D8 /* MLStyleSheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MLStyleSheetViewController.xib; path = MLStyleSheet/MLStyleSheetViewController.xib; sourceTree = "<group>"; };
 		BB5CF3A920240FF5006484D8 /* MLStyleSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLStyleSheetViewController.m; path = MLStyleSheet/MLStyleSheetViewController.m; sourceTree = "<group>"; };
 		BB6573122040588700FBE8DD /* MLModalStyleFactoryTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MLModalStyleFactoryTest.m; path = MLModal/MLModalStyleFactoryTest.m; sourceTree = "<group>"; };
-		C000F3B01CDBB1DE0034437C /* MLLongPressContextMenuViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLLongPressContextMenuViewTest.m; path = MLLongPressMenu/MLLongPressContextMenuViewTest.m; sourceTree = "<group>"; };
 		C06490821CE4C8D700F4042F /* MLContextualMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLContextualMenuItem.h; sourceTree = "<group>"; };
 		C06490831CE4C8D700F4042F /* MLContextualMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLContextualMenuItem.m; sourceTree = "<group>"; };
 		C0B960AC1CD24BAD00094F7A /* MLContextualMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLContextualMenu.h; sourceTree = "<group>"; };
@@ -1161,14 +1159,6 @@
 			name = MLStyleSheet;
 			sourceTree = "<group>";
 		};
-		C000F3AF1CDBB1A70034437C /* MLLongPressMenu */ = {
-			isa = PBXGroup;
-			children = (
-				C000F3B01CDBB1DE0034437C /* MLLongPressContextMenuViewTest.m */,
-			);
-			name = MLLongPressMenu;
-			sourceTree = "<group>";
-		};
 		C0B960A51CD1542000094F7A /* MLContextualMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1409,7 +1399,6 @@
 				4D5B06641C5BD395000E7378 /* MLButton */,
 				4D5B06611C5BCFEA000E7378 /* MLColorPalette */,
 				4E7F0C4D1C47E9C3005E4C7A /* MLFonts */,
-				C000F3AF1CDBB1A70034437C /* MLLongPressMenu */,
 				4D1B1D7F1CAAEBE9003571C1 /* MLModal */,
 				4D4641BF1C89DF5B00459E27 /* MLSnackbar */,
 				4DD55C361D50ECCF002DBDDD /* MLStyle */,
@@ -1758,7 +1747,6 @@
 				4D4435261C8A045400D28920 /* MLSnackbarTypeTest.m in Sources */,
 				FC570F441A66A5760021DCF4 /* MLUIActionButtonTest.m in Sources */,
 				6A44593E1D22D3A10069EFBC /* MLSwitchTest.m in Sources */,
-				C000F3B11CDBB1DE0034437C /* MLLongPressContextMenuViewTest.m in Sources */,
 				866425261CECC46900888CAA /* MLTitledMultiLineTextFieldTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
