@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "MLUI"
-  s.version          = "5.27.0"
+  s.version          = "5.28.0"
   s.summary          = "MercadoLibre mobile ios UI components"
   s.homepage         = "https://github.com/mercadolibre"
   s.license          = "Apache License, Version 2.0"
@@ -129,12 +129,6 @@ Pod::Spec.new do |s|
     mlspinner.dependency 'MLUI/MLColorPalette'
     mlspinner.dependency 'MLUI/MLFonts'
     mlspinner.dependency 'MLUI/StyleSheet'
-  end
-
-  s.subspec 'MLContextualMenu' do |mllongpressmenu|
-    mllongpressmenu.dependency 'MLUI/MLColorPalette'
-    mllongpressmenu.dependency 'MLUI/MLFonts'
-    mllongpressmenu.source_files = "LibraryComponents/MLContextualMenu/*.{h,m}"
   end
 
   s.subspec 'MLRadioButton' do |mlradiobutton|
