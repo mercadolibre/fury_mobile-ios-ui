@@ -15,7 +15,6 @@
 #import <MLUI/UIColor+MLColorPalette.h>
 #import "MLButtonViewController.h"
 #import "MLTitledTextFieldViewController.h"
-#import "MLContextualMenuTableViewController.h"
 #import <MLUI/MLGenericErrorView.h>
 #import "MLTextViewController.h"
 
@@ -57,9 +56,6 @@
 
 	self.textFieldButton.buttonTitle = @"Titled TextField";
 	[self.textFieldButton addTarget:self action:@selector(showTextField:) forControlEvents:UIControlEventTouchUpInside];
-
-	self.contextualMenuButton.buttonTitle = @"Contextual Menu";
-	[self.contextualMenuButton addTarget:self action:@selector(showContextualMenu:) forControlEvents:UIControlEventTouchUpInside];
 
 	self.errorViewButton.buttonTitle = @"Error View";
 	[self.errorViewButton addTarget:self action:@selector(showErrorView:) forControlEvents:UIControlEventTouchUpInside];
@@ -110,12 +106,6 @@
 - (void)showTextField:(id)sender
 {
 	MLTitledTextFieldViewController *controller = [[MLTitledTextFieldViewController alloc]init];
-	[self.navigationController pushViewController:controller animated:YES];
-}
-
-- (void)showContextualMenu:(id)sender
-{
-	MLContextualMenuTableViewController *controller = [[MLContextualMenuTableViewController alloc]init];
 	[self.navigationController pushViewController:controller animated:YES];
 }
 

@@ -96,8 +96,6 @@
 		BB5CF3AB20240FF5006484D8 /* MLStyleSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5CF3A920240FF5006484D8 /* MLStyleSheetViewController.m */; };
 		BB6573132040588700FBE8DD /* MLModalStyleFactoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6573122040588700FBE8DD /* MLModalStyleFactoryTest.m */; };
 		C000F3B11CDBB1DE0034437C /* MLLongPressContextMenuViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C000F3B01CDBB1DE0034437C /* MLLongPressContextMenuViewTest.m */; };
-		C081796E1CDD1D8B0024BECC /* MLContextualMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C081796C1CDD1D8B0024BECC /* MLContextualMenuTableViewController.m */; };
-		C081796F1CDD1D8B0024BECC /* MLContextualMenuTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C081796D1CDD1D8B0024BECC /* MLContextualMenuTableViewController.xib */; };
 		CD141FA219C14A9600DBF568 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD141F9819C14A9600DBF568 /* AppDelegate.m */; };
 		CD141FA319C14A9600DBF568 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD141F9919C14A9600DBF568 /* LaunchScreen.xib */; };
 		CD141FA519C14A9600DBF568 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD141F9D19C14A9600DBF568 /* Images.xcassets */; };
@@ -342,9 +340,6 @@
 		C000F3B01CDBB1DE0034437C /* MLLongPressContextMenuViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLLongPressContextMenuViewTest.m; path = MLLongPressMenu/MLLongPressContextMenuViewTest.m; sourceTree = "<group>"; };
 		C06490821CE4C8D700F4042F /* MLContextualMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLContextualMenuItem.h; sourceTree = "<group>"; };
 		C06490831CE4C8D700F4042F /* MLContextualMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLContextualMenuItem.m; sourceTree = "<group>"; };
-		C081796B1CDD1D8B0024BECC /* MLContextualMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLContextualMenuTableViewController.h; path = MLLongPressMenu/MLContextualMenuTableViewController.h; sourceTree = "<group>"; };
-		C081796C1CDD1D8B0024BECC /* MLContextualMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLContextualMenuTableViewController.m; path = MLLongPressMenu/MLContextualMenuTableViewController.m; sourceTree = "<group>"; };
-		C081796D1CDD1D8B0024BECC /* MLContextualMenuTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MLContextualMenuTableViewController.xib; path = MLLongPressMenu/MLContextualMenuTableViewController.xib; sourceTree = "<group>"; };
 		C0B960AC1CD24BAD00094F7A /* MLContextualMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLContextualMenu.h; sourceTree = "<group>"; };
 		C0B960AD1CD24BAD00094F7A /* MLContextualMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLContextualMenu.m; sourceTree = "<group>"; };
 		CD141F9719C14A9600DBF568 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1174,16 +1169,6 @@
 			name = MLLongPressMenu;
 			sourceTree = "<group>";
 		};
-		C081796A1CDD1D4A0024BECC /* MLContextualMenu */ = {
-			isa = PBXGroup;
-			children = (
-				C081796B1CDD1D8B0024BECC /* MLContextualMenuTableViewController.h */,
-				C081796C1CDD1D8B0024BECC /* MLContextualMenuTableViewController.m */,
-				C081796D1CDD1D8B0024BECC /* MLContextualMenuTableViewController.xib */,
-			);
-			name = MLContextualMenu;
-			sourceTree = "<group>";
-		};
 		C0B960A51CD1542000094F7A /* MLContextualMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1203,7 +1188,6 @@
 				4D5B06601C5A70F2000E7378 /* MLButton */,
 				4DFD2CC21C44182A0093CAE5 /* MLColorPalette */,
 				4DB11C001C45425000570E2F /* MLFonts */,
-				C081796A1CDD1D4A0024BECC /* MLContextualMenu */,
 				2C559064225B7BD6000405A0 /* MLHeader */,
 				8EAF22021D2D51B20005F1F1 /* MLHtml */,
 				2C0E9DCF22410FFC00FAA1FD /* MLFullscreenModal */,
@@ -1590,7 +1574,6 @@
 				4D1B1D791C9CA0D9003571C1 /* MLModalViewController.xib in Resources */,
 				2C559069225B7C1A000405A0 /* MLHeaderControllerDemoViewController.xib in Resources */,
 				6A4459431D22DABF0069EFBC /* MLBooleanWidgetViewController.xib in Resources */,
-				C081796F1CDD1D8B0024BECC /* MLContextualMenuTableViewController.xib in Resources */,
 				2C559091225B820E000405A0 /* MLHeaderControllerDemoFifthViewController.xib in Resources */,
 				4DFD2CC11C4416AA0093CAE5 /* ExampleViewController.xib in Resources */,
 				2C559082225B8036000405A0 /* MLCreditCardHeaderView.xib in Resources */,
@@ -1725,7 +1708,6 @@
 				3B4689611A6D80EC00F2F4A5 /* TestAppDelegate.m in Sources */,
 				6A2518F11D2ECA55009A673B /* MLViewController.m in Sources */,
 				4DC88F141D46628300570845 /* MLStyleViewController.m in Sources */,
-				C081796E1CDD1D8B0024BECC /* MLContextualMenuTableViewController.m in Sources */,
 				4D0D97D81CC532CD00FFF679 /* MLSpinnerViewController.m in Sources */,
 				3B6150EF1B5E8DE5007A07B4 /* MLUISnackBarExampleViewController.m in Sources */,
 				2C559068225B7C1A000405A0 /* MLHeaderControllerDemoViewController.m in Sources */,
