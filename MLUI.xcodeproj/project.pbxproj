@@ -343,6 +343,8 @@
 		FC570F341A66A30F0021DCF4 /* MLUIUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MLUIUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC570F371A66A30F0021DCF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC570F431A66A5760021DCF4 /* MLUIActionButtonTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUIActionButtonTest.m; sourceTree = "<group>"; };
+		FDFF037029797D5200DDD9F0 /* UIViewController+SnackBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIViewController+SnackBar.h"; path = "MLSnackBar/classes/UIViewController+SnackBar.h"; sourceTree = "<group>"; };
+		FDFF037129797D5600DDD9F0 /* UIViewController+SnackBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+SnackBar.m"; path = "MLSnackBar/classes/UIViewController+SnackBar.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -569,6 +571,8 @@
 				4D89066A1C80850600BD0EEE /* MLSnackbar.m */,
 				4D89066C1C80861C00BD0EEE /* MLSnackbar.xib */,
 				4D8906751C80BEE600BD0EEE /* MLSnackbarType.h */,
+				FDFF037029797D5200DDD9F0 /* UIViewController+SnackBar.h */,
+				FDFF037129797D5600DDD9F0 /* UIViewController+SnackBar.m */,
 				4D8906761C80BEE600BD0EEE /* MLSnackbarType.m */,
 			);
 			name = classes;

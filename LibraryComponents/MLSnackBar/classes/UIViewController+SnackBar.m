@@ -7,8 +7,6 @@
 //
 
 #import "UIViewController+SnackBar.h"
-#import "MLUISnackBarView.h"
-#import "MLUISnackBarProtocol.h"
 #import <objc/runtime.h>
 
 @implementation UIViewController (SnackBar)
