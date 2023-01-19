@@ -29,13 +29,6 @@ Pod::Spec.new do |s|
     actionButton.dependency 'MLUI/Core'
   end
 
-  s.subspec 'SnackBarView' do |snackBarView|
-    snackBarView.source_files = "LibraryComponents/MLUISnackbar/classes/*.{h,m}"
-    snackBarView.resources = "LibraryComponents/MLUISnackbar/classes/*.xib"
-    snackBarView.dependency 'MLUI/Helpers'
-    snackBarView.dependency 'MLUI/MLFonts'
-  end
-
   s.subspec 'MLTitledSingleLineTextField' do |textField|
       textField.source_files = "LibraryComponents/MLTitledSingleLineTextField/classes/*.{h,m}"
       textField.resources = "LibraryComponents/MLTitledSingleLineTextField/assets/*"

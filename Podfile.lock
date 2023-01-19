@@ -22,7 +22,6 @@ PODS:
     - MLUI/MLTextView (= 5.29.0)
     - MLUI/MLTitledMultiLineTextField (= 5.29.0)
     - MLUI/MLTitledSingleLineTextField (= 5.29.0)
-    - MLUI/SnackBarView (= 5.29.0)
     - MLUI/StyleSheet (= 5.29.0)
   - MLUI/ActionButton (5.29.0):
     - MLUI/Core
@@ -96,9 +95,6 @@ PODS:
     - MLUI/MLColorPalette
     - MLUI/MLFonts
     - MLUI/StyleSheet
-  - MLUI/SnackBarView (5.29.0):
-    - MLUI/Helpers
-    - MLUI/MLFonts
   - MLUI/StyleSheet (5.29.0)
   - OCMock (3.4.3)
 
@@ -120,7 +116,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
-  MLUI: 31e1add2d1b74539be14b6c41711e2bcb24ba3ff
+  MLUI: 86f54756ece6c04bcd2c845dfcabda51191e43c3
   OCMock: 43565190abc78977ad44a61c0d20d7f0784d35ab
 
 PODFILE CHECKSUM: f08b36dac0277f4b56d77c64e5b616091545812e

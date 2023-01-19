@@ -150,9 +150,6 @@
 		2C559094225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MLHeaderControllerDemoSixthViewController.xib; path = MLHeader/ViewControllers/MLHeaderControllerDemoSixthViewController.xib; sourceTree = "<group>"; };
 		3B4689281A6D7F9700F2F4A5 /* MLUIActionButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUIActionButtonViewController.h; sourceTree = "<group>"; };
 		3B4689291A6D7F9700F2F4A5 /* MLUIActionButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUIActionButtonViewController.m; sourceTree = "<group>"; };
-		3B4689421A6D7FB500F2F4A5 /* MLUIPriceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUIPriceView.h; sourceTree = "<group>"; };
-		3B4689431A6D7FB500F2F4A5 /* MLUIPriceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUIPriceView.m; sourceTree = "<group>"; };
-		3B4689441A6D7FB500F2F4A5 /* MLUIPriceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLUIPriceView.xib; sourceTree = "<group>"; };
 		3B46895C1A6D803E00F2F4A5 /* TestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAppDelegate.h; sourceTree = "<group>"; };
 		3B46895D1A6D803E00F2F4A5 /* TestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAppDelegate.m; sourceTree = "<group>"; };
 		424B92398C21CFBAA7A2FF7F /* Pods_MLUIUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MLUIUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -441,24 +438,6 @@
 				A470E05E1B6934A200B0E9FD /* MLUIActionButtonInXibViewController.xib */,
 			);
 			path = ActionButton;
-			sourceTree = "<group>";
-		};
-		3B4689401A6D7FB500F2F4A5 /* PriceView */ = {
-			isa = PBXGroup;
-			children = (
-				3B4689411A6D7FB500F2F4A5 /* classes */,
-			);
-			path = PriceView;
-			sourceTree = "<group>";
-		};
-		3B4689411A6D7FB500F2F4A5 /* classes */ = {
-			isa = PBXGroup;
-			children = (
-				3B4689421A6D7FB500F2F4A5 /* MLUIPriceView.h */,
-				3B4689431A6D7FB500F2F4A5 /* MLUIPriceView.m */,
-				3B4689441A6D7FB500F2F4A5 /* MLUIPriceView.xib */,
-			);
-			path = classes;
 			sourceTree = "<group>";
 		};
 		4D0D97CE1CC52F5B00FFF679 /* MLSpinner */ = {
@@ -1156,7 +1135,6 @@
 				EE2D9EAC1ECCF55000D9DA60 /* MLTextView */,
 				8664250A1CEB68BE00888CAA /* MLTitledSingleLineTextField */,
 				866425191CEBA1C800888CAA /* MLTitledMultiLineTextField */,
-				3B4689401A6D7FB500F2F4A5 /* PriceView */,
 				6A9583951E27D883009306AC /* Helpers */,
 				CD1665F719C1413A00EE6243 /* Core */,
 				CD1B9F1F19C3A497002EDF66 /* ActionButton */,
