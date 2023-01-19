@@ -29,13 +29,6 @@ Pod::Spec.new do |s|
     actionButton.dependency 'MLUI/Core'
   end
 
-  s.subspec 'PriceView' do |priceView|
-    priceView.source_files = "LibraryComponents/PriceView/classes/*.{h,m}"
-    priceView.resources = "LibraryComponents/PriceView/classes/*.xib"
-    priceView.dependency 'MLUI/Core'
-    priceView.dependency 'MLUI/MLFonts'
-  end
-
   s.subspec 'SnackBarView' do |snackBarView|
     snackBarView.source_files = "LibraryComponents/MLUISnackbar/classes/*.{h,m}"
     snackBarView.resources = "LibraryComponents/MLUISnackbar/classes/*.xib"

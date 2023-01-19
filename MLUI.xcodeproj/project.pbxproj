@@ -31,10 +31,7 @@
 		2C559095225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C559093225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.m */; };
 		2C559096225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C559094225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.xib */; };
 		3B4689321A6D7F9700F2F4A5 /* MLUIActionButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4689291A6D7F9700F2F4A5 /* MLUIActionButtonViewController.m */; };
-		3B4689351A6D7F9700F2F4A5 /* PriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4689301A6D7F9700F2F4A5 /* PriceViewController.m */; };
-		3B4689361A6D7F9700F2F4A5 /* PriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B4689311A6D7F9700F2F4A5 /* PriceViewController.xib */; };
 		3B4689611A6D80EC00F2F4A5 /* TestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B46895D1A6D803E00F2F4A5 /* TestAppDelegate.m */; };
-		3B4689621A6D823600F2F4A5 /* MLUIPriceViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4689591A6D801200F2F4A5 /* MLUIPriceViewTest.m */; };
 		3B6150EA1B5E8CA9007A07B4 /* MLUISnackBarViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6150E91B5E8CA9007A07B4 /* MLUISnackBarViewTest.m */; };
 		3B6150EF1B5E8DE5007A07B4 /* MLUISnackBarExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6150EE1B5E8DE5007A07B4 /* MLUISnackBarExampleViewController.m */; };
 		4C926D401E5F6AA30028DFFB /* MLGenericErrorViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C926D3F1E5F6AA30028DFFB /* MLGenericErrorViewTest.m */; };
@@ -155,13 +152,9 @@
 		2C559094225B82A9000405A0 /* MLHeaderControllerDemoSixthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MLHeaderControllerDemoSixthViewController.xib; path = MLHeader/ViewControllers/MLHeaderControllerDemoSixthViewController.xib; sourceTree = "<group>"; };
 		3B4689281A6D7F9700F2F4A5 /* MLUIActionButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUIActionButtonViewController.h; sourceTree = "<group>"; };
 		3B4689291A6D7F9700F2F4A5 /* MLUIActionButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUIActionButtonViewController.m; sourceTree = "<group>"; };
-		3B46892F1A6D7F9700F2F4A5 /* PriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceViewController.h; sourceTree = "<group>"; };
-		3B4689301A6D7F9700F2F4A5 /* PriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceViewController.m; sourceTree = "<group>"; };
-		3B4689311A6D7F9700F2F4A5 /* PriceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceViewController.xib; sourceTree = "<group>"; };
 		3B4689421A6D7FB500F2F4A5 /* MLUIPriceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUIPriceView.h; sourceTree = "<group>"; };
 		3B4689431A6D7FB500F2F4A5 /* MLUIPriceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUIPriceView.m; sourceTree = "<group>"; };
 		3B4689441A6D7FB500F2F4A5 /* MLUIPriceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLUIPriceView.xib; sourceTree = "<group>"; };
-		3B4689591A6D801200F2F4A5 /* MLUIPriceViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUIPriceViewTest.m; sourceTree = "<group>"; };
 		3B46895C1A6D803E00F2F4A5 /* TestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAppDelegate.h; sourceTree = "<group>"; };
 		3B46895D1A6D803E00F2F4A5 /* TestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAppDelegate.m; sourceTree = "<group>"; };
 		3B6150E91B5E8CA9007A07B4 /* MLUISnackBarViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUISnackBarViewTest.m; sourceTree = "<group>"; };
@@ -336,10 +329,6 @@
 		BB5CF3A820240FF4006484D8 /* MLStyleSheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MLStyleSheetViewController.xib; path = MLStyleSheet/MLStyleSheetViewController.xib; sourceTree = "<group>"; };
 		BB5CF3A920240FF5006484D8 /* MLStyleSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLStyleSheetViewController.m; path = MLStyleSheet/MLStyleSheetViewController.m; sourceTree = "<group>"; };
 		BB6573122040588700FBE8DD /* MLModalStyleFactoryTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MLModalStyleFactoryTest.m; path = MLModal/MLModalStyleFactoryTest.m; sourceTree = "<group>"; };
-		C06490821CE4C8D700F4042F /* MLContextualMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLContextualMenuItem.h; sourceTree = "<group>"; };
-		C06490831CE4C8D700F4042F /* MLContextualMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLContextualMenuItem.m; sourceTree = "<group>"; };
-		C0B960AC1CD24BAD00094F7A /* MLContextualMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLContextualMenu.h; sourceTree = "<group>"; };
-		C0B960AD1CD24BAD00094F7A /* MLContextualMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLContextualMenu.m; sourceTree = "<group>"; };
 		CD141F9719C14A9600DBF568 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CD141F9819C14A9600DBF568 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CD141F9A19C14A9600DBF568 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -465,16 +454,6 @@
 			path = ActionButton;
 			sourceTree = "<group>";
 		};
-		3B46892E1A6D7F9700F2F4A5 /* PriceView */ = {
-			isa = PBXGroup;
-			children = (
-				3B46892F1A6D7F9700F2F4A5 /* PriceViewController.h */,
-				3B4689301A6D7F9700F2F4A5 /* PriceViewController.m */,
-				3B4689311A6D7F9700F2F4A5 /* PriceViewController.xib */,
-			);
-			path = PriceView;
-			sourceTree = "<group>";
-		};
 		3B4689401A6D7FB500F2F4A5 /* PriceView */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,22 +468,6 @@
 				3B4689421A6D7FB500F2F4A5 /* MLUIPriceView.h */,
 				3B4689431A6D7FB500F2F4A5 /* MLUIPriceView.m */,
 				3B4689441A6D7FB500F2F4A5 /* MLUIPriceView.xib */,
-			);
-			path = classes;
-			sourceTree = "<group>";
-		};
-		3B4689571A6D801200F2F4A5 /* PriceView */ = {
-			isa = PBXGroup;
-			children = (
-				3B4689581A6D801200F2F4A5 /* classes */,
-			);
-			path = PriceView;
-			sourceTree = "<group>";
-		};
-		3B4689581A6D801200F2F4A5 /* classes */ = {
-			isa = PBXGroup;
-			children = (
-				3B4689591A6D801200F2F4A5 /* MLUIPriceViewTest.m */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -1159,17 +1122,6 @@
 			name = MLStyleSheet;
 			sourceTree = "<group>";
 		};
-		C0B960A51CD1542000094F7A /* MLContextualMenu */ = {
-			isa = PBXGroup;
-			children = (
-				C0B960AC1CD24BAD00094F7A /* MLContextualMenu.h */,
-				C0B960AD1CD24BAD00094F7A /* MLContextualMenu.m */,
-				C06490821CE4C8D700F4042F /* MLContextualMenuItem.h */,
-				C06490831CE4C8D700F4042F /* MLContextualMenuItem.m */,
-			);
-			path = MLContextualMenu;
-			sourceTree = "<group>";
-		};
 		CD141F9619C14A9600DBF568 /* Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -1189,7 +1141,6 @@
 				863E9A8C1CF3460900240FE0 /* MLTitledTextField */,
 				EE014FB01ECDF83700372EBB /* MLTextView */,
 				3B4689271A6D7F9700F2F4A5 /* ActionButton */,
-				3B46892E1A6D7F9700F2F4A5 /* PriceView */,
 				CD141F9719C14A9600DBF568 /* AppDelegate.h */,
 				CD141F9819C14A9600DBF568 /* AppDelegate.m */,
 				CD141F9919C14A9600DBF568 /* LaunchScreen.xib */,
@@ -1246,7 +1197,6 @@
 				4DB11C061C469C6A00570E2F /* MLButton */,
 				4DB11BFA1C453D0100570E2F /* MLFonts */,
 				4DA59A471C3EA5EC00AA439D /* MLColorPalette */,
-				C0B960A51CD1542000094F7A /* MLContextualMenu */,
 				7CB826D5226F5EE900E0C4A3 /* MLFullscreenModal */,
 				7CB826E7226FAF4A00E0C4A3 /* MLHeader */,
 				4D1854A01C8DCD1B00676993 /* MLModal */,
@@ -1408,7 +1358,6 @@
 				EEE5C8EE1ED333F7004D99A7 /* MLTextView */,
 				8664251F1CECB79600888CAA /* MLTitledSingleLineTextField */,
 				866425231CECC45600888CAA /* MLTitledMultiLineTextField */,
-				3B4689571A6D801200F2F4A5 /* PriceView */,
 				FC570F4B1A6723D50021DCF4 /* Core */,
 				FC570F421A66A5380021DCF4 /* ActionButton */,
 				FC570F361A66A30F0021DCF4 /* Supporting Files */,
@@ -1574,7 +1523,6 @@
 				4D1B1D7E1CA9C0F1003571C1 /* MLWidgetsViewController.xib in Resources */,
 				4D8906741C80A46700BD0EEE /* MLSnackbarViewController.xib in Resources */,
 				2C559087225B80F6000405A0 /* MLHeaderControllerDemoThirdViewController.xib in Resources */,
-				3B4689361A6D7F9700F2F4A5 /* PriceViewController.xib in Resources */,
 				2C0E9DD42241103900FAA1FD /* MLFullscreenModalInnerViewController.xib in Resources */,
 				4DFD2CBC1C440F760093CAE5 /* MainViewController.xib in Resources */,
 				A470E05F1B6934A200B0E9FD /* MLUIActionButtonInXibViewController.xib in Resources */,
@@ -1693,7 +1641,6 @@
 				EE014FB61ECE185B00372EBB /* MLTextViewController.m in Sources */,
 				BB5CF39B2023B00D006484D8 /* MLStyleSheetTest.m in Sources */,
 				2C559081225B8036000405A0 /* MLCreditCardHeaderView.m in Sources */,
-				3B4689351A6D7F9700F2F4A5 /* PriceViewController.m in Sources */,
 				3B4689611A6D80EC00F2F4A5 /* TestAppDelegate.m in Sources */,
 				6A2518F11D2ECA55009A673B /* MLViewController.m in Sources */,
 				4DC88F141D46628300570845 /* MLStyleViewController.m in Sources */,
@@ -1718,7 +1665,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B4689621A6D823600F2F4A5 /* MLUIPriceViewTest.m in Sources */,
 				4DD55C381D50ED08002DBDDD /* MLStyleUtilsTest.m in Sources */,
 				EEE5C8F01ED33426004D99A7 /* MLTextViewTest.m in Sources */,
 				4DF4CF1B1CCFD415002EC519 /* MLSpinnerTest.m in Sources */,
