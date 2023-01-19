@@ -17,6 +17,6 @@ API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI
  *
  *  @param style     style
  */
-- (void)ml_setStyle:(MLStyle)style;
+- (void)ml_setStyle:(MLStyle)style __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt AndesTextArea.");
 
 @end

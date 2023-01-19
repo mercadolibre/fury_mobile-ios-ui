@@ -18,7 +18,7 @@ API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI
 /**
  *  Hide all snackbars
  */
-- (void)ml_dismissAllSnackBars;
+- (void)ml_dismissAllSnackBars __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt AndesSnackbar.");
 
 @end
 
