@@ -37,7 +37,7 @@ API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI
  *
  *  @return Instancia de UIColor
  */
-+ (UIColor *)ml_cellBackgroundDefaultColor;
++ (UIColor *)ml_cellBackgroundDefaultColor __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt UIcolor.Andes.white");
 
 /**
  *  Retorna una instancia de UIColor con el color por default para el fondo de una celda
@@ -51,7 +51,7 @@ API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI
  *
  *  @return Instancia de UIColor
  */
-+ (UIColor *)ml_tableViewBackgroundDefaultColor;
++ (UIColor *)ml_tableViewBackgroundDefaultColor __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt UIcolor.Andes.white");
 
 /**
  *  Retorna una instancia de UIColor con el color de fondo para mostrar errores
