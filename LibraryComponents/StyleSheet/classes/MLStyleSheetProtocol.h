@@ -32,8 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) UIColor *darkGreyColor;
 @property (nonatomic, readonly) UIColor *greyColor;
 @property (nonatomic, readonly) UIColor *midGreyColor;
-@property (nonatomic, readonly) UIColor *lightGreyColor;
-@property (nonatomic, readonly) UIColor *whiteColor;
+@property (nonatomic, readonly) UIColor *lightGreyColor  __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt UIcolor.Andes.graySolid070");
+@property (nonatomic, readonly) UIColor *whiteColor __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt UIcolor.Andes.white");
 @property (nonatomic, readonly) UIColor *modalBackgroundColor;
 @property (nonatomic, readonly) UIColor *modalTintColor;
 
@@ -56,8 +56,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @optional
 - (UIFont *)monospaceFontOfSize:(CGFloat)fontSize;
-@property (nonatomic, readonly) UIColor *primaryBackgroundColor;
-@property (nonatomic, readonly) UIColor *secondaryBackgroundColor;
+@property (nonatomic, readonly) UIColor *primaryBackgroundColor __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt AndesStyleSheetManager.styleSheet.bgColorPrimary");
+@property (nonatomic, readonly) UIColor *secondaryBackgroundColor __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt AndesStyleSheetManager.styleSheet.bgColorSecondary");
 @property (nonatomic, readonly) UIStatusBarStyle statusBarStyle;
 @end
 
