@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
    This class is to manage the single style sheet that
    all the UI components are going to use later
  */
+API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesStyleSheetManager", ios(1.0, 13.0))
 @interface MLStyleSheetManager : NSObject
 
 /**

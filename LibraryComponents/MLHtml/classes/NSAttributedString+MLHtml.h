@@ -21,7 +21,7 @@ API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI
  *
  *  @return NSAttributedString with html
  */
-+ (NSAttributedString *)ml_attributedStringWithHtml:(NSString *)htmlText error:(NSError *__autoreleasing *)error;
++ (NSAttributedString *)ml_attributedStringWithHtml:(NSString *)htmlText error:(NSError *__autoreleasing *)error __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt AndesLabel.");
 
 /**
  *  Build an NSAttributedString from an html with default style.
@@ -34,7 +34,7 @@ API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI
  *
  *  @return NSAttributedString with html
  */
-+ (NSAttributedString *)ml_attributedStringWithHtml:(NSString *)htmlText attributes:(nullable NSDictionary <NSAttributedStringKey, id> *)attrs error:(NSError *__autoreleasing *)error;
++ (NSAttributedString *)ml_attributedStringWithHtml:(NSString *)htmlText attributes:(nullable NSDictionary <NSAttributedStringKey, id> *)attrs error:(NSError *__autoreleasing *)error __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt AndesLabel.");
 
 /**
  *  Build an NSAttributedString from an html with default style and process every tag with the attributesProvider.
@@ -46,7 +46,7 @@ API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI
  */
 + (NSAttributedString *)ml_attributedStringWithHtml:(NSString *)htmlText
                                  attributesProvider:(id <MLHtmlAttributeProvider>)attributesProvider
-                                              error:(NSError *__autoreleasing *)error;
+                                              error:(NSError *__autoreleasing *)error __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt AndesLabel.");
 
 /**
  *  Build an NSAttributedString from an html with default style and process every tag with the attributesProvider.
@@ -63,7 +63,7 @@ API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI
 + (NSAttributedString *)ml_attributedStringWithHtml:(NSString *)htmlText
                                  attributesProvider:(id <MLHtmlAttributeProvider>)attributesProvider
                                          attributes:(nullable NSDictionary <NSAttributedStringKey, id> *)attrs
-                                              error:(NSError *__autoreleasing *)error;
+                                              error:(NSError *__autoreleasing *)error __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt AndesLabel.");
 
 @end
 

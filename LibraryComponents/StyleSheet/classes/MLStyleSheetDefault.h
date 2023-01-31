@@ -13,6 +13,7 @@
    to build another custom stylesheet inheriting
    from this one and overriding the necessary colors and fonts
  */
+API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesStyleSheetManager", ios(1.0, 13.0))
 @interface MLStyleSheetDefault : NSObject <MLStyleSheetProtocol>
 
 @end

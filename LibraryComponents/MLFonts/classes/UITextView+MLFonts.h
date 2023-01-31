@@ -11,6 +11,6 @@
 API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI.", ios(1.0, 13.0))
 @interface UITextView (MLFonts)
 
-- (void)ml_shouldSetSystemFont:(NSInteger)shouldSet UI_APPEARANCE_SELECTOR;
+- (void)ml_shouldSetSystemFont:(NSInteger)shouldSet UI_APPEARANCE_SELECTOR __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt AndesTextArea.");
 
 @end

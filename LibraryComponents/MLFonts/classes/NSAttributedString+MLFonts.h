@@ -16,6 +16,6 @@ API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI
  *
  *  @return An instance of NSAttributedString
  */
-- (NSAttributedString *)ml_attributedStringByReplacingFontWithSystemFont;
+- (NSAttributedString *)ml_attributedStringByReplacingFontWithSystemFont __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt AndesLabel.");
 
 @end
