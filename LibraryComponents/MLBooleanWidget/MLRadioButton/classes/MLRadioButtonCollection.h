@@ -11,7 +11,7 @@
 /**
  *  MLRadioButtonCollection manage the exclusiveness of an array of MLRadioButtons
  */
-API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI.", ios(1.0, 13.0))
+API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesList.", ios(1.0, 13.0))
 @interface MLRadioButtonCollection : NSObject
 
 /**

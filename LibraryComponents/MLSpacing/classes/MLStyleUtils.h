@@ -17,13 +17,13 @@ API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI
  *
  *  @param style     style
  */
-- (NSDictionary *)attributedDictionaryForStyle:(MLStyle)style;
+- (NSDictionary *)attributedDictionaryForStyle:(MLStyle)style __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt AndesLabel.");
 
 /**
  *  Creates a dictionary containing the NSParagraphStyleAttributeName for the font
  *
  *  @param font     label or textView font
  */
-- (NSDictionary *)attributedDictionaryForFont:(UIFont *)font;
+- (NSDictionary *)attributedDictionaryForFont:(UIFont *)font __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt AndesLabel.");
 
 @end

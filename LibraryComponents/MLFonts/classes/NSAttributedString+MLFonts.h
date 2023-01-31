@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI.", ios(1.0, 13.0))
+API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesLabel.", ios(1.0, 13.0))
 @interface NSAttributedString (MLFonts)
 
 /**
@@ -16,6 +16,6 @@ API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI
  *
  *  @return An instance of NSAttributedString
  */
-- (NSAttributedString *)ml_attributedStringByReplacingFontWithSystemFont;
+- (NSAttributedString *)ml_attributedStringByReplacingFontWithSystemFont __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt AndesLabel.");
 
 @end

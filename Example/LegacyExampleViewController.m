@@ -7,9 +7,7 @@
 //
 
 #import "MLUIActionButtonViewController.h"
-#import "PriceViewController.h"
 #import "LegacyExampleViewController.h"
-#import "MLUISnackBarExampleViewController.h"
 #import "MLUIActionButtonInXibViewController.h"
 
 @interface LegacyExampleViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -32,22 +30,8 @@
 	[self.view addSubview:self.tableView];
 
 	// El nombre del componente, matchea con un metodo con el mismo nombre que pushea un controller que muestra el componente
-	NSArray *arrayToSort = @[@"mlUIPriceView", @"mlUIActionButton", @"mlUIActionButtonIntoXib", @"mlUIImageTransformations", @"mlUISnackBarView"];
+	NSArray *arrayToSort = @[@"mlUIActionButton", @"mlUIActionButtonIntoXib", @"mlUIImageTransformations"];
 	[self sortArrayByName:arrayToSort];
-}
-
-- (void)mlUIPriceView
-{
-	PriceViewController *controller = [[PriceViewController alloc] initWithNibName:nil bundle:nil];
-	[self.navigationController pushViewController:controller animated:YES];
-}
-
-- (void)mlUISnackBarView
-{
-	MLUISnackBarExampleViewController *exampleViewController = [[MLUISnackBarExampleViewController alloc] initWithNibName:nil bundle:nil];
-	[self.navigationController pushViewController:exampleViewController animated:YES];
-
-	[exampleViewController showSnackBar];
 }
 
 - (void)mlUIActionButton

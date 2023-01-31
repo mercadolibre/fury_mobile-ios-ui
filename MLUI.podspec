@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "MLUI"
-  s.version          = "5.27.0"
+  s.version          = "5.29.0"
   s.summary          = "MercadoLibre mobile ios UI components"
   s.homepage         = "https://github.com/mercadolibre"
   s.license          = "Apache License, Version 2.0"
@@ -27,20 +27,6 @@ Pod::Spec.new do |s|
   s.subspec 'ActionButton' do |actionButton|
     actionButton.source_files = "LibraryComponents/ActionButton/classes/*.{h,m}"
     actionButton.dependency 'MLUI/Core'
-  end
-
-  s.subspec 'PriceView' do |priceView|
-    priceView.source_files = "LibraryComponents/PriceView/classes/*.{h,m}"
-    priceView.resources = "LibraryComponents/PriceView/classes/*.xib"
-    priceView.dependency 'MLUI/Core'
-    priceView.dependency 'MLUI/MLFonts'
-  end
-
-  s.subspec 'SnackBarView' do |snackBarView|
-    snackBarView.source_files = "LibraryComponents/MLUISnackbar/classes/*.{h,m}"
-    snackBarView.resources = "LibraryComponents/MLUISnackbar/classes/*.xib"
-    snackBarView.dependency 'MLUI/Helpers'
-    snackBarView.dependency 'MLUI/MLFonts'
   end
 
   s.subspec 'MLTitledSingleLineTextField' do |textField|
@@ -131,12 +117,6 @@ Pod::Spec.new do |s|
     mlspinner.dependency 'MLUI/StyleSheet'
   end
 
-  s.subspec 'MLContextualMenu' do |mllongpressmenu|
-    mllongpressmenu.dependency 'MLUI/MLColorPalette'
-    mllongpressmenu.dependency 'MLUI/MLFonts'
-    mllongpressmenu.source_files = "LibraryComponents/MLContextualMenu/*.{h,m}"
-  end
-
   s.subspec 'MLRadioButton' do |mlradiobutton|
     mlradiobutton.source_files = ["LibraryComponents/MLBooleanWidget/MLRadioButton/classes/*.{h,m}", "LibraryComponents/MLBooleanWidget/classes/*.{h,m}"]
     mlradiobutton.dependency 'MLUI/StyleSheet'
@@ -155,6 +135,7 @@ Pod::Spec.new do |s|
     mlswitch.dependency 'MLUI/Helpers'
   end
 
+  # Es ML Style
   s.subspec 'MLSpacing' do |mlspacing|
     mlspacing.source_files = "LibraryComponents/MLSpacing/classes/*.{h,m}"
     mlspacing.dependency 'MLUI/MLFonts'
