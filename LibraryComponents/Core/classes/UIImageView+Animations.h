@@ -11,7 +11,7 @@
 /**
  *  Categoria que permite realizar animaciones sobre UIImageView
  */
-API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI.", ios(1.0, 13.0))
+API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesThumbnail.", ios(1.0, 13.0))
 @interface UIImageView (Animations)
 
 /**

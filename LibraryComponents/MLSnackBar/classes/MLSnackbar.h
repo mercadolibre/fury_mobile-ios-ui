@@ -44,7 +44,7 @@ typedef NS_ENUM (NSInteger, MLSnackbarDismissCause) {
  */
 typedef void (^MLSnackbarDismissBlock)(MLSnackbarDismissCause cause);
 
-API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI.", ios(1.0, 13.0))
+API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesSnackbar.", ios(1.0, 13.0))
 @interface MLSnackbar : UIView
 
 /**

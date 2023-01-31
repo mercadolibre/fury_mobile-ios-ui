@@ -12,7 +12,7 @@
 /**
    An NSObject subclass to handle resizing of UITextView as the user types in. The textview resizes as long as the number of lines lies between specified minimum and maximum number of lines. This class calculates total size of UITextView text and adjusts the height constraint of that UITextView. You need to provide height constraint to UITextView.
  */
-API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI.", ios(1.0, 13.0))
+API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesTextArea.", ios(1.0, 13.0))
 @interface MLGrowingTextViewHandler : NSObject
 
 /**

@@ -57,14 +57,13 @@ API_DEPRECATED("'MLUI' was deprecated, No longer supported; please adopt AndesUI
  *
  * Returns standard white for mercadolibre
  */
-+ (UIColor *)ml_meli_white;
++ (UIColor *)ml_meli_white __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt UIcolor.Andes.white");
 
 /**
  *
  * Returns standard blue for mercadolibre
  */
-+ (UIColor *)ml_meli_blue;
-
++ (UIColor *)ml_meli_blue __deprecated_msg("'MLUI' was deprecated, No longer supported; please adopt UIcolor.Andes.blue500");
 /**
  *
  * Returns standard green for mercadolibre
