@@ -10,15 +10,14 @@ repos:
 
   - repo: local
     hooks:
-    - id: swiftlint
-      name: swiftlint-script
-      entry: scripts/pre-commit
-      language: script
+      - id: swiftlint
+        name: swiftlint-script
+        entry: scripts/pre-commit
+        language: script
 
   # Next hooks are Code Quality hooks. 
   # If you want them to run on each commit, uncomment them
   # These are OPTIONAL.
-  
   # - repo: https://github.com/mercadolibre/fury_code-quality-pre-commit-ios
   #   rev: 1.0.0
   #   hooks:
@@ -37,3 +36,9 @@ repos:
   #     args:
   #       - --config
   #       - ./.code_quality/.swiftlint.yml
+  - repo: https://github.com/mercadolibre/fury_datasec-git-hooks
+    rev: 1.0.1
+    hooks:
+      - id: pre_commit_hook
+        stages: [commit]
+        verbose: true
